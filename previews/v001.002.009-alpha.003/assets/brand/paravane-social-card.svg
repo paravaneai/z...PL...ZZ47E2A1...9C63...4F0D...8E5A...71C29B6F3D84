@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#171C1F"/>
+  <path d="M-30 265C126 92 256 93 420 147" stroke="#F7601C" stroke-opacity="0.16" stroke-width="2"/>
+  <path d="M676 -40C618 75 648 158 805 210" stroke="#F7601C" stroke-opacity="0.16" stroke-width="2"/>
+  <image href="paravane-brandmark-compact-stem-orange-yellow-gradient-01.svg" x="170" y="145" width="260" height="260"/>
+  <text x="480" y="306" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="66" font-weight="700">Paravane</text>
+  <text x="484" y="356" fill="#A6B4BD" font-family="Segoe UI, Arial, sans-serif" font-size="28">Brand system preview</text>
+</svg>

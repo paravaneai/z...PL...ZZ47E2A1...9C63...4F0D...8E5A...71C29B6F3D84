@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+    <head>
+<meta http-equiv="Content-Security-Policy" content="connect-src 'none'; form-action 'none'">
+<meta name="robots" content="noindex, nofollow">
+<script src="../../../hosted-preview.js"></script>
+
+        <meta charset="utf-8" />
+        <meta name="color-scheme" content="only light" />
+        <meta name="darkreader-lock" content="true" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Quickstart guide for the smtpRS API." />
+        <title>Quickstart | Paravane Labs Docs</title>
+        <link rel="icon" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/b4/b47d8a12345bdbf064f0de8351c8ff55b0c87d6eec4e283d71a72b3fa8e150eb.ico" data-image-href="brand.favicon" />
+        <script>
+            (function () {
+                try {
+                    var theme = localStorage.getItem("paravane-theme");
+                    document.documentElement.setAttribute("data-theme", theme === "light" ? "light" : "dark");
+                } catch (err) {
+                    document.documentElement.setAttribute("data-theme", "dark");
+                }
+            })();
+        </script>
+        <script src="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.311/js/image-config.js?v=009.220.471-alpha.310-loader-soft-fade"></script>
+        <script src="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.311/js/site-config.js?v=009.220.471-alpha.310-loader-soft-fade"></script>
+        <script src="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.311/js/theme.js?v=009.220.471-alpha.310-loader-soft-fade"></script>
+        <script src="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.311/js/page-transition.js?v=009.220.471-alpha.310-loader-soft-fade"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+        <link rel="stylesheet" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.311/css/site.css?v=009.220.471-alpha.310-loader-soft-fade" />
+    </head>
+    <body class="page-smtprs page-standard page-docs">
+        <header class="site-header">
+            <div class="container nav">
+                <a class="logo" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.311/index.html" aria-label="Paravane Labs home">
+                    <img src="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/53/5324d7fe22bb243f1b8198e1552ef6818428086c753da78222be42bdeccddd26.png" data-theme-src-dark="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/53/5324d7fe22bb243f1b8198e1552ef6818428086c753da78222be42bdeccddd26.png" data-theme-src-light="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/e5/e5a26843f18ad2c6be031e62259ab0896325850b43ea7dbf03f7f89c22c9ba01.png" data-image-src="brand.wordmark" alt="Paravane Labs" />
+                </a>
+                <nav class="nav-links" aria-label="Primary navigation">
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.311/index.html">Platform</a>
+                    <div class="nav-catalog">
+    <button class="nav-catalog-trigger" type="button" aria-haspopup="true" aria-label="Open product catalog">
+        <span>Products</span>
+    </button>
+    <div class="product-catalog-menu" role="menu" aria-label="Products catalog">
+        <div class="product-catalog-head">
+            <div>
+                <strong>Product catalog</strong>
+                <span>Applied intelligence for risk, revenue, operations, compliance, data, and vendor decisions.</span>
+            </div>
+        </div>
+        <div class="product-catalog-grid">
+            <section class="product-catalog-section">
+                <h3>Risk &amp; Trust Intelligence</h3>
+                <p>Detect suspicious activity, unreliable outputs, risky communications, and fraud signals.</p>
+                <div class="product-catalog-list">
+                    <a class="product-catalog-item is-available" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.311/pages/products/smtprs.html" role="menuitem">
+                        <span class="product-catalog-title">smtpRS | EMAIL RISK INTELLIGENCE</span>
+                        <p>Scores email risk, urgency, confidence, and unusual activity.</p>
+                    </a>
+                    <a class="product-catalog-item is-available" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.311/pages/products/invoiceguard.html" role="menuitem">
+                        <span class="product-catalog-title">InvoiceGuard | Invoice Protection <span class="product-catalog-pill">In development</span></span>
+                        <p>Detects fraudulent, duplicate, inflated, or suspicious invoice activity.</p>
+                    </a>
+                </div>
+            </section>
+            <section class="product-catalog-section">
+                <h3>Customer &amp; Revenue Intelligence</h3>
+                <p>Predict churn, renewal health, payment reliability, and revenue risk.</p>
+                <div class="product-catalog-list">
+                    <a class="product-catalog-item is-available" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.311/pages/products/retainiq.html" role="menuitem">
+                        <span class="product-catalog-title">RetainIQ | Customer Retention Intelligence <span class="product-catalog-pill">In development</span></span>
+                        <p>Predicts customer churn, disengagement, and renewal risk.</p>
+                    </a>
+                </div>
+            </section>
+            <section class="product-catalog-section">
+                <h3>Data &amp; Vendor Intelligence</h3>
+                <p>Improve data reliability and evaluate third-party operational risk.</p>
+                <div class="product-catalog-list">
+                    <a class="product-catalog-item is-available" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.311/pages/products/vendorlens.html" role="menuitem">
+                        <span class="product-catalog-title">VendorLens | Vendor Intelligence <span class="product-catalog-pill">In development</span></span>
+                        <p>Assesses vendor reliability, compliance, and operational dependency risk.</p>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.311/pages/pricing/index.html">Pricing</a>
+                    <a class="active" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.311/pages/docs/index.html">Docs</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.311/pages/contact/index.html">Contact</a>
+                </nav>
+                <div class="nav-actions">
+                    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to light theme" aria-pressed="false" title="Switch to light theme">
+                        <span class="theme-toggle-track" aria-hidden="true"><span class="theme-toggle-thumb"></span></span>
+                        <span class="theme-toggle-label" data-theme-toggle-label>Dark</span>
+                    </button>
+                    <a class="nav-action nav-action-secondary" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.311/pages/auth/login.html">Login</a>
+                    <a class="nav-action" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.311/pages/auth/signup.html">Sign up</a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero standard-hero">
+                <div class="container">
+                    <p class="kicker">Quickstart</p>
+                    <h1>Your first smtpRS request.</h1>
+                    <p class="lede">
+                        Create an account, generate an API key, and call the analysis endpoint with a single email
+                        address.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container docs-reference-shell">
+                    <aside class="docs-sidebar" aria-label="Documentation navigation">
+                        <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.311/pages/docs/smtprs/index.html">Overview</a>
+                        <a class="active" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.311/pages/docs/smtprs/quickstart.html">Quickstart</a>
+                        <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.311/pages/docs/smtprs/authentication.html">Authentication</a>
+                        <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.311/pages/docs/smtprs/analyse.html">Analyse endpoint</a>
+                        <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.311/pages/docs/smtprs/responses.html">Responses</a>
+                        <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.311/pages/docs/smtprs/errors.html">Errors</a>
+                        <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.311/pages/docs/smtprs/plans-limits.html">Plans and limits</a>
+                        <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.311/pages/docs/smtprs/changelog.html">Changelog</a>
+                    </aside>
+
+                    <article class="docs-article">
+                        <section class="docs-section">
+                            <h2>1. Get access.</h2>
+                            <ol class="docs-mini-list">
+                                <li>Create a Paravane Labs account from the signup page.</li>
+                                <li>Verify your email address.</li>
+                                <li>Wait for review if your account is not automatically approved.</li>
+                                <li>Sign in and open the API keys page.</li>
+                                <li>Create a key and copy it immediately. Raw API keys are only shown once.</li>
+                            </ol>
+                            <div class="docs-page-actions">
+                                <a class="btn btn-primary" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.311/pages/auth/signup.html">Create account</a>
+                                <a class="btn btn-secondary" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.311/pages/app/api-keys.html">Open API keys</a>
+                            </div>
+                        </section>
+
+                        <section class="docs-section">
+                            <h2>2. Send a request.</h2>
+                            <div class="docs-endpoint">
+                                <span class="docs-method">POST</span>
+                                <code>https://api.paravane.io/v1/analyse</code>
+                            </div>
+                            <div class="code-card">
+                                <div class="docs-code-label">curl</div>
+                                <pre><code>curl -X POST https://api.paravane.io/v1/analyse \
+  -H "Content-Type: application/json" \
+  -H "X-API-Key: pvn_live_your_key_here" \
+  -d '{"email":"alice@example.com"}'</code></pre>
+                            </div>
+                            <div class="code-card">
+                                <div class="docs-code-label">Python</div>
+                                <pre><code>import requests
+
+response = requests.post(
+    "https://api.paravane.io/v1/analyse",
+    headers={
+        "Content-Type": "application/json",
+        "X-API-Key": "pvn_live_your_key_here",
+    },
+    json={"email": "alice@example.com"},
+    timeout=15,
+)
+response.raise_for_status()
+print(response.json())</code></pre>
+                            </div>
+                            <div class="code-card">
+                                <div class="docs-code-label">JavaScript</div>
+                                <pre><code>const response = await fetch("https://api.paravane.io/v1/analyse", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "X-API-Key": "pvn_live_your_key_here"
+  },
+  body: JSON.stringify({ email: "alice@example.com" })
+});
+
+if (!response.ok) {
+  throw new Error(`smtpRS request failed: ${response.status}`);
+}
+
+const result = await response.json();
+console.log(result);</code></pre>
+                            </div>
+                        </section>
+
+                        <section class="docs-section">
+                            <h2>3. Read the result.</h2>
+                            <p>
+                                The most important fields are <code class="docs-inline-code">overall_risk</code>,
+                                <code class="docs-inline-code">decision</code>,
+                                <code class="docs-inline-code">analysis_profile</code>,
+                                <code class="docs-inline-code">credit_cost</code>, and
+                                <code class="docs-inline-code">usage</code>. Basic plans receive a summary response.
+                                Higher tiers may receive full layer details when entitled.
+                            </p>
+                            <div class="code-card">
+                                <div class="docs-code-label">Example summary response</div>
+                                <pre><code>{
+  "overall_risk": 2,
+  "decision": "allow",
+  "tier": "BASIC",
+  "charlstm": false,
+  "analysis_profile": "full",
+  "credit_cost": 3,
+  "credits_charged": 3,
+  "response_profile": "summary",
+  "usage": {
+    "limit": 10000,
+    "used": 21,
+    "remaining": 9979,
+    "window": "calendar_month_utc"
+  }
+}</code></pre>
+                            </div>
+                        </section>
+
+                        <section class="docs-section">
+                            <h2>Next steps.</h2>
+                            <div class="docs-page-actions">
+                                <a class="btn btn-primary" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.311/pages/docs/smtprs/authentication.html">Authentication</a>
+                                <a class="btn btn-secondary" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.311/pages/docs/smtprs/analyse.html">Endpoint details</a>
+                            </div>
+                        </section>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container footer-inner footer-inner--social">
+                <span>© 2026 Paravane. A <a href="https://doydl.studio/" target="_blank" rel="noopener noreferrer">DOYDL Technologies</a> company.</span>
+                <nav class="footer-social" aria-label="Paravane Labs social media">
+                    <a class="footer-social-link footer-social-x" href="https://x.com/ParavaneAI" target="_blank" rel="noopener noreferrer" aria-label="Paravane Labs on X">
+                        <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a class="footer-social-link footer-social-youtube" href="https://www.youtube.com/@ParavaneAI" target="_blank" rel="noopener noreferrer" aria-label="Paravane Labs on YouTube">
+                        <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+                    </a>
+<a class="footer-social-link footer-social-linkedin" href="https://www.linkedin.com/company/paravane" target="_blank" rel="noopener noreferrer" aria-label="Paravane Labs on LinkedIn">
+                        <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                    <a class="footer-social-link footer-social-facebook" href="https://www.facebook.com/Paravane/" target="_blank" rel="noopener noreferrer" aria-label="Paravane Labs on Facebook">
+                        <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                    </a>
+                    <a class="footer-social-link footer-social-reddit" href="https://www.reddit.com/user/ParavaneLabs/" target="_blank" rel="noopener noreferrer" aria-label="Paravane Labs on Reddit">
+                        <i class="fa-brands fa-reddit-alien" aria-hidden="true"></i>
+                    </a>
+                    <a class="footer-social-link footer-social-github" href="https://github.com/paravaneai" target="_blank" rel="noopener noreferrer" aria-label="Paravane Labs on GitHub">
+                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                    </a>
+                </nav>
+                <div class="footer-links">
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.311/index.html">Platform</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.311/pages/pricing/index.html">Pricing</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.311/pages/docs/index.html">Docs</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.311/pages/contact/index.html">Contact</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.311/pages/legal/index.html">Legal</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.311/pages/legal/terms.html">Terms</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.311/pages/legal/privacy.html">Privacy</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.311/pages/legal/security.html">Security</a>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
+
+
+

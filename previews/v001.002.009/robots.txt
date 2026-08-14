@@ -1,0 +1,8 @@
+User-Agent: *
+Disallow: /languages/
+Disallow: /a/
+Disallow: /unindexed/
+Disallow: /*?*_page=*
+Disallow: /v1/?api_key*
+
+Sitemap: https://www.abstractapi.com/sitemap.xml

@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Security-Policy" content="connect-src 'none'; form-action 'none'">
+<meta name="robots" content="noindex, nofollow">
+<script src="./hosted-preview.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Paravane EmailRisk | Email intelligence and risk scoring</title>
+    <meta name="description" content="Paravane EmailRisk scores email addresses and domains with explainable signals for signup, fraud, trust, and review workflows.">
+    <link rel="icon" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/d7/d7dd3569f1f35f52819390ac2229c191cfc92a19380152afc06cc530b82d034c.png">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav">
+            <a class="brand" href="index.html" aria-label="Paravane Labs home">
+                <img class="brand-mark" src="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/d7/d7dd3569f1f35f52819390ac2229c191cfc92a19380152afc06cc530b82d034c.png" alt="Paravane Labs logo mark">
+                <span class="brand-name">
+                    <strong>Paravane</strong>
+                    <span>Labs</span>
+                </span>
+            </a>
+
+            <nav class="nav-links" data-nav-links aria-label="Primary navigation">
+                <a href="index.html">Platform</a>
+                <a href="emailrisk.html" aria-current="page">EmailRisk</a>
+                <a href="about.html">About</a>
+                <a href="legal.html">Legal</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a class="btn btn-secondary btn-small" href="#access">Private preview</a>
+                <button class="mobile-toggle" type="button" data-menu-toggle aria-label="Open menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container page-hero-grid">
+                <div class="hero-copy">
+                    <span class="badge">Paravane EmailRisk</span>
+                    <h1>Know when an email address deserves trust.</h1>
+                    <p class="lede">EmailRisk is an API-first intelligence layer for identifying risky addresses, disposable domains, suspicious sender patterns, and signals that need extra review before access is granted.</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="#access">Request preview access</a>
+                        <a class="btn btn-secondary" href="#api">View API shape</a>
+                    </div>
+                    <div class="hero-proof" aria-label="EmailRisk highlights">
+                        <span>Risk score</span>
+                        <span>Reason codes</span>
+                        <span>Workflow-ready JSON</span>
+                    </div>
+                </div>
+
+                <div class="panel product-preview" aria-label="EmailRisk interface mockup">
+                    <div class="risk-console">
+                        <div class="risk-console-head">
+                            <div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+                            <span class="dashboard-label">/v1/email-risk/check</span>
+                        </div>
+                        <div class="risk-console-body">
+                            <div class="query-row">
+                                <div class="fake-input">new.user@temporary-mail.example</div>
+                                <div class="fake-submit">Run</div>
+                            </div>
+
+                            <div class="risk-result">
+                                <div class="risk-value">88</div>
+                                <div class="result-copy">
+                                    <strong>High-risk email pattern</strong>
+                                    <span>Disposable infrastructure, weak domain history, and mismatch indicators found.</span>
+                                </div>
+                            </div>
+
+                            <div class="signal-list">
+                                <div class="signal-line">
+                                    <span>Disposable</span>
+                                    <div class="mini-bar" style="--value: 94%"><span></span></div>
+                                    <strong>high</strong>
+                                </div>
+                                <div class="signal-line">
+                                    <span>Domain age</span>
+                                    <div class="mini-bar" style="--value: 73%"><span></span></div>
+                                    <strong>elevated</strong>
+                                </div>
+                                <div class="signal-line">
+                                    <span>MX confidence</span>
+                                    <div class="mini-bar" style="--value: 42%"><span></span></div>
+                                    <strong>mixed</strong>
+                                </div>
+                                <div class="signal-line">
+                                    <span>Identity fit</span>
+                                    <div class="mini-bar" style="--value: 67%"><span></span></div>
+                                    <strong>review</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <span class="eyebrow">Use cases</span>
+                        <h2>Built for the points where email risk matters.</h2>
+                    </div>
+                    <p>Use EmailRisk anywhere an email address becomes an identity signal, a trust signal, or a workflow decision.</p>
+                </div>
+
+                <div class="use-case-grid">
+                    <article class="use-case">
+                        <h3>Signup protection</h3>
+                        <p>Add friction when a new account uses disposable or suspicious infrastructure.</p>
+                        <ul class="check-list">
+                            <li>Block obvious throwaway addresses</li>
+                            <li>Route uncertain cases to review</li>
+                            <li>Protect trial and invite flows</li>
+                        </ul>
+                    </article>
+                    <article class="use-case">
+                        <h3>Lead and CRM hygiene</h3>
+                        <p>Score inbound emails before they pollute sales, marketing, or support systems.</p>
+                        <ul class="check-list">
+                            <li>Flag weak contact records</li>
+                            <li>Improve routing quality</li>
+                            <li>Separate real demand from noise</li>
+                        </ul>
+                    </article>
+                    <article class="use-case">
+                        <h3>Fraud and abuse review</h3>
+                        <p>Give operations teams reasons, not just a score, when something looks wrong.</p>
+                        <ul class="check-list">
+                            <li>Return reason codes</li>
+                            <li>Explain the signal mix</li>
+                            <li>Support consistent decisions</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <span class="eyebrow">Signal flow</span>
+                        <h2>From raw email to action.</h2>
+                    </div>
+                    <p>EmailRisk is designed to return enough context for automation and enough explanation for a human reviewer.</p>
+                </div>
+
+                <div class="timeline-grid">
+                    <article class="timeline-card">
+                        <span>Step 01</span>
+                        <h3>Normalize</h3>
+                        <p>Clean the address, split local/domain parts, and prepare consistent inputs.</p>
+                    </article>
+                    <article class="timeline-card">
+                        <span>Step 02</span>
+                        <h3>Inspect</h3>
+                        <p>Check domain, mailbox, MX, disposable, velocity, and reputation-style patterns.</p>
+                    </article>
+                    <article class="timeline-card">
+                        <span>Step 03</span>
+                        <h3>Score</h3>
+                        <p>Convert signals into a severity level, score, and reason code set.</p>
+                    </article>
+                    <article class="timeline-card">
+                        <span>Step 04</span>
+                        <h3>Act</h3>
+                        <p>Return a recommended action such as allow, monitor, challenge, review, or block.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="api">
+            <div class="container split">
+                <div>
+                    <span class="eyebrow">API shape</span>
+                    <h2>Clean responses your app can use immediately.</h2>
+                    <p class="lede">Use the score for automation. Use the reason codes for logging, dashboards, and review queues. Keep the result explainable from day one.</p>
+                    <div class="hero-actions" style="margin-top: 24px;">
+                        <a class="btn btn-primary" href="#access">Request API access</a>
+                        <a class="btn btn-secondary" href="index.html">Back to platform</a>
+                    </div>
+                </div>
+
+                <div class="code-panel">
+                    <div class="code-head">
+                        <div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+                        <span>example response</span>
+                    </div>
+<pre><code>{
+  "email": "new.user@temporary-mail.example",
+  "risk_score": 88,
+  "severity": "high",
+  "recommended_action": "challenge",
+  "signals": {
+    "disposable_domain": true,
+    "domain_volatility": "elevated",
+    "mx_confidence": "mixed",
+    "identity_fit": "review"
+  },
+  "reason_codes": [
+    "TEMP_MAIL_PATTERN",
+    "WEAK_DOMAIN_HISTORY",
+    "SENDER_IDENTITY_MISMATCH"
+  ]
+}</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="access">
+            <div class="container">
+                <div class="cta-panel">
+                    <div>
+                        <span class="eyebrow">Private preview</span>
+                        <h2>Test EmailRisk against your real edge cases.</h2>
+                        <p>Early access is best for teams with a real signup, lead, fraud, or review workflow where email intelligence can reduce noise and improve decisions.</p>
+                    </div>
+                    <div class="section-actions">
+                        <a class="btn btn-primary" href="mailto:hello@paravanelabs.com?subject=EmailRisk%20private%20preview">Request preview</a>
+                        <a class="btn btn-secondary" href="mailto:hello@paravanelabs.com?subject=EmailRisk%20workflow%20question">Ask a question</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <a class="brand" href="index.html" aria-label="Paravane Labs home">
+                    <img class="brand-mark" src="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/d7/d7dd3569f1f35f52819390ac2229c191cfc92a19380152afc06cc530b82d034c.png" alt="Paravane Labs logo mark">
+                    <span class="brand-name"><strong>Paravane</strong><span>Labs</span></span>
+                </a>
+                <p class="footer-note">Email risk, identity, and signal intelligence systems.</p>
+            </div>
+            <div class="footer-links" aria-label="Footer navigation">
+                <a href="index.html">Platform</a>
+                <a href="about.html">About</a>
+                <a href="legal.html">Legal</a>
+                <a href="mailto:hello@paravanelabs.com">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+    <head>
+<meta http-equiv="Content-Security-Policy" content="connect-src 'none'; form-action 'none'">
+<meta name="robots" content="noindex, nofollow">
+<script src="../../hosted-preview.js"></script>
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Manage Paravane Labs API keys." />
+        <title>API Keys | Paravane Labs</title>
+        <link rel="icon" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/5c/5c0b22202097d2111076516815a4316e0be58467ac5161de9ee4ca1d0771e901.ico" />
+        <script>
+            (function () {
+                try {
+                    var theme = localStorage.getItem("paravane-theme");
+                    document.documentElement.setAttribute("data-theme", theme === "light" ? "light" : "dark");
+                } catch (err) {
+                    document.documentElement.setAttribute("data-theme", "dark");
+                }
+            })();
+        </script>
+        <script src="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v004.110.007/js/theme.js?v=003.012.006-image-config"></script>
+        <link rel="stylesheet" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v004.110.007/css/site.css?v=20260610-overscroll" />
+    </head>
+    <body class="page-emailrisk page-standard page-app">
+        <header class="site-header app-site-header">
+            <div class="container nav">
+                <a class="logo" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v004.110.007/index.html" aria-label="Paravane Labs home">
+                    <img src="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/02/02c14fb8f12f2de1620aae8c89e2a025036a24bed8dea8d040df51c67ee4c3ea.png" alt="Paravane Labs" />
+                </a>
+                <nav class="nav-links" aria-label="Primary navigation">
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v004.110.007/index.html">Platform</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v004.110.007/pages/products/neuralscore.html">NeuralScore</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v004.110.007/pages/pricing/index.html">Pricing</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v004.110.007/pages/docs/index.html">Docs</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v004.110.007/pages/contact/index.html">Contact</a>
+                </nav>
+                <div class="nav-actions">
+                    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to light theme" aria-pressed="false" title="Switch to light theme">
+                        <span class="theme-toggle-track" aria-hidden="true"><span class="theme-toggle-thumb"></span></span>
+                        <span class="theme-toggle-label" data-theme-toggle-label>Dark</span>
+                    </button>
+                    <button class="nav-action nav-action-secondary" type="button" data-logout>Logout</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="app-shell" data-api-keys-page>
+            <aside class="app-sidebar" aria-label="Account navigation">
+                <a class="app-nav-link" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v004.110.007/pages/app/index.html">Dashboard</a>
+                <a class="app-nav-link active" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v004.110.007/pages/app/api-keys.html">API keys</a>
+                <a class="app-nav-link" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v004.110.007/pages/app/usage.html">Usage</a>
+                <a class="app-nav-link" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v004.110.007/pages/app/billing.html">Billing</a>
+            </aside>
+            <section class="app-main">
+                <div class="app-topbar">
+                    <div>
+                        <p class="kicker">Account</p>
+                        <h1>API keys</h1>
+                    </div>
+                    <p class="app-status" data-app-status aria-live="polite">Loading keys.</p>
+                </div>
+
+                <section class="app-card">
+                    <div class="app-card-head">
+                        <div>
+                            <h2>Create a key</h2>
+                            <p>New keys are shown once. Store the value securely before leaving this page.</p>
+                        </div>
+                    </div>
+                    <form class="site-form api-key-form" data-create-api-key>
+                        <label class="field">
+                            <span>Key name</span>
+                            <input type="text" name="name" value="Production key" maxlength="120" required />
+                        </label>
+                        <button class="btn btn-primary" type="submit">Create API key</button>
+                    </form>
+                    <div class="secret-box" data-new-api-key hidden>
+                        <span>New API key</span>
+                        <code data-new-api-key-value></code>
+                    </div>
+                </section>
+
+                <section class="app-card">
+                    <div class="app-card-head">
+                        <div>
+                            <h2>Workspace keys</h2>
+                            <p>Active keys can score requests through the NeuralScore API.</p>
+                        </div>
+                    </div>
+                    <div class="empty-state" data-empty-keys hidden>No API keys have been created for this workspace.</div>
+                    <div class="table-wrap">
+                        <table class="data-table" aria-label="API keys">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Prefix</th>
+                                    <th>Tier</th>
+                                    <th>Status</th>
+                                    <th>Created</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody data-api-key-rows></tbody>
+                        </table>
+                    </div>
+                </section>
+            </section>
+        </main>
+
+        <script src="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v004.110.007/js/app.js?v=003.016.001-billing"></script>
+    </body>
+</html>

@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+    <head>
+<meta http-equiv="Content-Security-Policy" content="connect-src 'none'; form-action 'none'">
+<meta name="robots" content="noindex, nofollow">
+<script src="../../hosted-preview.js"></script>
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="smtpRS API authentication and API key handling." />
+        <title>Authentication | Paravane Labs Docs</title>
+        <link rel="icon" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/5c/5c0b22202097d2111076516815a4316e0be58467ac5161de9ee4ca1d0771e901.ico" data-image-href="brand.favicon" />
+        <script>
+            (function () {
+                try {
+                    var theme = localStorage.getItem("paravane-theme");
+                    document.documentElement.setAttribute("data-theme", theme === "light" ? "light" : "dark");
+                } catch (err) {
+                    document.documentElement.setAttribute("data-theme", "dark");
+                }
+            })();
+        </script>
+        <script src="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v006.004.000/js/image-config.js?v=003.012.006-image-config"></script>
+        <script src="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v006.004.000/js/theme.js?v=003.012.006-image-config"></script>
+        <script src="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v006.004.000/js/page-transition.js?v=004.112.009-transition-fix"></script>
+        <link rel="stylesheet" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v006.004.000/css/site.css?v=006.004.000-docs" />
+    </head>
+    <body class="page-emailrisk page-standard page-docs">
+        <header class="site-header">
+            <div class="container nav">
+                <a class="logo" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v006.004.000/index.html" aria-label="Paravane Labs home">
+                    <img src="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/02/02c14fb8f12f2de1620aae8c89e2a025036a24bed8dea8d040df51c67ee4c3ea.png" data-image-src="brand.wordmark" alt="Paravane Labs" />
+                </a>
+                <nav class="nav-links" aria-label="Primary navigation">
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v006.004.000/index.html">Platform</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v006.004.000/pages/products/smtprs.html">smtpRS</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v006.004.000/pages/pricing/index.html">Pricing</a>
+                    <a class="active" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v006.004.000/pages/docs/index.html">Docs</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v006.004.000/pages/contact/index.html">Contact</a>
+                </nav>
+                <div class="nav-actions">
+                    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to light theme" aria-pressed="false" title="Switch to light theme">
+                        <span class="theme-toggle-track" aria-hidden="true"><span class="theme-toggle-thumb"></span></span>
+                        <span class="theme-toggle-label" data-theme-toggle-label>Dark</span>
+                    </button>
+                    <a class="nav-action nav-action-secondary" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v006.004.000/pages/auth/login.html">Login</a>
+                    <a class="nav-action" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v006.004.000/pages/auth/signup.html">Sign up</a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero standard-hero">
+                <div class="container">
+                    <p class="kicker">Authentication</p>
+                    <h1>Authenticate every API call with an API key.</h1>
+                    <p class="lede">
+                        smtpRS uses a single request header for API access. Keys are scoped to a workspace and tied to
+                        plan limits, entitlements, usage, and revocation state.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container docs-reference-shell">
+                    <aside class="docs-sidebar" aria-label="Documentation navigation">
+                        <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v006.004.000/pages/docs/index.html">Overview</a>
+                        <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v006.004.000/pages/docs/quickstart.html">Quickstart</a>
+                        <a class="active" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v006.004.000/pages/docs/authentication.html">Authentication</a>
+                        <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v006.004.000/pages/docs/analyse.html">Analyse endpoint</a>
+                        <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v006.004.000/pages/docs/responses.html">Responses</a>
+                        <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v006.004.000/pages/docs/errors.html">Errors</a>
+                        <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v006.004.000/pages/docs/plans-limits.html">Plans and limits</a>
+                        <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v006.004.000/pages/docs/changelog.html">Changelog</a>
+                    </aside>
+
+                    <article class="docs-article">
+                        <section class="docs-section">
+                            <h2>Header format.</h2>
+                            <p>
+                                Include the raw key in the <code class="docs-inline-code">X-API-Key</code> header.
+                                Do not place API keys in URLs, query strings, browser-exposed scripts, or public repos.
+                            </p>
+                            <div class="code-card">
+                                <div class="docs-code-label">Required header</div>
+                                <pre><code>X-API-Key: pvn_live_your_key_here</code></pre>
+                            </div>
+                        </section>
+
+                        <section class="docs-section">
+                            <h2>One-time key display.</h2>
+                            <p>
+                                Raw API keys are shown only when created. After that, the dashboard shows the key name,
+                                prefix, status, tier, and creation date. If a key is lost, create a replacement and
+                                revoke the old key.
+                            </p>
+                            <div class="docs-callout">
+                                This is intentional. The backend stores API key hashes, not recoverable raw API keys,
+                                so a stolen database row cannot be used to reveal customer secrets.
+                            </div>
+                        </section>
+
+                        <section class="docs-section">
+                            <h2>Key lifecycle.</h2>
+                            <div class="docs-table-wrap">
+                                <table class="docs-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Action</th>
+                                            <th>Where</th>
+                                            <th>Notes</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Create</td>
+                                            <td>Dashboard API keys page</td>
+                                            <td>Shown once. Store it in your server secret manager.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Use</td>
+                                            <td><code>X-API-Key</code> header</td>
+                                            <td>Send only from trusted server-side code.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Rotate</td>
+                                            <td>Create a new key, update your app, revoke the old key</td>
+                                            <td>Preferred response when a key might be exposed.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Revoke</td>
+                                            <td>Dashboard API keys page</td>
+                                            <td>Revoked keys can no longer score requests.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+
+                        <section class="docs-section">
+                            <h2>Authentication errors.</h2>
+                            <div class="docs-table-wrap">
+                                <table class="docs-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Status</th>
+                                            <th>Detail</th>
+                                            <th>Meaning</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>401</td>
+                                            <td><code>missing api key</code></td>
+                                            <td>No <code>X-API-Key</code> header was sent.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>401</td>
+                                            <td><code>invalid api key</code></td>
+                                            <td>The key does not match an active workspace key.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>403</td>
+                                            <td><code>inactive api key</code></td>
+                                            <td>The key exists but has been revoked or disabled.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+
+                        <section class="docs-section">
+                            <h2>Next steps.</h2>
+                            <div class="docs-page-actions">
+                                <a class="btn btn-primary" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v006.004.000/pages/docs/analyse.html">Analyse endpoint</a>
+                                <a class="btn btn-secondary" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v006.004.000/pages/docs/errors.html">Errors</a>
+                            </div>
+                        </section>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container footer-inner">
+                <span>(c) 2026 Paravane Labs, Inc., a <a href="https://doydl.studio/" target="_blank" rel="noopener noreferrer">DOYDL Technologies</a> company.</span>
+                <div class="footer-links">
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v006.004.000/index.html">Platform</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v006.004.000/pages/pricing/index.html">Pricing</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v006.004.000/pages/docs/index.html">Docs</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v006.004.000/pages/contact/index.html">Contact</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v006.004.000/pages/legal/index.html">Legal</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v006.004.000/pages/legal/terms.html">Terms</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v006.004.000/pages/legal/privacy.html">Privacy</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v006.004.000/pages/legal/security.html">Security</a>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

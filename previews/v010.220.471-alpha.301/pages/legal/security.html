@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+    <head>
+<meta http-equiv="Content-Security-Policy" content="connect-src 'none'; form-action 'none'">
+<meta name="robots" content="noindex, nofollow">
+<script src="../../hosted-preview.js"></script>
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Public security summary and shared-responsibility guidance." />
+        <title>Security Overview | Paravane Labs</title>
+        <link rel="icon" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/5c/5c0b22202097d2111076516815a4316e0be58467ac5161de9ee4ca1d0771e901.ico" data-image-href="brand.favicon" />
+        <script>
+            (function () {
+                try {
+                    var theme = localStorage.getItem("paravane-theme");
+                    document.documentElement.setAttribute("data-theme", theme === "light" ? "light" : "dark");
+                } catch (err) {
+                    document.documentElement.setAttribute("data-theme", "dark");
+                }
+            })();
+        </script>
+        <script src="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.301/js/image-config.js?v=003.012.006-image-config"></script>
+        <script src="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.301/js/site-config.js?v=008.013.004-theme-enabled"></script>
+        <script src="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.301/js/theme.js?v=008.013.000-theme-config"></script>
+        <script src="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.301/js/page-transition.js?v=004.112.009-transition-fix"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+        <link rel="stylesheet" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.301/css/site.css?v=009.220.471-alpha.006-legal-meta-alignment" />
+    </head>
+    <body class="page-smtprs page-standard page-legal">
+        <header class="site-header">
+            <div class="container nav">
+                <a class="logo" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.301/index.html" aria-label="Paravane Labs home">
+                    <img src="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/02/02c14fb8f12f2de1620aae8c89e2a025036a24bed8dea8d040df51c67ee4c3ea.png" data-image-src="brand.wordmark" alt="Paravane Labs" />
+                </a>
+                <nav class="nav-links" aria-label="Primary navigation">
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.301/index.html">Platform</a>
+                    <div class="nav-catalog">
+    <button class="nav-catalog-trigger" type="button" aria-haspopup="true" aria-label="Open product catalog">
+        <span>Products</span>
+    </button>
+    <div class="product-catalog-menu" role="menu" aria-label="Products catalog">
+        <div class="product-catalog-head">
+            <div>
+                <strong>Product catalog</strong>
+                <span>Applied intelligence for risk, revenue, operations, compliance, data, and vendor decisions.</span>
+            </div>
+        </div>
+        <div class="product-catalog-grid">
+            <section class="product-catalog-section">
+                <h3>Risk &amp; Trust Intelligence</h3>
+                <p>Detect suspicious activity, unreliable outputs, risky communications, and fraud signals.</p>
+                <div class="product-catalog-list">
+                    <a class="product-catalog-item is-available" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.301/pages/products/smtprs.html" role="menuitem">
+                        <span class="product-catalog-title">smtpRS | EMAIL RISK INTELLIGENCE</span>
+                        <p>Scores email risk, urgency, confidence, and unusual activity.</p>
+                    </a>
+                    <a class="product-catalog-item is-available" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.301/pages/products/invoiceguard.html" role="menuitem">
+                        <span class="product-catalog-title">InvoiceGuard | Invoice Protection <span class="product-catalog-pill">In development</span></span>
+                        <p>Detects fraudulent, duplicate, inflated, or suspicious invoice activity.</p>
+                    </a>
+                </div>
+            </section>
+            <section class="product-catalog-section">
+                <h3>Customer &amp; Revenue Intelligence</h3>
+                <p>Predict churn, renewal health, payment reliability, and revenue risk.</p>
+                <div class="product-catalog-list">
+                    <a class="product-catalog-item is-available" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.301/pages/products/retainiq.html" role="menuitem">
+                        <span class="product-catalog-title">RetainIQ | Customer Retention Intelligence <span class="product-catalog-pill">In development</span></span>
+                        <p>Predicts customer churn, disengagement, and renewal risk.</p>
+                    </a>
+                </div>
+            </section>
+            <section class="product-catalog-section">
+                <h3>Data &amp; Vendor Intelligence</h3>
+                <p>Improve data reliability and evaluate third-party operational risk.</p>
+                <div class="product-catalog-list">
+                    <a class="product-catalog-item is-available" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.301/pages/products/vendorlens.html" role="menuitem">
+                        <span class="product-catalog-title">VendorLens | Vendor Intelligence <span class="product-catalog-pill">In development</span></span>
+                        <p>Assesses vendor reliability, compliance, and operational dependency risk.</p>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.301/pages/pricing/index.html">Pricing</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.301/pages/docs/index.html">Docs</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.301/pages/contact/index.html">Contact</a>
+                </nav>
+                <div class="nav-actions">
+                    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to light theme" aria-pressed="false" title="Switch to light theme">
+                        <span class="theme-toggle-track" aria-hidden="true"><span class="theme-toggle-thumb"></span></span>
+                        <span class="theme-toggle-label" data-theme-toggle-label>Dark</span>
+                    </button>
+                    <a class="nav-action nav-action-secondary" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.301/pages/auth/login.html">Login</a>
+                    <a class="nav-action" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.301/pages/auth/signup.html">Sign up</a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero standard-hero legal-hero">
+                <div class="container">
+                    <p class="kicker">Legal</p>
+                    <h1>Security Overview</h1>
+                    <p class="lede">Public security summary and shared-responsibility guide</p>
+                    <div class="legal-meta" aria-label="Document metadata">
+                        <span>Last updated: June 9, 2026</span>
+                        <a class="text-link" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.301/pages/legal/index.html">All legal resources</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section legal-section">
+                <div class="container legal-layout">
+                    <aside class="legal-sidebar" aria-label="Legal resources">
+                        <p class="kicker">Resources</p>
+                        <nav class="legal-nav">
+                            <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.301/pages/legal/terms.html">Terms of Service</a>
+                            <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.301/pages/legal/privacy.html">Privacy Policy</a>
+                            <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.301/pages/legal/acceptable-use.html">Acceptable Use</a>
+                            <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.301/pages/legal/data-processing.html">Data Processing Addendum</a>
+                            <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.301/pages/legal/subprocessors.html">Subprocessors</a>
+                            <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.301/pages/legal/cookie-notice.html">Cookie Notice</a>
+                            <a class="active" aria-current="page" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.301/pages/legal/security.html">Security Overview</a>
+                        </nav>
+                    </aside>
+                    <article class="legal-document">
+                        <h2 id="1-security-philosophy">1. Security philosophy</h2>
+<p>Paravane builds the smtpRS API, dashboard, billing flows, and related Services for developers and businesses that rely on reliable risk signals, secure APIs, and responsible data handling. This Security Overview summarizes the safeguards Paravane uses and continues to mature to protect customer data and maintain service reliability.</p>
+<p>Security is a shared responsibility. Paravane protects the Services and its infrastructure; customers are responsible for protecting their accounts, API keys, systems, integrations, logs, downstream data, and decisions based on Service outputs.</p>
+<h2 id="2-data-handled-by-the-services">2. Data handled by the Services</h2>
+<p>Depending on configuration, Paravane may process account data, email verification and password reset metadata, session metadata, API key metadata, billing and subscription metadata, support communications, API request metadata, usage events, submitted identifiers such as email addresses, domains, IP addresses, user-agent strings, and scoring outputs. Customers should submit only the data needed for their permitted use case.</p>
+<p>Unless separately agreed in writing, the Services are not designed to process protected health information, full payment card data, government ID numbers, financial account numbers, precise geolocation, children&#x27;s data, or special-category/sensitive personal data.</p>
+<h2 id="3-technical-and-organizational-controls">3. Technical and organizational controls</h2>
+<div class="legal-table-wrap"><table class="legal-table"><tr><th>Control area</th><th>Summary</th></tr><tr><td>Encryption in transit</td><td>Paravane uses HTTPS/TLS for traffic to the Services. Customers should call APIs only over HTTPS and should not transmit API keys or personal data over insecure channels.</td></tr><tr><td>Encryption at rest</td><td>Paravane uses infrastructure-supported encryption or equivalent protections for production systems that store Customer Personal Data where supported by the relevant provider and configuration.</td></tr><tr><td>Access controls</td><td>Production access is intended to be limited to authorized personnel with a business need. Administrative access should follow least-privilege principles.</td></tr><tr><td>Authentication</td><td>Customer accounts use email/password authentication, email verification, password reset flows, and server-side session handling where the dashboard is enabled. Administrative systems should use strong authentication and MFA where available. Customer-facing MFA and SSO/SAML are not available unless separately offered or agreed.</td></tr><tr><td>API key management</td><td>Customers can be issued API keys or tokens for integration. Keys are generated server-side, shown only when appropriate, stored in hashed or otherwise protected form where feasible, kept secret by customers, rotated periodically, and revoked immediately if exposed.</td></tr><tr><td>Logging and monitoring</td><td>Paravane uses logs, usage events, and operational monitoring for reliability, debugging, billing/entitlement enforcement, abuse prevention, security, and performance. Logs may include request metadata, API key identifiers or prefixes, and account/session events.</td></tr><tr><td>Abuse prevention</td><td>Rate limits, usage monitoring, suspicious activity detection, WAF/CDN controls, email verification, Turnstile checks, and account reviews may be used to prevent abuse and protect availability.</td></tr><tr><td>Backups and recovery</td><td>Paravane maintains backups and recovery procedures appropriate to the Services, with retention generally targeted at approximately 30 to 90 days unless otherwise required.</td></tr><tr><td>Dependency and patch management</td><td>Paravane tracks dependencies, applies security updates based on severity and exposure, and monitors for vulnerabilities in third-party components.</td></tr><tr><td>Secure development</td><td>Code review, secrets management, environment separation, migration review, webhook signature verification, configuration review, and deployment controls are used based on risk and company maturity.</td></tr><tr><td>Vendor management</td><td>Subprocessors are reviewed for security and privacy fit and bound by appropriate data protection terms.</td></tr><tr><td>Incident response</td><td>Paravane maintains a process for triaging, investigating, mitigating, documenting, and notifying customers of security incidents.</td></tr></table></div>
+<h2 id="4-customer-security-responsibilities">4. Customer security responsibilities</h2>
+<p>Customers should:</p>
+<ul>
+<li>Keep API keys, passwords, tokens, and credentials secret and out of client-side code, public repositories, logs, screenshots, and support tickets unless redacted.</li>
+<li>Use separate API keys for environments and rotate keys when employees leave, vendors change, or exposure is suspected.</li>
+<li>Restrict dashboard and API access to users with a legitimate need.</li>
+<li>Validate and sanitize data submitted to and received from the Services.</li>
+<li>Apply appropriate human review and downstream controls before taking action based on risk scores or outputs.</li>
+<li>Monitor usage for anomalies, unexpected spikes, integration errors, and failed requests.</li>
+<li>Delete or minimize exported data, logs, and outputs when no longer needed.</li>
+<li>Report suspected vulnerabilities or unauthorized access promptly to Paravane.</li>
+</ul>
+<h2 id="5-incident-reporting">5. Incident reporting</h2>
+<p>Report suspected vulnerabilities, exposed API keys, unauthorized access, abuse, or security concerns to security@paravane.io. Include relevant timestamps, endpoints, account identifiers, request IDs, logs, and reproduction steps where safe to provide. Do not include secrets or sensitive personal data unless necessary and encrypted.</p>
+<p>Paravane will review reports, prioritize based on severity and exploitability, and take appropriate remediation steps. Paravane may contact customers if a confirmed security incident affects their Customer Personal Data or Account.</p>
+<h2 id="6-data-retention-and-deletion">6. Data retention and deletion</h2>
+<p>Paravane aims to retain data only as long as needed for service operation, security, billing, support, compliance, and legitimate business purposes. API request log retention, payload retention, security log retention, backups, and support-ticket retention are reviewed as the Services mature.</p>
+<div class="legal-table-wrap"><table class="legal-table"><tr><th>Data area</th><th>Retention note</th></tr><tr><td>API request metadata</td><td>Approximately 90 days by default for ordinary API request metadata and usage events, unless a different period is required for security, abuse prevention, debugging, billing, legal claims, compliance, or a customer agreement.</td></tr><tr><td>Full API payloads</td><td>Not stored by default where feasible. Temporary storage should be limited to debugging, support, security investigation, or customer-enabled features, with minimization, redaction, and deletion controls where practicable.</td></tr><tr><td>Security logs</td><td>Approximately 1 year by default for security logs and abuse investigation records, with longer retention where needed for active investigations, legal claims, compliance, or enforcement.</td></tr><tr><td>Backups</td><td>Approximately 30 to 90 days, after which backups are overwritten or deleted in the ordinary course unless longer retention is required.</td></tr><tr><td>Support tickets</td><td>Approximately 3 years after resolution or account closure, unless a shorter period applies, deletion is requested, or retention is needed for legal, security, or compliance reasons.</td></tr><tr><td>Billing records</td><td>7 years, or another legally required accounting, tax, audit, or compliance period.</td></tr><tr><td>Authentication/session records</td><td>Retained for the active session or operational security period, with longer retention only where needed for abuse prevention, account recovery, investigation, legal claims, or compliance.</td></tr><tr><td>API key records</td><td>Retained while active and for a reasonable audit period after revocation or account closure. Secret key material should not be stored in plaintext where avoidable.</td></tr></table></div>
+<h2 id="7-compliance-status">7. Compliance status</h2>
+<p>Paravane is building its security program with reference to common SaaS security practices and customer needs. Paravane has not completed SOC 2, ISO 27001, HIPAA, PCI DSS, or similar formal certifications unless expressly stated in a signed agreement or updated public notice. Formal certifications will be listed here if and when available.</p>
+<h2 id="8-security-roadmap">8. Security roadmap</h2>
+<div class="legal-table-wrap"><table class="legal-table"><tr><th>Item</th><th>Status</th></tr><tr><td>Customer MFA</td><td>Not currently available for customer accounts; planned for a later dashboard release.</td></tr><tr><td>SSO/SAML</td><td>Not currently available unless separately agreed for an enterprise engagement.</td></tr><tr><td>Role-based access control</td><td>Planned and expected to be plan-specific as the dashboard matures.</td></tr><tr><td>SOC 2 Type I/II</td><td>Not currently completed; no public completion date.</td></tr><tr><td>Independent penetration test</td><td>No independent penetration test is published unless separately documented.</td></tr><tr><td>Vulnerability disclosure policy</td><td>Contact-only initially through security@paravane.io; a public vulnerability disclosure policy may be added later.</td></tr><tr><td>Regional data hosting</td><td>Not currently offered as a standard self-service feature; may be discussed for enterprise engagements.</td></tr><tr><td>Customer-configurable retention</td><td>Available on request / contact-only initially; broader self-service controls may be added as enterprise readiness matures.</td></tr></table></div>
+<h2 id="9-contact">9. Contact</h2>
+<p>Security questions and vulnerability reports: security@paravane.io. Privacy questions: privacy@paravane.io. Legal notices: legal@paravane.io. General information requests: contact@paravane.io. Mailing address: 11166 Fairfax Blvd Suite 500 #1378, Fairfax, VA 22030, United States; Phone: (703) 972-1286.</p>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container footer-inner footer-inner--social">
+                <span>
+                    © 2026 Paravane. A
+                    <a href="https://doydl.studio/" target="_blank" rel="noopener noreferrer">DOYDL Technologies</a>
+                    company.
+                </span>
+                <nav class="footer-social" aria-label="Paravane Labs social media">
+                    <a class="footer-social-link footer-social-x" href="https://x.com/ParavaneAI" target="_blank" rel="noopener noreferrer" aria-label="Paravane Labs on X">
+                        <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a class="footer-social-link footer-social-youtube" href="https://www.youtube.com/@ParavaneAI" target="_blank" rel="noopener noreferrer" aria-label="Paravane Labs on YouTube">
+                        <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+                    </a>
+<a class="footer-social-link footer-social-linkedin" href="https://www.linkedin.com/company/paravane" target="_blank" rel="noopener noreferrer" aria-label="Paravane Labs on LinkedIn">
+                        <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                    <a class="footer-social-link footer-social-facebook" href="https://www.facebook.com/Paravane/" target="_blank" rel="noopener noreferrer" aria-label="Paravane Labs on Facebook">
+                        <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                    </a>
+                    <a class="footer-social-link footer-social-reddit" href="https://www.reddit.com/user/ParavaneLabs/" target="_blank" rel="noopener noreferrer" aria-label="Paravane Labs on Reddit">
+                        <i class="fa-brands fa-reddit-alien" aria-hidden="true"></i>
+                    </a>
+                    <a class="footer-social-link footer-social-github" href="https://github.com/paravaneai" target="_blank" rel="noopener noreferrer" aria-label="Paravane Labs on GitHub">
+                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                    </a>
+                </nav>
+                <div class="footer-links">
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.301/index.html">Platform</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.301/pages/pricing/index.html">Pricing</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.301/pages/docs/index.html">Docs</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.301/pages/contact/index.html">Contact</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.301/pages/legal/index.html">Legal</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.301/pages/legal/terms.html">Terms</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.301/pages/legal/privacy.html">Privacy</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.301/pages/legal/security.html">Security</a>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

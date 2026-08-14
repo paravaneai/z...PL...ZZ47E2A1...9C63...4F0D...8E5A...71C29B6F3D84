@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+    <head>
+<meta http-equiv="Content-Security-Policy" content="connect-src 'none'; form-action 'none'">
+<meta name="robots" content="noindex, nofollow">
+<script src="../../../hosted-preview.js"></script>
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="smtpRS plans, credits, rate limits, and feature gates." />
+        <title>Plans and Limits | Paravane Labs Docs</title>
+        <link rel="icon" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/5c/5c0b22202097d2111076516815a4316e0be58467ac5161de9ee4ca1d0771e901.ico" data-image-href="brand.favicon" />
+        <script>
+            (function () {
+                try {
+                    var theme = localStorage.getItem("paravane-theme");
+                    document.documentElement.setAttribute("data-theme", theme === "light" ? "light" : "dark");
+                } catch (err) {
+                    document.documentElement.setAttribute("data-theme", "dark");
+                }
+            })();
+        </script>
+        <script src="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.005/js/image-config.js?v=003.012.006-image-config"></script>
+        <script src="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.005/js/site-config.js?v=008.013.004-theme-enabled"></script>
+        <script src="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.005/js/theme.js?v=008.013.000-theme-config"></script>
+        <script src="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.005/js/page-transition.js?v=004.112.009-transition-fix"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+        <link rel="stylesheet" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.005/css/site.css?v=008.013.004-light-theme-contrast" />
+    </head>
+    <body class="page-smtprs page-standard page-docs">
+        <header class="site-header">
+            <div class="container nav">
+                <a class="logo" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.005/index.html" aria-label="Paravane Labs home">
+                    <img src="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/02/02c14fb8f12f2de1620aae8c89e2a025036a24bed8dea8d040df51c67ee4c3ea.png" data-image-src="brand.wordmark" alt="Paravane Labs" />
+                </a>
+                <nav class="nav-links" aria-label="Primary navigation">
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.005/index.html">Platform</a>
+                    <div class="nav-catalog">
+    <button class="nav-catalog-trigger" type="button" aria-haspopup="true" aria-label="Open product catalog">
+        <span>Products</span>
+    </button>
+    <div class="product-catalog-menu" role="menu" aria-label="Products catalog">
+        <div class="product-catalog-head">
+            <div>
+                <strong>Product catalog</strong>
+                <span>Applied intelligence for risk, revenue, operations, compliance, data, and vendor decisions.</span>
+            </div>
+        </div>
+        <div class="product-catalog-grid">
+            <section class="product-catalog-section">
+                <h3>Risk &amp; Trust Intelligence</h3>
+                <p>Detect suspicious activity, unreliable outputs, risky communications, and fraud signals.</p>
+                <div class="product-catalog-list">
+                    <a class="product-catalog-item is-available" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.005/pages/products/smtprs.html" role="menuitem">
+                        <span class="product-catalog-title">smtpRS | Email Risk Intelligence</span>
+                        <p>Scores email risk, urgency, confidence, and unusual activity.</p>
+                    </a>
+                    <a class="product-catalog-item is-available" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.005/pages/products/invoiceguard.html" role="menuitem">
+                        <span class="product-catalog-title">InvoiceGuard | Invoice Protection <span class="product-catalog-pill">In development</span></span>
+                        <p>Detects fraudulent, duplicate, inflated, or suspicious invoice activity.</p>
+                    </a>
+                </div>
+            </section>
+            <section class="product-catalog-section">
+                <h3>Customer &amp; Revenue Intelligence</h3>
+                <p>Predict churn, renewal health, payment reliability, and revenue risk.</p>
+                <div class="product-catalog-list">
+                    <a class="product-catalog-item is-available" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.005/pages/products/retainiq.html" role="menuitem">
+                        <span class="product-catalog-title">RetainIQ | Customer Retention Intelligence <span class="product-catalog-pill">In development</span></span>
+                        <p>Predicts customer churn, disengagement, and renewal risk.</p>
+                    </a>
+                </div>
+            </section>
+            <section class="product-catalog-section">
+                <h3>Data &amp; Vendor Intelligence</h3>
+                <p>Improve data reliability and evaluate third-party operational risk.</p>
+                <div class="product-catalog-list">
+                    <a class="product-catalog-item is-available" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.005/pages/products/vendorlens.html" role="menuitem">
+                        <span class="product-catalog-title">VendorLens | Vendor Intelligence <span class="product-catalog-pill">In development</span></span>
+                        <p>Assesses vendor reliability, compliance, and operational dependency risk.</p>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.005/pages/pricing/index.html">Pricing</a>
+                    <a class="active" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.005/pages/docs/index.html">Docs</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.005/pages/contact/index.html">Contact</a>
+                </nav>
+                <div class="nav-actions">
+                    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to light theme" aria-pressed="false" title="Switch to light theme">
+                        <span class="theme-toggle-track" aria-hidden="true"><span class="theme-toggle-thumb"></span></span>
+                        <span class="theme-toggle-label" data-theme-toggle-label>Dark</span>
+                    </button>
+                    <a class="nav-action nav-action-secondary" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.005/pages/auth/login.html">Login</a>
+                    <a class="nav-action" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.005/pages/auth/signup.html">Sign up</a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero standard-hero">
+                <div class="container">
+                    <p class="kicker">Plans and limits</p>
+                    <h1>Credits and features by tier.</h1>
+                    <p class="lede">
+                        Each API key belongs to a workspace. The workspace plan controls included credits for each
+                        quota period, request rate, active API keys, scoring profiles, and response depth.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container docs-reference-shell">
+                    <aside class="docs-sidebar" aria-label="Documentation navigation">
+                        <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.005/pages/docs/smtprs/index.html">Overview</a>
+                        <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.005/pages/docs/smtprs/quickstart.html">Quickstart</a>
+                        <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.005/pages/docs/smtprs/authentication.html">Authentication</a>
+                        <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.005/pages/docs/smtprs/analyse.html">Analyse endpoint</a>
+                        <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.005/pages/docs/smtprs/responses.html">Responses</a>
+                        <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.005/pages/docs/smtprs/errors.html">Errors</a>
+                        <a class="active" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.005/pages/docs/smtprs/plans-limits.html">Plans and limits</a>
+                        <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.005/pages/docs/smtprs/changelog.html">Changelog</a>
+                    </aside>
+
+                    <article class="docs-article">
+                        <section class="docs-section">
+                            <h2>Plan defaults.</h2>
+                            <div class="docs-table-wrap">
+                                <table class="docs-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Plan</th>
+                                            <th>Included credits</th>
+                                            <th>RPS</th>
+                                            <th>API keys</th>
+                                            <th>Response</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Free</td>
+                                            <td>100</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>Summary</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Basic</td>
+                                            <td>10,000</td>
+                                            <td>2</td>
+                                            <td>1</td>
+                                            <td>Summary</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Pro</td>
+                                            <td>75,000</td>
+                                            <td>5</td>
+                                            <td>3</td>
+                                            <td>Full layer export available</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Scale</td>
+                                            <td>300,000</td>
+                                            <td>10</td>
+                                            <td>5</td>
+                                            <td>Full layer export available</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Business</td>
+                                            <td>600,000</td>
+                                            <td>20</td>
+                                            <td>10</td>
+                                            <td>Full layer export available</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Enterprise</td>
+                                            <td>Custom</td>
+                                            <td>Custom</td>
+                                            <td>Custom</td>
+                                            <td>By contract</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p>
+                                Free credits reset on a UTC calendar-month schedule. Paid-plan credits follow the
+                                workspace's current Stripe subscription period. Entitlements can be reviewed manually
+                                for sensitive or high-volume access, and the dashboard and API enforce the active
+                                workspace state.
+                            </p>
+                        </section>
+
+                        <section class="docs-section">
+                            <h2>Additional credit packs.</h2>
+                            <p>
+                                Active paid workspaces can make a one-time Stripe purchase for additional credits
+                                without changing their subscription plan. Free workspaces are not eligible for credit
+                                packs.
+                            </p>
+                            <div class="docs-table-wrap">
+                                <table class="docs-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Pack</th>
+                                            <th>Credits</th>
+                                            <th>Price</th>
+                                            <th>Eligible plans</th>
+                                            <th>Limit per period</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>10K Credit Boost</td>
+                                            <td>10,000</td>
+                                            <td>$25</td>
+                                            <td>Basic, Pro, Scale, Business</td>
+                                            <td>3 purchases</td>
+                                        </tr>
+                                        <tr>
+                                            <td>50K Credit Boost</td>
+                                            <td>50,000</td>
+                                            <td>$79</td>
+                                            <td>Pro, Scale, Business</td>
+                                            <td>3 purchases</td>
+                                        </tr>
+                                        <tr>
+                                            <td>200K Credit Boost</td>
+                                            <td>200,000</td>
+                                            <td>$249</td>
+                                            <td>Scale, Business</td>
+                                            <td>2 purchases</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="docs-callout">
+                                Purchased credits become available after payment confirmation, apply only to the
+                                current paid subscription period, expire at renewal, and do not roll over. A refunded
+                                or otherwise reversed payment removes its associated credit grant. Purchases and grant
+                                history are available from the workspace billing page.
+                            </div>
+                        </section>
+
+                        <section class="docs-section">
+                            <h2>Credit costs.</h2>
+                            <div class="docs-table-wrap">
+                                <table class="docs-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Profile</th>
+                                            <th>How to request</th>
+                                            <th>Credits</th>
+                                            <th>Notes</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Mini</td>
+                                            <td><code>?disposable_only=true</code></td>
+                                            <td>1</td>
+                                            <td>Fast screening profile.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Full</td>
+                                            <td>default request</td>
+                                            <td>3</td>
+                                            <td>Broader analysis for paid tiers.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Strict</td>
+                                            <td><code>?strict_disposable=true</code> or <code>?guess=true</code></td>
+                                            <td>5</td>
+                                            <td>Deeper checks for Pro and above.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Catch-all</td>
+                                            <td><code>?run_catch_all=true</code></td>
+                                            <td>20</td>
+                                            <td>Approval only because it can be slower and more sensitive.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+
+                        <section class="docs-section">
+                            <h2>Quota behavior.</h2>
+                            <p>
+                                Free usage is counted in a UTC calendar-month window. Paid usage is counted within the
+                                current Stripe subscription period. For an active paid workspace, the effective limit
+                                is the plan's included credits plus active additional credits granted for that same
+                                period.
+                            </p>
+                            <p>
+                                The billing and usage views report included credits, purchased credits, the effective
+                                limit, usage, remaining credits, and the current period boundaries. If a request would
+                                exceed the effective limit, the API returns 429 with a structured
+                                <code class="docs-inline-code">monthly_credit_limit_exceeded</code> response. Rate
+                                limits are enforced by the API and front-door server controls.
+                            </p>
+                            <div class="docs-page-actions">
+                                <a class="btn btn-primary" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.005/pages/pricing/index.html">Compare pricing</a>
+                                <a class="btn btn-secondary" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.005/pages/app/billing.html">Manage credits</a>
+                                <a class="btn btn-secondary" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.005/pages/contact/index.html">Request custom limits</a>
+                            </div>
+                        </section>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container footer-inner footer-inner--social">
+                <span>© 2026 Paravane Labs. A <a href="https://doydl.studio/" target="_blank" rel="noopener noreferrer">DOYDL Technologies</a> company.</span>
+                <nav class="footer-social" aria-label="Paravane Labs social media">
+                    <a class="footer-social-link footer-social-x" href="https://x.com/ParavaneAI" target="_blank" rel="noopener noreferrer" aria-label="Paravane Labs on X">
+                        <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a class="footer-social-link footer-social-youtube" href="https://www.youtube.com/@ParavaneAI" target="_blank" rel="noopener noreferrer" aria-label="Paravane Labs on YouTube">
+                        <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+                    </a>
+<a class="footer-social-link footer-social-linkedin" href="https://www.linkedin.com/company/paravane" target="_blank" rel="noopener noreferrer" aria-label="Paravane Labs on LinkedIn">
+                        <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                    <a class="footer-social-link footer-social-facebook" href="https://www.facebook.com/Paravane/" target="_blank" rel="noopener noreferrer" aria-label="Paravane Labs on Facebook">
+                        <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                    </a>
+                    <a class="footer-social-link footer-social-reddit" href="https://www.reddit.com/user/ParavaneLabs/" target="_blank" rel="noopener noreferrer" aria-label="Paravane Labs on Reddit">
+                        <i class="fa-brands fa-reddit-alien" aria-hidden="true"></i>
+                    </a>
+                    <a class="footer-social-link footer-social-github" href="https://github.com/paravaneai" target="_blank" rel="noopener noreferrer" aria-label="Paravane Labs on GitHub">
+                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                    </a>
+                </nav>
+                <div class="footer-links">
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.005/index.html">Platform</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.005/pages/pricing/index.html">Pricing</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.005/pages/docs/index.html">Docs</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.005/pages/contact/index.html">Contact</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.005/pages/legal/index.html">Legal</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.005/pages/legal/terms.html">Terms</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.005/pages/legal/privacy.html">Privacy</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.005/pages/legal/security.html">Security</a>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
+
+
+

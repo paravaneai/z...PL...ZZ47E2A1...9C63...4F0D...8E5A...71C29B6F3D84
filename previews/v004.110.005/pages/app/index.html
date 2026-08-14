@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+    <head>
+<meta http-equiv="Content-Security-Policy" content="connect-src 'none'; form-action 'none'">
+<meta name="robots" content="noindex, nofollow">
+<script src="../../hosted-preview.js"></script>
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Paravane Labs account dashboard." />
+        <title>Dashboard | Paravane Labs</title>
+        <link rel="icon" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/5c/5c0b22202097d2111076516815a4316e0be58467ac5161de9ee4ca1d0771e901.ico" />
+        <script>
+            (function () {
+                try {
+                    var theme = localStorage.getItem("paravane-theme");
+                    document.documentElement.setAttribute("data-theme", theme === "light" ? "light" : "dark");
+                } catch (err) {
+                    document.documentElement.setAttribute("data-theme", "dark");
+                }
+            })();
+        </script>
+        <script src="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v004.110.005/js/theme.js?v=003.012.006-image-config"></script>
+        <link rel="stylesheet" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v004.110.005/css/site.css?v=20260610-overscroll" />
+    </head>
+    <body class="page-emailrisk page-standard page-app">
+        <header class="site-header app-site-header">
+            <div class="container nav">
+                <a class="logo" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v004.110.005/index.html" aria-label="Paravane Labs home">
+                    <img src="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/02/02c14fb8f12f2de1620aae8c89e2a025036a24bed8dea8d040df51c67ee4c3ea.png" alt="Paravane Labs" />
+                </a>
+                <nav class="nav-links" aria-label="Primary navigation">
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v004.110.005/index.html">Platform</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v004.110.005/pages/products/neuralscore.html">NeuralScore</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v004.110.005/pages/pricing/index.html">Pricing</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v004.110.005/pages/docs/index.html">Docs</a>
+                    <a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v004.110.005/pages/contact/index.html">Contact</a>
+                </nav>
+                <div class="nav-actions">
+                    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to light theme" aria-pressed="false" title="Switch to light theme">
+                        <span class="theme-toggle-track" aria-hidden="true"><span class="theme-toggle-thumb"></span></span>
+                        <span class="theme-toggle-label" data-theme-toggle-label>Dark</span>
+                    </button>
+                    <button class="nav-action nav-action-secondary" type="button" data-logout>Logout</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="app-shell" data-app-dashboard>
+            <aside class="app-sidebar" aria-label="Account navigation">
+                <a class="app-nav-link active" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v004.110.005/pages/app/index.html">Dashboard</a>
+                <a class="app-nav-link" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v004.110.005/pages/app/api-keys.html">API keys</a>
+                <a class="app-nav-link" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v004.110.005/pages/app/usage.html">Usage</a>
+                <a class="app-nav-link" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v004.110.005/pages/app/billing.html">Billing</a>
+            </aside>
+            <section class="app-main">
+                <div class="app-topbar">
+                    <div>
+                        <p class="kicker">Account</p>
+                        <h1>Dashboard</h1>
+                    </div>
+                    <p class="app-status" data-app-status aria-live="polite">Loading account.</p>
+                </div>
+
+                <section class="app-card app-account-card">
+                    <div>
+                        <span class="app-label">Signed in as</span>
+                        <strong data-user-name>Loading</strong>
+                        <span data-user-email></span>
+                    </div>
+                    <div>
+                        <span class="app-label">Workspace</span>
+                        <strong data-tenant-name>Loading</strong>
+                        <span data-plan></span>
+                    </div>
+                </section>
+
+                <section class="metric-grid" aria-label="Account metrics">
+                    <article class="metric-card">
+                        <span>API keys</span>
+                        <strong data-api-key-count>0</strong>
+                        <small>Active keys</small>
+                    </article>
+                    <article class="metric-card">
+                        <span>Usage</span>
+                        <strong data-usage>0</strong>
+                        <small data-limit>Current month</small>
+                    </article>
+                    <article class="metric-card">
+                        <span>Billing</span>
+                        <strong data-billing-status>Not connected</strong>
+                        <small data-billing-note>Subscription status</small>
+                    </article>
+                </section>
+
+                <section class="app-card">
+                    <div class="app-card-head">
+                        <div>
+                            <h2>Recent usage</h2>
+                            <p>Recent NeuralScore activity for this workspace.</p>
+                        </div>
+                        <a class="btn btn-secondary" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v004.110.005/pages/app/api-keys.html">Manage keys</a>
+                    </div>
+                    <div class="empty-state" data-empty-usage hidden>No usage events have been recorded yet.</div>
+                    <div class="table-wrap">
+                        <table class="data-table" aria-label="Recent usage events">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Event</th>
+                                    <th>Quantity</th>
+                                    <th>Profile</th>
+                                </tr>
+                            </thead>
+                            <tbody data-usage-rows></tbody>
+                        </table>
+                    </div>
+                </section>
+            </section>
+        </main>
+
+        <script src="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v004.110.005/js/app.js?v=003.016.001-billing"></script>
+    </body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta http-equiv="Content-Security-Policy" content="connect-src 'none'; form-action 'none'">
+<meta name="robots" content="noindex, nofollow">
+<script src="../../../hosted-preview.js"></script>
+
+<meta charset="utf-8"/>
+<meta content="only light" name="color-scheme"/>
+<meta content="true" name="darkreader-lock"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="smtpRS public API documentation changelog." name="description"/>
+<title>Changelog | Paravane Labs Docs</title>
+<link data-image-href="brand.favicon" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/b4/b47d8a12345bdbf064f0de8351c8ff55b0c87d6eec4e283d71a72b3fa8e150eb.ico" rel="icon"/>
+<script>
+            (function () {
+                try {
+                    var theme = localStorage.getItem("paravane-theme");
+                    document.documentElement.setAttribute("data-theme", theme === "light" ? "light" : "dark");
+                } catch (err) {
+                    document.documentElement.setAttribute("data-theme", "dark");
+                }
+            })();
+        </script>
+<script src="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.312/js/image-config.js?v=009.220.471-alpha.310-loader-soft-fade"></script>
+<script src="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.312/js/site-config.js?v=009.220.471-alpha.310-loader-soft-fade"></script>
+<script src="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.312/js/theme.js?v=009.220.471-alpha.310-loader-soft-fade"></script>
+<script src="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.312/js/page-transition.js?v=009.220.471-alpha.310-loader-soft-fade"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet"/>
+<link href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.312/css/site.css?v=009.220.471-alpha.310-loader-soft-fade" rel="stylesheet"/>
+</head>
+<body class="page-smtprs page-standard page-docs">
+<header class="site-header">
+<div class="container nav">
+<a aria-label="Paravane Labs home" class="logo" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.312/index.html">
+<img alt="Paravane Labs" data-image-src="brand.wordmark" data-theme-src-dark="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/53/5324d7fe22bb243f1b8198e1552ef6818428086c753da78222be42bdeccddd26.png" data-theme-src-light="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/e5/e5a26843f18ad2c6be031e62259ab0896325850b43ea7dbf03f7f89c22c9ba01.png" src="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/53/5324d7fe22bb243f1b8198e1552ef6818428086c753da78222be42bdeccddd26.png"/>
+</a>
+<nav aria-label="Primary navigation" class="nav-links">
+<a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.312/index.html">Platform</a>
+<div class="nav-catalog">
+<button aria-haspopup="true" aria-label="Open product catalog" class="nav-catalog-trigger" type="button">
+<span>Products</span>
+</button>
+<div aria-label="Products catalog" class="product-catalog-menu" role="menu">
+<div class="product-catalog-head">
+<div>
+<strong>Product catalog</strong>
+<span>Applied intelligence for risk, revenue, operations, compliance, data, and vendor decisions.</span>
+</div>
+</div>
+<div class="product-catalog-grid">
+<section class="product-catalog-section">
+<h3>Risk &amp; Trust Intelligence</h3>
+<p>Detect suspicious activity, unreliable outputs, risky communications, and fraud signals.</p>
+<div class="product-catalog-list">
+<a class="product-catalog-item is-available" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.312/pages/products/smtprs.html" role="menuitem">
+<span class="product-catalog-title">smtpRS | EMAIL RISK INTELLIGENCE</span>
+<p>Scores email risk, urgency, confidence, and unusual activity.</p>
+</a>
+<a class="product-catalog-item is-available" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.312/pages/products/invoiceguard.html" role="menuitem">
+<span class="product-catalog-title">InvoiceGuard | Invoice Protection <span class="product-catalog-pill">In development</span></span>
+<p>Detects fraudulent, duplicate, inflated, or suspicious invoice activity.</p>
+</a>
+</div>
+</section>
+<section class="product-catalog-section">
+<h3>Customer &amp; Revenue Intelligence</h3>
+<p>Predict churn, renewal health, payment reliability, and revenue risk.</p>
+<div class="product-catalog-list">
+<a class="product-catalog-item is-available" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.312/pages/products/retainiq.html" role="menuitem">
+<span class="product-catalog-title">RetainIQ | Customer Retention Intelligence <span class="product-catalog-pill">In development</span></span>
+<p>Predicts customer churn, disengagement, and renewal risk.</p>
+</a>
+</div>
+</section>
+<section class="product-catalog-section">
+<h3>Data &amp; Vendor Intelligence</h3>
+<p>Improve data reliability and evaluate third-party operational risk.</p>
+<div class="product-catalog-list">
+<a class="product-catalog-item is-available" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.312/pages/products/vendorlens.html" role="menuitem">
+<span class="product-catalog-title">VendorLens | Vendor Intelligence <span class="product-catalog-pill">In development</span></span>
+<p>Assesses vendor reliability, compliance, and operational dependency risk.</p>
+</a>
+</div>
+</section>
+</div>
+</div>
+</div>
+<a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.312/pages/pricing/index.html">Pricing</a>
+<a class="active" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.312/pages/docs/index.html">Docs</a>
+<a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.312/pages/contact/index.html">Contact</a>
+</nav>
+<div class="nav-actions">
+<button aria-label="Switch to light theme" aria-pressed="false" class="theme-toggle" data-theme-toggle="" title="Switch to light theme" type="button">
+<span aria-hidden="true" class="theme-toggle-track"><span class="theme-toggle-thumb"></span></span>
+<span class="theme-toggle-label" data-theme-toggle-label="">Dark</span>
+</button>
+<a class="nav-action nav-action-secondary" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.312/pages/auth/login.html">Login</a>
+<a class="nav-action" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.312/pages/auth/signup.html">Sign up</a>
+</div>
+</div>
+</header>
+<main>
+<section class="hero standard-hero">
+<div class="container">
+<p class="kicker">Changelog</p>
+<h1>API changelog.</h1>
+<p class="lede">
+                        This Changelog highlights notable changes to the smtpRS API.
+                    </p>
+</div>
+</section>
+<section class="section">
+<div class="container docs-reference-shell docs-reference-shell--toc">
+<aside aria-label="Documentation navigation" class="docs-sidebar">
+<a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.312/pages/docs/smtprs/index.html">Overview</a>
+<a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.312/pages/docs/smtprs/quickstart.html">Quickstart</a>
+<a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.312/pages/docs/smtprs/authentication.html">Authentication</a>
+<a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.312/pages/docs/smtprs/analyse.html">Analyse endpoint</a>
+<a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.312/pages/docs/smtprs/responses.html">Responses</a>
+<a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.312/pages/docs/smtprs/errors.html">Errors</a>
+<a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.312/pages/docs/smtprs/plans-limits.html">Plans and limits</a>
+<a class="active" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.312/pages/docs/smtprs/changelog.html">Changelog</a>
+</aside>
+<aside aria-label="On this page" class="docs-toc">
+<div class="docs-toc-heading">On this page</div>
+<nav class="docs-toc-nav" aria-label="Changelog dates">
+<a href="#2026-08" data-docs-toc-link="2026-08">August 2026</a>
+<a href="#2026-07" data-docs-toc-link="2026-07">July 2026</a>
+<a href="#2026-06" data-docs-toc-link="2026-06">June 2026</a>
+<a href="#2026-05" data-docs-toc-link="2026-05">May 2026</a>
+<a href="#2025-12" data-docs-toc-link="2025-12">December 2025</a>
+<a href="#2025-10" data-docs-toc-link="2025-10">October 2025</a>
+<a href="#2025-08" data-docs-toc-link="2025-08">August 2025</a>
+<a href="#2025-06" data-docs-toc-link="2025-06">June 2025</a>
+<a href="#2025-04" data-docs-toc-link="2025-04">April 2025</a>
+<a href="#2025-02" data-docs-toc-link="2025-02">February 2025</a>
+<a href="#2024-11" data-docs-toc-link="2024-11">November 2024</a>
+<a href="#2024-09" data-docs-toc-link="2024-09">September 2024</a>
+<a href="#2024-07" data-docs-toc-link="2024-07">July 2024</a>
+<a href="#2024-03" data-docs-toc-link="2024-03">March 2024</a>
+<a href="#2023-12" data-docs-toc-link="2023-12">December 2023</a>
+<a href="#2023-09" data-docs-toc-link="2023-09">September 2023</a>
+<a href="#2023-06" data-docs-toc-link="2023-06">June 2023</a>
+<a href="#2023-03" data-docs-toc-link="2023-03">March 2023</a>
+<a href="#2023-01" data-docs-toc-link="2023-01">January 2023</a>
+</nav>
+</aside>
+<article class="docs-article"><!-- Pre-surviving-history entries are reconstructed/approximate and must not be represented as verified commit history. --><!-- Dates reflect meaningful public-facing product milestones. Routine maintenance and internal implementation changes are omitted. --><section class="docs-section" id="2026-08"><p class="kicker">August 2026</p><div class="docs-changelog-entry"><h3>Company intelligence expanded.</h3><ul class="docs-mini-list">
+<li>Improved company-related email intelligence for eligible plans.</li>
+<li>Expanded the coverage and consistency of company validation signals.</li>
+<li>Improved reliability when evaluating older, incomplete, or conflicting company information.</li>
+<li>Refined company-related results while preserving user privacy.</li>
+</ul></div><div class="docs-changelog-entry"><h3>Verified organization branding added.</h3><ul class="docs-mini-list">
+<li>Added verified organization branding to eligible company results.</li>
+<li>Improved the consistency of organization identity information shown to customers.</li>
+<li>Improved the consistency of company identity details shown alongside eligible results.</li>
+</ul></div><div class="docs-changelog-entry"><h3>Preview, credits, and billing controls strengthened.</h3><ul class="docs-mini-list">
+<li>Improved the public smtpRS Preview experience and decision guidance.</li>
+<li>Added optional credit purchases for supported paid accounts.</li>
+<li>Improved plan-transition handling so account limits remain aligned with the active plan.</li>
+<li>Strengthened overall billing and entitlement reliability.</li>
+</ul></div></section><section class="docs-section" id="2026-07"><p class="kicker">July 2026</p><div class="docs-changelog-entry"><h3>Company validation coverage expanded.</h3><ul class="docs-mini-list">
+<li>Expanded the breadth of company validation coverage.</li>
+<li>Improved confidence when associating business domains with organizations.</li>
+<li>Improved handling of incomplete, repeated, or conflicting company information.</li>
+<li>Refined domain-risk decisions to reduce avoidable false positives.</li>
+</ul></div><div class="docs-changelog-entry"><h3>Flexible analysis options and Company Validity Beta added.</h3><ul class="docs-mini-list">
+<li>Added additional analysis options so eligible accounts can choose between faster and more comprehensive evaluation.</li>
+<li>Introduced Company Validity Beta for eligible paid accounts.</li>
+<li>Kept existing analysis behavior unchanged unless additional options are selected.</li>
+<li>Strengthened access controls around paid features.</li>
+</ul></div><div class="docs-changelog-entry"><h3>Company and domain intelligence expanded.</h3><ul class="docs-mini-list">
+<li>Added broader company and business-domain intelligence.</li>
+<li>Improved the ability to distinguish a technically valid domain from one confidently associated with a specific organization.</li>
+<li>Improved handling of ambiguous, redirected, and conflicting business domains.</li>
+<li>Improved handling of cases where a company-domain relationship cannot be established confidently.</li>
+</ul></div><div class="docs-changelog-entry"><h3>Account and API key management refined.</h3><ul class="docs-mini-list">
+<li>Added API key renaming for easier workspace management.</li>
+<li>Improved signup and workspace creation when a company name is not provided.</li>
+<li>Simplified customer-facing analysis responses to focus on useful decisions and context.</li>
+</ul></div></section><section class="docs-section" id="2026-06"><p class="kicker">June 2026</p><div class="docs-changelog-entry"><h3>Access security and abuse protections expanded.</h3><ul class="docs-mini-list">
+<li>Strengthened account and API access security.</li>
+<li>Improved signup safeguards against duplicate and abusive account activity.</li>
+<li>Improved protections against suspicious or abusive usage.</li>
+<li>Improved the reliability of account and access controls.</li>
+</ul></div><div class="docs-changelog-entry"><h3>Self-service account deletion added.</h3><ul class="docs-mini-list">
+<li>Added authenticated self-service account deletion with confirmation safeguards.</li>
+<li>Improved cleanup of account access when deletion is completed.</li>
+<li>Added safeguards for accounts with active billing relationships.</li>
+<li>Protected shared workspaces when other active members remain.</li>
+</ul></div><div class="docs-changelog-entry"><h3>Customer accounts, plans, billing, and administration added.</h3><ul class="docs-mini-list">
+<li>Added customer login, account verification, password recovery, dashboard access, and self-service API key management.</li>
+<li>Added plan-aware usage limits, credits, feature access, and account controls.</li>
+<li>Added self-service subscription and billing management.</li>
+<li>Improved customer visibility into usage, plan, and subscription status.</li>
+</ul></div><div class="docs-changelog-entry"><h3>Public evaluation and signup workflows introduced.</h3><ul class="docs-mini-list">
+<li>Connected public contact and signup experiences to structured customer onboarding.</li>
+<li>Added account review and secure API access provisioning for approved customers.</li>
+<li>Added usage tracking and plan limits for approved accounts.</li>
+<li>Added a limited public smtpRS Preview experience for evaluating the service before integration.</li>
+</ul></div><div class="docs-changelog-entry"><h3>smtpRS available.</h3><ul class="docs-mini-list">
+<li>Introduced email risk analysis for individual address checks.</li>
+<li>Results provide clear risk guidance, decision support, and usage information.</li>
+<li>Flexible analysis options support evaluation and production workflows according to the account plan.</li>
+<li>Secure access and practical integration guidance are included for approved customers.</li>
+</ul></div></section><section class="docs-section" id="2026-05"><p class="kicker">May 2026</p><h3>Core analysis quality and reliability improved.</h3><ul class="docs-mini-list">
+<li>Improved email risk scoring accuracy across a wider range of address patterns.</li>
+<li>Improved scoring consistency to reduce avoidable misclassification.</li>
+<li>Strengthened overall service reliability and resilience.</li>
+<li>Expanded customer and integration documentation.</li>
+</ul></section><section class="docs-section" id="2025-12"><p class="kicker">December 2025</p><h3>Response consistency improved.</h3><ul class="docs-mini-list"><li>Standardized common analysis fields across responses.</li><li>Added clearer decision guidance for borderline results.</li><li>Improved consistency between repeated checks of the same address.</li></ul></section><section class="docs-section" id="2025-10"><p class="kicker">October 2025</p><h3>Deliverability checks refined.</h3><ul class="docs-mini-list"><li>Improved handling of domains with unusual or inconsistent mail configurations.</li><li>Reduced false warnings for otherwise healthy business domains.</li><li>Improved timeout handling for slower network-dependent checks.</li></ul></section><section class="docs-section" id="2025-08"><p class="kicker">August 2025</p><h3>Disposable email coverage expanded.</h3><ul class="docs-mini-list"><li>Expanded detection coverage for temporary and disposable email services.</li><li>Improved handling of newly observed disposable-domain patterns.</li><li>Refined risk guidance for addresses using short-lived mailbox providers.</li></ul></section><section class="docs-section" id="2025-06"><p class="kicker">June 2025</p><h3>Domain reputation signals broadened.</h3><ul class="docs-mini-list"><li>Added additional domain-level risk indicators.</li><li>Improved handling of newly registered and low-confidence domains.</li><li>Refined scoring when individual signals disagree.</li></ul></section><section class="docs-section" id="2025-04"><p class="kicker">April 2025</p><h3>Address normalization improved.</h3><ul class="docs-mini-list"><li>Improved normalization of mixed-case and unusually formatted addresses.</li><li>Expanded support for internationalized domain and address edge cases.</li><li>Reduced avoidable validation failures caused by formatting differences.</li></ul></section><section class="docs-section" id="2025-02"><p class="kicker">February 2025</p><h3>Risk results made easier to interpret.</h3><ul class="docs-mini-list"><li>Simplified result wording for low-, medium-, and high-risk outcomes.</li><li>Added a normalized <code>decision</code> field to standard responses.</li><li>Improved reason ordering so the most important findings appear first.</li></ul></section><section class="docs-section" id="2024-11"><p class="kicker">November 2024</p><h3>Mailbox pattern handling expanded.</h3><ul class="docs-mini-list"><li>Improved recognition of common role-based and shared mailbox patterns.</li><li>Reduced unnecessary penalties for legitimate business aliases.</li><li>Refined treatment of unusual local-part formatting.</li></ul></section><section class="docs-section" id="2024-09"><p class="kicker">September 2024</p><h3>Domain validation became more resilient.</h3><ul class="docs-mini-list"><li>Improved handling of redirects, aliases, and inconsistent domain responses.</li><li>Added safer fallbacks when a domain could not be evaluated completely.</li><li>Reduced hard failures when external checks were temporarily unavailable.</li></ul></section><section class="docs-section" id="2024-07"><p class="kicker">July 2024</p><h3>Mail-domain checks expanded.</h3><ul class="docs-mini-list"><li>Added broader checks for whether a domain appears configured to receive email.</li><li>Improved handling of domains with multiple mail routes.</li><li>Refined results for partially configured domains.</li></ul></section><section class="docs-section" id="2024-03"><p class="kicker">March 2024</p><h3>Standard response metadata expanded.</h3><ul class="docs-mini-list"><li>Added clearer request-level metadata to analysis responses.</li><li>Improved processing-time reporting for diagnostics and integration testing.</li><li>Standardized field naming across early response formats.</li></ul></section><section class="docs-section" id="2023-12"><p class="kicker">December 2023</p><h3>Risk categories standardized.</h3><ul class="docs-mini-list"><li>Introduced consistent low-, medium-, and high-risk classifications.</li><li>Grouped validation findings into clearer customer-facing reasons.</li><li>Improved consistency between numeric scores and final guidance.</li></ul></section><section class="docs-section" id="2023-09"><p class="kicker">September 2023</p><h3>Disposable-address detection introduced.</h3><ul class="docs-mini-list"><li>Added early detection for known temporary and disposable mailbox domains.</li><li>Expanded the initial domain deny-list used during evaluation.</li><li>Improved handling of obvious throwaway-address patterns.</li></ul></section><section class="docs-section" id="2023-06"><p class="kicker">June 2023</p><h3>Domain verification added.</h3><ul class="docs-mini-list"><li>Added checks for whether the email domain exists and appears usable.</li><li>Improved handling of malformed, incomplete, and nonexistent domains.</li><li>Separated address-format issues from domain-level issues.</li></ul></section><section class="docs-section" id="2023-03"><p class="kicker">March 2023</p><h3>Email parsing and normalization improved.</h3><ul class="docs-mini-list"><li>Improved parsing of common address formats and edge cases.</li><li>Normalized casing and whitespace before evaluation.</li><li>Added clearer validation reasons for malformed addresses.</li></ul></section><section class="docs-section" id="2023-01"><p class="kicker">January 2023</p><h3>Early smtpRS prototype established.</h3><ul class="docs-mini-list"><li>Created the first structured email-risk evaluation flow.</li><li>Added basic syntax and domain checks.</li><li>Introduced an early risk score for comparing suspicious and ordinary addresses.</li></ul></section></article>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container footer-inner footer-inner--social">
+<span>© 2026 Paravane. A <a href="https://doydl.studio/" rel="noopener noreferrer" target="_blank">DOYDL Technologies</a> company.</span>
+<nav aria-label="Paravane Labs social media" class="footer-social">
+<a aria-label="Paravane Labs on X" class="footer-social-link footer-social-x" href="https://x.com/ParavaneAI" rel="noopener noreferrer" target="_blank">
+<i aria-hidden="true" class="fa-brands fa-x-twitter"></i>
+</a>
+<a aria-label="Paravane Labs on YouTube" class="footer-social-link footer-social-youtube" href="https://www.youtube.com/@ParavaneAI" rel="noopener noreferrer" target="_blank">
+<i aria-hidden="true" class="fa-brands fa-youtube"></i>
+</a>
+<a aria-label="Paravane Labs on LinkedIn" class="footer-social-link footer-social-linkedin" href="https://www.linkedin.com/company/paravane" rel="noopener noreferrer" target="_blank">
+<i aria-hidden="true" class="fa-brands fa-linkedin-in"></i>
+</a>
+<a aria-label="Paravane Labs on Facebook" class="footer-social-link footer-social-facebook" href="https://www.facebook.com/Paravane/" rel="noopener noreferrer" target="_blank">
+<i aria-hidden="true" class="fa-brands fa-facebook-f"></i>
+</a>
+<a aria-label="Paravane Labs on Reddit" class="footer-social-link footer-social-reddit" href="https://www.reddit.com/user/ParavaneLabs/" rel="noopener noreferrer" target="_blank">
+<i aria-hidden="true" class="fa-brands fa-reddit-alien"></i>
+</a>
+<a aria-label="Paravane Labs on GitHub" class="footer-social-link footer-social-github" href="https://github.com/paravaneai" rel="noopener noreferrer" target="_blank">
+<i aria-hidden="true" class="fa-brands fa-github"></i>
+</a>
+</nav>
+<div class="footer-links">
+<a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.312/index.html">Platform</a>
+<a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.312/pages/pricing/index.html">Pricing</a>
+<a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.312/pages/docs/index.html">Docs</a>
+<a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.312/pages/contact/index.html">Contact</a>
+<a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.312/pages/legal/index.html">Legal</a>
+<a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.312/pages/legal/terms.html">Terms</a>
+<a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.312/pages/legal/privacy.html">Privacy</a>
+<a href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.312/pages/legal/security.html">Security</a>
+</div>
+</div>
+</footer>
+
+<script>
+(function () {
+    var toc = document.querySelector(".docs-toc");
+    if (!toc) return;
+
+    var links = Array.prototype.slice.call(toc.querySelectorAll("[data-docs-toc-link]"));
+    var items = links.map(function (link) {
+        var id = link.getAttribute("data-docs-toc-link");
+        return { id: id, link: link, section: document.getElementById(id) };
+    }).filter(function (item) { return item.section; });
+
+    if (!items.length) return;
+
+    var ticking = false;
+
+    function setActive(id) {
+        items.forEach(function (item) {
+            var active = item.id === id;
+            item.link.classList.toggle("active", active);
+            if (active) {
+                item.link.setAttribute("aria-current", "location");
+            } else {
+                item.link.removeAttribute("aria-current");
+            }
+        });
+
+        var activeLink = toc.querySelector(".docs-toc-nav a.active");
+        if (activeLink && typeof activeLink.scrollIntoView === "function") {
+            var tocRect = toc.getBoundingClientRect();
+            var linkRect = activeLink.getBoundingClientRect();
+
+            if (linkRect.top < tocRect.top + 48 || linkRect.bottom > tocRect.bottom - 12) {
+                activeLink.scrollIntoView({ block: "nearest", inline: "nearest", behavior: "smooth" });
+            }
+        }
+    }
+
+    function updateActiveSection() {
+        ticking = false;
+        var threshold = 170;
+        var current = items[0];
+
+        items.forEach(function (item) {
+            if (item.section.getBoundingClientRect().top <= threshold) {
+                current = item;
+            }
+        });
+
+        setActive(current.id);
+    }
+
+    function requestUpdate() {
+        if (ticking) return;
+        ticking = true;
+        window.requestAnimationFrame(updateActiveSection);
+    }
+
+    links.forEach(function (link) {
+        link.addEventListener("click", function () {
+            setActive(link.getAttribute("data-docs-toc-link"));
+        });
+    });
+
+    window.addEventListener("scroll", requestUpdate, { passive: true });
+    window.addEventListener("resize", requestUpdate);
+    window.addEventListener("hashchange", requestUpdate);
+    requestUpdate();
+})();
+</script>
+
+</body>
+</html>

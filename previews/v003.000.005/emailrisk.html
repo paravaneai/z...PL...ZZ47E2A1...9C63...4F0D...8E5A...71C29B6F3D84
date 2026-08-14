@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Security-Policy" content="connect-src 'none'; form-action 'none'">
+<meta name="robots" content="noindex, nofollow">
+<script src="./hosted-preview.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="EmailRisk by Paravane Labs is a private beta email intelligence system for risk scoring, reputation, and identity signals.">
+    <title>EmailRisk | Paravane Labs</title>
+    <link rel="icon" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/5c/5c0b22202097d2111076516815a4316e0be58467ac5161de9ee4ca1d0771e901.ico">
+    <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav">
+            <a class="logo" href="index.html" aria-label="Paravane Labs home">
+                <img src="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/02/02c14fb8f12f2de1620aae8c89e2a025036a24bed8dea8d040df51c67ee4c3ea.png" alt="Paravane Labs">
+            </a>
+            <nav class="nav-links" aria-label="Primary navigation">
+                <a href="index.html">Platform</a>
+                <a class="active" href="emailrisk.html">EmailRisk</a>
+                <a href="about.html">About</a>
+                <a href="legal.html">Legal</a>
+            </nav>
+            <a class="nav-action" href="mailto:hello@paravanelabs.com?subject=EmailRisk%20evaluation">Request evaluation</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="product-hero">
+            <div class="container hero-grid">
+                <div>
+                    <div class="eyebrow"><span class="dot"></span> Email intelligence · Private beta</div>
+                    <h1 class="product-title">EmailRisk</h1>
+                    <p class="lede">A scoring layer for email quality, reputation, and abuse signals. Built for intake, onboarding, lead review, fraud triage, and trust workflows.</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="mailto:hello@paravanelabs.com?subject=EmailRisk%20private%20evaluation">Request private evaluation</a>
+                        <a class="btn btn-secondary" href="#outputs">See outputs</a>
+                        <span class="btn btn-muted" aria-disabled="true">No public keys</span>
+                    </div>
+                    <p class="note">The system is not available for public registration or self-serve API access.</p>
+                </div>
+
+                <aside class="panel console" aria-label="EmailRisk API response preview">
+                    <div class="console-top">
+                        <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+                        <div class="status-pill"><span class="dot"></span> EmailRisk v0</div>
+                    </div>
+                    <div class="code-card" style="margin-top:20px;">
+                        <div class="code-head"><span>analysis response</span><span>example</span></div>
+                        <pre><code>{
+  <span class="code-key">"email"</span>: <span class="code-string">"sample@domain.com"</span>,
+  <span class="code-key">"risk_score"</span>: <span class="code-number">64</span>,
+  <span class="code-key">"verdict"</span>: <span class="code-string">"review"</span>,
+  <span class="code-key">"confidence"</span>: <span class="code-string">"medium_high"</span>,
+  <span class="code-key">"reasons"</span>: [
+    <span class="code-string">"new_domain_pattern"</span>,
+    <span class="code-string">"weak_reputation_depth"</span>,
+    <span class="code-string">"unusual_mailbox_shape"</span>
+  ]
+}</code></pre>
+                    </div>
+                    <div class="kpi-row">
+                        <div class="kpi"><strong>0-100</strong><span>risk score</span></div>
+                        <div class="kpi"><strong>4</strong><span>verdict bands</span></div>
+                        <div class="kpi"><strong>API</strong><span>ready shape</span></div>
+                    </div>
+                    <img class="logo-watermark" src="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/8a/8acb97b515bd2046013ef798f5faacafc855ebae9c7853907429492bd95c4830.png" alt="" aria-hidden="true">
+                </aside>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-head">
+                    <h2>More than <span class="grad">email validation.</span></h2>
+                    <p>EmailRisk looks beyond format and deliverability. It reads the surrounding signal field.</p>
+                </div>
+                <div class="detail-grid">
+                    <article class="detail-card">
+                        <h3>Mailbox and route checks</h3>
+                        <p>Basic structure, route posture, and mailbox-level traits are normalized into a usable signal layer.</p>
+                    </article>
+                    <article class="detail-card">
+                        <h3>Domain intelligence</h3>
+                        <p>Domain age patterns, DNS posture, temporary-provider behavior, and reputation depth inform the score.</p>
+                    </article>
+                    <article class="detail-card">
+                        <h3>Pattern inference</h3>
+                        <p>Models weigh suspicious shapes, low-trust combinations, and weak identity consistency.</p>
+                    </article>
+                    <article class="detail-card">
+                        <h3>Decision output</h3>
+                        <p>Every response is compact: score, verdict, reasons, confidence, and normalized traits.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-tight">
+            <div class="container">
+                <div class="section-head">
+                    <h2>Designed for <span class="grad">pre-decision moments.</span></h2>
+                    <p>Use it before the cost shows up downstream.</p>
+                </div>
+                <div class="sequence">
+                    <div class="sequence-step">
+                        <div class="step-number">1</div>
+                        <div><h3>Submit an address</h3><p>Send an email address and optional context from your workflow.</p></div>
+                    </div>
+                    <div class="sequence-step">
+                        <div class="step-number">2</div>
+                        <div><h3>Signals are layered</h3><p>EmailRisk evaluates mailbox, domain, reputation, and anomaly signals through a compact model pipeline.</p></div>
+                    </div>
+                    <div class="sequence-step">
+                        <div class="step-number">3</div>
+                        <div><h3>Receive a decision shape</h3><p>Return allow, review, throttle, or block logic to the systems that need it.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="outputs">
+            <div class="container output-grid">
+                <div class="detail-card">
+                    <div class="section-head" style="margin-bottom:20px;">
+                        <h2>Output that stays <span class="grad">readable.</span></h2>
+                    </div>
+                    <div class="output-list">
+                        <div class="output-item"><strong>risk_score</strong><span>0-100 normalized score</span></div>
+                        <div class="output-item"><strong>verdict</strong><span>allow · review · throttle · block</span></div>
+                        <div class="output-item"><strong>reasons</strong><span>compact reason codes</span></div>
+                        <div class="output-item"><strong>confidence</strong><span>model certainty band</span></div>
+                        <div class="output-item"><strong>traits</strong><span>cleaned signal attributes</span></div>
+                    </div>
+                </div>
+                <aside class="private-box">
+                    <div>
+                        <img src="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/8a/8acb97b515bd2046013ef798f5faacafc855ebae9c7853907429492bd95c4830.png" alt="Paravane mark">
+                        <h3>Private beta only</h3>
+                        <p>No public dashboard. No open signup. Evaluations are handled directly while the model is tuned.</p>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section class="section section-tight">
+            <div class="container cta-band">
+                <div>
+                    <h2>Evaluate quietly.</h2>
+                    <p>Share a narrow use case. If it fits the beta, access can be arranged without opening the platform publicly.</p>
+                </div>
+                <div class="cta-actions">
+                    <a class="btn btn-primary" href="mailto:hello@paravanelabs.com?subject=EmailRisk%20private%20evaluation">Request evaluation</a>
+                    <span class="btn btn-muted" aria-disabled="true">Self-serve disabled</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <span>© 2026 Paravane Labs, Inc. EmailRisk private beta.</span>
+            <div class="footer-links">
+                <a href="index.html">Platform</a>
+                <a href="about.html">About</a>
+                <a href="legal.html">Legal</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

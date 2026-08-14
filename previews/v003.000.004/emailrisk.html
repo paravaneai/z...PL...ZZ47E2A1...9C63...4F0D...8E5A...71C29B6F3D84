@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Security-Policy" content="connect-src 'none'; form-action 'none'">
+<meta name="robots" content="noindex, nofollow">
+<script src="./hosted-preview.js"></script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Email Risk Intelligence API — Paravane Labs</title>
+  <meta name="description" content="Paravane Email Risk Intelligence API scores email addresses using model-backed reputation, infrastructure, and mail-layer signals.">
+  <link rel="icon" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/5c/5c0b22202097d2111076516815a4316e0be58467ac5161de9ee4ca1d0771e901.ico">
+  <style>
+    :root {
+      --bg: #050508;
+      --bg-soft: #09090f;
+      --panel: rgba(255, 255, 255, 0.055);
+      --panel-strong: rgba(255, 255, 255, 0.085);
+      --line: rgba(255, 255, 255, 0.11);
+      --text: #f6f2ea;
+      --muted: #a7a2b4;
+      --muted-2: #767181;
+      --orange: #ff6a00;
+      --gold: #ffc324;
+      --green: #72f0b5;
+      --red: #ff6b6b;
+      --shadow: 0 28px 90px rgba(0, 0, 0, 0.42);
+      --radius: 28px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 18% 4%, rgba(255, 106, 0, 0.18), transparent 28%),
+        radial-gradient(circle at 80% 16%, rgba(255, 195, 36, 0.10), transparent 34%),
+        linear-gradient(180deg, #050508 0%, #090910 58%, #050508 100%);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: linear-gradient(to bottom, black, transparent 78%);
+      opacity: .28;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(var(--max), calc(100% - 44px)); margin: 0 auto; }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(5, 5, 8, 0.72);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand { display: inline-flex; align-items: center; gap: 12px; min-width: 210px; }
+    .brand img { height: 34px; width: auto; display: block; }
+    .brand-mark { display: none; width: 34px; height: 34px; object-fit: contain; }
+    .nav-links { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 14px; }
+    .nav-links a { padding: 10px 13px; border: 1px solid transparent; border-radius: 999px; transition: .2s ease; }
+    .nav-links a:hover, .nav-links a.active { color: var(--text); border-color: var(--line); background: rgba(255,255,255,.04); }
+    .nav-cta { color: #120902 !important; background: linear-gradient(135deg, var(--orange), var(--gold)); border: 0 !important; font-weight: 700; box-shadow: 0 12px 36px rgba(255, 128, 0, 0.22); }
+
+    .hero { padding: 88px 0 66px; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, .94fr) minmax(390px, .86fr); gap: 44px; align-items: center; }
+    .eyebrow {
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 22px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255, 195, 36, .22);
+      border-radius: 999px;
+      color: #ffe1a1;
+      background: rgba(255, 158, 0, .08);
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: linear-gradient(135deg, var(--orange), var(--gold)); box-shadow: 0 0 22px rgba(255, 177, 28, .7); }
+    h1 { margin: 0; max-width: 760px; font-size: clamp(46px, 6.6vw, 88px); line-height: .94; letter-spacing: -0.075em; font-weight: 780; }
+    .grad { background: linear-gradient(135deg, #fff7e7 0%, #ff9c16 48%, #ffce30 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .subhead { max-width: 650px; margin: 26px 0 0; color: var(--muted); font-size: clamp(18px, 2vw, 22px); line-height: 1.55; }
+    .actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 19px; border-radius: 999px; border: 1px solid var(--line); background: rgba(255,255,255,.055); color: var(--text); font-weight: 700; font-size: 14px; transition: transform .2s ease, border-color .2s ease, background .2s ease; }
+    .btn:hover { transform: translateY(-2px); border-color: rgba(255,255,255,.24); background: rgba(255,255,255,.08); }
+    .btn-primary { color: #130a03; border: 0; background: linear-gradient(135deg, var(--orange), var(--gold)); box-shadow: 0 18px 44px rgba(255, 135, 0, .20); }
+
+    .api-panel {
+      position: relative;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.035));
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .api-panel::before { content: ""; position: absolute; inset: -1px; background: radial-gradient(circle at 22% 8%, rgba(255,106,0,.25), transparent 36%); pointer-events: none; }
+    .panel-top { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 16px 18px; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+    .lights { display: flex; gap: 7px; }
+    .lights span { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,.22); }
+    .score-card { position: relative; padding: 24px; }
+    .score-head { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-bottom: 24px; }
+    .score-ring {
+      width: 126px;
+      height: 126px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: conic-gradient(from 210deg, var(--red), var(--orange), var(--gold) 72%, rgba(255,255,255,.08) 0);
+      box-shadow: 0 22px 60px rgba(255, 106, 0, .16);
+    }
+    .score-ring div { width: 92px; height: 92px; border-radius: 50%; display: grid; place-items: center; background: #08080d; border: 1px solid rgba(255,255,255,.09); }
+    .score-ring b { display: block; font-size: 34px; letter-spacing: -.05em; }
+    .score-copy span { color: var(--muted-2); font-size: 12px; text-transform: uppercase; letter-spacing: .12em; }
+    .score-copy strong { display: block; margin-top: 8px; font-size: 22px; }
+    .checks { display: grid; gap: 10px; }
+    .check { display: flex; justify-content: space-between; gap: 14px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 16px; background: rgba(0,0,0,.18); color: var(--muted); font-size: 14px; }
+    .check b { color: var(--text); font-weight: 650; }
+    .check .warn { color: #ffd57e; }
+    .check .bad { color: #ff9b8f; }
+    .check .good { color: var(--green); }
+
+    .section { padding: 68px 0; }
+    .section-tight { padding-top: 28px; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 24px; }
+    .section h2 { margin: 0; font-size: clamp(30px, 4vw, 54px); line-height: 1; letter-spacing: -0.055em; }
+    .section-note { max-width: 450px; margin: 0; color: var(--muted); line-height: 1.6; }
+
+    .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .card { min-height: 194px; padding: 24px; border: 1px solid var(--line); border-radius: 24px; background: var(--panel); box-shadow: 0 18px 55px rgba(0,0,0,.20); }
+    .card strong { display: block; margin-bottom: 11px; font-size: 19px; letter-spacing: -.02em; }
+    .card p { margin: 0; color: var(--muted); line-height: 1.58; }
+    .mini { display: inline-flex; margin-bottom: 20px; padding: 7px 10px; border-radius: 999px; background: rgba(255,195,36,.08); border: 1px solid rgba(255,195,36,.18); color: #ffd57e; font-size: 11px; text-transform: uppercase; letter-spacing: .11em; }
+
+    .split { display: grid; grid-template-columns: .9fr 1.1fr; gap: 16px; align-items: stretch; }
+    .plain-panel { border: 1px solid var(--line); border-radius: 28px; background: var(--panel); padding: 26px; }
+    .plain-panel h3 { margin: 0 0 14px; font-size: 28px; letter-spacing: -.04em; }
+    .plain-panel p { margin: 0; color: var(--muted); line-height: 1.65; }
+    .list { display: grid; gap: 12px; margin-top: 24px; }
+    .list div { display: flex; align-items: center; gap: 12px; color: var(--muted); }
+    .list span { width: 8px; height: 8px; border-radius: 50%; background: linear-gradient(135deg, var(--orange), var(--gold)); box-shadow: 0 0 16px rgba(255,177,28,.55); flex: 0 0 auto; }
+
+    pre.code {
+      margin: 0;
+      min-height: 100%;
+      padding: 24px;
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: rgba(0,0,0,.34);
+      color: #f9ead0;
+      font: 13px/1.75 ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    }
+    .token { color: #ffc324; }
+    .token2 { color: #72f0b5; }
+    .token3 { color: #ff8b2b; }
+    .token4 { color: #ff9b8f; }
+
+    .access {
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 32px;
+      padding: 30px;
+      background: linear-gradient(135deg, rgba(255,106,0,.13), rgba(255,195,36,.05)), rgba(255,255,255,.045);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 20px;
+    }
+    .access h2 { margin-bottom: 12px; }
+    .access p { margin: 0; color: var(--muted); line-height: 1.6; max-width: 650px; }
+
+    footer { padding: 42px 0 58px; border-top: 1px solid var(--line); color: var(--muted-2); font-size: 13px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .footer-links { display: flex; gap: 16px; flex-wrap: wrap; }
+    .footer-links a:hover { color: var(--text); }
+
+    @media (max-width: 900px) {
+      .hero-grid, .split, .access { grid-template-columns: 1fr; }
+      .api-panel { order: -1; }
+      .cards { grid-template-columns: 1fr; }
+      .section-head { display: block; }
+      .section-note { margin-top: 14px; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .brand img { display: none; }
+      .brand-mark { display: block; }
+      .brand { min-width: auto; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="index.html" aria-label="Paravane Labs home">
+        <img src="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/02/02c14fb8f12f2de1620aae8c89e2a025036a24bed8dea8d040df51c67ee4c3ea.png" alt="Paravane Labs">
+        <img class="brand-mark" src="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/8a/8acb97b515bd2046013ef798f5faacafc855ebae9c7853907429492bd95c4830.png" alt="">
+      </a>
+      <div class="nav-links" aria-label="Primary navigation">
+        <a class="active" href="emailrisk.html">Email Risk</a>
+        <a href="about.html">About</a>
+        <a href="legal.html">Legal</a>
+        <a class="nav-cta" href="#access">Request access</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> Email intelligence API</div>
+          <h1>Know the risk behind <span class="grad">an email.</span></h1>
+          <p class="subhead">Paravane scores email addresses through model-backed reputation, infrastructure, and mail-layer signals.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#access">Request access</a>
+            <a class="btn" href="#response">View response</a>
+          </div>
+        </div>
+
+        <aside class="api-panel" aria-label="Email risk score preview">
+          <div class="panel-top">
+            <div class="lights"><span></span><span></span><span></span></div>
+            <span>emailrisk.score</span>
+          </div>
+          <div class="score-card">
+            <div class="score-head">
+              <div class="score-copy">
+                <span>sample assessment</span>
+                <strong>review recommended</strong>
+              </div>
+              <div class="score-ring"><div><b>82</b></div></div>
+            </div>
+            <div class="checks">
+              <div class="check"><span>Disposable pattern</span><b class="bad">high</b></div>
+              <div class="check"><span>Domain reputation</span><b class="warn">thin</b></div>
+              <div class="check"><span>MX infrastructure</span><b class="good">present</b></div>
+              <div class="check"><span>Mailbox confidence</span><b class="warn">mixed</b></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section-tight">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>One endpoint. Clean judgment.</h2>
+          <p class="section-note">Designed for teams that need fast routing, not another noisy dashboard.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <span class="mini">score</span>
+            <strong>Risk score</strong>
+            <p>A single normalized read for allow, review, or block workflows.</p>
+          </article>
+          <article class="card">
+            <span class="mini">signals</span>
+            <strong>Reason codes</strong>
+            <p>Concise explanations: disposable, thin reputation, mail-layer mismatch, synthetic pattern.</p>
+          </article>
+          <article class="card">
+            <span class="mini">action</span>
+            <strong>Decision support</strong>
+            <p>Built for signup gates, lead scoring, fraud queues, and enrichment pipelines.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="response">
+      <div class="wrap split">
+        <div class="plain-panel">
+          <h3>What it looks at</h3>
+          <p>The API blends validation checks with reputation, domain, infrastructure, and learned pattern signals.</p>
+          <div class="list">
+            <div><span></span>Format, DNS, MX, and SMTP indicators</div>
+            <div><span></span>Disposable and temporary-mail infrastructure</div>
+            <div><span></span>Domain age, reputation, and signal density</div>
+            <div><span></span>Model-backed risk classification</div>
+          </div>
+        </div>
+
+<pre class="code">{
+  <span class="token">"email"</span>: <span class="token2">"alex@samplemail.dev"</span>,
+  <span class="token">"risk_score"</span>: <span class="token3">82</span>,
+  <span class="token">"risk_level"</span>: <span class="token4">"high"</span>,
+  <span class="token">"decision"</span>: <span class="token2">"review"</span>,
+  <span class="token">"signals"</span>: {
+    <span class="token">"disposable"</span>: <span class="token3">true</span>,
+    <span class="token">"mx_present"</span>: <span class="token3">true</span>,
+    <span class="token">"smtp_reachable"</span>: <span class="token3">false</span>,
+    <span class="token">"domain_reputation"</span>: <span class="token2">"thin"</span>,
+    <span class="token">"pattern_match"</span>: <span class="token2">"synthetic"</span>
+  }
+}</pre>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Use it before trust is granted.</h2>
+          <p class="section-note">A lightweight layer for moments where email quality matters.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <span class="mini">signup</span>
+            <strong>Account creation</strong>
+            <p>Flag suspicious registrations before they enter the system.</p>
+          </article>
+          <article class="card">
+            <span class="mini">revenue</span>
+            <strong>Lead intake</strong>
+            <p>Separate clean prospects from risky or low-quality contact records.</p>
+          </article>
+          <article class="card">
+            <span class="mini">ops</span>
+            <strong>Fraud review</strong>
+            <p>Add email-layer context to queues, scoring, and case workflows.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="access">
+      <div class="wrap access">
+        <div>
+          <h2>Private beta access.</h2>
+          <p>Paravane Email Risk is being released to a small set of early users while the model and API surface are refined.</p>
+        </div>
+        <a class="btn btn-primary" href="mailto:access@paravane.example?subject=Paravane%20Email%20Risk%20Access">Replace with your access email</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div>© 2026 Paravane Labs. Email risk intelligence.</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="legal.html">Legal</a>
+        <a href="#access">Private beta</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

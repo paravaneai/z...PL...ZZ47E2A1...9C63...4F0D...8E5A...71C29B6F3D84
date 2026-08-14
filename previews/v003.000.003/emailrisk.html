@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Security-Policy" content="connect-src 'none'; form-action 'none'">
+<meta name="robots" content="noindex, nofollow">
+<script src="./hosted-preview.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Paravane Email Risk API | Paravane Labs</title>
+    <meta name="description" content="Paravane Email Risk API scores email identity, domain, mailbox, and reputation signals for risk-aware product flows.">
+    <link rel="icon" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/1b/1bd96637a8992e7f0f68c7a7d50941f8f541aa083395263dbce60fb68935cef3.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="emailrisk-page">
+    <header class="site-header">
+        <div class="container navbar">
+            <a class="brand" href="index.html" aria-label="Paravane Labs home">
+                <span class="brand-mark"><img src="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/02/02ef2c3befccae14b66156e3f1f3258c39ee89fe5137c21694906e64b8bb7ea0.png" alt=""></span>
+                <span class="brand-text">Paravane Labs</span>
+            </a>
+            <nav class="nav-links" aria-label="Primary navigation">
+                <a href="index.html">Home</a>
+                <a class="active" href="emailrisk.html">Email Risk</a>
+                <a href="about.html">About</a>
+                <a href="legal.html">Legal</a>
+            </nav>
+            <div class="nav-actions">
+                <a class="btn btn-ghost" href="#docs">Docs</a>
+                <a class="btn btn-primary" href="#access">Request Access</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero page-hero">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <div class="badge"><span class="badge-dot"></span>email-intelligence-api</div>
+                    <h1><span class="gradient-text">Email risk</span> without the noise.</h1>
+                    <p class="lead">A model-assisted API for scoring email identity, mailbox posture, domain signals, and abuse patterns before they reach your core system.</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="#response">View response</a>
+                        <a class="btn btn-secondary" href="#signals">See signals</a>
+                    </div>
+                    <div class="endpoint-bar">
+                        <span class="method">POST</span>
+                        <code>https://api.paravaneapi.com/v1/email-risk</code>
+                    </div>
+                </div>
+
+                <div class="score-panel" aria-label="Email risk score preview">
+                    <div class="score-top">
+                        <div>
+                            <span class="product-eyebrow">Live preview</span>
+                            <h3>Email intelligence model</h3>
+                        </div>
+                        <span class="pill-status">private beta</span>
+                    </div>
+                    <div class="score-circle"><strong>72</strong></div>
+                    <div class="signal-list">
+                        <div class="signal-row"><span>Risk verdict</span><strong>review</strong></div>
+                        <div class="signal-row"><span>Disposable pattern</span><strong>detected</strong></div>
+                        <div class="signal-row"><span>Domain signal</span><strong>unstable</strong></div>
+                        <div class="signal-row"><span>Mailbox posture</span><strong>uncertain</strong></div>
+                    </div>
+                    <form class="demo-form" onsubmit="return false;" aria-label="Demo email form">
+                        <label for="demo-email">Static demo field</label>
+                        <div class="demo-input-row">
+                            <input id="demo-email" type="email" value="name@temporary-mail.test" aria-label="Email address">
+                            <button class="btn btn-primary" type="button">Score</button>
+                        </div>
+                        <span class="demo-note">Wire this to the real API when the endpoint is ready.</span>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="signals" class="section page-band">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <p class="section-kicker">Signals</p>
+                        <h2>More than valid or invalid.</h2>
+                    </div>
+                    <p class="section-desc">Email risk is rarely a single check. Paravane returns a compact risk view built from multiple layers.</p>
+                </div>
+                <div class="card-grid">
+                    <article class="card">
+                        <div class="card-icon">S</div>
+                        <h3>Syntax and format</h3>
+                        <p>Normalize the obvious issues before the model layer spends time on deeper signals.</p>
+                    </article>
+                    <article class="card">
+                        <div class="card-icon">D</div>
+                        <h3>Domain posture</h3>
+                        <p>Read DNS, MX, recency, disposable infrastructure, and domain stability features.</p>
+                    </article>
+                    <article class="card">
+                        <div class="card-icon">M</div>
+                        <h3>Mailbox confidence</h3>
+                        <p>Surface deliverability and mailbox uncertainty without making the response noisy.</p>
+                    </article>
+                    <article class="card">
+                        <div class="card-icon">R</div>
+                        <h3>Reputation patterns</h3>
+                        <p>Flag throwaway, abusive, role-based, or suspicious behavior patterns.</p>
+                    </article>
+                    <article class="card">
+                        <div class="card-icon">A</div>
+                        <h3>AI scoring</h3>
+                        <p>Compress low-level indicators into a risk score, confidence score, and reason codes.</p>
+                    </article>
+                    <article class="card">
+                        <div class="card-icon">Q</div>
+                        <h3>Queue-friendly output</h3>
+                        <p>Return enough context for allow, block, review, suppression, or enrichment workflows.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="response" class="section">
+            <div class="container split">
+                <div>
+                    <p class="section-kicker">Response</p>
+                    <h2>A clean answer for product flows.</h2>
+                    <p class="section-desc">Use the simple fields for automation. Use the reason codes when a human needs to understand why the model leaned a certain way.</p>
+                    <div class="feature-list">
+                        <div class="feature-item"><span class="check">✓</span><span><strong>verdict</strong> for allow, block, or review logic.</span></div>
+                        <div class="feature-item"><span class="check">✓</span><span><strong>risk_score</strong> for threshold tuning.</span></div>
+                        <div class="feature-item"><span class="check">✓</span><span><strong>signals</strong> for explainable review queues.</span></div>
+                    </div>
+                </div>
+                <div class="code-card" aria-label="Email risk API response example">
+                    <div class="code-card-header">
+                        <span>email-risk.response.json</span>
+                        <span class="window-dots"><i></i><i></i><i></i></span>
+                    </div>
+<pre><code>{
+  <span class="token-key">"request_id"</span>: <span class="token-string">"prv_req_7Qx91"</span>,
+  <span class="token-key">"email"</span>: <span class="token-string">"name@temporary-mail.test"</span>,
+  <span class="token-key">"normalized_email"</span>: <span class="token-string">"name@temporary-mail.test"</span>,
+  <span class="token-key">"verdict"</span>: <span class="token-string">"review"</span>,
+  <span class="token-key">"risk_score"</span>: <span class="token-number">0.72</span>,
+  <span class="token-key">"confidence"</span>: <span class="token-number">0.91</span>,
+  <span class="token-key">"checks"</span>: {
+    <span class="token-key">"format_valid"</span>: <span class="token-bool">true</span>,
+    <span class="token-key">"mx_found"</span>: <span class="token-bool">true</span>,
+    <span class="token-key">"disposable"</span>: <span class="token-bool">true</span>,
+    <span class="token-key">"role_based"</span>: <span class="token-bool">false</span>,
+    <span class="token-key">"mailbox_confidence"</span>: <span class="token-string">"uncertain"</span>
+  },
+  <span class="token-key">"signals"</span>: [
+    <span class="token-string">"disposable_provider"</span>,
+    <span class="token-string">"domain_velocity"</span>,
+    <span class="token-string">"low_identity_weight"</span>
+  ]
+}</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section id="docs" class="section tight">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <p class="section-kicker">Workflow</p>
+                        <h2>Built to sit at the edge.</h2>
+                    </div>
+                    <p class="section-desc">Run it before signup, before lead handoff, or before a risky email enters your data layer.</p>
+                </div>
+                <div class="timeline-grid">
+                    <article class="timeline-card">
+                        <div class="step">1</div>
+                        <h3>Capture</h3>
+                        <p>Send an email address with optional context.</p>
+                    </article>
+                    <article class="timeline-card">
+                        <div class="step">2</div>
+                        <h3>Score</h3>
+                        <p>The model blends deterministic checks and learned signals.</p>
+                    </article>
+                    <article class="timeline-card">
+                        <div class="step">3</div>
+                        <h3>Decide</h3>
+                        <p>Route allow, block, review, enrichment, or suppression paths.</p>
+                    </article>
+                    <article class="timeline-card">
+                        <div class="step">4</div>
+                        <h3>Learn</h3>
+                        <p>Keep model feedback tight as more signal becomes available.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <p class="section-kicker">Fields</p>
+                        <h2>What teams can use.</h2>
+                    </div>
+                </div>
+                <div class="table-card">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Field</th>
+                                <th>Purpose</th>
+                                <th>Typical use</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>verdict</strong></td>
+                                <td>Final model-assisted recommendation.</td>
+                                <td>Allow, review, block, suppress.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>risk_score</strong></td>
+                                <td>Continuous risk score for threshold tuning.</td>
+                                <td>Automation and routing.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>confidence</strong></td>
+                                <td>How strongly the signal stack supports the answer.</td>
+                                <td>Escalation and QA.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>checks</strong></td>
+                                <td>Readable validation and reputation attributes.</td>
+                                <td>Debugging and reporting.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>signals</strong></td>
+                                <td>Reason codes behind the verdict.</td>
+                                <td>Review queues and audit notes.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="section tight">
+            <div class="container faq-grid">
+                <article class="faq-item">
+                    <h3>Is this just email validation?</h3>
+                    <p>No. Validation is one layer. Paravane is positioned as an email intelligence and risk signal system.</p>
+                </article>
+                <article class="faq-item">
+                    <h3>Does it expose the model?</h3>
+                    <p>No. The API returns useful verdicts and signals without exposing internal weights or detection logic.</p>
+                </article>
+                <article class="faq-item">
+                    <h3>Where does it fit?</h3>
+                    <p>Signup forms, lead intake, enrichment workflows, fraud review, and internal risk tooling.</p>
+                </article>
+                <article class="faq-item">
+                    <h3>What stage is it in?</h3>
+                    <p>Controlled preview. The page is ready for public positioning while access remains limited.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="access" class="section">
+            <div class="container request-card">
+                <div>
+                    <p class="section-kicker">Access</p>
+                    <h2>Bring signal to the first touchpoint.</h2>
+                    <p class="section-desc">Use this as the early-access CTA until the public dashboard and docs are ready.</p>
+                </div>
+                <a class="btn btn-primary" href="mailto:hello@paravanelabs.com?subject=Paravane%20Email%20Risk%20API">Request API access</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <a class="brand" href="index.html">
+                <span class="brand-mark"><img src="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/02/02ef2c3befccae14b66156e3f1f3258c39ee89fe5137c21694906e64b8bb7ea0.png" alt=""></span>
+                <span class="brand-text">Paravane Labs</span>
+            </a>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="legal.html">Legal</a>
+            </div>
+            <span>© 2026 Paravane Labs.</span>
+        </div>
+    </footer>
+</body>
+</html>

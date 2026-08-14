@@ -1,0 +1,1738 @@
+<!DOCTYPE html><!-- Last Published: Fri Aug 22 2025 16:07:17 GMT+0000 (Coordinated Universal Time) --><html data-wf-domain="www.abstractapi.com" data-wf-page="6643827018e2bb60b803033a" data-wf-site="65166126ca18241731aa26b0" lang="en" data-wf-collection="6643827018e2bb60b8030319" data-wf-item-slug="sending-email-with-python"><head>
+<meta http-equiv="Content-Security-Policy" content="connect-src 'none'; form-action 'none'">
+<meta name="robots" content="noindex, nofollow">
+<script src="../../hosted-preview.js"></script>
+<meta charset="utf-8"/><title>How to Send Email with Python (The Ultimate Guide) | Abstract API</title><meta content="Learn How to Send Email with Python with local SMTP, Telnet, Python, Google 2FA, with HTML, and more! Try out AbstractAPI&#x27;s Email APIs today for Free!" name="description"/><meta content="How to Send Email with Python (The Ultimate Guide) | Abstract API" property="og:title"/><meta content="Learn How to Send Email with Python with local SMTP, Telnet, Python, Google 2FA, with HTML, and more! Try out AbstractAPI&#x27;s Email APIs today for Free!" property="og:description"/><meta content="How to Send Email with Python (The Ultimate Guide) | Abstract API" property="twitter:title"/><meta content="Learn How to Send Email with Python with local SMTP, Telnet, Python, Google 2FA, with HTML, and more! Try out AbstractAPI&#x27;s Email APIs today for Free!" property="twitter:description"/><meta property="og:type" content="website"/><meta content="summary_large_image" name="twitter:card"/><meta content="width=device-width, initial-scale=1" name="viewport"/><link href="https://cdn.prod.website-files.com/65166126ca18241731aa26b0/css/abstractapi-staging.shared.b0dbf8059.min.css" rel="stylesheet" type="text/css"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"/><script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script><script type="text/javascript">WebFont.load({  google: {    families: ["Inconsolata:400,700"]  }});</script><script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script><link href="https://cdn.prod.website-files.com/65166126ca18241731aa26b0/65390de624cb65770560dda5_FAV.png" rel="shortcut icon" type="image/x-icon"/><link href="https://cdn.prod.website-files.com/65166126ca18241731aa26b0/6538e7c57e650c1c861cb100_FAV-large.png" rel="apple-touch-icon"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-167288395-1"></script><script type="text/javascript">window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-167288395-1', {'anonymize_ip': false});</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HP1YNVYK06"></script><script type="text/javascript">window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('set', 'developer_id.dZGVlNj', true);gtag('config', 'G-HP1YNVYK06');</script><meta name='robots' content='max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+<style>
+   .break-word {
+      word-wrap: break-word;
+   }
+</style>
+<!-- Webnomads custom styles -->
+<style>
+li.toc-item-h1 {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 39px 0px;
+}
+li.toc-item-h2 a {
+    color: #1b1643;
+}
+  li.toc-item-h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 26px 0px;
+}
+li.toc-item-h2 a {
+    color: #1b1643;
+}
+li.toc-item-h3 {
+    font-size: 14px;
+    font-weight: bold;
+    opacity: 0.75;
+    margin-left: 26px;
+}
+li.toc-item-h3 a {
+    color: #1b1643;
+}
+li.toc-item-h4 {
+    font-size: 12px;
+    font-weight: bold;
+    opacity: 0.5;
+    margin-left: 52px;
+}
+li.toc-item-h4 a {
+    color: #1b1643;
+}
+
+.toc-container ul {
+margin-top: 13px;
+    margin-bottom: 0px;
+    padding: 10px 0 10px 75px;
+}
+  @font-face {
+  font-display: swap !important;
+  }
+  
+  .error-message, .w-form-fail {
+  	visibility: hidden;
+    display: none!important;
+  }
+</style>
+
+<!-- Start Google One Tap -->
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script>
+  function handleGoogleResponse(response) {
+    // Handle the ID token in response.credential
+    const apiURL = "https://app.abstractapi.com/users/signup";
+    let slugApi;
+    const currentUrl = window.location.href;
+
+    if (currentUrl.includes('email-verification-validation-api')) {
+      slugApi = 'email-validation';
+    } else if (currentUrl.includes('email-validation')) {
+      slugApi = 'email-validation';
+    } else if (currentUrl.includes('phone-validation-api')) {
+      slugApi = 'phone-validation';
+    } else if (currentUrl.includes('ip-geolocation-api')) {
+      slugApi = 'ip-geolocation';
+    } else if (currentUrl.includes('ip-geolocation')) {
+      slugApi = 'ip-geolocation';
+    } else if (currentUrl.includes('company-enrichment')) {
+      slugApi = 'company-enrichment';
+    } else if (currentUrl.includes('exchange-rate-api')) {
+      slugApi = 'exchange-rates';
+    } else if (currentUrl.includes('time-date-timezone-api')) {
+      slugApi = 'timezone';
+    } else if (currentUrl.includes('holidays-api')) {
+      slugApi = 'holidays';
+    } else if (currentUrl.includes('weather')) {
+      slugApi = 'weather';
+    } else if (currentUrl.includes('website-screenshot-api')) {
+      slugApi = 'screenshot';
+    } else if (currentUrl.includes('image-processing-optimization-api')) {
+      slugApi = 'images';
+    } else if (currentUrl.includes('link-shortener')) {
+      slugApi = 'link-shortener';
+    } else if (currentUrl.includes('web-scraping-api')) {
+      slugApi = 'scrape';
+    } else if (currentUrl.includes('user-avatar-api')) {
+      slugApi = 'avatars';
+    } else if (currentUrl.includes('vat-validation-rates-api')) {
+      slugApi = 'vat';
+    } else if (currentUrl.includes('iban-validation')) {
+      slugApi = 'iban-validation';
+    }
+
+    // Construct the full URL with the credentials parameter and optionally the target parameter
+    let fullUrl;
+    if (slugApi) {
+      fullUrl = `${apiURL}?credentials=${encodeURIComponent(response.credential)}&target=${encodeURIComponent(`/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v000.000.000/api/${slugApi}/pricing/select`)}`;
+    } else {
+      fullUrl = `${apiURL}?credentials=${encodeURIComponent(response.credential)}`;
+    }
+
+    // Redirect the user to the constructed URL
+    window.location.href = fullUrl;
+  }
+</script>
+<!-- End Google One Tap --><link rel="canonical" href="https://www.abstractapi.com/guides/email-validation/sending-email-with-python"  />
+
+
+<!-- On-page anchors -->
+<meta content="https://assets-global.website-files.com/65166126ca18241731aa26b0/6532894c4b8441d0d19d2c83_Opengraph.png" property="twitter:image">
+<meta content="https://assets-global.website-files.com/65166126ca18241731aa26b0/6532894c4b8441d0d19d2c83_Opengraph.png" property="og:image">
+<style>
+
+#toc > ul {
+margin: 0;
+}
+
+.toc-item-h2 {
+margin: 15px 0!important;
+}
+.toc-item-h2 {
+color: #687ded;
+}
+
+.cta-rich-text > .guides-rich-text-intro > span {
+margin-top: -80px;
+}
+
+th, td {
+	padding: 4px 8px;
+}
+
+a.toc-link.w-inline-block.w--current {
+  color: #1CC67E !important; 
+  transform: translateX(24px);
+  position: relative;
+  transition: all ease 0.2s;
+}
+
+a.toc-link.w-inline-block.w--current::before {
+  content:url('https://cdn.prod.website-files.com/65166126ca18241731aa26b0/652e40c8e6d45aefe04ff129_line.png');
+  position: absolute;
+  left: -24px;
+  top: -1px;
+  transition: all ease 0.2s;
+}
+</style>
+
+<style>
+  /* make prism-formatted code block font a little
+  smaller than the default */
+  pre[class*="language-"] {
+		background-color: #f5f2f0;
+    font-size: 0.8em;
+    line-height: 0.8em;
+  }
+  
+ #toc .toc-inner-wrapper a[fs-toc-element="link-1"][href="#"] {
+  display: none;
+}
+</style>
+
+<!-- OG tags -->
+<meta property="og:image" content="https://cdn.prod.website-files.com/5ebbd0a566a3996636e55959/5ee00b98f613d13574bfe548_Abstract__Automate_anything_with_Abstract_APIs.png" />
+<meta property="og:url" content="https://www.abstractapi.com/guides/sending-email-with-python" />
+
+<style>
+/* Base table styles */
+.my-friendly-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.my-friendly-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+}
+
+.my-friendly-table th,
+.my-friendly-table td {
+  padding: 12px 15px;
+}
+
+.my-friendly-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+/* Row hover effect */
+.my-friendly-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.my-friendly-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.my-friendly-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Responsive table */
+@media screen and (max-width: 600px) {
+  .my-friendly-table thead {
+    display: none;
+  }
+
+  .my-friendly-table, .my-friendly-table tbody, .my-friendly-table th, .my-friendly-table td, .my-friendly-table tr {
+    display: block;
+    width: 100%;
+  }
+
+  .my-friendly-table tr {
+    margin-bottom: 15px;
+  }
+
+  .my-friendly-table td {
+    text-align: right;
+    padding-left: 50%;
+    text-align: right;
+    position: relative;
+  }
+
+  .my-friendly-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 15px;
+    font-weight: bold;
+    text-align: left;
+  }
+}
+
+</style></head><body><div><div class="global-styles-html w-embed"><style>
+  /* Make text look crisper and more legible in all browsers */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  * {
+    font-variant-ligatures: none;
+  }
+
+
+  /* Get rid of top margin on first element in any rich text element */
+  .w-richtext > :not(div):first-child, .w-richtext > div:first-child > :first-child {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  /* Get rid of bottom margin on last element in any rich text element */
+  .w-richtext>:last-child, .w-richtext ol li:last-child, .w-richtext ul li:last-child {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+
+  .gray-box {
+    box-shadow: 0px -3px 8px 0px rgba(86, 86, 92, 0.03) inset;
+  }
+
+  .white-card:hover .gray-box {
+    box-shadow: 0px -3px 38px 0px rgba(86, 86, 92, 0.13) inset;
+    transition: box-shadow 0.5s ease-in-out;
+  }
+
+  .api-card,
+  .feature-card,
+  .box-shadow, 
+  .api-guides-styles {
+    box-shadow: 0px 0px 40px 2px #F5F5F5, 0px 4px 30px 2px rgba(255, 255, 255, 0.10) inset;
+  }
+
+  .white-card.box-shadow {
+    box-shadow: 0px 18px 36px -18px rgba(0,0,0,0.1), 0px 30px 45px -30px rgba(227, 235, 240, 0.5);
+  }
+
+  .inner-gray {
+    box-shadow: 0px -3px 8px 0px rgba(86, 92, 92, 0.03) inset;
+  }
+
+  .white-card-simple {
+    box-shadow: 0px 0px 0px 5px rgba(243, 248, 249, 0.40), 0px 1px 4px 0px rgba(29, 29, 32, 0.04);
+  }
+
+  .grey-wrapper {
+    box-shadow: 0px 0px 0px 5px rgba(248, 251, 253, 0.70);
+  }
+
+
+  @media screen and (max-width: 767px) {
+    .grey-wrapper {
+      box-shadow: none;
+    }
+  }
+
+  /*FAQ section*/
+  .answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s linear;
+  }
+
+  .answer.active {
+    max-height: 2000px;
+    transition: all 0.3s linear;
+  }
+
+  .questions-box-more,
+  .http-list-wrapper {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s linear;
+  }
+
+  .questions-box-more.active,
+  .http-list-wrapper.active,
+  .toc-container.active {
+    max-height: 2000px;
+    transition: all 0.3s linear;
+  }
+
+  @media screen and (max-width: 1279px) {
+    .toc-container {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s linear;
+    }
+  }
+
+  .no-scroll {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+
+  .resources-menu, .catalogue-menu {
+    opacity: 0;
+    overflow: hidden;
+    display: none;
+    transition: opacity 0.2s ease;
+    box-shadow: 0px 4px 13px 6px rgba(50, 92, 116, 0.08);
+  }
+
+  .resources-menu.is-open, .catalogue-menu.is-open {
+    opacity: 100%;
+    transition: opacity 0.3s ease;
+    display: grid;
+    overflow: auto;
+    opacity: 100%;
+  }
+
+  .resources-menu.is-open, .catalogue-menu.is-open {
+    overflow: visible;
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .catalogue-menu::-webkit-scrollbar, dropdown-menu::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .catalogue-menu {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+
+  /*hover */
+
+  .api-guides-item-link .text-regular, .glossary-item-link .text-regular, .http-link-block-item .text-small {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: rgba(27, 34, 38, 0);
+    transition: text-decoration-color 200ms ease;
+  }
+
+  .api-guides-item-link:hover .text-regular, .glossary-item-link:hover .text-regular, .http-link-block-item:hover .text-small {
+    text-decoration-color: rgba(27, 34, 38, 1);
+  }
+
+  .next:hover .btn-txt-black {
+    color: #1CC67E;
+  }
+  .benefits-card {
+    box-shadow: 0px 0px 40px 2px #F5F5F5, 0px 4px 30px 2px rgba(255, 255, 255, 0.10) inset;
+  }
+
+  @media screen and (max-width: 479px) {
+    .benefits-card {
+      box-shadow: none;
+    }
+  }
+
+  .box-shadow-testimonials{
+    box-shadow: 0px 0px 40px 2px #EFEFEF;
+  }
+  .about-box-shadow {
+    box-shadow: 0px 0px 0px 5px rgba(243, 248, 249, 0.40), 0px 1px 4px 0px rgba(29, 29, 32, 0.04);
+  }
+
+  .box-shadow-resources {
+    box-shadow: 0px 18px 36px -18px rgba(0, 0, 0, 0.10), 0px 30px 45px -30px rgba(50, 50, 93, 0.25);
+  }
+
+  .pricing-card {
+    box-shadow: 0px 0px 0px 5px rgba(33, 41, 46, 0.60), 0px 2px 5px 0px rgba(0, 0, 0, 0.31);
+  }
+
+  .login:hover .nav-link-txt{
+    color: #20E492;
+    transition: all 0.2s linear;
+
+  }
+
+  .link-nav-product:hover .nav-link-txt{
+    color: #20E492;
+    transition: all 0.2s linear;
+
+  }
+  .is-open .arrow-dropdown {
+    transform: rotate(180deg);
+  }
+
+  .nav-link.is-open {
+    background-color: #f5f8fa;
+  }
+
+  .toggle-cnt.active-monthly #monthly-text, .toggle-cnt.active-yearly #yearly-text  {
+    color: #ffffff;
+  }
+
+  .toggle-cnt.active-monthly .toggle  {
+    justify-content: start;
+  }
+
+  .toggle-cnt.active-yearly .toggle  {
+    justify-content: end;
+  }
+
+  .black-week-banner {
+    box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 0.07);
+  }
+</style></div><section class="navbar-wrapper"><div class="w-embed"><div id="g_id_onload"
+     data-client_id="971807779038-a0u48skugvbgi86jvij8l9v7opamttu6.apps.googleusercontent.com"
+     data-context="signup"
+     data-callback="handleGoogleResponse"
+     data-auto_select="false"
+     data-itp_support="true">
+</div></div><div data-w-id="ce5d7a85-886f-c8b0-3624-4fbc6a68f100" data-animation="default" data-collapse="all" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar-main w-nav"><div class="container-main"><div class="nav-wrapper-container"><div class="brand-and-links-wrapper"><a href="http://www.abstractapi.com/" class="brand w-nav-brand"><img src="https://cdn.prod.website-files.com/65166126ca18241731aa26b0/6538df34291c9fa4ed28d6f7_Logo.svg" loading="lazy" width="106" alt="Abstract logo" class="abstract-logo"/><div class="fake-txt">abstract</div></a><div class="large-desktop-links-wrapper"><div id="api-large-dropdown" class="nav-large-dropdown"><div class="nav-link-txt-2">Products</div><div class="arrow-dropdown w-embed"><svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.00151 1.3395L4.79387 5.67589L0.878906 1.32593" stroke="#21292E" stroke-linecap="square" stroke-linejoin="round"/>
+<path d="M8.97473 1.32593L6.4765 3.92521C5.56758 4.87089 4.04695 4.84598 3.1695 3.87103L0.878906 1.32593" stroke="#ffffff" stroke-linecap="square" stroke-linejoin="round"/>
+<path d="M8.97473 1.32324L7.31777 3.04863C5.95459 4.4681 3.67286 4.43119 2.35632 2.96836L0.878906 1.32679" stroke="#ffffff" stroke-linecap="square" stroke-linejoin="round"/>
+</svg></div><div id="api-large-menu" class="catalogue-menu"><div id="w-node-_8aa52331-73d3-ed85-8199-079c13f200ac-3387dbcd" class="hover-bg"></div><div class="drop-img api w-embed"><svg width="28" height="14" viewBox="0 0 28 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.7569 2.34719L18.5 12.119H17H3H1.5L8.48213 2.32233C9.28707 1.1929 10.9692 1.20567 11.7569 2.34719Z" fill="white" stroke="#E3EBF0"/>
+<rect y="10" width="28" height="4" fill="white"/>
+</svg></div><div id="w-node-_20473390-c560-caff-3439-227a52159db2-3387dbcd" class="nav-menu-links-wrapper"><div class="nav-dropdown-p"><div class="catalogue-menu-wrapper"><div class="nav-links-block-2 _1"><div class="links-group-header-2 no-m">APIs TO LOOK UP</div><div class="links-wrapper-main"><div id="w-node-_20473390-c560-caff-3439-227a52159dbe-3387dbcd" class="links-wrapper _1"><a href="../../api/ip-intelligence.html" class="nav-link-block-desktop-2 w-inline-block"><div class="nav-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M50 10L80 25V50C80 70 65 85 50 90C35 85 20 70 20 50V25L50 10Z" fill="#20E492"/>
+<path d="M50 20L70 30V50C70 65 60 75 50 80C40 75 30 65 30 50V30L50 20Z" fill="#A6F4D3"/>
+<path d="M63.7983 41.4194L61.5886 39.2097C60.3682 37.9893 58.3896 37.9893 57.1692 39.2097L42.8028 53.5762C41.5824 54.7965 41.5824 56.7752 42.8028 57.9956L45.0125 60.2053C46.2329 61.4257 48.2115 61.4257 49.4319 60.2053L63.7983 45.8388C65.0187 44.6184 65.0187 42.6398 63.7983 41.4194Z" fill="#0E3419"/>
+<path d="M38.4194 44.8677L36.2097 47.0774C34.9893 48.2978 34.9893 50.2764 36.2097 51.4968L43.3633 58.6504C44.5837 59.8708 46.5623 59.8708 47.7827 58.6504L49.9924 56.4407C51.2128 55.2203 51.2128 53.2417 49.9924 52.0213L42.8388 44.8677C41.6184 43.6473 39.6398 43.6473 38.4194 44.8677Z" fill="#0E3419"/>
+</svg></div><div class="nav-link-block-txts-wrapper"><div class="popular-wrap"><div class="nav-link-desktop-txt">IP Intelligence</div><div class="gap-12px"></div><div class="popular-label-2">Popular</div></div><div class="nav-link-subtext-2">Reduce risk and enhance security</div></div></a><a href="../../api/ip-geolocation-api.html" class="nav-link-block-desktop-2 w-inline-block"><div class="nav-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M14.8068 6.53817C15.1129 6.42919 15.2749 6.09146 15.1408 5.79554C14.7963 5.03518 14.3189 4.34048 13.7297 3.74478C13.1405 3.14909 12.4511 2.66418 11.6945 2.31137C11.4001 2.17406 11.0606 2.33236 10.9483 2.6372L10.5442 3.73391C10.4319 4.03875 10.5902 4.37372 10.8787 4.52311C11.3153 4.7492 11.7149 5.04277 12.0623 5.39404C12.4098 5.7453 12.699 6.14811 12.9203 6.58714C13.0665 6.87725 13.3997 7.03922 13.7058 6.93024L14.8068 6.53817Z" fill="#A6F4D3"/>
+<path d="M10.9214 14.7906C11.0324 15.0959 11.3712 15.2557 11.6662 15.1197C12.4266 14.7692 13.1201 14.2855 13.7131 13.69C14.3061 13.0944 14.7869 12.3989 15.1342 11.637C15.2689 11.3414 15.1077 11.0033 14.8019 10.8937L13.7017 10.4991C13.3959 10.3894 13.0623 10.5506 12.9154 10.8404C12.6924 11.2804 12.401 11.6838 12.0512 12.0351C11.7014 12.3864 11.2992 12.6795 10.8602 12.9044C10.571 13.0525 10.4112 13.3868 10.5222 13.6921L10.9214 14.7906Z" fill="#A6F4D3"/>
+<path d="M2.61136 10.8694C2.30513 10.9779 2.14255 11.3153 2.27612 11.6115C2.62473 12.3844 3.11043 13.0896 3.71125 13.6924C4.31207 14.2952 5.01577 14.7832 5.78752 15.1343C6.08323 15.2689 6.42121 15.1074 6.53066 14.8015L6.92445 13.701C7.0339 13.3952 6.87245 13.0617 6.58257 12.915C6.1361 12.6891 5.7273 12.3929 5.37229 12.0368C5.01729 11.6806 4.72247 11.2709 4.498 10.8237C4.35227 10.5333 4.01932 10.3708 3.71309 10.4792L2.61136 10.8694Z" fill="#A6F4D3"/>
+<path d="M6.49863 2.62803C6.38757 2.32273 6.04874 2.16303 5.75375 2.29912C5.0041 2.64496 4.31949 3.1203 3.73208 3.70473C3.14467 4.28916 2.66585 4.97134 2.3162 5.71923C2.17861 6.01353 2.33658 6.35316 2.64131 6.46578L3.73763 6.87093C4.04236 6.98354 4.37749 6.82555 4.52716 6.5372C4.75085 6.10626 5.04034 5.7114 5.3862 5.36729C5.73207 5.02318 6.12839 4.7357 6.56047 4.51421C6.84957 4.36601 7.00926 4.03169 6.8982 3.72639L6.49863 2.62803Z" fill="#A6F4D3"/>
+<path d="M9.29848 0.472656C9.62336 0.472656 9.88672 0.736018 9.88672 1.06089L9.88672 5.17854C9.88672 5.50341 9.62336 5.76677 9.29848 5.76677L8.12201 5.76677C7.79714 5.76677 7.53378 5.50341 7.53378 5.17854L7.53378 1.06089C7.53378 0.736019 7.79714 0.472656 8.12201 0.472656L9.29848 0.472656Z" fill="#20E492"/>
+<path d="M9.29848 11.6484C9.62336 11.6484 9.88672 11.9118 9.88672 12.2367L9.88672 16.3543C9.88672 16.6792 9.62336 16.9426 9.29848 16.9426L8.12201 16.9426C7.79714 16.9426 7.53378 16.6792 7.53378 16.3543L7.53378 12.2367C7.53378 11.9118 7.79714 11.6484 8.12201 11.6484L9.29848 11.6484Z" fill="#20E492"/>
+<path d="M16.9453 9.29653C16.9453 9.6214 16.682 9.88477 16.3571 9.88477L12.2394 9.88477C11.9146 9.88477 11.6512 9.6214 11.6512 9.29653L11.6512 8.12006C11.6512 7.79519 11.9146 7.53182 12.2394 7.53182L16.3571 7.53182C16.682 7.53182 16.9453 7.79519 16.9453 8.12006L16.9453 9.29653Z" fill="#20E492"/>
+<path d="M7.53516 9.29653C7.53516 9.6214 7.79852 9.88477 8.12339 9.88477L9.29986 9.88477C9.62474 9.88477 9.8881 9.6214 9.8881 9.29653L9.8881 8.12006C9.8881 7.79519 9.62474 7.53182 9.29986 7.53182L8.12339 7.53182C7.79852 7.53182 7.53516 7.79519 7.53516 8.12006L7.53516 9.29653Z" fill="#0E3419"/>
+<path d="M5.76563 9.29653C5.76563 9.6214 5.50226 9.88477 5.17739 9.88477L1.05974 9.88477C0.73487 9.88477 0.471508 9.6214 0.471508 9.29653L0.471508 8.12006C0.471508 7.79519 0.73487 7.53182 1.05974 7.53182L5.17739 7.53182C5.50226 7.53182 5.76563 7.79519 5.76563 8.12006L5.76563 9.29653Z" fill="#20E492"/>
+</svg></div><div class="nav-link-block-txts-wrapper"><div class="popular-wrap"><div class="nav-link-desktop-txt">IP Geolocation</div><div class="gap-12px"></div><div class="popular-label-2">Popular</div></div><div class="nav-link-subtext-2">Geolocate any IP worldwide</div></div></a><a href="../../api/company-enrichment.html" class="nav-link-block-desktop-2 w-inline-block"><div class="nav-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="13.0625" y="9.625" width="6.1875" height="11" rx="0.588235" fill="#A6F4D3"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12.3755 9.52528C12.3755 9.2004 12.6388 8.93704 12.9637 8.93704L15.2243 8.93704C15.5491 8.93704 15.8125 8.67368 15.8125 8.3488L15.8125 1.96324C15.8125 1.63836 15.5491 1.375 15.2243 1.375L3.33823 1.375C3.01336 1.375 2.75 1.63836 2.75 1.96324L2.75 20.0368C2.75 20.3616 3.01336 20.625 3.33823 20.625L4.22518 20.625C4.55006 20.625 4.81342 20.3616 4.81342 20.0368L4.81342 15.7132C4.81342 15.3884 5.07678 15.125 5.40165 15.125L9.72518 15.125C10.0501 15.125 10.3134 15.3884 10.3134 15.7132L10.3134 20.0368C10.3134 20.3616 10.5768 20.625 10.9017 20.625L15.2243 20.625C15.2321 20.625 15.2399 20.6248 15.2477 20.6245L12.9637 20.6245C12.6388 20.6245 12.3755 20.3612 12.3755 20.0363L12.3755 9.52528Z" fill="#20E492"/>
+<rect x="5.5" y="15.8125" width="4.125" height="4.8125" rx="0.588235" fill="#0E3419"/>
+</svg></div><div class="nav-link-block-txts-wrapper"><div class="popular-wrap"><div class="nav-link-desktop-txt">Company Enrichment</div><div class="gap-12px"></div><div class="popular-label-2">Popular</div></div><div class="nav-link-subtext-2">Get data on any domain or company</div></div></a></div><div id="w-node-_20473390-c560-caff-3439-227a52159ddc-3387dbcd" class="links-wrapper _1"><a href="../../api/exchange-rate-api.html" class="nav-link-block-desktop-2 w-inline-block"><div class="nav-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 17 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.4389 11.7124C15.7484 11.811 16.0816 11.6404 16.1569 11.3244C16.3972 10.3153 16.4362 9.26667 16.2695 8.23895C16.0713 7.0173 15.588 5.85955 14.8587 4.85962C14.1294 3.85968 13.1747 3.04571 12.072 2.48372C11.1444 2.01094 10.134 1.72769 9.09979 1.64817C8.77588 1.62327 8.51161 1.88838 8.51095 2.21325L8.50801 3.6532C8.50735 3.97808 8.77099 4.23858 9.09376 4.2755C9.71635 4.34672 10.3228 4.52885 10.884 4.81484C11.6203 5.19011 12.2578 5.73365 12.7447 6.40136C13.2317 7.06907 13.5545 7.84216 13.6868 8.65793C13.7877 9.2796 13.7758 9.91272 13.6533 10.5273C13.5899 10.8459 13.7574 11.1765 14.0669 11.2752L15.4389 11.7124Z" fill="#20E492"/>
+<path d="M1.5533 7.28762C1.24377 7.18899 0.910587 7.35961 0.835325 7.67565C0.59502 8.68472 0.555994 9.73333 0.722718 10.761C0.920903 11.9827 1.40423 13.1404 2.13351 14.1404C2.86279 15.1403 3.81748 15.9543 4.92015 16.5163C5.84777 16.9891 6.85815 17.2723 7.89239 17.3518C8.21631 17.3767 8.48058 17.1116 8.48124 16.7867L8.48418 15.3468C8.48484 15.0219 8.22119 14.7614 7.89843 14.7245C7.27584 14.6533 6.66936 14.4711 6.10823 14.1852C5.37192 13.8099 4.73442 13.2664 4.24744 12.5986C3.76047 11.9309 3.43772 11.1578 3.30538 10.3421C3.20453 9.7204 3.21642 9.08728 3.33884 8.4727C3.4023 8.15409 3.23482 7.82345 2.92528 7.72482L1.5533 7.28762Z" fill="#20E492"/>
+<path d="M1.27734 5.63051C1.27734 5.95539 1.54071 6.21875 1.86558 6.21875L6.59536 6.21875C6.92023 6.21875 7.18359 5.95539 7.18359 5.63052L7.18359 0.900736C7.18359 0.575862 6.92023 0.3125 6.59536 0.3125L1.86558 0.3125C1.54071 0.3125 1.27734 0.575862 1.27734 0.900735L1.27734 5.63051Z" fill="#0E3419"/>
+<path d="M9.80469 15.4063C9.80469 17.2184 11.2738 18.6875 13.0859 18.6875C14.8981 18.6875 16.3672 17.2184 16.3672 15.4063C16.3672 13.5941 14.8981 12.125 13.0859 12.125C11.2738 12.125 9.80469 13.5941 9.80469 15.4063Z" fill="#A6F4D3"/>
+</svg></div><div class="nav-link-block-txts-wrapper"><div class="nav-link-desktop-txt">Exchange Rates &amp; Currencies</div><div class="nav-link-subtext-2">Get and convert exchange rates</div></div></a><a href="../../api/time-date-timezone-api.html" class="nav-link-block-desktop-2 w-inline-block"><div class="nav-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M18.9551 13.533C19.2647 13.6317 19.5976 13.461 19.6756 13.1457C19.9459 12.0539 20.0081 10.919 19.857 9.8009C19.6795 8.48814 19.2125 7.23124 18.4896 6.12114C17.7668 5.01104 16.8062 4.07551 15.6774 3.38223C14.716 2.79175 13.653 2.38958 12.5451 2.19513C12.2252 2.13897 11.9345 2.3744 11.8995 2.69738L11.7063 4.47991C11.6713 4.80289 11.9057 5.09017 12.2237 5.15679C12.8942 5.29726 13.5371 5.55247 14.1234 5.91255C14.8771 6.37549 15.5186 7.00019 16.0012 7.74147C16.4839 8.48274 16.7958 9.32204 16.9143 10.1986C17.0064 10.8805 16.9798 11.5716 16.837 12.2417C16.7694 12.5594 16.9373 12.89 17.2468 12.9886L18.9551 13.533Z" fill="#A6F4D3"/>
+<path d="M10.1262 2.69463C10.0922 2.37154 9.80227 2.13521 9.48212 2.19038C8.16327 2.41766 6.90965 2.93875 5.81546 3.71798C4.56125 4.61117 3.55906 5.81325 2.90605 7.20768C2.25305 8.60211 1.97137 10.1416 2.08832 11.6769C2.20528 13.2122 2.7169 14.6913 3.5736 15.9707C4.43029 17.2501 5.603 18.2865 6.97804 18.9794C8.35308 19.6723 9.88382 19.9983 11.4219 19.9256C12.9599 19.8529 14.4531 19.3841 15.7567 18.5646C16.8939 17.8497 17.8532 16.889 18.5657 15.7562C18.7386 15.4812 18.6305 15.123 18.3448 14.9685L16.7675 14.1159C16.4817 13.9614 16.1271 14.0698 15.9453 14.339C15.4822 15.0245 14.8803 15.6081 14.1763 16.0507C13.3058 16.5979 12.3087 16.9109 11.2817 16.9595C10.2547 17.008 9.23251 16.7904 8.31432 16.3277C7.39612 15.865 6.61304 15.1729 6.04098 14.3186C5.46892 13.4642 5.12728 12.4766 5.04918 11.4514C4.97108 10.4261 5.15917 9.39815 5.59522 8.46701C6.03127 7.53587 6.70049 6.73317 7.538 6.13674C8.21534 5.65436 8.98418 5.32013 9.7944 5.15302C10.1126 5.08739 10.3479 4.80084 10.3139 4.47775L10.1262 2.69463Z" fill="#20E492"/>
+<rect x="10.3125" y="6.1875" width="2.0625" height="6.1875" rx="0.588235" fill="#0E3419"/>
+<rect x="8.10156" y="12.3887" width="2.0625" height="3.60068" rx="0.588235" transform="rotate(-90 8.10156 12.3887)" fill="#0E3419"/>
+</svg></div><div class="nav-link-block-txts-wrapper"><div class="nav-link-desktop-txt">Time, Date, and Timezones</div><div class="nav-link-subtext-2">Get any date and timezone globally</div></div></a><a href="../../api/holidays-api.html" class="nav-link-block-desktop-2 w-inline-block"><div class="nav-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.0625" y="3.5" width="3.4375" height="18.5625" rx="0.588235" transform="rotate(-90 0.0625 3.5)" fill="#0E3419"/>
+<rect x="0.0625" y="7.625" width="3.4375" height="3.4375" rx="0.531309" transform="rotate(-90 0.0625 7.625)" fill="#20E492"/>
+<rect x="4.875" y="8.3125" width="4.125" height="4.125" rx="0.531309" transform="rotate(-90 4.875 8.3125)" fill="#20E492"/>
+<rect x="0.0625" y="8.3125" width="4.125" height="4.125" rx="0.531309" transform="rotate(-90 0.0625 8.3125)" fill="#20E492"/>
+<rect x="9.6875" y="8.3125" width="4.125" height="4.125" rx="0.531309" transform="rotate(-90 9.6875 8.3125)" fill="#A6F4D3"/>
+<rect x="14.5" y="8.3125" width="4.125" height="4.125" rx="0.531309" transform="rotate(-90 14.5 8.3125)" fill="#A6F4D3"/>
+<rect x="0.0625" y="13.125" width="4.125" height="4.125" rx="0.531309" transform="rotate(-90 0.0625 13.125)" fill="#20E492"/>
+<rect x="4.875" y="13.125" width="4.125" height="4.125" rx="0.531309" transform="rotate(-90 4.875 13.125)" fill="#A6F4D3"/>
+<rect x="9.6875" y="13.125" width="4.125" height="4.125" rx="0.531309" transform="rotate(-90 9.6875 13.125)" fill="#A6F4D3"/>
+<rect x="14.5" y="13.125" width="4.125" height="4.125" rx="0.531309" transform="rotate(-90 14.5 13.125)" fill="#A6F4D3"/>
+<rect x="0.0625" y="17.9375" width="4.125" height="4.125" rx="0.531309" transform="rotate(-90 0.0625 17.9375)" fill="#20E492"/>
+<rect x="4.875" y="17.9375" width="4.125" height="4.125" rx="0.531309" transform="rotate(-90 4.875 17.9375)" fill="#A6F4D3"/>
+<rect x="9.6875" y="17.9375" width="4.125" height="4.125" rx="0.531309" transform="rotate(-90 9.6875 17.9375)" fill="#20E492"/>
+<rect x="14.5" y="17.9375" width="4.125" height="4.125" rx="0.531309" transform="rotate(-90 14.5 17.9375)" fill="#A6F4D3"/>
+</svg></div><div class="nav-link-block-txts-wrapper"><div class="nav-link-desktop-txt">Public Holidays</div><div class="nav-link-subtext-2">Get holidays for any country</div></div></a></div></div></div><div class="nav-links-block-2 _2"><div class="links-group-header-2">APIs TO CREATE</div><div class="links-wrapper-main"><div id="w-node-_20473390-c560-caff-3439-227a52159df6-3387dbcd" class="links-wrapper"><a href="../../api/website-screenshot-api.html" class="nav-link-block-desktop-2 w-inline-block"><div class="nav-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="6.89453" y="3.875" width="3.4375" height="6.875" rx="0.588235" transform="rotate(-90 6.89453 3.875)" fill="#A6F4D3"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M6.20795 3.77378C6.20795 3.44891 5.94459 3.18555 5.61972 3.18555L1.29527 3.18555C0.970393 3.18555 0.707031 3.44891 0.707031 3.77378L0.707032 14.2848C0.707032 14.6097 0.970394 14.873 1.29527 14.873H5.52321C6.05001 14.873 6.35033 14.1909 6.09923 13.7278C5.72994 13.0467 5.52022 12.2665 5.52022 11.4373C5.52022 8.7794 7.67485 6.62477 10.3327 6.62477C12.9906 6.62477 15.1452 8.7794 15.1452 11.4373C15.1452 12.2665 14.9355 13.0467 14.5662 13.7278C14.3151 14.1909 14.6154 14.873 15.1422 14.873H19.3688C19.6937 14.873 19.957 14.6097 19.957 14.2848V3.77378C19.957 3.44891 19.6937 3.18555 19.3688 3.18555L15.0462 3.18555C14.7213 3.18555 14.458 3.44891 14.458 3.77378V3.97231C14.458 4.29718 14.1946 4.56055 13.8697 4.56055L6.79619 4.56055C6.47131 4.56055 6.20795 4.29718 6.20795 3.97231V3.77378Z" fill="#20E492"/>
+<circle cx="10.332" cy="11.4375" r="4.125" fill="#0E3419"/>
+</svg></div><div class="nav-link-block-txts-wrapper"><div class="nav-link-desktop-txt">Website Screenshot</div><div class="nav-link-subtext-2">Get a screeshot of any URL</div></div></a><a href="../../api/image-processing-optimization-api.html" class="nav-link-block-desktop-2 w-inline-block"><div class="nav-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12.1804 6.9375C12.5053 6.9375 12.7686 7.20086 12.7686 7.52573L12.7686 9.78676C12.7686 10.1116 13.032 10.375 13.3568 10.375L17.6813 10.375C18.0062 10.375 18.2695 10.1116 18.2695 9.78676L18.2695 0.650733C18.2695 0.32586 18.0062 0.0624981 17.6813 0.062498L7.17027 0.0624981C6.84539 0.062498 6.58203 0.32586 6.58203 0.650733L6.58203 6.34926C6.58203 6.67414 6.84539 6.9375 7.17026 6.9375L12.1804 6.9375Z" fill="#A6F4D3"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M7.86039 13.2733C8.13912 13.1164 8.49216 13.211 8.65512 13.4862L10.9695 17.3951C11.0754 17.5739 11.2679 17.6836 11.4757 17.6836L11.4938 17.6836C11.8187 17.6836 12.082 17.4202 12.082 17.0954L12.082 8.21616C12.082 7.89129 11.8187 7.62793 11.4938 7.62793L0.982765 7.62792C0.657891 7.62793 0.394529 7.89129 0.394529 8.21616L0.39453 12.9097C0.39453 13.3597 0.879215 13.643 1.27134 13.4223L3.73585 12.0348C4.01458 11.8779 4.36762 11.9725 4.53058 12.2477L5.52526 13.9276C5.68823 14.2029 6.04127 14.2974 6.32 14.1405L7.86039 13.2733Z" fill="#20E492"/>
+<path d="M3.38245 13.006L0.7197 14.3374C0.520415 14.4371 0.394531 14.6407 0.394531 14.8635V17.3493C0.394531 17.6741 0.657893 17.9375 0.982766 17.9375H9.33914C9.79314 17.9375 10.076 17.445 9.84725 17.0529L8.25079 14.3161C8.08813 14.0372 7.73113 13.9416 7.45084 14.1018L6.01232 14.9238C5.75021 15.0735 5.41727 15.0006 5.24181 14.7549L4.12419 13.1903C3.95594 12.9547 3.64135 12.8766 3.38245 13.006Z" fill="#0E3419"/>
+</svg></div><div class="nav-link-block-txts-wrapper"><div class="nav-link-desktop-txt">Image Processing</div><div class="nav-link-subtext-2">Compress and optimize an image</div></div></a></div><div id="w-node-_20473390-c560-caff-3439-227a52159e05-3387dbcd" class="links-wrapper"><a href="../../api/web-scraping-api.html" class="nav-link-block-desktop-2 w-inline-block"><div class="nav-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M17.6813 17.9375C18.0062 17.9375 18.2695 17.6741 18.2695 17.3493L18.2695 2.02573C18.2695 1.70086 18.0062 1.4375 17.6813 1.4375L10.9794 1.4375C10.8234 1.4375 10.6738 1.49948 10.5635 1.60979L7.44182 4.73143C7.3315 4.84175 7.26953 4.99137 7.26953 5.14738L7.26953 6.23937C7.26953 6.41667 7.3495 6.58452 7.4872 6.69621L12.2104 10.5274C12.4998 10.7621 12.5008 11.2032 12.2126 11.4393L7.48502 15.3117C7.34862 15.4234 7.26953 15.5904 7.26953 15.7668L7.26953 17.3493C7.26953 17.6741 7.53289 17.9375 7.85777 17.9375L17.6813 17.9375Z" fill="#20E492"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M6.58203 15.2848C6.58203 15.6097 6.31867 15.873 5.99379 15.873L0.982767 15.873C0.657893 15.873 0.394531 15.6097 0.394531 15.2848L0.39453 3.7695C0.39453 3.61349 0.456505 3.46387 0.56682 3.35356L3.68754 0.232835C3.79786 0.12252 3.94748 0.0605456 4.10349 0.0605456L9.2869 0.0605451C9.81096 0.0605451 10.0734 0.694157 9.70285 1.06472L6.75432 4.01326C6.644 4.12357 6.58203 4.27319 6.58203 4.4292L6.58203 15.2848Z" fill="#A6F4D3"/>
+<path d="M10.8357 11.515C11.1246 11.2811 11.1268 10.8412 10.8403 10.6044L8.19788 8.42077C7.81431 8.10378 7.23493 8.3766 7.23493 8.8742L7.23493 13.1976C7.23493 13.6925 7.80877 13.9662 8.19335 13.6548L10.8357 11.515Z" fill="#0E3419"/>
+</svg></div><div class="nav-link-block-txts-wrapper"><div class="nav-link-desktop-txt">Web Scraping</div><div class="nav-link-subtext-2">Extract data from any website</div></div></a><a href="../../api/user-avatar-api.html" class="nav-link-block-desktop-2 w-inline-block"><div class="nav-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M16.2438 15.123C16.5687 15.123 16.8353 14.8589 16.8006 14.5359C16.6672 13.2931 16.1132 12.1261 15.2211 11.234C14.1897 10.2025 12.7907 9.62305 11.332 9.62305C9.87334 9.62305 8.47439 10.2025 7.44294 11.234C6.55084 12.1261 5.99685 13.2931 5.86344 14.5359C5.82877 14.8589 6.09539 15.123 6.42027 15.123L11.332 15.123L16.2438 15.123Z" fill="#20E492"/>
+<ellipse cx="11.332" cy="5.49805" rx="3.4375" ry="3.4375" fill="#0E3419"/>
+<rect x="5.83203" y="15.8105" width="11" height="4.125" rx="0.588235" fill="#A6F4D3"/>
+</svg></div><div class="nav-link-block-txts-wrapper"><div class="nav-link-desktop-txt">User Avatars</div><div class="nav-link-subtext-2">Create flexible user avatars</div></div></a></div></div></div><div class="nav-links-block-2 no-border _3"><div class="links-group-header-2">APIs TO VALIDATE</div><div class="links-wrapper-main"><div id="w-node-_20473390-c560-caff-3439-227a52159e1f-3387dbcd" class="links-wrapper"><a href="../../api/email-verification-validation-api.html" class="nav-link-block-desktop-2 w-inline-block"><div class="nav-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M19.7993 7.1831C20.265 7.51571 20.0297 8.25 19.4574 8.25L3.87854 8.25C3.30628 8.25 3.07097 7.51572 3.53663 7.1831L11.3261 1.61922C11.5306 1.47313 11.8053 1.47313 12.0099 1.61922L19.7993 7.1831Z" fill="#A6F4D3"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2.1848 9.13909C2.3213 8.98339 2.55535 9.04819 2.70699 9.18919L11.2916 17.1708C11.5173 17.3807 11.8669 17.3807 12.0926 17.1708L20.6407 9.2231C20.8039 9.0714 21.063 9.01257 21.188 9.19696C21.2518 9.29101 21.2891 9.4045 21.2891 9.52668V18.6627C21.2891 18.9876 21.0257 19.2509 20.7008 19.2509L2.6273 19.2509C2.30243 19.2509 2.03906 18.9876 2.03906 18.6627L2.03906 9.52668C2.03906 9.37822 2.09406 9.2426 2.1848 9.13909Z" fill="#20E492"/>
+<rect x="14.4961" y="9.625" width="2.0625" height="5.84479" rx="0.588235" transform="rotate(45 14.4961 9.625)" fill="#0E3419"/>
+<rect x="8.91406" y="12.3281" width="2.0625" height="3.60068" rx="0.588235" transform="rotate(-45 8.91406 12.3281)" fill="#0E3419"/>
+</svg></div><div class="nav-link-block-txts-wrapper"><div class="popular-wrap"><div class="nav-link-desktop-txt">Email Validation</div><div class="gap-12px"></div><div class="popular-label-2">Popular</div></div><div class="nav-link-subtext-2">Validate email addresses</div></div></a><a href="../../api/email-reputation-api.html" class="nav-link-block-desktop-2 w-inline-block"><div class="nav-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M79.5 19.5557V46C79.5 59.0878 71.8603 71.5087 63.8496 80.875C59.882 85.514 55.9083 89.3059 52.9248 91.9375C51.5279 93.1697 50.351 94.1435 49.5 94.8281C48.649 94.1435 47.4721 93.1697 46.0752 91.9375C43.0917 89.3059 39.118 85.514 35.1504 80.875C27.1397 71.5087 19.5 59.0878 19.5 46V19.5557L49.5 4.78613L79.5 19.5557Z" fill="#A6F4D3" stroke="#20E492" stroke-width="5"/>
+<path d="M68.0352 38.6804C68.395 38.9349 68.2132 39.4966 67.771 39.4966H31.2328C30.7906 39.4966 30.6087 38.9349 30.9686 38.6804L49.2377 25.7615C49.3957 25.6498 49.608 25.6498 49.766 25.7615L68.0352 38.6804Z" fill="#0E3419"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M30.4476 39.8887C30.5624 39.8887 30.673 39.9317 30.7571 40.0091L49.2468 57.0283C49.4213 57.1889 49.6914 57.1889 49.8658 57.0283L68.3555 40.0091C68.4396 39.9317 68.5502 39.8887 68.665 39.8887H68.733C68.984 39.8887 69.1875 40.0901 69.1875 40.3387V60.3215C69.1875 60.57 68.984 60.7715 68.733 60.7715H30.267C30.016 60.7715 29.8125 60.57 29.8125 60.3215V40.3387C29.8125 40.0901 30.016 39.8887 30.267 39.8887H30.4476Z" fill="#20E492"/>
+<path d="M57.9586 43.9144L55.6183 41.5975C55.4408 41.4218 55.153 41.4218 54.9755 41.5975L47.1647 49.3302C46.9872 49.5059 46.9872 49.7908 47.1647 49.9666L49.5049 52.2835C49.6825 52.4592 49.9703 52.4592 50.1478 52.2835L57.9586 44.5508C58.1361 44.375 58.1361 44.0901 57.9586 43.9144Z" fill="#0E3419"/>
+<path d="M46.5367 44.1188L44.1964 46.4357C44.0189 46.6114 44.0189 46.8964 44.1964 47.0721L48.7615 51.5915C48.939 51.7672 49.2268 51.7672 49.4043 51.5915L51.7446 49.2746C51.9221 49.0989 51.9221 48.814 51.7446 48.6382L47.1795 44.1188C47.002 43.9431 46.7142 43.9431 46.5367 44.1188Z" fill="#0E3419"/>
+</svg></div><div class="nav-link-block-txts-wrapper"><div class="popular-wrap"><div class="nav-link-desktop-txt">Email Reputation</div><div class="gap-12px"></div><div class="popular-label-2">Popular</div></div><div class="nav-link-subtext-2">Enrich email addresses</div></div></a><a href="../../api/phone-validation-api.html" class="nav-link-block-desktop-2 w-inline-block"><div class="nav-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_3372_109632)">
+<rect x="16.5625" y="6.1875" width="2.0625" height="5.84479" rx="0.588235" transform="rotate(45 16.5625 6.1875)" fill="#0E3419"/>
+<rect x="10.9805" y="8.89062" width="2.0625" height="3.60068" rx="0.588235" transform="rotate(-45 10.9805 8.89062)" fill="#0E3419"/>
+<path d="M3.03913 5.50327C2.97724 5.25325 3.08519 4.99205 3.30553 4.85868L5.25495 3.67871C5.53288 3.51048 5.89456 3.59941 6.06278 3.87734L15.0656 18.7509C15.2339 19.0288 15.1449 19.3905 14.867 19.5587L12.9176 20.7387C12.6972 20.8721 12.4158 20.8466 12.2229 20.6758L10.8877 19.4931C7.22961 16.2531 4.64208 11.9782 3.46778 7.23474L3.03913 5.50327Z" fill="#20E492"/>
+<rect x="13.3125" y="14.1992" width="2.75" height="5.5" rx="0.588235" transform="rotate(-31.1862 13.3125 14.1992)" fill="#A6F4D3"/>
+<rect x="6.67188" y="2.94922" width="2.75" height="5.5" rx="0.588235" transform="rotate(-31.1862 6.67188 2.94922)" fill="#A6F4D3"/>
+</g>
+<defs>
+<clipPath id="clip0_3372_109632">
+<rect width="22" height="22" fill="white" transform="translate(0.667969)"/>
+</clipPath>
+</defs>
+</svg></div><div class="nav-link-block-txts-wrapper"><div class="popular-wrap"><div class="nav-link-desktop-txt">Phone Validation</div><div class="gap-12px"></div><div class="popular-label-2">Popular</div></div><div class="nav-link-subtext-2">Validate phone numbers</div></div></a></div><div id="w-node-_20473390-c560-caff-3439-227a52159e36-3387dbcd" class="links-wrapper"><a href="../../api/vat-validation-rates-api.html" class="nav-link-block-desktop-2 w-inline-block"><div class="nav-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M16.5797 1.375C16.9046 1.375 17.168 1.63836 17.168 1.96324V3.30388C17.0694 3.29862 16.9701 3.29596 16.8702 3.29596C13.8326 3.29596 11.3702 5.75839 11.3702 8.79596C11.3702 11.8335 13.8326 14.296 16.8702 14.296C16.9701 14.296 17.0694 14.2933 17.168 14.288V20.0368C17.168 20.3616 16.9046 20.625 16.5797 20.625H10.293L10.293 14.338C10.293 14.0131 10.0296 13.7498 9.70473 13.7498H3.41797V1.96324C3.41797 1.63836 3.68133 1.375 4.0062 1.375H16.5797Z" fill="#20E492"/>
+<rect x="19.1602" y="6.57812" width="2.0625" height="5.84479" rx="0.588235" transform="rotate(45 19.1602 6.57812)" fill="#0E3419"/>
+<rect x="13.5781" y="9.28125" width="2.0625" height="3.60068" rx="0.588235" transform="rotate(-45 13.5781 9.28125)" fill="#0E3419"/>
+<path d="M9.01723 14.4375C9.34211 14.4375 9.60547 14.7009 9.60547 15.0257L9.60547 19.8924C9.60547 20.4164 8.97186 20.6789 8.60129 20.3083L3.73465 15.4417C3.36408 15.0711 3.62653 14.4375 4.15059 14.4375L9.01723 14.4375Z" fill="#A6F4D3"/>
+</svg></div><div class="nav-link-block-txts-wrapper"><div class="nav-link-desktop-txt">VAT Validation &amp; Rates</div><div class="nav-link-subtext-2">Comply with VAT laws</div></div></a><a href="../../api/iban-validation.html" class="nav-link-block-desktop-2 w-inline-block"><div class="nav-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1.0062 4.875C0.681331 4.875 0.417969 4.61164 0.417969 4.28676L0.417969 3.30916C0.417969 3.05777 0.57773 2.83416 0.815557 2.75268L8.47732 0.127815C8.60089 0.0854799 8.73504 0.0854798 8.85862 0.127815L16.5204 2.75268C16.7582 2.83416 16.918 3.05777 16.918 3.30916L16.918 4.28676C16.918 4.61164 16.6546 4.875 16.3297 4.875L1.0062 4.875Z" fill="#A6F4D3"/>
+<rect x="0.417969" y="17.9375" width="12.375" height="4.125" rx="0.588235" transform="rotate(-90 0.417969 17.9375)" fill="#20E492"/>
+<rect x="12.793" y="17.9375" width="12.375" height="4.125" rx="0.588235" transform="rotate(-90 12.793 17.9375)" fill="#20E492"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.23047 17.3493C5.23047 17.6741 5.49383 17.9375 5.8187 17.9375H11.5172C11.8421 17.9375 12.1055 17.6741 12.1055 17.3493V15.9693C12.1055 15.4905 11.5491 15.1947 11.1094 15.3842C10.3827 15.6973 9.55127 15.875 8.66797 15.875C7.78467 15.875 6.95324 15.6973 6.22649 15.3842C5.7868 15.1947 5.23047 15.4905 5.23047 15.9693L5.23047 17.3493ZM6.22649 8.11582C5.7868 8.30526 5.23047 8.00945 5.23047 7.53069L5.23047 6.15073C5.23047 5.82586 5.49383 5.5625 5.8187 5.5625L11.5172 5.5625C11.8421 5.5625 12.1055 5.82586 12.1055 6.15074V7.53069C12.1055 8.00945 11.5491 8.30526 11.1094 8.11582C10.3827 7.80269 9.55127 7.625 8.66797 7.625C7.78467 7.625 6.95324 7.80269 6.22649 8.11582Z" fill="#20E492"/>
+<rect x="11.1758" y="8.80273" width="2.0625" height="5.84479" rx="0.588235" transform="rotate(45 11.1758 8.80273)" fill="#0E3419"/>
+<rect x="5.59375" y="11.5059" width="2.0625" height="3.60068" rx="0.588235" transform="rotate(-45 5.59375 11.5059)" fill="#0E3419"/>
+</svg></div><div class="nav-link-block-txts-wrapper"><div class="nav-link-desktop-txt">IBAN Validation</div><div class="nav-link-subtext-2">Validate IBAN codes</div></div></a></div></div></div></div></div></div><div class="nav-form-wrapper"><div class="form-customised smaller-border"><div class="max-w-customers-heading-nav"><div class="font-2rem align-center">Get your free API key now</div></div><div class="rating-wrapper paddings-12px flex"><img src="https://cdn.prod.website-files.com/65166126ca18241731aa26b0/65364c5e1e46b97a04f18d96_Stars.avif" loading="lazy" alt="stars rating" class="stars mb-4px"/><div class="text-13px is-neutral-40">4.8 from 1,863 votes</div></div><div class="form-txt-wrapper flex mb-20"><div class="text-small align-center right-m">See why the best developers</div><div class="text-small">build on Abstract</div></div><div class="form-block w-form"><form id="nav-form-large" name="wf-form-Modal-CTA-Form" data-name="Modal CTA Form" method="get" class="modal-content-form-nav--large" data-wf-page-id="6643827018e2bb60b803033a" data-wf-element-id="20473390-c560-caff-3439-227a52159e78"><input class="modal-content-form-field-nav--large w-input" maxlength="256" name="E-mail-2" data-name="E Mail 2" placeholder="Enter your email" type="email" required=""/><div data-w-id="20473390-c560-caff-3439-227a52159e7a" class="cta-button-circle"><input type="submit" data-wait="" class="cta-button-link-submit w-button" value=""/><div class="cta-button-arrow w-embed"><svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M8.67157 0.445275L11.8536 3.62726C12.0488 3.82252 12.0488 4.1391 11.8536 4.33436L8.67157 7.51634C8.47631 7.71161 8.15973 7.71161 7.96447 7.51634C7.7692 7.32108 7.7692 7.0045 7.96447 6.80924L8.58579 6.18792C9.21575 5.55795 8.76959 4.48081 7.87868 4.48081H1C0.723858 4.48081 0.5 4.25695 0.5 3.98081C0.5 3.70467 0.723857 3.48081 0.999999 3.48081H7.87868C8.76958 3.48081 9.21575 2.40367 8.58579 1.7737L7.96447 1.15238C7.7692 0.957119 7.7692 0.640537 7.96447 0.445275C8.15973 0.250013 8.47631 0.250013 8.67157 0.445275Z" fill="#0E3419" stroke="#0E3419" stroke-width="0.5"/>
+</svg></div></div></form><div class="no-credit-txt centered">No credit card required</div><div class="success-message w-form-done"><div class="thank-you-form-txt-2 smaller">Thank you! Your submission has been received!</div></div><div class="error-message w-form-fail"><div>Oops! Something went wrong while submitting the form.</div></div></div><div class="spacer-12px"></div></div></div></div></div><div id="solution-large-dropdown" class="nav-large-dropdown resources-dropdown"><div class="nav-link-txt-2">Resources</div><div class="arrow-dropdown w-embed"><svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.00151 1.3395L4.79387 5.67589L0.878906 1.32593" stroke="#21292E" stroke-linecap="square" stroke-linejoin="round"/>
+<path d="M8.97473 1.32593L6.4765 3.92521C5.56758 4.87089 4.04695 4.84598 3.1695 3.87103L0.878906 1.32593" stroke="#ffffff" stroke-linecap="square" stroke-linejoin="round"/>
+<path d="M8.97473 1.32324L7.31777 3.04863C5.95459 4.4681 3.67286 4.43119 2.35632 2.96836L0.878906 1.32679" stroke="#ffffff" stroke-linecap="square" stroke-linejoin="round"/>
+</svg></div><div id="solution-large-menu" class="resources-menu"><div class="drop-img resources-drop-icon w-embed"><svg width="28" height="14" viewBox="0 0 28 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.7569 2.34719L18.5 12.119H17H3H1.5L8.48213 2.32233C9.28707 1.1929 10.9692 1.20567 11.7569 2.34719Z" fill="white" stroke="#E3EBF0"/>
+<rect y="10" width="28" height="4" fill="white"/>
+</svg></div><a href="../../about.html" class="nav-link-block-2 w-inline-block"><div class="text-small">About us</div></a><a href="../../guides.html" class="nav-link-block-2 w-inline-block"><div class="text-small">API Guides and Tips</div></a><a href="../http-status-codes.html" class="nav-link-block-2 w-inline-block"><div class="text-small">HTTP Status Code Guide</div></a></div></div><div id="resource-large-dropdown" class="nav-large-dropdown resources-dropdown hidden"><div class="nav-link-txt-2">Resources</div><div class="arrow-dropdown w-embed"><svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.00151 1.3395L4.79387 5.67589L0.878906 1.32593" stroke="#21292E" stroke-linecap="square" stroke-linejoin="round"/>
+<path d="M8.97473 1.32593L6.4765 3.92521C5.56758 4.87089 4.04695 4.84598 3.1695 3.87103L0.878906 1.32593" stroke="#ffffff" stroke-linecap="square" stroke-linejoin="round"/>
+<path d="M8.97473 1.32324L7.31777 3.04863C5.95459 4.4681 3.67286 4.43119 2.35632 2.96836L0.878906 1.32679" stroke="#ffffff" stroke-linecap="square" stroke-linejoin="round"/>
+</svg></div><div id="resource-large-menu" class="resources-menu"><div class="drop-img resources-drop-icon w-embed"><svg width="28" height="14" viewBox="0 0 28 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.7569 2.34719L18.5 12.119H17H3H1.5L8.48213 2.32233C9.28707 1.1929 10.9692 1.20567 11.7569 2.34719Z" fill="white" stroke="#E3EBF0"/>
+<rect y="10" width="28" height="4" fill="white"/>
+</svg></div><a href="../../guides.html" class="nav-link-block-2 w-inline-block"><div class="text-small">API Guides</div></a><a href="../http-status-codes.html" class="nav-link-block-2 w-inline-block"><div class="text-small">HTTP Status Guide</div></a><a href="../api-glossary.html" class="nav-link-block-2 w-inline-block"><div class="text-small">API Glossary</div></a></div></div><a href="../../integrations.html" class="nav-links radius-0 integrations login w-inline-block"><div class="nav-link-txt">Integrations</div></a><div class="right-side-menu"><a href="https://app.abstractapi.com/users/login" target="_blank" class="nav-links radius-0 login w-inline-block"><div class="nav-link-txt">LOG IN</div></a><a id="cta-link-nav" placement="nav_bar" data-w-id="ce5d7a85-886f-c8b0-3624-4fbc6a68f120" href="https://app.abstractapi.com/users/signup" target="_blank" class="nav-links radius-special cta-link-nav w-inline-block"><div class="nav-link-txt is-green-4">START FOR FREE </div><div class="arrow w-embed"><svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M8.67157 0.464806L11.8536 3.64679C12.0488 3.84205 12.0488 4.15863 11.8536 4.35389L8.67157 7.53587C8.47631 7.73114 8.15973 7.73114 7.96447 7.53587C7.7692 7.34061 7.7692 7.02403 7.96447 6.82877L8.58579 6.20745C9.21575 5.57748 8.76959 4.50034 7.87868 4.50034H1C0.723858 4.50034 0.5 4.27648 0.5 4.00034C0.5 3.7242 0.723857 3.50034 0.999999 3.50034H7.87868C8.76958 3.50034 9.21575 2.4232 8.58579 1.79323L7.96447 1.17191C7.7692 0.976651 7.7692 0.660068 7.96447 0.464806C8.15973 0.269544 8.47631 0.269544 8.67157 0.464806Z" fill="#20E492"/>
+</svg></div></a><div id="open-menu-btn" data-w-id="ce5d7a85-886f-c8b0-3624-4fbc6a68f124" class="open-menu-btn"><div class="menu-hamburger"><div class="hamburger-line first"></div><div class="hamburger-line"></div><div class="hamburger-line last"></div></div></div></div></div></div><div id="nav-menu-btn" class="nav-menu-button w-nav-button"><div class="menu-hamburger"><div class="hamburger-line first"></div><div class="hamburger-line middle"></div><div class="hamburger-line last"></div></div></div></div><nav role="navigation" class="nav-menu w-nav-menu"><div class="nav-menu-grid"><div class="nav-menu-links-wrapper"><div id="api-dropdown" class="nav-link"><div class="nav-link-txt-2">Products</div><div class="arrow-dropdown w-embed"><svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.00151 1.3395L4.79387 5.67589L0.878906 1.32593" stroke="#21292E" stroke-linecap="square" stroke-linejoin="round"/>
+<path d="M8.97473 1.32593L6.4765 3.92521C5.56758 4.87089 4.04695 4.84598 3.1695 3.87103L0.878906 1.32593" stroke="#21292E" stroke-linecap="square" stroke-linejoin="round"/>
+<path d="M8.97473 1.32324L7.31777 3.04863C5.95459 4.4681 3.67286 4.43119 2.35632 2.96836L0.878906 1.32679" stroke="#21292E" stroke-linecap="square" stroke-linejoin="round"/>
+</svg></div></div><div id="api-dropdown-menu" class="nav-dropdown-menu is-open"><div class="nav-dropdown-p"><div class="catalogue-menu-wrapper"><div class="nav-links-block-2"><div class="links-group-header-2 no-m">APIs TO LOOK UP</div><div class="links-wrapper-main"><div id="w-node-ce5d7a85-886f-c8b0-3624-4fbc6a68f13d-3387dbcd" class="links-wrapper"><a href="../../api/ip-intelligence.html" class="nav-link-block-desktop-2 w-inline-block"><div class="nav-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 100" fill="none">
+<path d="M50 10L80 25V50C80 70 65 85 50 90C35 85 20 70 20 50V25L50 10Z" fill="#20E492"/>
+<path d="M50 20L70 30V50C70 65 60 75 50 80C40 75 30 65 30 50V30L50 20Z" fill="#A6F4D3"/>
+<path d="M63.7983 41.4194L61.5886 39.2097C60.3682 37.9893 58.3896 37.9893 57.1692 39.2097L42.8028 53.5762C41.5824 54.7965 41.5824 56.7752 42.8028 57.9956L45.0125 60.2053C46.2329 61.4257 48.2115 61.4257 49.4319 60.2053L63.7983 45.8388C65.0187 44.6184 65.0187 42.6398 63.7983 41.4194Z" fill="#0E3419"/>
+<path d="M38.4194 44.8677L36.2097 47.0774C34.9893 48.2978 34.9893 50.2764 36.2097 51.4968L43.3633 58.6504C44.5837 59.8708 46.5623 59.8708 47.7827 58.6504L49.9924 56.4407C51.2128 55.2203 51.2128 53.2417 49.9924 52.0213L42.8388 44.8677C41.6184 43.6473 39.6398 43.6473 38.4194 44.8677Z" fill="#0E3419"/>
+</svg></div><div class="nav-link-block-txts-wrapper"><div class="popular-wrap"><div class="nav-link-desktop-txt">IP Intelligence</div><div class="gap-12px"></div><div class="popular-label-2">Popular</div></div><div class="nav-link-subtext-2">Reduce risk and enhance security</div></div></a><a href="../../api/ip-geolocation-api.html" class="nav-link-block-desktop-2 w-inline-block"><div class="nav-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M14.8068 6.53817C15.1129 6.42919 15.2749 6.09146 15.1408 5.79554C14.7963 5.03518 14.3189 4.34048 13.7297 3.74478C13.1405 3.14909 12.4511 2.66418 11.6945 2.31137C11.4001 2.17406 11.0606 2.33236 10.9483 2.6372L10.5442 3.73391C10.4319 4.03875 10.5902 4.37372 10.8787 4.52311C11.3153 4.7492 11.7149 5.04277 12.0623 5.39404C12.4098 5.7453 12.699 6.14811 12.9203 6.58714C13.0665 6.87725 13.3997 7.03922 13.7058 6.93024L14.8068 6.53817Z" fill="#A6F4D3"/>
+<path d="M10.9214 14.7906C11.0324 15.0959 11.3712 15.2557 11.6662 15.1197C12.4266 14.7692 13.1201 14.2855 13.7131 13.69C14.3061 13.0944 14.7869 12.3989 15.1342 11.637C15.2689 11.3414 15.1077 11.0033 14.8019 10.8937L13.7017 10.4991C13.3959 10.3894 13.0623 10.5506 12.9154 10.8404C12.6924 11.2804 12.401 11.6838 12.0512 12.0351C11.7014 12.3864 11.2992 12.6795 10.8602 12.9044C10.571 13.0525 10.4112 13.3868 10.5222 13.6921L10.9214 14.7906Z" fill="#A6F4D3"/>
+<path d="M2.61136 10.8694C2.30513 10.9779 2.14255 11.3153 2.27612 11.6115C2.62473 12.3844 3.11043 13.0896 3.71125 13.6924C4.31207 14.2952 5.01577 14.7832 5.78752 15.1343C6.08323 15.2689 6.42121 15.1074 6.53066 14.8015L6.92445 13.701C7.0339 13.3952 6.87245 13.0617 6.58257 12.915C6.1361 12.6891 5.7273 12.3929 5.37229 12.0368C5.01729 11.6806 4.72247 11.2709 4.498 10.8237C4.35227 10.5333 4.01932 10.3708 3.71309 10.4792L2.61136 10.8694Z" fill="#A6F4D3"/>
+<path d="M6.49863 2.62803C6.38757 2.32273 6.04874 2.16303 5.75375 2.29912C5.0041 2.64496 4.31949 3.1203 3.73208 3.70473C3.14467 4.28916 2.66585 4.97134 2.3162 5.71923C2.17861 6.01353 2.33658 6.35316 2.64131 6.46578L3.73763 6.87093C4.04236 6.98354 4.37749 6.82555 4.52716 6.5372C4.75085 6.10626 5.04034 5.7114 5.3862 5.36729C5.73207 5.02318 6.12839 4.7357 6.56047 4.51421C6.84957 4.36601 7.00926 4.03169 6.8982 3.72639L6.49863 2.62803Z" fill="#A6F4D3"/>
+<path d="M9.29848 0.472656C9.62336 0.472656 9.88672 0.736018 9.88672 1.06089L9.88672 5.17854C9.88672 5.50341 9.62336 5.76677 9.29848 5.76677L8.12201 5.76677C7.79714 5.76677 7.53378 5.50341 7.53378 5.17854L7.53378 1.06089C7.53378 0.736019 7.79714 0.472656 8.12201 0.472656L9.29848 0.472656Z" fill="#20E492"/>
+<path d="M9.29848 11.6484C9.62336 11.6484 9.88672 11.9118 9.88672 12.2367L9.88672 16.3543C9.88672 16.6792 9.62336 16.9426 9.29848 16.9426L8.12201 16.9426C7.79714 16.9426 7.53378 16.6792 7.53378 16.3543L7.53378 12.2367C7.53378 11.9118 7.79714 11.6484 8.12201 11.6484L9.29848 11.6484Z" fill="#20E492"/>
+<path d="M16.9453 9.29653C16.9453 9.6214 16.682 9.88477 16.3571 9.88477L12.2394 9.88477C11.9146 9.88477 11.6512 9.6214 11.6512 9.29653L11.6512 8.12006C11.6512 7.79519 11.9146 7.53182 12.2394 7.53182L16.3571 7.53182C16.682 7.53182 16.9453 7.79519 16.9453 8.12006L16.9453 9.29653Z" fill="#20E492"/>
+<path d="M7.53516 9.29653C7.53516 9.6214 7.79852 9.88477 8.12339 9.88477L9.29986 9.88477C9.62474 9.88477 9.8881 9.6214 9.8881 9.29653L9.8881 8.12006C9.8881 7.79519 9.62474 7.53182 9.29986 7.53182L8.12339 7.53182C7.79852 7.53182 7.53516 7.79519 7.53516 8.12006L7.53516 9.29653Z" fill="#0E3419"/>
+<path d="M5.76563 9.29653C5.76563 9.6214 5.50226 9.88477 5.17739 9.88477L1.05974 9.88477C0.73487 9.88477 0.471508 9.6214 0.471508 9.29653L0.471508 8.12006C0.471508 7.79519 0.73487 7.53182 1.05974 7.53182L5.17739 7.53182C5.50226 7.53182 5.76563 7.79519 5.76563 8.12006L5.76563 9.29653Z" fill="#20E492"/>
+</svg></div><div class="nav-link-block-txts-wrapper"><div class="popular-wrap"><div class="nav-link-desktop-txt">IP Geolocation</div><div class="gap-12px"></div><div class="popular-label-2">Popular</div></div><div class="nav-link-subtext-2">Geolocate any IP worldwide</div></div></a><a href="../../api/company-enrichment.html" class="nav-link-block-desktop-2 w-inline-block"><div class="nav-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="13.0625" y="9.625" width="6.1875" height="11" rx="0.588235" fill="#A6F4D3"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12.3755 9.52528C12.3755 9.2004 12.6388 8.93704 12.9637 8.93704L15.2243 8.93704C15.5491 8.93704 15.8125 8.67368 15.8125 8.3488L15.8125 1.96324C15.8125 1.63836 15.5491 1.375 15.2243 1.375L3.33823 1.375C3.01336 1.375 2.75 1.63836 2.75 1.96324L2.75 20.0368C2.75 20.3616 3.01336 20.625 3.33823 20.625L4.22518 20.625C4.55006 20.625 4.81342 20.3616 4.81342 20.0368L4.81342 15.7132C4.81342 15.3884 5.07678 15.125 5.40165 15.125L9.72518 15.125C10.0501 15.125 10.3134 15.3884 10.3134 15.7132L10.3134 20.0368C10.3134 20.3616 10.5768 20.625 10.9017 20.625L15.2243 20.625C15.2321 20.625 15.2399 20.6248 15.2477 20.6245L12.9637 20.6245C12.6388 20.6245 12.3755 20.3612 12.3755 20.0363L12.3755 9.52528Z" fill="#20E492"/>
+<rect x="5.5" y="15.8125" width="4.125" height="4.8125" rx="0.588235" fill="#0E3419"/>
+</svg></div><div class="nav-link-block-txts-wrapper"><div class="popular-wrap"><div class="nav-link-desktop-txt">Company Enrichment</div><div class="gap-12px"></div><div class="popular-label-2">Popular</div></div><div class="nav-link-subtext-2">Get data on any domain or company</div></div></a></div><div id="w-node-ce5d7a85-886f-c8b0-3624-4fbc6a68f15b-3387dbcd" class="links-wrapper _1"><a href="../../api/exchange-rate-api.html" class="nav-link-block-desktop-2 w-inline-block"><div class="nav-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 17 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.4389 11.7124C15.7484 11.811 16.0816 11.6404 16.1569 11.3244C16.3972 10.3153 16.4362 9.26667 16.2695 8.23895C16.0713 7.0173 15.588 5.85955 14.8587 4.85962C14.1294 3.85968 13.1747 3.04571 12.072 2.48372C11.1444 2.01094 10.134 1.72769 9.09979 1.64817C8.77588 1.62327 8.51161 1.88838 8.51095 2.21325L8.50801 3.6532C8.50735 3.97808 8.77099 4.23858 9.09376 4.2755C9.71635 4.34672 10.3228 4.52885 10.884 4.81484C11.6203 5.19011 12.2578 5.73365 12.7447 6.40136C13.2317 7.06907 13.5545 7.84216 13.6868 8.65793C13.7877 9.2796 13.7758 9.91272 13.6533 10.5273C13.5899 10.8459 13.7574 11.1765 14.0669 11.2752L15.4389 11.7124Z" fill="#20E492"/>
+<path d="M1.5533 7.28762C1.24377 7.18899 0.910587 7.35961 0.835325 7.67565C0.59502 8.68472 0.555994 9.73333 0.722718 10.761C0.920903 11.9827 1.40423 13.1404 2.13351 14.1404C2.86279 15.1403 3.81748 15.9543 4.92015 16.5163C5.84777 16.9891 6.85815 17.2723 7.89239 17.3518C8.21631 17.3767 8.48058 17.1116 8.48124 16.7867L8.48418 15.3468C8.48484 15.0219 8.22119 14.7614 7.89843 14.7245C7.27584 14.6533 6.66936 14.4711 6.10823 14.1852C5.37192 13.8099 4.73442 13.2664 4.24744 12.5986C3.76047 11.9309 3.43772 11.1578 3.30538 10.3421C3.20453 9.7204 3.21642 9.08728 3.33884 8.4727C3.4023 8.15409 3.23482 7.82345 2.92528 7.72482L1.5533 7.28762Z" fill="#20E492"/>
+<path d="M1.27734 5.63051C1.27734 5.95539 1.54071 6.21875 1.86558 6.21875L6.59536 6.21875C6.92023 6.21875 7.18359 5.95539 7.18359 5.63052L7.18359 0.900736C7.18359 0.575862 6.92023 0.3125 6.59536 0.3125L1.86558 0.3125C1.54071 0.3125 1.27734 0.575862 1.27734 0.900735L1.27734 5.63051Z" fill="#0E3419"/>
+<path d="M9.80469 15.4063C9.80469 17.2184 11.2738 18.6875 13.0859 18.6875C14.8981 18.6875 16.3672 17.2184 16.3672 15.4063C16.3672 13.5941 14.8981 12.125 13.0859 12.125C11.2738 12.125 9.80469 13.5941 9.80469 15.4063Z" fill="#A6F4D3"/>
+</svg></div><div class="nav-link-block-txts-wrapper"><div class="nav-link-desktop-txt">Exchange Rates &amp; Currencies</div><div class="nav-link-subtext-2">Get and convert exchange rates</div></div></a><a href="../../api/time-date-timezone-api.html" class="nav-link-block-desktop-2 w-inline-block"><div class="nav-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M18.9551 13.533C19.2647 13.6317 19.5976 13.461 19.6756 13.1457C19.9459 12.0539 20.0081 10.919 19.857 9.8009C19.6795 8.48814 19.2125 7.23124 18.4896 6.12114C17.7668 5.01104 16.8062 4.07551 15.6774 3.38223C14.716 2.79175 13.653 2.38958 12.5451 2.19513C12.2252 2.13897 11.9345 2.3744 11.8995 2.69738L11.7063 4.47991C11.6713 4.80289 11.9057 5.09017 12.2237 5.15679C12.8942 5.29726 13.5371 5.55247 14.1234 5.91255C14.8771 6.37549 15.5186 7.00019 16.0012 7.74147C16.4839 8.48274 16.7958 9.32204 16.9143 10.1986C17.0064 10.8805 16.9798 11.5716 16.837 12.2417C16.7694 12.5594 16.9373 12.89 17.2468 12.9886L18.9551 13.533Z" fill="#A6F4D3"/>
+<path d="M10.1262 2.69463C10.0922 2.37154 9.80227 2.13521 9.48212 2.19038C8.16327 2.41766 6.90965 2.93875 5.81546 3.71798C4.56125 4.61117 3.55906 5.81325 2.90605 7.20768C2.25305 8.60211 1.97137 10.1416 2.08832 11.6769C2.20528 13.2122 2.7169 14.6913 3.5736 15.9707C4.43029 17.2501 5.603 18.2865 6.97804 18.9794C8.35308 19.6723 9.88382 19.9983 11.4219 19.9256C12.9599 19.8529 14.4531 19.3841 15.7567 18.5646C16.8939 17.8497 17.8532 16.889 18.5657 15.7562C18.7386 15.4812 18.6305 15.123 18.3448 14.9685L16.7675 14.1159C16.4817 13.9614 16.1271 14.0698 15.9453 14.339C15.4822 15.0245 14.8803 15.6081 14.1763 16.0507C13.3058 16.5979 12.3087 16.9109 11.2817 16.9595C10.2547 17.008 9.23251 16.7904 8.31432 16.3277C7.39612 15.865 6.61304 15.1729 6.04098 14.3186C5.46892 13.4642 5.12728 12.4766 5.04918 11.4514C4.97108 10.4261 5.15917 9.39815 5.59522 8.46701C6.03127 7.53587 6.70049 6.73317 7.538 6.13674C8.21534 5.65436 8.98418 5.32013 9.7944 5.15302C10.1126 5.08739 10.3479 4.80084 10.3139 4.47775L10.1262 2.69463Z" fill="#20E492"/>
+<rect x="10.3125" y="6.1875" width="2.0625" height="6.1875" rx="0.588235" fill="#0E3419"/>
+<rect x="8.10156" y="12.3887" width="2.0625" height="3.60068" rx="0.588235" transform="rotate(-90 8.10156 12.3887)" fill="#0E3419"/>
+</svg></div><div class="nav-link-block-txts-wrapper"><div class="nav-link-desktop-txt">Time, Date, and Timezones</div><div class="nav-link-subtext-2">Get any date and timezone globally</div></div></a><a href="../../api/holidays-api.html" class="nav-link-block-desktop-2 w-inline-block"><div class="nav-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.0625" y="3.5" width="3.4375" height="18.5625" rx="0.588235" transform="rotate(-90 0.0625 3.5)" fill="#0E3419"/>
+<rect x="0.0625" y="7.625" width="3.4375" height="3.4375" rx="0.531309" transform="rotate(-90 0.0625 7.625)" fill="#20E492"/>
+<rect x="4.875" y="8.3125" width="4.125" height="4.125" rx="0.531309" transform="rotate(-90 4.875 8.3125)" fill="#20E492"/>
+<rect x="0.0625" y="8.3125" width="4.125" height="4.125" rx="0.531309" transform="rotate(-90 0.0625 8.3125)" fill="#20E492"/>
+<rect x="9.6875" y="8.3125" width="4.125" height="4.125" rx="0.531309" transform="rotate(-90 9.6875 8.3125)" fill="#A6F4D3"/>
+<rect x="14.5" y="8.3125" width="4.125" height="4.125" rx="0.531309" transform="rotate(-90 14.5 8.3125)" fill="#A6F4D3"/>
+<rect x="0.0625" y="13.125" width="4.125" height="4.125" rx="0.531309" transform="rotate(-90 0.0625 13.125)" fill="#20E492"/>
+<rect x="4.875" y="13.125" width="4.125" height="4.125" rx="0.531309" transform="rotate(-90 4.875 13.125)" fill="#A6F4D3"/>
+<rect x="9.6875" y="13.125" width="4.125" height="4.125" rx="0.531309" transform="rotate(-90 9.6875 13.125)" fill="#A6F4D3"/>
+<rect x="14.5" y="13.125" width="4.125" height="4.125" rx="0.531309" transform="rotate(-90 14.5 13.125)" fill="#A6F4D3"/>
+<rect x="0.0625" y="17.9375" width="4.125" height="4.125" rx="0.531309" transform="rotate(-90 0.0625 17.9375)" fill="#20E492"/>
+<rect x="4.875" y="17.9375" width="4.125" height="4.125" rx="0.531309" transform="rotate(-90 4.875 17.9375)" fill="#A6F4D3"/>
+<rect x="9.6875" y="17.9375" width="4.125" height="4.125" rx="0.531309" transform="rotate(-90 9.6875 17.9375)" fill="#20E492"/>
+<rect x="14.5" y="17.9375" width="4.125" height="4.125" rx="0.531309" transform="rotate(-90 14.5 17.9375)" fill="#A6F4D3"/>
+</svg></div><div class="nav-link-block-txts-wrapper"><div class="nav-link-desktop-txt">Public Holidays</div><div class="nav-link-subtext-2">Get holidays for any country</div></div></a></div></div></div><div class="nav-links-block-2 _2"><div class="links-group-header-2">APIs TO CREATE</div><div class="links-wrapper-main"><div id="w-node-ce5d7a85-886f-c8b0-3624-4fbc6a68f175-3387dbcd" class="links-wrapper"><a href="../../api/website-screenshot-api.html" class="nav-link-block-desktop-2 w-inline-block"><div class="nav-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="6.89453" y="3.875" width="3.4375" height="6.875" rx="0.588235" transform="rotate(-90 6.89453 3.875)" fill="#A6F4D3"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M6.20795 3.77378C6.20795 3.44891 5.94459 3.18555 5.61972 3.18555L1.29527 3.18555C0.970393 3.18555 0.707031 3.44891 0.707031 3.77378L0.707032 14.2848C0.707032 14.6097 0.970394 14.873 1.29527 14.873H5.52321C6.05001 14.873 6.35033 14.1909 6.09923 13.7278C5.72994 13.0467 5.52022 12.2665 5.52022 11.4373C5.52022 8.7794 7.67485 6.62477 10.3327 6.62477C12.9906 6.62477 15.1452 8.7794 15.1452 11.4373C15.1452 12.2665 14.9355 13.0467 14.5662 13.7278C14.3151 14.1909 14.6154 14.873 15.1422 14.873H19.3688C19.6937 14.873 19.957 14.6097 19.957 14.2848V3.77378C19.957 3.44891 19.6937 3.18555 19.3688 3.18555L15.0462 3.18555C14.7213 3.18555 14.458 3.44891 14.458 3.77378V3.97231C14.458 4.29718 14.1946 4.56055 13.8697 4.56055L6.79619 4.56055C6.47131 4.56055 6.20795 4.29718 6.20795 3.97231V3.77378Z" fill="#20E492"/>
+<circle cx="10.332" cy="11.4375" r="4.125" fill="#0E3419"/>
+</svg></div><div class="nav-link-block-txts-wrapper"><div class="nav-link-desktop-txt">Website Screenshot</div><div class="nav-link-subtext-2">Get a screeshot of any URL</div></div></a><a href="../../api/image-processing-optimization-api.html" class="nav-link-block-desktop-2 w-inline-block"><div class="nav-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12.1804 6.9375C12.5053 6.9375 12.7686 7.20086 12.7686 7.52573L12.7686 9.78676C12.7686 10.1116 13.032 10.375 13.3568 10.375L17.6813 10.375C18.0062 10.375 18.2695 10.1116 18.2695 9.78676L18.2695 0.650733C18.2695 0.32586 18.0062 0.0624981 17.6813 0.062498L7.17027 0.0624981C6.84539 0.062498 6.58203 0.32586 6.58203 0.650733L6.58203 6.34926C6.58203 6.67414 6.84539 6.9375 7.17026 6.9375L12.1804 6.9375Z" fill="#A6F4D3"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M7.86039 13.2733C8.13912 13.1164 8.49216 13.211 8.65512 13.4862L10.9695 17.3951C11.0754 17.5739 11.2679 17.6836 11.4757 17.6836L11.4938 17.6836C11.8187 17.6836 12.082 17.4202 12.082 17.0954L12.082 8.21616C12.082 7.89129 11.8187 7.62793 11.4938 7.62793L0.982765 7.62792C0.657891 7.62793 0.394529 7.89129 0.394529 8.21616L0.39453 12.9097C0.39453 13.3597 0.879215 13.643 1.27134 13.4223L3.73585 12.0348C4.01458 11.8779 4.36762 11.9725 4.53058 12.2477L5.52526 13.9276C5.68823 14.2029 6.04127 14.2974 6.32 14.1405L7.86039 13.2733Z" fill="#20E492"/>
+<path d="M3.38245 13.006L0.7197 14.3374C0.520415 14.4371 0.394531 14.6407 0.394531 14.8635V17.3493C0.394531 17.6741 0.657893 17.9375 0.982766 17.9375H9.33914C9.79314 17.9375 10.076 17.445 9.84725 17.0529L8.25079 14.3161C8.08813 14.0372 7.73113 13.9416 7.45084 14.1018L6.01232 14.9238C5.75021 15.0735 5.41727 15.0006 5.24181 14.7549L4.12419 13.1903C3.95594 12.9547 3.64135 12.8766 3.38245 13.006Z" fill="#0E3419"/>
+</svg></div><div class="nav-link-block-txts-wrapper"><div class="nav-link-desktop-txt">Image Processing</div><div class="nav-link-subtext-2">Compress and optimize an image</div></div></a></div><div id="w-node-ce5d7a85-886f-c8b0-3624-4fbc6a68f184-3387dbcd" class="links-wrapper _1"><a href="../../api/web-scraping-api.html" class="nav-link-block-desktop-2 w-inline-block"><div class="nav-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M17.6813 17.9375C18.0062 17.9375 18.2695 17.6741 18.2695 17.3493L18.2695 2.02573C18.2695 1.70086 18.0062 1.4375 17.6813 1.4375L10.9794 1.4375C10.8234 1.4375 10.6738 1.49948 10.5635 1.60979L7.44182 4.73143C7.3315 4.84175 7.26953 4.99137 7.26953 5.14738L7.26953 6.23937C7.26953 6.41667 7.3495 6.58452 7.4872 6.69621L12.2104 10.5274C12.4998 10.7621 12.5008 11.2032 12.2126 11.4393L7.48502 15.3117C7.34862 15.4234 7.26953 15.5904 7.26953 15.7668L7.26953 17.3493C7.26953 17.6741 7.53289 17.9375 7.85777 17.9375L17.6813 17.9375Z" fill="#20E492"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M6.58203 15.2848C6.58203 15.6097 6.31867 15.873 5.99379 15.873L0.982767 15.873C0.657893 15.873 0.394531 15.6097 0.394531 15.2848L0.39453 3.7695C0.39453 3.61349 0.456505 3.46387 0.56682 3.35356L3.68754 0.232835C3.79786 0.12252 3.94748 0.0605456 4.10349 0.0605456L9.2869 0.0605451C9.81096 0.0605451 10.0734 0.694157 9.70285 1.06472L6.75432 4.01326C6.644 4.12357 6.58203 4.27319 6.58203 4.4292L6.58203 15.2848Z" fill="#A6F4D3"/>
+<path d="M10.8357 11.515C11.1246 11.2811 11.1268 10.8412 10.8403 10.6044L8.19788 8.42077C7.81431 8.10378 7.23493 8.3766 7.23493 8.8742L7.23493 13.1976C7.23493 13.6925 7.80877 13.9662 8.19335 13.6548L10.8357 11.515Z" fill="#0E3419"/>
+</svg></div><div class="nav-link-block-txts-wrapper"><div class="nav-link-desktop-txt">Web Scraping</div><div class="nav-link-subtext-2">Extract data from any website</div></div></a><a href="../../api/user-avatar-api.html" class="nav-link-block-desktop-2 w-inline-block"><div class="nav-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M16.2438 15.123C16.5687 15.123 16.8353 14.8589 16.8006 14.5359C16.6672 13.2931 16.1132 12.1261 15.2211 11.234C14.1897 10.2025 12.7907 9.62305 11.332 9.62305C9.87334 9.62305 8.47439 10.2025 7.44294 11.234C6.55084 12.1261 5.99685 13.2931 5.86344 14.5359C5.82877 14.8589 6.09539 15.123 6.42027 15.123L11.332 15.123L16.2438 15.123Z" fill="#20E492"/>
+<ellipse cx="11.332" cy="5.49805" rx="3.4375" ry="3.4375" fill="#0E3419"/>
+<rect x="5.83203" y="15.8105" width="11" height="4.125" rx="0.588235" fill="#A6F4D3"/>
+</svg></div><div class="nav-link-block-txts-wrapper"><div class="nav-link-desktop-txt">User Avatars</div><div class="nav-link-subtext-2">Create flexible user avatars</div></div></a></div></div></div><div class="nav-links-block-2 no-border"><div class="links-group-header-2">APIs TO VALIDATE</div><div class="links-wrapper-main"><div id="w-node-ce5d7a85-886f-c8b0-3624-4fbc6a68f19e-3387dbcd" class="links-wrapper"><a href="../../api/email-verification-validation-api.html" class="nav-link-block-desktop-2 w-inline-block"><div class="nav-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M19.7993 7.1831C20.265 7.51571 20.0297 8.25 19.4574 8.25L3.87854 8.25C3.30628 8.25 3.07097 7.51572 3.53663 7.1831L11.3261 1.61922C11.5306 1.47313 11.8053 1.47313 12.0099 1.61922L19.7993 7.1831Z" fill="#A6F4D3"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2.1848 9.13909C2.3213 8.98339 2.55535 9.04819 2.70699 9.18919L11.2916 17.1708C11.5173 17.3807 11.8669 17.3807 12.0926 17.1708L20.6407 9.2231C20.8039 9.0714 21.063 9.01257 21.188 9.19696C21.2518 9.29101 21.2891 9.4045 21.2891 9.52668V18.6627C21.2891 18.9876 21.0257 19.2509 20.7008 19.2509L2.6273 19.2509C2.30243 19.2509 2.03906 18.9876 2.03906 18.6627L2.03906 9.52668C2.03906 9.37822 2.09406 9.2426 2.1848 9.13909Z" fill="#20E492"/>
+<rect x="14.4961" y="9.625" width="2.0625" height="5.84479" rx="0.588235" transform="rotate(45 14.4961 9.625)" fill="#0E3419"/>
+<rect x="8.91406" y="12.3281" width="2.0625" height="3.60068" rx="0.588235" transform="rotate(-45 8.91406 12.3281)" fill="#0E3419"/>
+</svg></div><div class="nav-link-block-txts-wrapper"><div class="popular-wrap"><div class="nav-link-desktop-txt">Email Validation</div><div class="gap-12px"></div><div class="popular-label-2">Popular</div></div><div class="nav-link-subtext-2">Validate email addresses</div></div></a><a href="../../api/email-reputation-api.html" class="nav-link-block-desktop-2 w-inline-block"><div class="nav-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M79.5 19.5557V46C79.5 59.0878 71.8603 71.5087 63.8496 80.875C59.882 85.514 55.9083 89.3059 52.9248 91.9375C51.5279 93.1697 50.351 94.1435 49.5 94.8281C48.649 94.1435 47.4721 93.1697 46.0752 91.9375C43.0917 89.3059 39.118 85.514 35.1504 80.875C27.1397 71.5087 19.5 59.0878 19.5 46V19.5557L49.5 4.78613L79.5 19.5557Z" fill="#A6F4D3" stroke="#20E492" stroke-width="5"/>
+<path d="M68.0352 38.6804C68.395 38.9349 68.2132 39.4966 67.771 39.4966H31.2328C30.7906 39.4966 30.6087 38.9349 30.9686 38.6804L49.2377 25.7615C49.3957 25.6498 49.608 25.6498 49.766 25.7615L68.0352 38.6804Z" fill="#0E3419"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M30.4476 39.8887C30.5624 39.8887 30.673 39.9317 30.7571 40.0091L49.2468 57.0283C49.4213 57.1889 49.6914 57.1889 49.8658 57.0283L68.3555 40.0091C68.4396 39.9317 68.5502 39.8887 68.665 39.8887H68.733C68.984 39.8887 69.1875 40.0901 69.1875 40.3387V60.3215C69.1875 60.57 68.984 60.7715 68.733 60.7715H30.267C30.016 60.7715 29.8125 60.57 29.8125 60.3215V40.3387C29.8125 40.0901 30.016 39.8887 30.267 39.8887H30.4476Z" fill="#20E492"/>
+<path d="M57.9586 43.9144L55.6183 41.5975C55.4408 41.4218 55.153 41.4218 54.9755 41.5975L47.1647 49.3302C46.9872 49.5059 46.9872 49.7908 47.1647 49.9666L49.5049 52.2835C49.6825 52.4592 49.9703 52.4592 50.1478 52.2835L57.9586 44.5508C58.1361 44.375 58.1361 44.0901 57.9586 43.9144Z" fill="#0E3419"/>
+<path d="M46.5367 44.1188L44.1964 46.4357C44.0189 46.6114 44.0189 46.8964 44.1964 47.0721L48.7615 51.5915C48.939 51.7672 49.2268 51.7672 49.4043 51.5915L51.7446 49.2746C51.9221 49.0989 51.9221 48.814 51.7446 48.6382L47.1795 44.1188C47.002 43.9431 46.7142 43.9431 46.5367 44.1188Z" fill="#0E3419"/>
+</svg></div><div class="nav-link-block-txts-wrapper"><div class="popular-wrap"><div class="nav-link-desktop-txt">Email Reputation</div><div class="gap-12px"></div><div class="popular-label-2">Popular</div></div><div class="nav-link-subtext-2">Enrich email addresses</div></div></a><a href="../../api/phone-validation-api.html" class="nav-link-block-desktop-2 w-inline-block"><div class="nav-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_3372_109632)">
+<rect x="16.5625" y="6.1875" width="2.0625" height="5.84479" rx="0.588235" transform="rotate(45 16.5625 6.1875)" fill="#0E3419"/>
+<rect x="10.9805" y="8.89062" width="2.0625" height="3.60068" rx="0.588235" transform="rotate(-45 10.9805 8.89062)" fill="#0E3419"/>
+<path d="M3.03913 5.50327C2.97724 5.25325 3.08519 4.99205 3.30553 4.85868L5.25495 3.67871C5.53288 3.51048 5.89456 3.59941 6.06278 3.87734L15.0656 18.7509C15.2339 19.0288 15.1449 19.3905 14.867 19.5587L12.9176 20.7387C12.6972 20.8721 12.4158 20.8466 12.2229 20.6758L10.8877 19.4931C7.22961 16.2531 4.64208 11.9782 3.46778 7.23474L3.03913 5.50327Z" fill="#20E492"/>
+<rect x="13.3125" y="14.1992" width="2.75" height="5.5" rx="0.588235" transform="rotate(-31.1862 13.3125 14.1992)" fill="#A6F4D3"/>
+<rect x="6.67188" y="2.94922" width="2.75" height="5.5" rx="0.588235" transform="rotate(-31.1862 6.67188 2.94922)" fill="#A6F4D3"/>
+</g>
+<defs>
+<clipPath id="clip0_3372_109632">
+<rect width="22" height="22" fill="white" transform="translate(0.667969)"/>
+</clipPath>
+</defs>
+</svg></div><div class="nav-link-block-txts-wrapper"><div class="popular-wrap"><div class="nav-link-desktop-txt">Phone Validation</div><div class="gap-12px"></div><div class="popular-label-2">Popular</div></div><div class="nav-link-subtext-2">Validate phone numbers</div></div></a></div><div id="w-node-ce5d7a85-886f-c8b0-3624-4fbc6a68f1b5-3387dbcd" class="links-wrapper _1"><a href="../../api/vat-validation-rates-api.html" class="nav-link-block-desktop-2 w-inline-block"><div class="nav-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M16.5797 1.375C16.9046 1.375 17.168 1.63836 17.168 1.96324V3.30388C17.0694 3.29862 16.9701 3.29596 16.8702 3.29596C13.8326 3.29596 11.3702 5.75839 11.3702 8.79596C11.3702 11.8335 13.8326 14.296 16.8702 14.296C16.9701 14.296 17.0694 14.2933 17.168 14.288V20.0368C17.168 20.3616 16.9046 20.625 16.5797 20.625H10.293L10.293 14.338C10.293 14.0131 10.0296 13.7498 9.70473 13.7498H3.41797V1.96324C3.41797 1.63836 3.68133 1.375 4.0062 1.375H16.5797Z" fill="#20E492"/>
+<rect x="19.1602" y="6.57812" width="2.0625" height="5.84479" rx="0.588235" transform="rotate(45 19.1602 6.57812)" fill="#0E3419"/>
+<rect x="13.5781" y="9.28125" width="2.0625" height="3.60068" rx="0.588235" transform="rotate(-45 13.5781 9.28125)" fill="#0E3419"/>
+<path d="M9.01723 14.4375C9.34211 14.4375 9.60547 14.7009 9.60547 15.0257L9.60547 19.8924C9.60547 20.4164 8.97186 20.6789 8.60129 20.3083L3.73465 15.4417C3.36408 15.0711 3.62653 14.4375 4.15059 14.4375L9.01723 14.4375Z" fill="#A6F4D3"/>
+</svg></div><div class="nav-link-block-txts-wrapper"><div class="nav-link-desktop-txt">VAT Validation &amp; Rates</div><div class="nav-link-subtext-2">Comply with VAT laws</div></div></a><a href="../../api/iban-validation.html" class="nav-link-block-desktop-2 w-inline-block"><div class="nav-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1.0062 4.875C0.681331 4.875 0.417969 4.61164 0.417969 4.28676L0.417969 3.30916C0.417969 3.05777 0.57773 2.83416 0.815557 2.75268L8.47732 0.127815C8.60089 0.0854799 8.73504 0.0854798 8.85862 0.127815L16.5204 2.75268C16.7582 2.83416 16.918 3.05777 16.918 3.30916L16.918 4.28676C16.918 4.61164 16.6546 4.875 16.3297 4.875L1.0062 4.875Z" fill="#A6F4D3"/>
+<rect x="0.417969" y="17.9375" width="12.375" height="4.125" rx="0.588235" transform="rotate(-90 0.417969 17.9375)" fill="#20E492"/>
+<rect x="12.793" y="17.9375" width="12.375" height="4.125" rx="0.588235" transform="rotate(-90 12.793 17.9375)" fill="#20E492"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.23047 17.3493C5.23047 17.6741 5.49383 17.9375 5.8187 17.9375H11.5172C11.8421 17.9375 12.1055 17.6741 12.1055 17.3493V15.9693C12.1055 15.4905 11.5491 15.1947 11.1094 15.3842C10.3827 15.6973 9.55127 15.875 8.66797 15.875C7.78467 15.875 6.95324 15.6973 6.22649 15.3842C5.7868 15.1947 5.23047 15.4905 5.23047 15.9693L5.23047 17.3493ZM6.22649 8.11582C5.7868 8.30526 5.23047 8.00945 5.23047 7.53069L5.23047 6.15073C5.23047 5.82586 5.49383 5.5625 5.8187 5.5625L11.5172 5.5625C11.8421 5.5625 12.1055 5.82586 12.1055 6.15074V7.53069C12.1055 8.00945 11.5491 8.30526 11.1094 8.11582C10.3827 7.80269 9.55127 7.625 8.66797 7.625C7.78467 7.625 6.95324 7.80269 6.22649 8.11582Z" fill="#20E492"/>
+<rect x="11.1758" y="8.80273" width="2.0625" height="5.84479" rx="0.588235" transform="rotate(45 11.1758 8.80273)" fill="#0E3419"/>
+<rect x="5.59375" y="11.5059" width="2.0625" height="3.60068" rx="0.588235" transform="rotate(-45 5.59375 11.5059)" fill="#0E3419"/>
+</svg></div><div class="nav-link-block-txts-wrapper"><div class="nav-link-desktop-txt">IBAN Validation</div><div class="nav-link-subtext-2">Validate IBAN codes</div></div></a></div></div></div></div></div></div><div id="solution-dropdown" class="nav-link with-top-border"><div class="nav-link-txt-2">Resources</div><div class="arrow-dropdown w-embed"><svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.00151 1.3395L4.79387 5.67589L0.878906 1.32593" stroke="#21292E" stroke-linecap="square" stroke-linejoin="round"/>
+<path d="M8.97473 1.32593L6.4765 3.92521C5.56758 4.87089 4.04695 4.84598 3.1695 3.87103L0.878906 1.32593" stroke="#21292E" stroke-linecap="square" stroke-linejoin="round"/>
+<path d="M8.97473 1.32324L7.31777 3.04863C5.95459 4.4681 3.67286 4.43119 2.35632 2.96836L0.878906 1.32679" stroke="#21292E" stroke-linecap="square" stroke-linejoin="round"/>
+</svg></div></div><div id="solution-dropdown-menu" class="nav-dropdown-menu hide-above-1280 is-open"><div class="nav-dropdown-p"><div class="resource-menu-wrapper"><a href="../../solutions/payment-fraud-detection.html" class="nav-link-block-desktop-2 w-inline-block"><div class="nav-icon arrow-icon w-embed"><svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M9.63127 1.1591L13.0881 4.61591C13.3002 4.82804 13.3002 5.17196 13.0881 5.38409L9.63127 8.8409C9.41915 9.05303 9.07522 9.05303 8.86309 8.8409C8.65096 8.62878 8.65096 8.28485 8.86309 8.07272L9.68552 7.25029C10.3155 6.62033 9.86932 5.54319 8.97842 5.54319H1.29709C0.997099 5.54319 0.753906 5.29999 0.753906 5C0.753906 4.70001 0.997098 4.45681 1.29709 4.45681H8.97842C9.86932 4.45681 10.3155 3.37967 9.68552 2.74971L8.86309 1.92728C8.65096 1.71515 8.65096 1.37122 8.86309 1.1591C9.07522 0.946968 9.41915 0.946968 9.63127 1.1591Z" fill="#6F7E87" stroke="#6F7E87" stroke-width="0.5"/>
+</svg></div><div class="nav-link-block-txts-wrapper"><div class="nav-link-desktop-txt">About us</div><div class="nav-link-subtext-2">We believe developers deserve great tools.</div></div></a><a href="../../solutions/email-impersonation-prevention.html" class="nav-link-block-desktop-2 w-inline-block"><div class="nav-icon arrow-icon w-embed"><svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M9.63127 1.1591L13.0881 4.61591C13.3002 4.82804 13.3002 5.17196 13.0881 5.38409L9.63127 8.8409C9.41915 9.05303 9.07522 9.05303 8.86309 8.8409C8.65096 8.62878 8.65096 8.28485 8.86309 8.07272L9.68552 7.25029C10.3155 6.62033 9.86932 5.54319 8.97842 5.54319H1.29709C0.997099 5.54319 0.753906 5.29999 0.753906 5C0.753906 4.70001 0.997098 4.45681 1.29709 4.45681H8.97842C9.86932 4.45681 10.3155 3.37967 9.68552 2.74971L8.86309 1.92728C8.65096 1.71515 8.65096 1.37122 8.86309 1.1591C9.07522 0.946968 9.41915 0.946968 9.63127 1.1591Z" fill="#6F7E87" stroke="#6F7E87" stroke-width="0.5"/>
+</svg></div><div class="nav-link-block-txts-wrapper"><div class="nav-link-desktop-txt">API Guides &amp; Tips</div><div class="nav-link-subtext-2">Useful guides about our Email validation API, IP geolocation API, Phone validation API and more.</div></div></a><a href="../../solutions/customer-risk-assessment.html" class="nav-link-block-desktop-2 w-inline-block"><div class="nav-icon arrow-icon w-embed"><svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M9.63127 1.1591L13.0881 4.61591C13.3002 4.82804 13.3002 5.17196 13.0881 5.38409L9.63127 8.8409C9.41915 9.05303 9.07522 9.05303 8.86309 8.8409C8.65096 8.62878 8.65096 8.28485 8.86309 8.07272L9.68552 7.25029C10.3155 6.62033 9.86932 5.54319 8.97842 5.54319H1.29709C0.997099 5.54319 0.753906 5.29999 0.753906 5C0.753906 4.70001 0.997098 4.45681 1.29709 4.45681H8.97842C9.86932 4.45681 10.3155 3.37967 9.68552 2.74971L8.86309 1.92728C8.65096 1.71515 8.65096 1.37122 8.86309 1.1591C9.07522 0.946968 9.41915 0.946968 9.63127 1.1591Z" fill="#6F7E87" stroke="#6F7E87" stroke-width="0.5"/>
+</svg></div><div class="nav-link-block-txts-wrapper"><div class="nav-link-desktop-txt">HTTP Status Code Guide</div><div class="nav-link-subtext-2">An overview of the various HTTP Status Codes, as well as descriptions and more details of each code.</div></div></a></div></div></div><a href="../../integrations.html" class="nav-link with-top-border w-inline-block"><div class="nav-link-txt-2">Integrations</div><div class="rotate-90 w-embed"><svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.00151 1.3395L4.79387 5.67589L0.878906 1.32593" stroke="#21292E" stroke-linecap="square" stroke-linejoin="round"/>
+<path d="M8.97473 1.32593L6.4765 3.92521C5.56758 4.87089 4.04695 4.84598 3.1695 3.87103L0.878906 1.32593" stroke="#21292E" stroke-linecap="square" stroke-linejoin="round"/>
+<path d="M8.97473 1.32324L7.31777 3.04863C5.95459 4.4681 3.67286 4.43119 2.35632 2.96836L0.878906 1.32679" stroke="#21292E" stroke-linecap="square" stroke-linejoin="round"/>
+</svg></div></a><a href="https://app.abstractapi.com/users/login" target="_blank" class="nav-link with-top-border w-inline-block"><div class="nav-link-txt-2">Log in</div><div class="rotate-90 w-embed"><svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.00151 1.3395L4.79387 5.67589L0.878906 1.32593" stroke="#21292E" stroke-linecap="square" stroke-linejoin="round"/>
+<path d="M8.97473 1.32593L6.4765 3.92521C5.56758 4.87089 4.04695 4.84598 3.1695 3.87103L0.878906 1.32593" stroke="#21292E" stroke-linecap="square" stroke-linejoin="round"/>
+<path d="M8.97473 1.32324L7.31777 3.04863C5.95459 4.4681 3.67286 4.43119 2.35632 2.96836L0.878906 1.32679" stroke="#21292E" stroke-linecap="square" stroke-linejoin="round"/>
+</svg></div></a><a href="https://app.abstractapi.com/users/signup" target="_blank" class="nav-link with-top-border w-inline-block"><div class="nav-link-txt-2">Start for free</div><div class="rotate-90 w-embed"><svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.00151 1.3395L4.79387 5.67589L0.878906 1.32593" stroke="#21292E" stroke-linecap="square" stroke-linejoin="round"/>
+<path d="M8.97473 1.32593L6.4765 3.92521C5.56758 4.87089 4.04695 4.84598 3.1695 3.87103L0.878906 1.32593" stroke="#21292E" stroke-linecap="square" stroke-linejoin="round"/>
+<path d="M8.97473 1.32324L7.31777 3.04863C5.95459 4.4681 3.67286 4.43119 2.35632 2.96836L0.878906 1.32679" stroke="#21292E" stroke-linecap="square" stroke-linejoin="round"/>
+</svg></div></a></div><div class="nav-form-wrapper"><div class="form-customised smaller-border"><div class="max-w-customers-heading-nav"><div class="font-2rem align-center">Get your free API key</div></div><div class="rating-wrapper paddings-12px flex"><img src="https://cdn.prod.website-files.com/65166126ca18241731aa26b0/65364c5e1e46b97a04f18d96_Stars.avif" loading="lazy" alt="stars rating" class="stars mb-4px"/><div class="text-13px is-neutral-40">4.8 from 1,863 votes</div></div><div class="form-txt-wrapper flex mb-20"><div class="text-small align-center right-m">See why the best developers</div><div class="text-small">build on Abstract</div></div><div class="form-block w-form"><form id="nav-form" name="wf-form-Modal-CTA-Form" data-name="Modal CTA Form" method="get" class="modal-content-form-nav" data-wf-page-id="6643827018e2bb60b803033a" data-wf-element-id="ce5d7a85-886f-c8b0-3624-4fbc6a68f1f8"><input class="modal-content-form-field-nav w-input" maxlength="256" name="E-mail-2" data-name="E Mail 2" placeholder="Enter your email" type="email" required=""/><div data-w-id="ce5d7a85-886f-c8b0-3624-4fbc6a68f1fa" class="cta-button-circle"><input type="submit" data-wait="" class="cta-button-link-submit w-button" value=""/><div class="cta-button-arrow w-embed"><svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M8.67157 0.445275L11.8536 3.62726C12.0488 3.82252 12.0488 4.1391 11.8536 4.33436L8.67157 7.51634C8.47631 7.71161 8.15973 7.71161 7.96447 7.51634C7.7692 7.32108 7.7692 7.0045 7.96447 6.80924L8.58579 6.18792C9.21575 5.55795 8.76959 4.48081 7.87868 4.48081H1C0.723858 4.48081 0.5 4.25695 0.5 3.98081C0.5 3.70467 0.723857 3.48081 0.999999 3.48081H7.87868C8.76958 3.48081 9.21575 2.40367 8.58579 1.7737L7.96447 1.15238C7.7692 0.957119 7.7692 0.640537 7.96447 0.445275C8.15973 0.250013 8.47631 0.250013 8.67157 0.445275Z" fill="#0E3419" stroke="#0E3419" stroke-width="0.5"/>
+</svg></div></div></form><div class="no-credit-txt centered">No credit card required</div><div class="success-message w-form-done"><div class="thank-you-form-txt-2 smaller">Thank you! Your submission has been received!</div></div><div class="error-message w-form-fail"><div>Oops! Something went wrong while submitting the form.</div></div></div><div class="spacer-12px"></div></div></div></div></nav></div></div><div class="banner-wrapper-copy cookies"><div class="w-embed"><style>
+.cookies {
+ visibility: hidden;
+}
+
+</style></div><div class="container-main ban"><div class="banner black-week-banner-copy"><div class="cookie-txt text-color-white">This website uses cookies to enhance user experience and to analyze performance on our website. <a href="../../legal/legal.html" class="link-grey">Learn more</a></div><div class="div-block-17"><a id="cookies-reject-cta" href="sending-email-with-python.html#" class="cookie-declined w-inline-block"><div class="btn-txt-black is-white">reject</div></a><a href="sending-email-with-python.html#" class="btn cookie-accepted w-inline-block"><div class="btn-txt-black is-white">Accept all cookies</div></a></div></div></div></div></section><main class="page-wrapper"><div class="section article"><div class="container-main-small"><div class="article-wrapper api"><a href="../../guides.html" class="back-link w-inline-block"><div class="arrow-back w-embed"><svg width="13" height="9" viewBox="0 0 13 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4.32843 8.03519L1.14645 4.85321C0.951185 4.65795 0.951185 4.34137 1.14645 4.14611L4.32843 0.964126C4.52369 0.768864 4.84027 0.768864 5.03553 0.964126C5.2308 1.15939 5.2308 1.47597 5.03553 1.67123L4.41421 2.29255C3.78425 2.92252 4.23041 3.99966 5.12132 3.99966L12 3.99966C12.2761 3.99966 12.5 4.22352 12.5 4.49966C12.5 4.7758 12.2761 4.99966 12 4.99966L5.12132 4.99966C4.23042 4.99966 3.78425 6.0768 4.41421 6.70677L5.03553 7.32809C5.2308 7.52335 5.2308 7.83993 5.03553 8.03519C4.84027 8.23046 4.52369 8.23046 4.32843 8.03519Z" fill="currentColor" stroke="currentColor" stroke-width="0.5"/>
+</svg></div><div class="back-link-txt">Back to ALL GUIDES</div></a><div class="label-date-wrapper"><div class="http-grey-label-2">Guides</div><div class="last-updated---html-embed-2">Last updated</div><div class="last-updated---html-embed-2">August 4, 2025</div></div><h1 class="article-heading">How to Send Email with Python (the Right Way)</h1><div class="spacer-16px"></div><a href="http://www.abstractapi.com/author/nicolas-rios" class="link-bl w-inline-block"><img width="70" height="70" alt="" loading="lazy" src="https://cdn.prod.website-files.com/65166126ca18241731aa26d2/67251104454950c3e425ea39_nicolas_rios_author.avif" class="guides-author-pic"/><div class="text-small">Nicolas Rios</div></a><div class="spacer-64px"></div><div class="article-wrapper-grid"><div id="w-node-ef8c5f22-a375-8eb3-5e11-5bd920029f4f-20029f37" class="toc-wrapper"><div class="question-wrapper article"><div class="question-btn-2"><div class="question-icon w-embed"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.0601 0.83974L4.85247 5.17614L0.9375 0.826172" stroke="#1B2226" stroke-linecap="square" stroke-linejoin="round"/>
+<path d="M9.03333 0.826172L6.53509 3.42545C5.62617 4.37113 4.10555 4.34622 3.22809 3.37128L0.9375 0.826172" stroke="#1B2226" stroke-linecap="square" stroke-linejoin="round"/>
+<path d="M9.03333 0.824219L7.37636 2.54961C6.01319 3.96908 3.73146 3.93217 2.41491 2.46934L0.9375 0.82777" stroke="#1B2226" stroke-linecap="square" stroke-linejoin="round"/>
+</svg></div></div><h2 class="table-of-content-heading-2">Table of Contents:</h2></div><div id="toc" class="toc-container"><div class="toc-inner-wrapper"><a fs-toc-element="link-1" href="sending-email-with-python.html#" class="toc-link-2 w-inline-block"><h2 class="toc-link-2">Heading</h2></a></div></div><div id="toc" class="toc-container"><div class="toc-inner-wrapper"><a fs-toc-element="link-2" href="sending-email-with-python.html#" class="toc-link-2 w-inline-block"><h2 class="toc-link-2">Heading</h2></a></div></div><div class="show-form-on-medium-desktop"><div class="black-wrapper-on-left show-on-small-desktop hide-on-tablet"><div class="max-w-customers-heading-copy"><div class="text-font-32px">Get your free</div><div class="text-font-32px api-text">Email Validation </div><div class="text-font-32px"> API key now</div></div><div class="rating-wrapper paddings-12px flex-on-small-desktop"><img src="https://cdn.prod.website-files.com/65166126ca18241731aa26b0/65364c5e1e46b97a04f18d96_Stars.avif" loading="lazy" alt="stars rating" class="stars mb-4px"/><div class="text-small is-neutral-40">4.8 from 1,863 votes</div></div><div class="form-txt-wrapper flex flex-on-small-desktop"><div class="text-small">See why the best developers build on Abstract</div></div><div class="spacer-32px"></div><div class="form-block small w-form"><form id="wf-form-Modal-CTA-Form" name="wf-form-Modal-CTA-Form" data-name="Modal CTA Form" method="get" placement="sidebar_CTA" class="sticky-content-form on-left _60" data-wf-page-id="6643827018e2bb60b803033a" data-wf-element-id="1dd6b221-22bd-f8c2-3a1d-d20e586e8b2f"><input class="sticky-content-form-field on-left small-input w-input" maxlength="256" name="email" data-name="email" placeholder="Enter your email" type="email" id="email-2" required=""/><div class="cta-button-form _52x52"><input type="submit" data-wait="Please wait..." class="cta-button-link-submit w-button" value=""/><div class="form-txt sepcial">START FOR FREE</div><div class="cta-button-arrow w-embed"><svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M8.17157 0.789025L11.3536 3.97101C11.5488 4.16627 11.5488 4.48285 11.3536 4.67811L8.17157 7.86009C7.97631 8.05535 7.65973 8.05535 7.46447 7.86009C7.2692 7.66483 7.2692 7.34825 7.46447 7.15299L8.08579 6.53167C8.71575 5.9017 8.26959 4.82456 7.37868 4.82456H0.5C0.223858 4.82456 0 4.6007 0 4.32456V4.32456C0 4.04842 0.223857 3.82456 0.499999 3.82456H7.37868C8.26958 3.82456 8.71575 2.74742 8.08579 2.11745L7.46447 1.49613C7.2692 1.30087 7.2692 0.984287 7.46447 0.789025C7.65973 0.593763 7.97631 0.593763 8.17157 0.789025Z" fill="currentColor"/>
+</svg></div></div></form><div class="success-message w-form-done"><div class="thank-you-form-txt">Thank you! Your submission has been received!</div></div><div class="error-message w-form-fail"><div>Oops! Something went wrong while submitting the form.</div></div></div><div class="spacer-12px"></div><div class="no-credit-txt">No credit card required</div></div></div></div><div id="w-node-ef8c5f22-a375-8eb3-5e11-5bd920029f62-20029f37" class="article-wrapper-rich-texts"><div fs-toc-offsettop="8rem" fs-toc-element="contents-1" class="articles-rich-txt w-richtext"><p>Sending emails automatically is a routine task for many developers — whether it&#x27;s delivering reports, notifying users, or powering entire marketing campaigns. Fortunately, Python makes this remarkably straightforward thanks to its built-in tools. But while it&#x27;s easy to fire off emails, doing it correctly — meaning reliably, securely, and professionally — takes one extra step.</p><figure style="max-width:1200pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image"><div><img src="https://cdn.prod.website-files.com/65166126ca18241731aa26d2/6890fbbb2156eb06c9f90cfb_AD_4nXdK7XEz1F0V2R34HKImWd8CZVIhHZ1s7lHV0bYarMKlmJkQ9JO6f7i_svJamBYc8p4EUL2jce1wZqqC4nZDDDouxOp5uNXqhAt-aQ-ZN08XIc6NAJFIY8Ld3U5ZR1IU-Ui1YTpJxw.png" loading="lazy" alt="Send email with Python - Abstract API"/></div></figure><p>👉 Before you send, it’s crucial to validate each email address. Why? Because sending to invalid or undeliverable addresses can damage your sender reputation, waste resources, and land your messages in the spam folder.</p><p>In this guide, you’ll learn how to:</p><ul role="list"><li>Validate email addresses using <a href="https://www.abstractapi.com/api/email-verification-validation-api">AbstractAPI&#x27;s Email Validation API</a>,</li><li>Send an email using Python’s built-in smtplib, and</li><li>Combine both steps into a single, polished solution 🚀</li></ul></div><div class="mini-tool-margin"><div class="white-card-simple is-dark"><div class="signup-wrapper"><a href="https://app.abstractapi.com/users/signup?target=/api/email-validation/pricing/select%20+%20&amp;cta_source=demo-component" target="_blank" class="w-inline-block"><div class="text-small text-weight-medium is-neutral-30"><span class="text-green-gradient-2">Sign up</span> to get free instant validations and explore other APIs</div></a></div><div class="widget-wrapper"><div class="text-font-32px text-color-white text-weight-medium m-font-18">Enter your email address to start</div><div class="spacer-12px"></div><div class="widget-submit-wrapper v2 w-form"><form id="wf-form-EmailAPI" name="wf-form-EmailAPI" data-name="EmailAPI" method="get" data-wf-page-id="6643827018e2bb60b803033a" data-wf-element-id="70c482b8-2f30-42a8-7a82-75e1e47243fb"><input class="input-widget v2 w-input" maxlength="256" name="email-api-2" data-name="Email Api 2" placeholder="ENTER YOUR EMAIL" type="email" id="email-api-2" required=""/><div class="margin-box _16-0-40-0"><div class="flexbox justify-center gap-4px"><div class="text-size-16 text-color-lightgrey text-align-center">Need inspiration? Try </div><a href="sending-email-with-python.html#" class="test-link w-inline-block"><div class="text-size-16 text-color-lightgrey text-align-center text-underline">test@abstractapi.com</div></a></div></div><a id="submit-btn" href="sending-email-with-python.html#" class="btn green green-widget-button w-inline-block"><div class="btn-txt-black">VALIDATE</div><div class="link-arrow green w-embed"><svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M8.17157 0.789025L11.3536 3.97101C11.5488 4.16627 11.5488 4.48285 11.3536 4.67811L8.17157 7.86009C7.97631 8.05535 7.65973 8.05535 7.46447 7.86009C7.2692 7.66483 7.2692 7.34825 7.46447 7.15299L8.08579 6.53167C8.71575 5.9017 8.26959 4.82456 7.37868 4.82456H0.5C0.223858 4.82456 0 4.6007 0 4.32456V4.32456C0 4.04842 0.223857 3.82456 0.499999 3.82456H7.37868C8.26958 3.82456 8.71575 2.74742 8.08579 2.11745L7.46447 1.49613C7.2692 1.30087 7.2692 0.984287 7.46447 0.789025C7.65973 0.593763 7.97631 0.593763 8.17157 0.789025Z" fill="currentColor"/>
+</svg></div></a></form><div class="w-form-done"><div>Thank you! Your submission has been received!</div></div><div class="w-form-fail"><div>Oops! Something went wrong while submitting the form.</div></div></div></div><div class="countdown-wrapper"><div class="loader-lottie" data-w-id="70c482b8-2f30-42a8-7a82-75e1e472440a" data-animation-type="lottie" data-src="https://cdn.prod.website-files.com/65166126ca18241731aa26b0/67961646331d535a998385c9_Animation%20-%201736929254221%20(2).json" data-loop="1" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg" data-default-duration="0" data-duration="1.3166666666666667"></div><div class="text-font-32px text-color-white text-weight-medium m-font-18">Checking</div><div id="email" class="email-input">test@email.com</div><div class="countdown hide"><div>5</div></div></div><div class="throttling-wrapper"><a href="https://app.abstractapi.com/users/signup?target=/api/email-validation/pricing/select%20+%20&amp;cta_source=demo-component" target="_blank" class="w-inline-block"><div class="text-small text-weight-medium is-neutral-30">You have used all your daily credits</div><div class="spacer-12px"></div><div class="text-small text-weight-medium is-neutral-30"><span class="text-green-gradient-2">Sign up</span> to get more free validations</div></a></div><div class="widget-empty-input-wrapper"><a href="https://app.abstractapi.com/users/signup?target=/api/email-validation/pricing/select%20+%20&amp;cta_source=demo-component" target="_blank" class="w-inline-block"><div class="text-small text-weight-medium is-neutral-30">Please, input a correct email address</div><div class="spacer-12px"></div><div class="text-small text-weight-medium is-neutral-30"><span class="text-green-gradient-2">Sign up</span> to get more free validations</div></a></div><div class="widget-results-wrapper v2"><div><div class="flexbox flex-align-center gap-4 t-flex-vertical"><div class="results-header">Results for </div><div id="email-2" class="results-header">email</div></div><div class="results-wrapper"><div class="flexbox gap-20px padding-bottom-5px m-gap-5 space-between"><div>Deliverability:</div><div id="is-deliverable-container" class="result-container"><div id="deliverability" class="text-color-white">TEST</div><div id="deliverability-container" class="position-relative width-10"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 16 12" fill="none" class="true-icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.3004 0.869897C15.5098 1.07937 15.6275 1.36343 15.6275 1.65962C15.6275 1.95581 15.5098 2.23987 15.3004 2.44934L6.92811 10.8217C6.81747 10.9323 6.68611 11.0201 6.54153 11.08C6.39696 11.1399 6.242 11.1707 6.08551 11.1707C5.92903 11.1707 5.77407 11.1399 5.62949 11.08C5.48492 11.0201 5.35356 10.9323 5.24292 10.8217L1.0832 6.66268C0.97651 6.55964 0.891415 6.43639 0.832874 6.30011C0.774332 6.16383 0.743518 6.01725 0.74223 5.86894C0.740941 5.72062 0.769203 5.57354 0.825367 5.43626C0.881531 5.29899 0.964472 5.17427 1.06935 5.06939C1.17423 4.96451 1.29894 4.88157 1.43622 4.82541C1.5735 4.76924 1.72058 4.74098 1.8689 4.74227C2.01721 4.74356 2.16379 4.77437 2.30007 4.83291C2.43634 4.89146 2.5596 4.97655 2.66264 5.08324L6.08514 8.50574L13.7202 0.869897C13.824 0.766097 13.9471 0.683755 14.0827 0.627576C14.2183 0.571396 14.3636 0.54248 14.5103 0.54248C14.6571 0.54248 14.8024 0.571396 14.938 0.627576C15.0735 0.683755 15.1967 0.766097 15.3004 0.869897Z" fill="currentColor"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 13 14" fill="none" class="false-icon"><path d="M11.2559 2.06396L1.25586 12.064" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"></path><path d="M1.25586 2.06396L11.2559 12.064" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"></path></svg></div></div></div><div class="flexbox gap-20px padding-bottom-5px m-gap-5 space-between"><div>Free email:</div><div id="is-free-container" class="result-container"><div id="is-free" class="text-color-white">TEST</div><div class="position-relative width-10"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 16 12" fill="none" class="true-icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.3004 0.869897C15.5098 1.07937 15.6275 1.36343 15.6275 1.65962C15.6275 1.95581 15.5098 2.23987 15.3004 2.44934L6.92811 10.8217C6.81747 10.9323 6.68611 11.0201 6.54153 11.08C6.39696 11.1399 6.242 11.1707 6.08551 11.1707C5.92903 11.1707 5.77407 11.1399 5.62949 11.08C5.48492 11.0201 5.35356 10.9323 5.24292 10.8217L1.0832 6.66268C0.97651 6.55964 0.891415 6.43639 0.832874 6.30011C0.774332 6.16383 0.743518 6.01725 0.74223 5.86894C0.740941 5.72062 0.769203 5.57354 0.825367 5.43626C0.881531 5.29899 0.964472 5.17427 1.06935 5.06939C1.17423 4.96451 1.29894 4.88157 1.43622 4.82541C1.5735 4.76924 1.72058 4.74098 1.8689 4.74227C2.01721 4.74356 2.16379 4.77437 2.30007 4.83291C2.43634 4.89146 2.5596 4.97655 2.66264 5.08324L6.08514 8.50574L13.7202 0.869897C13.824 0.766097 13.9471 0.683755 14.0827 0.627576C14.2183 0.571396 14.3636 0.54248 14.5103 0.54248C14.6571 0.54248 14.8024 0.571396 14.938 0.627576C15.0735 0.683755 15.1967 0.766097 15.3004 0.869897Z" fill="currentColor"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 13 14" fill="none" class="false-icon"><path d="M11.2559 2.06396L1.25586 12.064" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"></path><path d="M1.25586 2.06396L11.2559 12.064" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"></path></svg></div></div></div><div class="flexbox gap-20px padding-bottom-5px m-gap-5 space-between align-center"><div>Valid format:</div><div id="is-valid-format-container" class="result-wrapper"><div class="blur-img"></div><div id="is-valid-format" class="text-color-white">TEST</div><div class="position-relative width-10"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 16 12" fill="none" class="true-icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.3004 0.869897C15.5098 1.07937 15.6275 1.36343 15.6275 1.65962C15.6275 1.95581 15.5098 2.23987 15.3004 2.44934L6.92811 10.8217C6.81747 10.9323 6.68611 11.0201 6.54153 11.08C6.39696 11.1399 6.242 11.1707 6.08551 11.1707C5.92903 11.1707 5.77407 11.1399 5.62949 11.08C5.48492 11.0201 5.35356 10.9323 5.24292 10.8217L1.0832 6.66268C0.97651 6.55964 0.891415 6.43639 0.832874 6.30011C0.774332 6.16383 0.743518 6.01725 0.74223 5.86894C0.740941 5.72062 0.769203 5.57354 0.825367 5.43626C0.881531 5.29899 0.964472 5.17427 1.06935 5.06939C1.17423 4.96451 1.29894 4.88157 1.43622 4.82541C1.5735 4.76924 1.72058 4.74098 1.8689 4.74227C2.01721 4.74356 2.16379 4.77437 2.30007 4.83291C2.43634 4.89146 2.5596 4.97655 2.66264 5.08324L6.08514 8.50574L13.7202 0.869897C13.824 0.766097 13.9471 0.683755 14.0827 0.627576C14.2183 0.571396 14.3636 0.54248 14.5103 0.54248C14.6571 0.54248 14.8024 0.571396 14.938 0.627576C15.0735 0.683755 15.1967 0.766097 15.3004 0.869897Z" fill="currentColor"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 13 14" fill="none" class="false-icon"><path d="M11.2559 2.06396L1.25586 12.064" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"></path><path d="M1.25586 2.06396L11.2559 12.064" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"></path></svg></div></div></div><div class="flexbox gap-20px padding-bottom-5px m-gap-5 space-between"><div>Disposable email:</div><div id="is-disposable-container" class="result-wrapper"><div id="is-disposable" class="text-color-white">TEST</div><div class="position-relative width-10"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 16 12" fill="none" class="true-icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.3004 0.869897C15.5098 1.07937 15.6275 1.36343 15.6275 1.65962C15.6275 1.95581 15.5098 2.23987 15.3004 2.44934L6.92811 10.8217C6.81747 10.9323 6.68611 11.0201 6.54153 11.08C6.39696 11.1399 6.242 11.1707 6.08551 11.1707C5.92903 11.1707 5.77407 11.1399 5.62949 11.08C5.48492 11.0201 5.35356 10.9323 5.24292 10.8217L1.0832 6.66268C0.97651 6.55964 0.891415 6.43639 0.832874 6.30011C0.774332 6.16383 0.743518 6.01725 0.74223 5.86894C0.740941 5.72062 0.769203 5.57354 0.825367 5.43626C0.881531 5.29899 0.964472 5.17427 1.06935 5.06939C1.17423 4.96451 1.29894 4.88157 1.43622 4.82541C1.5735 4.76924 1.72058 4.74098 1.8689 4.74227C2.01721 4.74356 2.16379 4.77437 2.30007 4.83291C2.43634 4.89146 2.5596 4.97655 2.66264 5.08324L6.08514 8.50574L13.7202 0.869897C13.824 0.766097 13.9471 0.683755 14.0827 0.627576C14.2183 0.571396 14.3636 0.54248 14.5103 0.54248C14.6571 0.54248 14.8024 0.571396 14.938 0.627576C15.0735 0.683755 15.1967 0.766097 15.3004 0.869897Z" fill="currentColor"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 13 14" fill="none" class="false-icon"><path d="M11.2559 2.06396L1.25586 12.064" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"></path><path d="M1.25586 2.06396L11.2559 12.064" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"></path></svg></div><div class="blur-img"></div></div></div><div class="flexbox gap-20px padding-bottom-5px m-gap-5 space-between"><div>Valid SMTP:</div><div id="smtp-valid-container" class="result-wrapper"><div id="smtp-valid" class="text-color-white">TEST</div><div class="position-relative width-10"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 16 12" fill="none" class="true-icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.3004 0.869897C15.5098 1.07937 15.6275 1.36343 15.6275 1.65962C15.6275 1.95581 15.5098 2.23987 15.3004 2.44934L6.92811 10.8217C6.81747 10.9323 6.68611 11.0201 6.54153 11.08C6.39696 11.1399 6.242 11.1707 6.08551 11.1707C5.92903 11.1707 5.77407 11.1399 5.62949 11.08C5.48492 11.0201 5.35356 10.9323 5.24292 10.8217L1.0832 6.66268C0.97651 6.55964 0.891415 6.43639 0.832874 6.30011C0.774332 6.16383 0.743518 6.01725 0.74223 5.86894C0.740941 5.72062 0.769203 5.57354 0.825367 5.43626C0.881531 5.29899 0.964472 5.17427 1.06935 5.06939C1.17423 4.96451 1.29894 4.88157 1.43622 4.82541C1.5735 4.76924 1.72058 4.74098 1.8689 4.74227C2.01721 4.74356 2.16379 4.77437 2.30007 4.83291C2.43634 4.89146 2.5596 4.97655 2.66264 5.08324L6.08514 8.50574L13.7202 0.869897C13.824 0.766097 13.9471 0.683755 14.0827 0.627576C14.2183 0.571396 14.3636 0.54248 14.5103 0.54248C14.6571 0.54248 14.8024 0.571396 14.938 0.627576C15.0735 0.683755 15.1967 0.766097 15.3004 0.869897Z" fill="currentColor"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 13 14" fill="none" class="false-icon"><path d="M11.2559 2.06396L1.25586 12.064" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"></path><path d="M1.25586 2.06396L11.2559 12.064" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"></path></svg></div><div class="blur-img"></div></div></div><div class="flexbox gap-20px padding-bottom-5px m-gap-5 space-between"><div>Valid MX record:</div><div id="is-mx-found-container" class="result-wrapper"><div id="is-mx-found" class="text-color-white">TEST</div><div class="position-relative width-10"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 16 12" fill="none" class="true-icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.3004 0.869897C15.5098 1.07937 15.6275 1.36343 15.6275 1.65962C15.6275 1.95581 15.5098 2.23987 15.3004 2.44934L6.92811 10.8217C6.81747 10.9323 6.68611 11.0201 6.54153 11.08C6.39696 11.1399 6.242 11.1707 6.08551 11.1707C5.92903 11.1707 5.77407 11.1399 5.62949 11.08C5.48492 11.0201 5.35356 10.9323 5.24292 10.8217L1.0832 6.66268C0.97651 6.55964 0.891415 6.43639 0.832874 6.30011C0.774332 6.16383 0.743518 6.01725 0.74223 5.86894C0.740941 5.72062 0.769203 5.57354 0.825367 5.43626C0.881531 5.29899 0.964472 5.17427 1.06935 5.06939C1.17423 4.96451 1.29894 4.88157 1.43622 4.82541C1.5735 4.76924 1.72058 4.74098 1.8689 4.74227C2.01721 4.74356 2.16379 4.77437 2.30007 4.83291C2.43634 4.89146 2.5596 4.97655 2.66264 5.08324L6.08514 8.50574L13.7202 0.869897C13.824 0.766097 13.9471 0.683755 14.0827 0.627576C14.2183 0.571396 14.3636 0.54248 14.5103 0.54248C14.6571 0.54248 14.8024 0.571396 14.938 0.627576C15.0735 0.683755 15.1967 0.766097 15.3004 0.869897Z" fill="currentColor"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 13 14" fill="none" class="false-icon"><path d="M11.2559 2.06396L1.25586 12.064" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"></path><path d="M1.25586 2.06396L11.2559 12.064" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"></path></svg></div><div class="blur-img"></div></div></div></div></div><div class="widget-cta-wrapper"><div class="text-align-center"><div class="text-size-20 text-color-lightgrey text-weight-normal">Get free credits, more data, and faster results</div><div class="padding-top _18"><a data-w-id="3ce91134-19fa-8683-90cf-0ba82a6dd998" href="https://app.abstractapi.com/users/signup?target=/api/email-validation/pricing/select&amp;cta_source=demo-component" target="_blank" class="btn green green-widget-button w-inline-block"><div class="btn-txt-black">CREATE A FREE ACCOUNT</div><div class="link-arrow green w-embed"><svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M8.17157 0.789025L11.3536 3.97101C11.5488 4.16627 11.5488 4.48285 11.3536 4.67811L8.17157 7.86009C7.97631 8.05535 7.65973 8.05535 7.46447 7.86009C7.2692 7.66483 7.2692 7.34825 7.46447 7.15299L8.08579 6.53167C8.71575 5.9017 8.26959 4.82456 7.37868 4.82456H0.5C0.223858 4.82456 0 4.6007 0 4.32456V4.32456C0 4.04842 0.223857 3.82456 0.499999 3.82456H7.37868C8.26958 3.82456 8.71575 2.74742 8.08579 2.11745L7.46447 1.49613C7.2692 1.30087 7.2692 0.984287 7.46447 0.789025C7.65973 0.593763 7.97631 0.593763 8.17157 0.789025Z" fill="currentColor"/>
+</svg></div></a></div></div></div></div><div class="css w-embed"><style>
+.countdown-wrapper {
+  display: none; 
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out; 
+}
+
+.throttling-wrapper {
+  display: none; 
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out; 
+}
+
+.widget-empty-input-wrapper {
+  display: none; 
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out; 
+}
+
+.widget-results-wrapper.v2 {
+  display: none;
+  opacity: 0; 
+  transition: opacity 0.6s ease-in-out; 
+}
+
+.widget-wrapper, .signup-wrapper {
+  transition: opacity 0.6s ease-in-out; 
+}
+
+.signup-wrapper {
+  display: none;
+  opacity: 0;
+}
+
+
+/*.true {
+  color: #1CC67E;
+}
+
+.false {
+  color: #F74A13;
+}
+
+.deliverable {
+  color: #1CC67E;
+}
+
+.undeliverable {
+  color: #F74A13;
+}
+</style></div><div class="js w-embed w-script"><script>
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector(".test-link").addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent default action if it's a link
+
+        let inputField = document.querySelector(".input-widget.v2");
+        let submitButton = document.querySelector(".btn.green.green-widget-button");
+
+        if (inputField && submitButton) {
+            inputField.value = "test@abstractapi.com";
+
+            // Trigger an input event to ensure any listeners detect the change
+            let event = new Event('input', { bubbles: true });
+            inputField.dispatchEvent(event);
+
+            // Automatically submit the form
+            submitButton.click();
+        } else {
+            console.error("Form input or submit button not found.");
+        }
+    });
+    
+    document.querySelector("#wf-form-EmailAPI").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent form submission
+
+        let inputField = document.querySelector(".input-widget.v2");
+        let submitButton = document.querySelector(".btn.green.green-widget-button");
+
+        if (inputField && submitButton) {
+
+            // Trigger an input event to ensure any listeners detect the change
+            let event = new Event('input', { bubbles: true });
+            inputField.dispatchEvent(event);
+
+            // Automatically submit the form
+            submitButton.click();
+        } else {
+            console.error("Form input or submit button not found.");
+        }
+    });
+});
+
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const API_KEY = '1b490272599745fea339b6cf2d1165fd';
+  const TRANSITION_DELAY = 500;
+
+  // DOM Elements
+  const els = {
+    button: document.querySelector('.btn.green.green-widget-button'),
+    input: document.querySelector('.input-widget.v2'),
+    emailWrapper: document.querySelector('.widget-wrapper'),
+    countdownWrapper: document.querySelector('.countdown-wrapper'),
+    countdown: document.querySelector('.countdown'),
+    resultsWrapper: document.querySelector('.widget-results-wrapper.v2'),
+    throttlingWrapper: document.querySelector('.throttling-wrapper'),
+    signupWrapper: document.querySelector('.signup-wrapper')
+  };
+
+  // Animation helpers
+  const animate = {
+    fadeOut: (el) => {
+      el.style.transition = `opacity ${TRANSITION_DELAY}ms`;
+      el.style.opacity = 0;
+      return new Promise(resolve =>
+        setTimeout(() => {
+          el.style.display = 'none';
+          resolve();
+        }, TRANSITION_DELAY)
+      );
+    },
+    fadeIn: (el, display = 'flex') => { // ✅ Changed to 'flex'
+      el.style.display = display;
+      el.style.opacity = 0;
+      el.style.transition = `opacity ${TRANSITION_DELAY}ms`;
+      setTimeout(() => el.style.opacity = 1, 10);
+    }
+  };
+
+  // Update email display
+  const updateEmailDisplay = (email) => {
+    document.querySelectorAll('#email, #email-2').forEach(el => {
+      if (el) el.innerText = email;
+    });
+  };
+
+  // Update results based on API response
+  const updateResults = (data, email) => {
+
+    if (data.deliverability) {
+      const deliverability = document.getElementById('deliverability');
+      if (deliverability) {
+        deliverability.innerText = data.deliverability;
+        const isDeliverable = data.deliverability === 'DELIVERABLE';
+        const container = document.getElementById('deliverability-container');
+        if (container) {
+          container.querySelector('.true-icon').style.display = isDeliverable ? 'inline-block' : 'none';
+          container.querySelector('.false-icon').style.display = isDeliverable ? 'none' : 'inline-block';
+        }
+      }
+    }
+
+    // Update quality score
+    const scoreEl = document.getElementById('quality-score');
+    if (scoreEl) scoreEl.innerText = data.quality_score || 'N/A';
+
+    // Helper function to set values correctly
+    const updateBooleanField = (field, apiField) => {
+      const el = document.getElementById(field);
+      if (!el) {
+        console.error(`Element #${field} not found.`);
+        return;
+      }
+
+      // Extract correct boolean value
+      const value = data[apiField]?.value ?? false;
+      el.innerText = value ? 'True' : 'False';
+
+      const container = document.getElementById(`${field}-container`);
+      if (!container) {
+        console.error(`Container #${field}-container not found.`);
+        return;
+      }
+
+      const trueIcon = container.querySelector('.true-icon');
+      const falseIcon = container.querySelector('.false-icon');
+
+      if (trueIcon && falseIcon) {
+        trueIcon.style.display = value ? 'inline-block' : 'none';
+        falseIcon.style.display = value ? 'none' : 'inline-block';
+      } else {
+        console.error(`Icons not found inside ${field}-container.`);
+      }
+    };
+
+    // Apply fixes: Ensure correct API field names and boolean extraction
+    updateBooleanField('is-valid-format', 'is_valid_format');
+    updateBooleanField('is-free', 'is_free_email');
+    updateBooleanField('is-disposable', 'is_disposable_email');
+    updateBooleanField('is-role', 'is_role_email');
+    updateBooleanField('is-catchall', 'is_catchall_email');
+    updateBooleanField('is-mx-found', 'is_mx_found');
+    updateBooleanField('smtp-valid', 'is_smtp_valid');
+  };
+
+  // Click handler
+  els.button.addEventListener('click', async (event) => {
+    event.preventDefault();
+    const email = els.input.value.trim();
+    if (!email) return;
+
+    // Update email display immediately
+    updateEmailDisplay(email);
+
+    // Hide previous results and show countdown
+    els.resultsWrapper.style.opacity = 0;
+    els.resultsWrapper.style.display = 'none';
+
+    let count = 5; // ⏳ Set countdown start time (5 seconds)
+
+    // **✅ Fade out email input field before showing countdown**
+    animate.fadeOut(els.emailWrapper).then(() => {
+      els.countdownWrapper.style.display = 'flex';  // ✅ Changed to 'flex'
+      els.countdownWrapper.style.opacity = 1;
+      els.countdown.innerText = count; // Display initial countdown number
+
+      // Start countdown interval
+      const interval = setInterval(() => {
+        count--; // Decrease count by 1
+        els.countdown.innerText = count; // Update countdown display
+
+        if (count < 0) { // When countdown finishes
+          clearInterval(interval); // Stop the countdown
+
+          // Fade-out countdown wrapper before making the API request
+          animate.fadeOut(els.countdownWrapper).then(async () => {
+            try {
+              // Fetch validation data from API
+              const response = await fetch(
+                `https://emailvalidation.abstractapi.com/v1/?api_key=${API_KEY}&email=${email}`
+              );
+
+              if (!response.ok) throw new Error(`API request failed: ${response.status}`);
+
+              const data = await response.json();
+              if (!data || typeof data !== 'object') {
+                throw new Error("Invalid API response structure.");
+              }
+
+              // Handle response
+              updateResults(data, email);
+              animate.fadeIn(els.resultsWrapper);
+
+            } catch (error) {
+              console.error('Error validating email:', error);
+              animate.fadeIn(els.throttlingWrapper);
+            }
+          });
+        }
+      }, 1000); // ⏳ Runs every 1000ms (1 second)
+    });
+  });
+});
+</script></div></div></div><article fs-toc-offsettop="8rem" fs-toc-element="contents-2" class="articles-rich-txt w-richtext"><h2><strong>Why You Shouldn&#x27;t Just &quot;Send&quot;⚠️</strong></h2><p>Let’s start with the problem. Many developers build scripts that send emails directly — without verifying if the address is even real. This might seem harmless at first, but over time, it causes serious issues:</p><ul role="list"><li>High bounce rates: Emails sent to fake or mistyped addresses won’t go through. A high bounce rate signals to providers that you&#x27;re a spam risk.</li><li>Wasted resources: Your system spends time and processing power trying to deliver undeliverable messages.</li><li>Damaged sender reputation: Internet Service Providers (ISPs) track your domain&#x27;s behavior. Sending to invalid addresses frequently can get you blacklisted.</li><li>Spam folder trouble: Even your valid recipients may stop seeing your emails because providers begin flagging you.</li></ul><p><em>✅ Best practice: Always verify your email list before sending. And that’s where AbstractAPI steps in.</em></p><figure style="max-width:1200pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image"><div><img src="https://cdn.prod.website-files.com/65166126ca18241731aa26d2/6890fc2a7e4fe51c49b3a7c5_AD_4nXez0NWaHLzhrtCf4hTfdwsuzEqAgOuH-xkA3lZTDKK4nrySoPhdKuJPZYZwnQabEg9jsngwlK-LUh3hQcHlFCCU5PZmj02vYSL58xdr6mYdbFPY1M-b8NE0sOXtYH0r1YsQkvCJWQ.png" loading="lazy" alt="Steps to validate email with Abstract API"/></div></figure><h2><strong>✅ Step 1: Validate Emails with AbstractAPI</strong></h2><p>Let’s first make sure our emails are legitimate and deliverable. <a href="https://www.abstractapi.com/email-verification-api">AbstractAPI&#x27;s Email Validation API</a> gives us real-time feedback on an email address’s status — checking syntax, domain, and even whether the mailbox exists using <a href="http://www.abstractapi.com/guides/email-validation/what-is-smtp">SMTP checks</a>.</p><p>‍</p><h3><strong>🔌 How it Works</strong></h3><p>Here’s a Python function that sends a request to AbstractAPI and determines if an email is valid:</p><p>‍</p><p><strong>import requests</strong></p><p><strong>ABSTRACTAPI_KEY = &#x27;your_abstractapi_key_here&#x27;</strong></p><p><strong>def is_email_valid(email):</strong></p><p><strong>    url = f&quot;https://emailvalidation.abstractapi.com/v1/?api_key={ABSTRACTAPI_KEY}&amp;email={email}&quot;</strong></p><p><strong>    response = requests.get(url)</strong></p><p><strong>    data = response.json()</strong></p><p><strong>    # Check if SMTP and deliverability checks passed</strong></p><p><strong>    smtp_valid = data.get(&quot;is_smtp_valid&quot;, &quot;FALSE&quot;)</strong></p><p><strong>    deliverability = data.get(&quot;deliverability&quot;, &quot;UNDELIVERABLE&quot;)</strong></p><p><strong>    return smtp_valid == &quot;TRUE&quot; and deliverability == &quot;DELIVERABLE&quot;</strong></p><p>‍</p><h3><strong>🔍 What This Does</strong></h3><ul role="list"><li><em>Calls </em>AbstractAPI’s validation endpoint with the email you want to check.</li><li>Parses the response for two key fields:</li></ul><ul role="list"><li>is_smtp_valid: Whether the mailbox exists and accepts messages.</li><li>deliverability: AbstractAPI’s overall rating based on multiple factors.</li></ul><ul role="list"><li>Returns True only if both indicate the email is likely to be successfully delivered.</li></ul><p>🛡️ Why it matters: This tiny check protects your domain, improves deliverability, and keeps your email campaigns clean and effective.</p><p><em>Want to explore more validation capabilities? Check out our full </em><a href="https://www.abstractapi.com/guides/email-validation"><em>Email Verification Guide</em></a><em>.</em></p><p>‍</p><h2><strong>📤 Step 2: Sending Emails with Python&#x27;s smtplib</strong></h2><p>Now that we’ve cleaned up our list, let’s look at how to send an email using Python’s standard libraries.</p><p>Python includes two helpful modules for sending emails: smtplib (for sending) and email.message (for formatting). Together, they let you craft and dispatch messages with minimal setup.</p><p>‍</p><p><strong>✉️ Basic Example:</strong></p><p><strong>import smtplib</strong></p><p><strong>from email.message import EmailMessage</strong></p><p><strong>def send_email(sender, recipient, subject, body, smtp_server, smtp_port, login, password):</strong></p><p><strong>    msg = EmailMessage()</strong></p><p><strong>    msg[&quot;From&quot;] = sender</strong></p><p><strong>    msg[&quot;To&quot;] = recipient</strong></p><p><strong>    msg[&quot;Subject&quot;] = subject</strong></p><p><strong>    msg.set_content(body)</strong></p><p><strong>    # Connect to SMTP server and send the email</strong></p><p><strong>    with smtplib.SMTP_SSL(smtp_server, smtp_port) as server:</strong></p><p><strong>        server.login(login, password)</strong></p><p><strong>        server.send_message(msg)</strong></p><p>‍</p><h3><strong>🛠️ What You’ll Need</strong></h3><ul role="list"><li>SMTP credentials: For example, Gmail requires you to enable App Passwords if you use 2FA.</li><li>Server details: For Gmail, use smtp.gmail.com and port 465 (SSL).</li><li>Basic message data: From, to, subject, and body.</li></ul><p>‍</p><h2><strong>🧩 Step 3: Put It All Together – Validate &amp; Send</strong></h2><p>Here’s a complete script that:</p><ol role="list"><li>Loops through a list of emails.</li><li>Validates each one.</li><li>Sends only to the verified addresses.</li></ol><p>‍</p><p><strong>import smtplib</strong></p><p><strong>import requests</strong></p><p><strong>from email.message import EmailMessage</strong></p><p><strong>ABSTRACTAPI_KEY = &#x27;your_abstractapi_key_here&#x27;</strong></p><p><strong>def is_email_valid(email):</strong></p><p><strong>    url = f&quot;https://emailvalidation.abstractapi.com/v1/?api_key={ABSTRACTAPI_KEY}&amp;email={email}&quot;</strong></p><p><strong>    response = requests.get(url)</strong></p><p><strong>    data = response.json()</strong></p><p><strong>    smtp_valid = data.get(&quot;is_smtp_valid&quot;, &quot;FALSE&quot;)</strong></p><p><strong>    deliverability = data.get(&quot;deliverability&quot;, &quot;UNDELIVERABLE&quot;)</strong></p><p><strong>    return smtp_valid == &quot;TRUE&quot; and deliverability == &quot;DELIVERABLE&quot;</strong></p><p><strong>def send_email(sender, recipient, subject, body, smtp_server, smtp_port, login, password):</strong></p><p><strong>    msg = EmailMessage()</strong></p><p><strong>    msg[&quot;From&quot;] = sender</strong></p><p><strong>    msg[&quot;To&quot;] = recipient</strong></p><p><strong>    msg[&quot;Subject&quot;] = subject</strong></p><p><strong>    msg.set_content(body)</strong></p><p><strong>    with smtplib.SMTP_SSL(smtp_server, smtp_port) as server:</strong></p><p><strong>        server.login(login, password)</strong></p><p><strong>        server.send_message(msg)</strong></p><p><strong># Your email list</strong></p><p><strong>email_list = [&quot;valid@example.com&quot;, &quot;fake@nowhere.com&quot;]</strong></p><p><strong># Email credentials and message</strong></p><p><strong>smtp_server = &quot;smtp.gmail.com&quot;</strong></p><p><strong>smtp_port = 465</strong></p><p><strong>sender_email = &quot;your_email@gmail.com&quot;</strong></p><p><strong>password = &quot;your_app_password&quot;</strong></p><p><strong>subject = &quot;Hello from Python!&quot;</strong></p><p><strong>body = &quot;This is a test email sent via Python and AbstractAPI 🎉&quot;</strong></p><p><strong># Send to only valid emails</strong></p><p><strong>for email in email_list:</strong></p><p><strong>    if is_email_valid(email):</strong></p><p><strong>        send_email(sender_email, email, subject, body, smtp_server, smtp_port, sender_email, password)</strong></p><p><strong>        print(f&quot;✅ Email sent to {email}&quot;)</strong></p><p><strong>    else:</strong></p><p><strong>        print(f&quot;❌ Skipping invalid email: {email}&quot;)</strong></p><p>‍</p><h2><strong>🎯 Final Thoughts</strong></h2><p>Sending emails with Python is simple — but sending them effectively requires a bit more care.</p><p>By combining the convenience of Python’s built-in smtplib with the power of AbstractAPI’s Email Validation, you can create a robust, reliable, and professional email system that follows industry best practices.</p><p>✨ Validate before you send — and enjoy cleaner lists, fewer bounces, and better results.</p><figure style="max-width:1200pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image"><div><img src="https://cdn.prod.website-files.com/65166126ca18241731aa26d2/6890fc2a7e4fe51c49b3a7bf_AD_4nXfaO0jyfifHrVpFUJCZfhTVNv9YwDy__O0YblTtJYz3g4jOUxmXeFBYGwDRhGHbFTHbi9-hdwYJ8OMDxVCiMqmLcLvQ8aRKEqAvXBVHRS-gvJ-wkHXkbau6pGfaS4SrnhjX-9BlFQ.png" loading="lazy" alt=""/></div></figure><h3><strong>🔗 Explore More AbstractAPI Email Tools:</strong></h3><ul role="list"><li><a href="https://www.abstractapi.com/api/email-verification-validation-api">Free Email Validation API</a></li><li><a href="http://www.abstractapi.com/guides/email-validation/how-to-detect-disposable-email-addresses">Disposable Email Detection Guide</a></li><li><a href="../../tools/disposable-email-checker.html">Disposable Emails Checker</a></li></ul></article><a id="author-low" href="http://www.abstractapi.com/author/nicolas-rios" class="link-bl w-inline-block"><img width="70" height="70" alt="" loading="lazy" src="https://cdn.prod.website-files.com/65166126ca18241731aa26d2/67251104454950c3e425ea39_nicolas_rios_author.avif" class="guides-author-pic"/><div><div class="text-small">Nicolas Rios</div><p>Head of Product at Abstract API</p></div></a><div class="cta-article-wrapper"><div class="max-w-customers-heading-copy-copy"><div class="max-w-customers-heading inline-text"><div class="text-large align-center font-weight-medium inline">Get your free</div><div class="text-large align-center font-weight-medium inline api-inline">Email Validation </div><div class="text-large align-center font-weight-medium inline">key now</div></div><div class="spacer-4px"></div><div class="text-small align-center is-neutral-60">See why the best developers build on Abstract</div><div class="spacer-32px"></div><a id="app-button-free" href="sending-email-with-python.html#" class="btn-2 green w-inline-block"><div class="btn-txt-black">get started for free</div><div class="link-arrow green w-embed"><svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M8.17157 0.789025L11.3536 3.97101C11.5488 4.16627 11.5488 4.48285 11.3536 4.67811L8.17157 7.86009C7.97631 8.05535 7.65973 8.05535 7.46447 7.86009C7.2692 7.66483 7.2692 7.34825 7.46447 7.15299L8.08579 6.53167C8.71575 5.9017 8.26959 4.82456 7.37868 4.82456H0.5C0.223858 4.82456 0 4.6007 0 4.32456V4.32456C0 4.04842 0.223857 3.82456 0.499999 3.82456H7.37868C8.26958 3.82456 8.71575 2.74742 8.08579 2.11745L7.46447 1.49613C7.2692 1.30087 7.2692 0.984287 7.46447 0.789025C7.65973 0.593763 7.97631 0.593763 8.17157 0.789025Z" fill="currentColor"/>
+</svg></div></a></div></div><div id="relatedSection" class="article-wrapper"><div class="spacer-2"></div><h3 class="text-large font-weight-medium">Related Articles</h3><div class="spacer-36px"></div><div id="relatedWrap"></div></div></div></div></div></div></div><div class="section"><div class="container-main"><div class="relative"><div class="black-wrapper"><div class="lottie-top-left" data-w-id="ef8c5f22-a375-8eb3-5e11-5bd920029f95" data-animation-type="lottie" data-src="https://cdn.prod.website-files.com/65166126ca18241731aa26b0/653262322cb29c000a8973d3_top.json" data-loop="1" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg" data-default-duration="10" data-duration="0"></div><div class="max-w-customers-heading inline-text"><div class="text-large align-center font-weight-medium inline">Get your free</div><div class="text-large align-center font-weight-medium inline api-inline">Email Validation </div><div class="text-large align-center font-weight-medium inline">key now</div></div><div class="rating-wrapper paddings-12px"><img loading="lazy" src="https://cdn.prod.website-files.com/65166126ca18241731aa26b0/65364c5e1e46b97a04f18d96_Stars.avif" alt="stars rating" class="stars"/><div class="text-small is-neutral-40">4.8 from 1,863 votes</div></div><div class="form-txt-wrapper"><div class="text-small align-center">See why the best developers build on Abstract</div></div><div class="spacer-32px"></div><div data-w-id="ef8c5f22-a375-8eb3-5e11-5bd920029fa5" class="form-block w-form"><form id="form-api-key-bottom" name="wf-form-Modal-CTA-Form" data-name="Modal CTA Form" method="get" class="modal-content-form" data-wf-page-id="6643827018e2bb60b803033a" data-wf-element-id="ef8c5f22-a375-8eb3-5e11-5bd920029fa6"><input class="modal-content-form-field w-input" maxlength="256" name="E-mail-2" data-name="E Mail 2" placeholder="Enter your email" type="email" id="E-mail-2" required=""/><div class="cta-button-form"><input type="submit" data-wait="" class="cta-button-link-submit w-button" value="S"/><div class="btn-txt-black form">START FOR FREE</div><div class="link-arrow form w-embed"><svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M8.17157 0.789025L11.3536 3.97101C11.5488 4.16627 11.5488 4.48285 11.3536 4.67811L8.17157 7.86009C7.97631 8.05535 7.65973 8.05535 7.46447 7.86009C7.2692 7.66483 7.2692 7.34825 7.46447 7.15299L8.08579 6.53167C8.71575 5.9017 8.26959 4.82456 7.37868 4.82456H0.5C0.223858 4.82456 0 4.6007 0 4.32456V4.32456C0 4.04842 0.223857 3.82456 0.499999 3.82456H7.37868C8.26958 3.82456 8.71575 2.74742 8.08579 2.11745L7.46447 1.49613C7.2692 1.30087 7.2692 0.984287 7.46447 0.789025C7.65973 0.593763 7.97631 0.593763 8.17157 0.789025Z" fill="currentColor"/>
+</svg></div></div></form><div class="success-message w-form-done"><div class="thank-you-form-txt-2">Thank you! Your submission has been received!</div></div><div class="error-message w-form-fail"><div>Oops! Something went wrong while submitting the form.</div></div></div><div class="spacer-12px"></div><div class="no-credit-txt">No credit card required</div></div></div></div></div><footer class="footer"><div class="container-main"><div class="footer-wrapper"><div class="footer-top"><div class="footer-logo-wrapper"><a href="http://www.abstractapi.com/" class="footer-logo-link w-inline-block"><img src="https://cdn.prod.website-files.com/65166126ca18241731aa26b0/6538df34291c9fa4ed28d6f7_Logo.svg" loading="lazy" alt="abstract logo" class="footer-logo"/><div class="fake-txt">abstract</div></a></div></div><div class="footer-middle"><div class="links-footer-wrapper"><div class="text-footer-cat">APIs tO LOOK UP</div><a href="../../api/ip-intelligence.html" class="link-footer">IP Intelligence API</a><div class="show-more-wrapper"><div class="show-more-box"><a href="../../api/exchange-rate-api.html" class="link-footer">Exchange Rate API</a><a href="../../api/ip-geolocation-api.html" class="link-footer">IP Geolocation API</a><a href="../../api/holidays-api.html" class="link-footer">Public Holidays API</a><a href="../../api/company-enrichment.html" class="link-footer">Company Enrichment API</a><a href="../../api/time-date-timezone-api.html" class="link-footer">Time, Date, Timezone API</a></div></div></div><div class="links-footer-wrapper"><div class="text-footer-cat">APIs tO CREATE</div><a href="../../api/user-avatar-api.html" class="link-footer">User Avatar API</a><a href="../../api/web-scraping-api.html" class="link-footer">Web Scraping API</a><div class="show-more-wrapper"><div class="show-more-box"><a href="../../api/image-processing-optimization-api.html" class="link-footer">Image Processing API</a><a href="../../api/website-screenshot-api.html" class="link-footer">Website Screenshot API</a></div></div></div><div class="links-footer-wrapper last"><div class="text-footer-cat">APIs tO VALIDATE</div><a href="../../api/iban-validation.html" class="link-footer">IBAN Validation API</a><a href="../../api/email-verification-validation-api.html" class="link-footer">Email Validation API</a><div class="show-more-wrapper"><div class="show-more-box"><a href="../../api/vat-validation-rates-api.html" class="link-footer">VAT Validation API</a></div></div><a href="../../api/phone-validation-api.html" class="link-footer">Phone Validation API</a></div><div class="links-footer-wrapper last _2"><a href="../../resources.html" class="w-inline-block"><div class="text-footer-cat">RESOURCES</div></a><a href="../api-glossary.html" class="link-footer">API Glossary</a><a href="../../api.html" class="link-footer">Full API List</a><a href="../../guides.html" class="link-footer">API Guides &amp; Tips</a><a href="../../what-is-my-ip-address-and-location.html" class="link-footer">What&#x27;s My IP Address?</a><a href="../http-status-codes.html" class="link-footer">HTTP Status Code Guide</a><a href="../../tools/email-regex-guide.html" class="link-footer">Email Regex Guide</a></div><div class="links-footer-wrapper last _2"><a href="../../resources.html" class="w-inline-block"><div class="text-footer-cat">FREE TOOLS</div></a><a href="../../ip-lookup.html" class="link-footer">IP Lookup</a><a href="../../phone-number-lookup.html" class="link-footer">Phone Number Lookup</a><a href="../../tools/vpn-detection-tool.html" class="link-footer">VPN Detector</a><a href="../../tools/proxy-detector.html" class="link-footer">Proxy IP Checker</a><a href="../../tools/tor-detector.html" class="link-footer">TOR Lookup</a><a href="../../tools/ip-abuse-check.html" class="link-footer">IP Abuse Check</a><a href="../../domain-reputation-checker.html" class="link-footer">Domain Reputation Checker</a><a href="../../tools/disposable-email-checker.html" class="link-footer">Disposable Email Checker</a><a href="../../tools/domain-age-checker.html" class="link-footer">Domain Age Checker</a><a href="../../tools/dmarc-check.html" class="link-footer">DMARC Record Check</a><a href="../../tools/spf-check.html" class="link-footer">SPF Record Check</a></div></div><div class="bottom-links"><div class="footer-urls"><a href="../../docs.html" class="footer-url">Docs</a><a href="../../integrations.html" class="footer-url">Integrations</a><a href="../../about.html" class="footer-url">About</a><a href="mailto:team@abstractapi.com?subject=Contact%20Us" class="footer-url">Contact</a><a href="sending-email-with-python.html#" class="footer-url hide">Integrations</a><a href="../../legal/legal.html" class="footer-url">Legal</a></div><div class="status-txt-wrapper mt-mobile"><div class="status-item-wrapper"><div class="status-txt">Status: </div><div class="dot w-embed"><svg width="6" height="7" viewBox="0 0 6 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M3.39306 6.10448C1.96506 6.10448 0.789062 4.92848 0.789062 3.50048C0.789062 2.07248 1.96506 0.896484 3.39306 0.896484C4.82106 0.896484 5.99706 2.07248 5.99706 3.50048C5.99706 4.92848 4.82106 6.10448 3.39306 6.10448Z" fill="url(#paint0_linear_3069_45305)"/>
+<defs>
+<linearGradient id="paint0_linear_3069_45305" x1="3.45983" y1="1.68901" x2="4.02081" y2="6.03839" gradientUnits="userSpaceOnUse">
+<stop stop-color="#6BF88C"/>
+<stop offset="1" stop-color="#55E977"/>
+</linearGradient>
+</defs>
+</svg></div><div class="text-green-gradient">All systems normal</div></div><a href="https://trust.abstractapi.com/" target="_blank" class="status-item-wrapper footer-url w-inline-block"><div class="status-txt">Compliance: </div><div class="dot w-embed"><svg width="6" height="7" viewBox="0 0 6 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M3.39306 6.10448C1.96506 6.10448 0.789062 4.92848 0.789062 3.50048C0.789062 2.07248 1.96506 0.896484 3.39306 0.896484C4.82106 0.896484 5.99706 2.07248 5.99706 3.50048C5.99706 4.92848 4.82106 6.10448 3.39306 6.10448Z" fill="url(#paint0_linear_3069_45305)"/>
+<defs>
+<linearGradient id="paint0_linear_3069_45305" x1="3.45983" y1="1.68901" x2="4.02081" y2="6.03839" gradientUnits="userSpaceOnUse">
+<stop stop-color="#6BF88C"/>
+<stop offset="1" stop-color="#55E977"/>
+</linearGradient>
+</defs>
+</svg></div><div class="text-green-gradient">SOC2 &amp; GDPR</div></a></div></div><div class="bottom-links-wrapper"><div class="footer-urls"><a href="sending-email-with-python.html#" class="footer-url is-neutral-40">Abstract CSV</a><a href="sending-email-with-python.html#" class="footer-url is-neutral-40">Abstract PDF</a><a href="sending-email-with-python.html#" class="footer-url is-neutral-40">Abstract Files</a><a href="sending-email-with-python.html#" class="footer-url is-neutral-40">Abstract Images</a></div></div><img src="https://cdn.prod.website-files.com/65166126ca18241731aa26b0/651ab8a2442b1fa97e6e054f_code-lines.avif" loading="lazy" alt="Code Lines for Footer - Abstract API" class="code-numbers-img"/><div class="footer-bottom"><div class="footer-bottom-left-side"><div>@2025 Abstract API Inc</div><div class="social-logos"><a href="https://www.linkedin.com/company/abstractapi" target="_blank" class="link-social w-inline-block"><img src="https://cdn.prod.website-files.com/65166126ca18241731aa26b0/66eaebdd8ca2fda568f52af6_icon-linkedin.svg" loading="lazy" alt="Linkedin icon" class="logo-linkedin"/></a><a href="https://www.facebook.com/abstractapi/" target="_blank" class="link-social w-inline-block"><img src="https://cdn.prod.website-files.com/65166126ca18241731aa26b0/66eaecbc7f15e4fc014eadff_icon-facebook.svg" loading="lazy" alt="Facebook icon" class="logo-facebook"/></a><a href="https://x.com/abstractapi" target="_blank" class="link-social w-inline-block"><img src="https://cdn.prod.website-files.com/65166126ca18241731aa26b0/66eaec128ca2fda568f54be0_icon-x.svg" loading="lazy" alt="X icon" class="logo-x"/></a></div></div><a href="https://trust.abstractapi.com/" target="_blank" class="footer-bottom-right-side w-inline-block"><img src="https://cdn.prod.website-files.com/65166126ca18241731aa26b0/651be768aaca2da0c441d861_footer2.avif" loading="lazy" alt="SOC 2 Type II compliant" class="soc-img"/><img src="https://cdn.prod.website-files.com/65166126ca18241731aa26b0/651be76803d83b3c2cea9632_footer1.avif" loading="lazy" alt="GDPR compliant" class="gpdr-img"/></a></div></div></div></footer></main><div id="popup" class="popup-wrapper"><div class="form-wrapper-popup"><div class="black-wrapper-2 popup"><div class="lottie-top-left" data-w-id="ef8c5f22-a375-8eb3-5e11-5bd920029fba" data-animation-type="lottie" data-src="https://cdn.prod.website-files.com/65166126ca18241731aa26b0/653262322cb29c000a8973d3_top.json" data-loop="1" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg" data-default-duration="10" data-duration="0"></div><div class="close-popup-btn"><div id="close-popup-btn" class="close-btn-embed w-embed"><svg width="59" height="59" viewBox="0 0 59 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="0.5" width="58" height="58" rx="29" fill="#21292E"/>
+<path d="M37.5 21.5L21.5 37.5M21.5 21.5L37.5 37.5" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="0.5" y="0.5" width="58" height="58" rx="29" stroke="#21292E"/>
+</svg></div></div><div class="max-w-customers-heading inline-text"><div class="text-large align-center font-weight-medium inline">Get your free</div><div class="text-large align-center font-weight-medium inline api-inline">Email Validation </div><div class="text-large align-center font-weight-medium inline"> key now</div></div><div class="rating-wrapper paddings-12px"><img loading="lazy" src="https://cdn.prod.website-files.com/65166126ca18241731aa26b0/651d1e64d43cf1073e582a21_Stars.avif" alt="stars rating" class="stars"/><div class="text-small is-neutral-60">4.8 from 1,863 votes</div></div><div class="form-txt-wrapper flex"><div class="text-small text-center">See why the best developers build on Abstract</div></div><div data-w-id="ef8c5f22-a375-8eb3-5e11-5bd920029fcb" class="spacer-32px"></div><div class="form-block w-form"><form id="popup-form" name="wf-form-Modal-CTA-Form" data-name="Modal CTA Form" method="get" class="popup-content-form" data-wf-page-id="6643827018e2bb60b803033a" data-wf-element-id="ef8c5f22-a375-8eb3-5e11-5bd920029fcd"><input class="popup-content-form-field w-input" maxlength="256" name="email-3" data-name="Email 3" placeholder="Enter your email" type="email" id="email-3" required=""/><div class="cta-button-form"><input type="submit" data-wait="" class="cta-button-link-submit w-button" value=""/><div class="btn-txt-black form">START FOR FREE</div><div class="link-arrow form w-embed"><svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M8.17157 0.789025L11.3536 3.97101C11.5488 4.16627 11.5488 4.48285 11.3536 4.67811L8.17157 7.86009C7.97631 8.05535 7.65973 8.05535 7.46447 7.86009C7.2692 7.66483 7.2692 7.34825 7.46447 7.15299L8.08579 6.53167C8.71575 5.9017 8.26959 4.82456 7.37868 4.82456H0.5C0.223858 4.82456 0 4.6007 0 4.32456V4.32456C0 4.04842 0.223857 3.82456 0.499999 3.82456H7.37868C8.26958 3.82456 8.71575 2.74742 8.08579 2.11745L7.46447 1.49613C7.2692 1.30087 7.2692 0.984287 7.46447 0.789025C7.65973 0.593763 7.97631 0.593763 8.17157 0.789025Z" fill="currentColor"/>
+</svg></div></div></form><div class="success-message w-form-done"><div class="thank-you-form-txt-2">Thank you! Your submission has been received!</div></div><div class="error-message w-form-fail"><div>Oops! Something went wrong while submitting the form.</div></div></div><div class="spacer-12px"></div><div class="no-credit-txt-2">No credit card required</div></div></div></div><div class="guides-styles w-embed w-script"><script>
+document.addEventListener('DOMContentLoaded', function() {
+    let relatedPosts = document.getElementById('relatedPosts');
+    let relatedWrap = document.getElementById('relatedWrap');
+    relatedWrap.appendChild(relatedPosts);
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Hide #stars at the beginning
+    document.getElementById('stars').style.display = 'none';
+
+    // Convert #stars string to number
+    let stars = parseFloat(document.getElementById('stars').innerText);
+
+    // Check the number and hide elements accordingly
+    if (stars > 4.49 && stars < 5) {
+        document.getElementById('star').style.display = 'none';
+    }
+    
+    if (stars === 5) {
+        document.getElementById('halfstar').style.display = 'none';
+    }
+    
+    if (stars < 4.49) {
+        document.getElementById('star').style.display = 'none';
+        document.getElementById('halfstar').style.display = 'none';
+    }
+});
+</script></div></div><div id="relatedPosts" class="w-dyn-list"><div fs-cmsload-element="list" role="list" class="guides-list w-dyn-items"><div role="listitem" class="api-guides-list-item w-dyn-item"><a href="react-hook-form-email-validation.html" class="api-guides-item-link w-inline-block"><div class="spacer-16px"><h4 class="text-regular font-weight-normal">React Hook Form Email Validation</h4></div><p class="date-txt is-neutral-50">June 26, 2025</p><p class="text-xsmall">Email validation with React Hook Forms can be easier than you think. Learn how to implement it in this step-by-step guide.</p></a></div><div role="listitem" class="api-guides-list-item w-dyn-item"><a href="http://www.abstractapi.com/guides/email-validation/bulk-email-validation" class="api-guides-item-link w-inline-block"><div class="spacer-16px"><h4 class="text-regular font-weight-normal">Bulk Email Validation: A Comprehensive Guide for Email Marketers</h4></div><p class="date-txt is-neutral-50">May 26, 2025</p><p class="text-xsmall">Learn what Bulk Email Validation and How to Bulk Validate Emails using AbstractAPI&#x27;s Email Validation API. Try it now for Free!</p></a></div><div role="listitem" class="api-guides-list-item w-dyn-item"><a href="http://www.abstractapi.com/guides/email-validation/clean-email-list-free" class="api-guides-item-link w-inline-block"><div class="spacer-16px"><h4 class="text-regular font-weight-normal">Best Email List Cleaning Services in 2025</h4></div><p class="date-txt is-neutral-50">May 12, 2025</p><p class="text-xsmall">Learn how to maintain a healthy and active email list with these top free solutions. Find out how email list cleaning can help improve your deliverability &amp; ROI.</p></a></div><div role="listitem" class="api-guides-list-item w-dyn-item"><a href="http://www.abstractapi.com/guides/email-validation/html-email-validation" class="api-guides-item-link w-inline-block"><div class="spacer-16px"><h4 class="text-regular font-weight-normal">Simple guide to HTML Email Validation</h4></div><p class="date-txt is-neutral-50">April 21, 2025</p><p class="text-xsmall">Learn how to validate email addresses in HTML forms using HTML5 features (input type=&quot;email&quot;, pattern, required) and when to use JavaScript or an API for more robust validation.</p></a></div><div role="listitem" class="api-guides-list-item w-dyn-item"><a href="http://www.abstractapi.com/guides/email-validation/email-validation-regex-javascript" class="api-guides-item-link w-inline-block"><div class="spacer-16px"><h4 class="text-regular font-weight-normal">Email Validation in JavaScript Using Regex</h4></div><p class="date-txt is-neutral-50">April 21, 2025</p><p class="text-xsmall">Discover our guide on email validation in JavaScript using regex. Includes script examples, clarification on the basics, and step-by-step sections.</p></a></div><div role="listitem" class="api-guides-list-item w-dyn-item"><a href="http://www.abstractapi.com/guides/email-validation/email-address-format-validation" class="api-guides-item-link w-inline-block"><div class="spacer-16px"><h4 class="text-regular font-weight-normal">How To Check If An Email Address Is In A Valid Format</h4></div><p class="date-txt is-neutral-50">April 11, 2025</p><p class="text-xsmall">Keep your mail list valid by validating email strings. We uncover how to check if an email address is valid &amp; the methods you can use to valid addresses.</p></a></div></div></div><script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=65166126ca18241731aa26b0" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script><script src="https://cdn.prod.website-files.com/65166126ca18241731aa26b0/js/abstractapi-staging.schunk.57d5559d2f0cd9f8.js" type="text/javascript"></script><script src="https://cdn.prod.website-files.com/65166126ca18241731aa26b0/js/abstractapi-staging.schunk.6d426aea3bb47e99.js" type="text/javascript"></script><script src="https://cdn.prod.website-files.com/65166126ca18241731aa26b0/js/abstractapi-staging.7acc9dc8.200e5e789777549b.js" type="text/javascript"></script><!-- Segment -->
+<script async>
+  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v000.000.000/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.13.1";
+  analytics.load("lZyMAQGP5xY4sBRRXM7i3cytuvD8ZXRP");
+  analytics.page();
+  }}();
+</script>
+
+<!-- Regular events -->
+<script async>
+  if (document.referrer.indexOf('abstractapi.') == -1) {
+    analytics.track('Session started', {
+      'referrer': document.referrer,
+      'current_url': window.location.href,
+      'path': window.location.pathname
+    });
+  }
+  analytics.track('Marketing page loaded', {
+    'referrer': document.referrer,
+    'current_url': window.location.href,
+    'path': window.location.pathname
+  });
+</script>
+
+<!-- Link change to target specific APIs -->
+<script defer>
+  window.onload = function() {
+    var marketingPathstoProductPaths = {
+      '/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v000.000.000/ip-geolocation-api':'ip-geolocation',
+      '/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v000.000.000/vat-validation-rates-api':'vat',
+      '/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v000.000.000/email-verification-validation-api':'email-validation',
+      '/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v000.000.000/phone-validation-api':'phone-validation',
+      '/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v000.000.000/website-screenshot-api':'screenshot',
+      '/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v000.000.000/user-avatar-api':'avatars',
+      '/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v000.000.000/web-scraping-api':'scrape',
+      '/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v000.000.000/image-processing-optimization-api':'images',
+      '/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v000.000.000/holidays-api':'holidays',
+      '/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v000.000.000/time-date-timezone-api':'timezone',
+      '/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v000.000.000/exchange-rate-api':'exchange-rates',
+      '/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v000.000.000/company-enrichment':'company-enrichment'
+    }
+    var anchors = document.getElementsByTagName("a");
+
+    for (var i = 0; i < anchors.length; i++) {
+      if (document.location.pathname in marketingPathstoProductPaths) {
+        // Product page with redirect to enforce
+        if (anchors[i].href.includes('https://app.abstractapi.com/users/signup')) {
+          // Link to signup page with target to append
+          anchors[i].href = 'https://app.abstractapi.com/users/signup?target=/api/' + marketingPathstoProductPaths[document.location.pathname] + '/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v000.000.000/pricing/select';
+        }
+      }
+    }      
+  }
+</script>
+
+<!-- Tracking session -->
+<script defer>
+  var abstractSourceTracking = {
+
+    createCookie: function() {
+
+      var date = new Date();
+      date.setTime(date.getTime()+(360*24*60*60*1000));
+      var expires = "; expires="+date.toGMTString();
+
+      var currentURL = encodeURIComponent(window.location.href);
+      var data = "%7B%22landing_page_url%22%3A%20%22"+currentURL+"%22";
+
+      if (document.referrer) {
+        data = data + ",%22initial_referrer%22%3A%20%22"+document.referrer+"%22,%22initial_referring_domain%22%3A%20%22"+(new URL(document.referrer)).hostname+"%22";
+      }
+
+      // Adding closing }
+      data = data + "%7D";
+
+      document.cookie = "abs_trckng="+data+"; domain=.abstractapi.com; expires="+expires+"; path=/";
+    },
+
+    readCookie: function() {
+      var name = "abs_trckng=";
+      var decodedCookie = decodeURIComponent(document.cookie);
+      var ca = decodedCookie.split(';');
+      for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "{}";
+    },
+
+    checkCookie: function() {
+      var existingValue = this.readCookie();
+      // Checking if a landing_page_url value is already defined
+      if (existingValue === "{}") {
+        // If value doesn't exist we create a cookie with the existing Value
+        this.createCookie();
+      }
+    },
+  };
+
+  abstractSourceTracking.checkCookie();
+</script>
+
+<script defer>
+  $(document).ready(function () {
+    if ($('.faq-wrapper').length > 0) {
+      $('.question-box, .question-btn, .answer').removeClass('active');
+
+      // Activate the first question-box by default (excluding those inside .questions-box-more)
+      $('.question-box:not(.questions-box-more .question-box):first').addClass('active');
+      $('.question-box:not(.questions-box-more .question-box):first .question-btn, .question-box:not(.questions-box-more .question-box):first .answer').addClass('active');
+
+      function toggleActive(element) {
+        element.toggleClass('active');
+        element.find('.question-btn, .answer').toggleClass('active');
+      }
+
+      // Only trigger toggle when clicking on .question-wrapper
+      $('.question-wrapper').click(function (e) {
+        const questionBox = $(this).closest('.question-box');
+
+        if (questionBox.hasClass('active')) {
+          toggleActive(questionBox);
+        } else {
+          $('.question-box.active').removeClass('active').find('.question-btn, .answer').removeClass('active');
+          toggleActive(questionBox);
+        }
+      });
+
+      // Allow expansion in .questions-box-more only if not already active
+      $('.questions-box-more .question-wrapper').click(function () {
+        const questionBox = $(this).closest('.question-box');
+
+        if (!questionBox.hasClass('active')) {
+          toggleActive(questionBox);
+        }
+      });
+
+      $(".show-more-questions-button").click(function () {
+        $(this).hide(); // Hide the button
+        $(".questions-box-more").addClass("active");
+      });
+    }
+  });
+</script>
+
+<script defer>
+  function navigationMenu() {
+    var apiLargeDropdown = document.getElementById('api-large-dropdown');
+    var resourceLargeDropdown = document.getElementById('resource-large-dropdown');
+    var solutionLargeDropdown = document.getElementById('solution-large-dropdown');
+    if (apiLargeDropdown) {
+      apiLargeDropdown.addEventListener('mouseenter', function() {
+        toggleIsOpenClass('api-large-menu');
+        toggleIsOpenClass('api-large-dropdown');
+      });
+      apiLargeDropdown.addEventListener('mouseleave', function() {
+        toggleIsOpenClass('api-large-menu');
+        toggleIsOpenClass('api-large-dropdown');
+      });
+    }
+    if (resourceLargeDropdown) {
+      resourceLargeDropdown.addEventListener('mouseenter', function() {
+        toggleIsOpenClass('resource-large-menu');
+        toggleIsOpenClass('resource-large-dropdown');
+      });
+
+      resourceLargeDropdown.addEventListener('mouseleave', function() {
+        toggleIsOpenClass('resource-large-menu');
+        toggleIsOpenClass('resource-large-dropdown');
+      });
+    }
+    if (solutionLargeDropdown) {
+      solutionLargeDropdown.addEventListener('mouseenter', function() {
+        toggleIsOpenClass('solution-large-menu');
+        toggleIsOpenClass('solution-large-dropdown');
+      });
+
+      solutionLargeDropdown.addEventListener('mouseleave', function() {
+        toggleIsOpenClass('solution-large-menu');
+        toggleIsOpenClass('solution-large-dropdown');
+      });
+    }
+    var apiDropdown = document.getElementById('api-dropdown');
+    var resourceDropdown = document.getElementById('resource-dropdown');
+    var solutionDropdown = document.getElementById('solution-dropdown');
+
+    if (apiDropdown) {
+      apiDropdown.addEventListener('click', function() {
+        toggleIsOpenClass('api-dropdown-menu');
+        toggleIsOpenClass('api-dropdown');
+      });
+    }
+
+    if (resourceDropdown) {
+      resourceDropdown.addEventListener('click', function() {
+        toggleIsOpenClass('resource-dropdown-menu');
+        toggleIsOpenClass('resource-dropdown');
+      });
+    }
+
+    if (solutionDropdown) {
+      solutionDropdown.addEventListener('click', function() {
+        toggleIsOpenClass('solution-dropdown-menu');
+        toggleIsOpenClass('solution-dropdown');
+      });
+    }
+  }
+
+  function toggleIsOpenClass(elementId) {
+    var element = document.getElementById(elementId);
+    if (element) {
+      element.classList.toggle('is-open');
+    }
+  }
+
+  function handleDOMContentLoaded() {
+    toggleIsOpenClass('api-dropdown-menu');
+    toggleIsOpenClass('resource-dropdown-menu');
+    toggleIsOpenClass('solution-dropdown-menu');
+    navigationMenu()
+  }
+
+  document.addEventListener('DOMContentLoaded', handleDOMContentLoaded);
+</script>
+
+<script defer>
+  $(document).ready(function() {
+    function redirectOnSubmit(formSelector, emailFieldClass) {
+      $(formSelector).on("submit", function(event) {
+        event.preventDefault();
+
+        var formElementID = $(this).attr('id');
+        var emailField = $(this).find(emailFieldClass);
+        var email = emailField.val();
+
+        // 🔹 Get placement from form attribute
+        var placement = $(this).attr('placement');
+
+        // 🔹 Get full slug from pathname (e.g., "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v000.000.000/reputation/abc")
+        var slug = window.location.pathname;
+
+        function getUrlParameter(name) {
+          name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+          var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+          var results = regex.exec(location.search);
+          return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        if (email && email.includes('@')) {
+          var encodedEmail = encodeURIComponent(email);
+          var decodedAtSymbol = encodedEmail.replace(/%40/g, "@");
+          var pathArray = window.location.pathname.split('/').filter(Boolean);
+          var slugEnd = pathArray.pop();
+          var hasAds = pathArray.indexOf('a') !== -1;
+
+          var redirectUrl;
+
+          switch (true) {
+            case pathArray.includes('api'):
+              var slugApi = localStorage.getItem('slugApi');
+              redirectUrl = `https://app.abstractapi.com/users/signup?target=/api/${slugApi}/pricing/select&email=${decodedAtSymbol}`;
+              break;
+
+            case pathArray.includes('guides'):
+              var localStorageValue = localStorage.getItem('targetLink');
+              redirectUrl = `https://app.abstractapi.com/users/signup${localStorageValue}&email=${decodedAtSymbol}`;
+              break;
+
+            case pathArray.includes('integrations'):
+              var localStorageValue1 = localStorage.getItem('targetLink1');
+              var localStorageValue2 = localStorage.getItem('integration');
+              redirectUrl = `https://app.abstractapi.com/users/signup${localStorageValue1}&utm_campaign=integrations&integration=${localStorageValue2}&email=${decodedAtSymbol}`;
+              break;
+
+            case hasAds:
+              var slugApi = localStorage.getItem('slugApi');
+              var utmParams = {
+                utm_source: getUrlParameter('utm_source'),
+                utm_medium: getUrlParameter('utm_medium'),
+                utm_campaign: getUrlParameter('utm_campaign'),
+                utm_term: getUrlParameter('utm_term'),
+                utm_content: getUrlParameter('utm_content'),
+                gclid: getUrlParameter('gclid')
+              };
+
+              var utmParamFound = Object.values(utmParams).some(val => val);
+
+              if (utmParamFound) {
+                redirectUrl = `https://app.abstractapi.com/users/signup?target=/api/${slugApi}/pricing/select&email=${decodedAtSymbol}` +
+                  `&utm_source=${utmParams['utm_source']}` +
+                  `&utm_medium=${utmParams['utm_medium']}` +
+                  `&utm_campaign=${utmParams['utm_campaign']}` +
+                  `&utm_term=${utmParams['utm_term']}` +
+                  `&utm_content=${utmParams['utm_content']}` +
+                  `&gclid=${utmParams['gclid']}`;
+              } else {
+                redirectUrl = `https://app.abstractapi.com/users/signup?target=/api/${slugEnd}/pricing/select&email=${decodedAtSymbol}`;
+              }
+
+              break;
+
+            default:
+              redirectUrl = `https://app.abstractapi.com/users/signup?email=${decodedAtSymbol}`;
+              break;
+          }
+
+          // 🔹 Append global params
+          if (formElementID) {
+            redirectUrl += `&cta_source=${formElementID}`;
+          }
+          if (placement) {
+            redirectUrl += `&placement=${placement}`;
+          }
+          if (slug) {
+            redirectUrl += `&slug=${slug}`;
+          }
+
+          // 🔁 Redirect
+          window.location.href = redirectUrl;
+        } else {
+          alert("Please enter a valid email address.");
+        }
+      });
+    }
+
+    function checkScreenWidth() {
+      if (window.innerWidth >= 1280) {
+        redirectOnSubmit(".modal-content-form-nav--large", ".modal-content-form-field-nav--large");
+      } else if (window.innerWidth > 768) {
+        redirectOnSubmit(".modal-content-form-nav", ".modal-content-form-field-nav");
+      }
+    }
+
+    redirectOnSubmit(".modal-content-form", ".modal-content-form-field");
+    window.addEventListener("resize", checkScreenWidth);
+    checkScreenWidth();
+  });
+</script>
+
+<script defer>
+  // Stop body scroll when mobile menu is open
+  const body = document.body;
+  function letBodyScroll(bool) {
+    if (bool) {
+      body.style.overflow = 'hidden';
+    } else {
+      body.style.overflow = 'auto';
+    }
+  }
+
+  const targetNode = document.querySelector('.w-nav-button');
+  const config = { attributes: true, childList: false, subtree: false };
+  const callback = function (mutationsList, observer) {
+    for (let i = 0; i < mutationsList.length; i++) {
+      if (mutationsList[i].type === 'attributes') {
+        const menuIsOpen = mutationsList[i].target.classList.contains('w--open');
+        letBodyScroll(menuIsOpen);
+      }
+    }
+  };
+  const observer = new MutationObserver(callback);
+  observer.observe(targetNode, config);
+</script>
+
+<script defer>
+  document.addEventListener("DOMContentLoaded", function() {
+    var closeBanners = document.querySelectorAll(".close-banner");
+    var ctaBanners = document.querySelectorAll(".cta-banner");
+
+    if (closeBanners) {
+      if (ctaBanners) {
+        ctaBanners.forEach(function(ctaBanner) {
+          var link = ctaBanner.querySelector("a");
+          if (link) {
+            var currentHref = link.getAttribute("href");
+            if (currentHref) {
+              var updatedHref = currentHref + "?utm_campaign=cyber_week";
+              link.setAttribute("href", updatedHref);
+            }
+          }
+        });
+      }
+      closeBanners.forEach(function(closeBanner) {
+        closeBanner.addEventListener("click", function() {
+          var banner = document.getElementById("banner");
+          if (banner) {
+            banner.style.display = "none";
+          }
+        });
+      });
+    }
+  });
+</script>
+
+<script>
+  $(document).ready(function() {
+    var cookieBtn = document.querySelector('.cookie-accepted');
+    var rejectBtn = document.querySelector('.cookie-declined');
+    cookieBtn.addEventListener('click', function() {
+      localStorage.setItem('cookieAccepted', 'true');
+      document.querySelector('.cookies').style.visibility = 'hidden';
+    });
+    rejectBtn.addEventListener('click', function() {
+      localStorage.setItem('cookieDeclined', 'true');
+      document.querySelector('.cookies').style.visibility = 'hidden';
+    });
+    function checkCookies() {
+      if (localStorage.getItem('cookieAccepted') === 'true' || localStorage.getItem('cookieDeclined') === 'true') {
+        document.querySelector('.cookies').style.visibility = 'hidden';
+      } else {
+        document.querySelector('.cookies').style.visibility = 'visible';
+      }
+    }
+
+    $(window).resize(function() {
+      checkCookies();
+    })
+
+    checkCookies();
+  })
+</script>
+
+<script>
+  //Nofollow script
+  let host = window.location.host; // Get the host of the current page (e.g., 'www.abstractapi.com')
+  let allPostLinks = $('.w-richtext a'); // Select all anchor elements inside elements with the class 'w-richtext'
+
+  // Loop through all anchor links
+  allPostLinks.each(function() {
+    let currentHref = $(this).attr('href'); // Get the 'href' attribute of the current link
+
+    // Check if the href starts with '/', does not include the host, and does not contain '/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v000.000.000/abstract/'
+    if (!currentHref.includes('/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v000.000.000/guides/') && !currentHref.includes(host) && !currentHref.includes('abstract')) {
+      //console.log("Add rel nofollow to: " + currentHref);
+      $(this).attr("rel", "nofollow"); // Add rel="nofollow" to the link
+    }
+  });
+</script>
+
+<script>
+    !function(i,s,o,g,r,a,m){i.Ip2cObject=o;i[o]||(i[o]=function(){
+    (i[o].q=i[o].q||[]).push(arguments)});i[o].l=+new Date;r=s.createElement(g);
+    a=s.getElementsByTagName(g)[0];r.src='//reveal.ip2c.net/8433734.js';
+    a.parentNode.insertBefore(r,a)}(window,document,'ip2c','script');
+    ip2c('verify', '8433734');
+</script><script>
+$(document).ready(function() {
+    $('#relatedPosts').appendTo('#relatedWrap');
+});
+</script>
+
+<!-- JS formatting scripts -->
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/postscribe/2.0.8/postscribe.min.js"></script>
+<script async src="https://s3-us-west-2.amazonaws.com/daily-web/prism.js"></script>
+<link href="https://s3-us-west-2.amazonaws.com/daily-web/prism.css" rel="stylesheet" type="text/css" />
+
+<!-- [Attributes by Finsweet] Table of Contents -->
+<script defer src="https://cdn.jsdelivr.net/npm/@finsweet/attributes-toc@1/toc.js"></script>
+
+<script>
+function formatCode(el) {
+    // find our magic declaration string. if we don't find it,
+    // do nothing
+    let match = el.innerHTML.match(/--\s*CODE\s+(.*)\s*--/),
+        classNames, codeEl;
+    if (match && match[1]) {
+      classNames = match[1];
+    } else {
+      return;
+    }
+    // strip off the magic string, everything preceding it, and
+    // all leading and trailing whitespace
+    let txt = el.innerHTML.substring(match.index+match[0].length);
+    el.innerHTML = '';
+    if (classNames.match(/language-markup/)) {
+      codeEl = el.appendChild(document.createElement('script'));
+      codeEl.type = 'text/plain';
+    } else {
+      codeEl = el.appendChild(document.createElement('pre')).
+                  appendChild(document.createElement('code'));
+    }
+    codeEl.className = classNames;
+    codeEl.innerHTML = txt;
+  }
+
+  let snips = $('p:contains("CODE")');
+  snips.toArray().forEach(formatCode);
+  Prism.hooks.add('before-highlight', function (env) {
+    env.code = env.element.innerText;
+  });
+  Prism.highlightAll();
+</script>
+
+<!-- SlickSlider script -->
+<script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<!-- SlickSlider enable & customisation -->
+<script>
+$('.guides-list-alt').slick({
+  infinite: true,
+  slidesToShow: 4,
+  slidesToScroll: 1
+});
+</script>
+
+
+ <!-- Blog Schema Markup for Google -->
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.abstractapi.com/guides/sending-email-with-python"
+      },
+      "headline": "How to Send Email with Python (The Ultimate Guide) | Abstract API",
+      "datePublished": "Aug 04, 2025",
+      "dateModified": "Aug 04, 2025",
+      "author": {
+        "@type": "Person",
+        "name": "Nicolas Rios"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Abstract",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://cdn.prod.website-files.com/5ebbd0a566a3996636e55959/61e07e26988731dc9367e304_logo-dark-new.svg"
+        }
+      },
+      "description": "Learn How to Send Email with Python with local SMTP, Telnet, Python, Google 2FA, with HTML, and more! Try out AbstractAPI&#39;s Email APIs today for Free!"
+    }
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "CreativeWorkSeries",
+  "name": "How to Send Email with Python (the Right Way)",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "bestRating": "5",
+    "ratingCount": "6"
+  }
+}
+</script>
+
+<script>
+$(document).ready(function() {
+    var btnLink = document.getElementsByClassName("cta-link-nav")[0].href;
+    btnLink = btnLink + '?target=/api/email-validation/pricing/select';
+    $('#cta-link-nav, #app-button, #app-button-free').attr('href', btnLink);
+});
+</script>
+<!-- Use submitted e-mail for suffix on URL redirect on modal scroll popup -->
+<script>
+		$(document).ready(function() {
+      if (!'?target=/api/email-validation/pricing/select') {
+    // If it's empty, set targetLink to 'api'
+    var targetLink = '?';
+} else {
+    // If it's not empty, use the dataFromSomewhere
+    var targetLink = '?target=/api/email-validation/pricing/select + &';
+}
+      localStorage.setItem('targetLink', targetLink);
+
+	function redirectOnSubmit(formSelector, emailFieldClass, ctaSource) {
+        $(formSelector).on("submit", function(event) {
+          event.preventDefault();
+
+          var emailField = $(this).find(emailFieldClass);
+          var email = emailField.val();
+
+          if (email && email.includes('@')) {
+            var encodedEmail = encodeURIComponent(email);
+            var decodedAtSymbol = encodedEmail.replace(/%40/g, "@");
+
+            var redirectUrl = `https://app.abstractapi.com/users/signup${targetLink}email=${decodedAtSymbol}&cta_source=` + ctaSource
+
+            window.location.href = redirectUrl;
+          } else {
+            alert("Please enter a valid email address.");
+          }
+        });
+      }
+      redirectOnSubmit('.popup-content-form','.popup-content-form-field', 'popup')
+      redirectOnSubmit('.sticky-content-form','.sticky-content-form-field', 'sticky-content-form')
+    });
+</script>
+ <script>
+    $(document).ready(function () {
+        $('.question-wrapper').click(function () {
+            // Toggle the 'active' class for the clicked elements
+            $(this).toggleClass('active');
+            $(this).find('.question-btn').toggleClass('active');
+            $(this).siblings('.toc-container').toggleClass('active');
+
+            // Remove the 'active' class from other elements
+            $(this).parent().siblings().find('.question-wrapper').removeClass('active');
+            $(this).parent().siblings().find('.toc-container').removeClass('active');
+            $(this).parent().siblings().find('.question-btn').removeClass('active');
+        });
+    });
+</script>
+
+<!-- popup when you leave the page -->
+<script>
+let showPopup = true;
+
+function displayPopup() {
+  if (showPopup) {
+    document.getElementById("popup").style.display = "flex";
+    showPopup = false;
+  }
+}
+
+document.addEventListener("mouseout", function (e) {
+  if (e.clientY <= 0 || e.clientY >= window.innerHeight || e.clientX <= 0 || e.clientX >= window.innerWidth) {
+    displayPopup();
+  }
+});
+
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+  showPopup = false; // uncomment if you want to trigger it at anytime, without this line it works once
+}
+
+document.getElementById("close-popup-btn").addEventListener("click", closePopup);
+</script>
+<!-- Authors Schema Markup for Google -->
+<script>
+    // Define the encoded JSON string with HTML entity encoding
+    let encodedJSONString = '{ &quot;@context&quot;: &quot;http://schema.org&quot;, &quot;@type&quot;: &quot;Person&quot;, &quot;name&quot;: &quot;Nicolas Rios&quot;, &quot;alternateName&quot;: &quot;Nicolas Rios&quot;, &quot;jobTitle&quot;: &quot;Head of Product&quot;, &quot;worksFor&quot;: { &quot;@type&quot;: &quot;Organization&quot;, &quot;name&quot;: &quot;Abstract API&quot; }, &quot;url&quot;: &quot;https://www.linkedin.com/in/nicolasrios&quot;, &quot;description&quot;: &quot;Nicolas Rios is the Head of Product at Abstract API, combining his software engineering expertise with a focus on creating accessible API solutions.&quot;, &quot;sameAs&quot;: &quot;https://www.linkedin.com/in/nicolasrios&quot;, &quot;hasOccupation&quot;: [ { &quot;@type&quot;: &quot;Occupation&quot;, &quot;name&quot;: &quot;Head of Product&quot; } ], &quot;alumniOf&quot;: { &quot;@type&quot;: &quot;Organization&quot;, &quot;name&quot;: &quot;N/A&quot; }, &quot;knowsAbout&quot;: [ &quot;Software Engineering&quot;, &quot;API Development&quot;, &quot;Product Management&quot;, &quot;Technical Writing&quot;, &quot;User Experience&quot; ]
+}';
+
+    // Decode the HTML-encoded JSON string
+    let decodedJSONString = encodedJSONString.replace(/\&quot;/g, '\"')
+                                             .replace(/\&lt;/g, '<')
+                                             .replace(/\&gt;/g, '>')
+                                             .replace(/\&amp;/g, '&')
+                                             .replace(/\&#39;/g, '\'');
+
+    // Parse the decoded string into a JSON object
+    let jsonObject;
+    try {
+        jsonObject = JSON.parse(decodedJSONString);
+    } catch (e) {
+        console.error('Error parsing JSON:', e);
+        // Optionally, add more error handling here
+    }
+
+    if (jsonObject) {
+        // Update the JSON object's content as needed
+
+        // Convert the updated JSON object back to a string
+        let updatedJSONString = JSON.stringify(jsonObject);
+
+        // Dynamically create a script element
+        let script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.textContent = updatedJSONString;
+
+        // Append the script to the document
+        document.body.appendChild(script);
+    }   
+</script>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Abstract",
+        "item": "https://www.abstractapi.com/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "API Guides, Tips & Tricks",
+        "item": "https://www.abstractapi.com/guides"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "How to Send Email with Python (The Ultimate Guide) | Abstract API"
+      }]
+    }
+</script></body></html>

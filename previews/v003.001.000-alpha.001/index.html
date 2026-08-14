@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Security-Policy" content="connect-src 'none'; form-action 'none'">
+<meta name="robots" content="noindex, nofollow">
+<script src="./hosted-preview.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Paravane Labs builds email intelligence systems for trust, risk, and operational review workflows.">
+    <title>Paravane Labs | Email intelligence for trust workflows</title>
+    <link rel="icon" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/5c/5c0b22202097d2111076516815a4316e0be58467ac5161de9ee4ca1d0771e901.ico">
+    <link rel="stylesheet" href="css/site.css">
+</head>
+<body class="page-index">
+    <!-- Preloader -->
+    <div class="animationload" aria-label="Loading Paravane Labs">
+        <div class="loader">Loading...</div>
+    </div>
+    <!-- End Preloader -->
+
+    <header class="site-header">
+        <div class="container nav">
+            <a class="logo" href="index.html" aria-label="Paravane Labs home">
+                <img src="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/02/02c14fb8f12f2de1620aae8c89e2a025036a24bed8dea8d040df51c67ee4c3ea.png" alt="Paravane Labs">
+            </a>
+            <nav class="nav-links" aria-label="Primary navigation">
+                <a class="active" href="index.html">Platform</a>
+                <a href="emailrisk.html">EmailRisk</a>
+                <a href="about.html">About</a>
+                <a href="legal.html">Legal</a>
+            </nav>
+            <a class="nav-action" href="mailto:hello@paravanelabs.com?subject=Paravane%20access%20request">Request access</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <p class="kicker">Paravane Labs</p>
+                    <h1>Email intelligence for trust and risk workflows.</h1>
+                    <p class="lede">Paravane helps teams evaluate sender identity, reputation, and risk signals with compact model outputs built for review and operations.</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="mailto:hello@paravanelabs.com?subject=Paravane%20access%20request">Request access</a>
+                        <a class="btn btn-secondary" href="emailrisk.html">View EmailRisk</a>
+                    </div>
+                    <p class="note">Access is currently limited to early evaluators.</p>
+                </div>
+
+                <aside class="preview-card" aria-label="Paravane model output preview">
+                    <div class="preview-header">
+                        <span>Model output</span>
+                        <span>Example</span>
+                    </div>
+                    <div class="signal-table" aria-label="Signal summary">
+                        <div class="signal-row">
+                            <span>Identity</span>
+                            <div class="meter"><span style="--w: 82%"></span></div>
+                            <strong>0.82</strong>
+                        </div>
+                        <div class="signal-row">
+                            <span>Reputation</span>
+                            <div class="meter"><span style="--w: 68%"></span></div>
+                            <strong>0.68</strong>
+                        </div>
+                        <div class="signal-row">
+                            <span>Anomaly</span>
+                            <div class="meter"><span style="--w: 36%"></span></div>
+                            <strong>0.36</strong>
+                        </div>
+                    </div>
+                    <div class="code-card">
+                        <pre><code>{
+  <span class="code-key">"risk_score"</span>: <span class="code-number">42</span>,
+  <span class="code-key">"verdict"</span>: <span class="code-string">"review"</span>,
+  <span class="code-key">"confidence"</span>: <span class="code-string">"medium"</span>,
+  <span class="code-key">"reasons"</span>: [
+    <span class="code-string">"limited_reputation_depth"</span>,
+    <span class="code-string">"identity_mismatch"</span>
+  ]
+}</code></pre>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-head narrow">
+                    <p class="kicker">Platform</p>
+                    <h2>Signals for review, intake, and operations.</h2>
+                    <p>Paravane is designed to return small, usable outputs that fit into existing systems without forcing a new workflow around them.</p>
+                </div>
+                <div class="card-grid three">
+                    <article class="card">
+                        <span class="card-label">01</span>
+                        <h3>Email risk</h3>
+                        <p>Evaluation of mailbox, domain, route, reputation, and pattern signals.</p>
+                    </article>
+                    <article class="card">
+                        <span class="card-label">02</span>
+                        <h3>Identity context</h3>
+                        <p>Model-assisted interpretation of sender traits and consistency indicators.</p>
+                    </article>
+                    <article class="card">
+                        <span class="card-label">03</span>
+                        <h3>Operational output</h3>
+                        <p>Scores, verdicts, reason codes, and confidence bands for review systems.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section product-section">
+            <div class="container product-card">
+                <div class="product-copy">
+                    <p class="kicker">First product</p>
+                    <h2>EmailRisk</h2>
+                    <p>EmailRisk evaluates email addresses through a compact scoring layer for validation, reputation, and risk review.</p>
+                    <a class="text-link" href="emailrisk.html">View product details</a>
+                </div>
+                <div class="product-spec">
+                    <div class="spec-row">
+                        <span>Input</span>
+                        <strong>Email address + optional context</strong>
+                    </div>
+                    <div class="spec-row">
+                        <span>Output</span>
+                        <strong>Score, verdict, reasons, confidence</strong>
+                    </div>
+                    <div class="spec-row">
+                        <span>Use cases</span>
+                        <strong>Intake, onboarding, review, triage</strong>
+                    </div>
+                    <div class="spec-row">
+                        <span>Access</span>
+                        <strong>Limited evaluation</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-final">
+            <div class="container beta-card">
+                <div>
+                    <p class="kicker">Access</p>
+                    <h2>Private beta access</h2>
+                    <p>Paravane is currently available to a limited group of early evaluators.</p>
+                </div>
+                <a class="btn btn-primary" href="mailto:hello@paravanelabs.com?subject=Paravane%20private%20beta%20access">Request access</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <span>© 2026 Paravane Labs, Inc.</span>
+            <div class="footer-links">
+                <a href="emailrisk.html">EmailRisk</a>
+                <a href="about.html">About</a>
+                <a href="legal.html">Legal</a>
+            </div>
+        </div>
+    </footer>
+    <script src="js/loader.js"></script>
+</body>
+</html>

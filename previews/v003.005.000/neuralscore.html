@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Security-Policy" content="connect-src 'none'; form-action 'none'">
+<meta name="robots" content="noindex, nofollow">
+<script src="./hosted-preview.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="NeuralScore by Paravane Labs evaluates sender identity, reputation, and risk signals for review and operational workflows.">
+    <title>NeuralScore | Paravane Labs</title>
+    <link rel="icon" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/5c/5c0b22202097d2111076516815a4316e0be58467ac5161de9ee4ca1d0771e901.ico">
+    <link rel="stylesheet" href="css/site.css">
+</head>
+<body class="page-emailrisk">
+
+    <!-- Preloader
+    <div class="animationload" aria-label="Loading Paravane Labs">
+        <div class="loader">Loading...</div>
+    </div>
+     End Preloader -->
+
+    <header class="site-header">
+        <div class="container nav">
+            <a class="logo" href="index.html" aria-label="Paravane Labs home">
+                <img src="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/02/02c14fb8f12f2de1620aae8c89e2a025036a24bed8dea8d040df51c67ee4c3ea.png" alt="Paravane Labs">
+            </a>
+            <nav class="nav-links" aria-label="Primary navigation">
+                <a href="index.html">Platform</a>
+                <a class="active" href="neuralscore.html">NeuralScore</a>
+                <a href="about.html">About</a>
+                <a href="legal.html">Legal</a>
+            </nav>
+            <a class="nav-action" href="mailto:hello@paravanelabs.com?subject=NeuralScore%20access%20request">Request access</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero product-hero">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <p class="kicker">NeuralScore</p>
+                    <h1>Email risk scoring for review workflows.</h1>
+                    <p class="lede">NeuralScore evaluates address quality, sender context, domain reputation, and risk patterns, then returns a compact output for systems and teams.</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="mailto:hello@paravanelabs.com?subject=NeuralScore%20access%20request">Request access</a>
+                        <a class="btn btn-secondary" href="#outputs">View outputs</a>
+                    </div>
+                    <p class="note">Public registration and self-serve API keys are not enabled during the beta period.</p>
+                </div>
+
+                <aside class="preview-card" aria-label="NeuralScore response preview">
+                    <div class="preview-header">
+                        <span>POST /v1/emailrisk/analyze</span>
+                        <span>Example</span>
+                    </div>
+                    <div class="code-card large-code">
+                        <pre><code>{
+  <span class="code-key">"email"</span>: <span class="code-string">"sample@domain.com"</span>,
+  <span class="code-key">"risk_score"</span>: <span class="code-number">64</span>,
+  <span class="code-key">"verdict"</span>: <span class="code-string">"review"</span>,
+  <span class="code-key">"confidence"</span>: <span class="code-string">"medium_high"</span>,
+  <span class="code-key">"reasons"</span>: [
+    <span class="code-string">"new_domain_pattern"</span>,
+    <span class="code-string">"weak_reputation_depth"</span>,
+    <span class="code-string">"unusual_mailbox_shape"</span>
+  ],
+  <span class="code-key">"traits"</span>: {
+    <span class="code-key">"route"</span>: <span class="code-string">"valid"</span>,
+    <span class="code-key">"domain_type"</span>: <span class="code-string">"commercial"</span>
+  }
+}</code></pre>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-head narrow">
+                    <p class="kicker">Evaluation</p>
+                    <h2>More than a deliverability check.</h2>
+                    <p>NeuralScore combines validation, reputation, identity, and pattern signals into a small review-ready response.</p>
+                </div>
+                <div class="card-grid four">
+                    <article class="card">
+                        <span class="card-label">Mailbox</span>
+                        <h3>Address quality</h3>
+                        <p>Format, mailbox shape, route posture, and normalized traits.</p>
+                    </article>
+                    <article class="card">
+                        <span class="card-label">Domain</span>
+                        <h3>Domain context</h3>
+                        <p>DNS posture, provider behavior, domain patterns, and reputation depth.</p>
+                    </article>
+                    <article class="card">
+                        <span class="card-label">Model</span>
+                        <h3>Risk inference</h3>
+                        <p>Weighted signals for suspicious combinations and low-trust patterns.</p>
+                    </article>
+                    <article class="card">
+                        <span class="card-label">Ops</span>
+                        <h3>Decision shape</h3>
+                        <p>Compact fields that can be routed into review or automation logic.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-muted" id="outputs">
+            <div class="container output-layout">
+                <div class="section-head stacked">
+                    <p class="kicker">Output</p>
+                    <h2>Readable fields for operational review.</h2>
+                    <p>The response is intentionally small: enough to support a decision without requiring a separate analyst view.</p>
+                </div>
+                <div class="output-list">
+                    <div class="output-item">
+                        <strong>risk_score</strong>
+                        <span>0-100 normalized risk score</span>
+                    </div>
+                    <div class="output-item">
+                        <strong>verdict</strong>
+                        <span>allow · review · throttle · block</span>
+                    </div>
+                    <div class="output-item">
+                        <strong>reasons</strong>
+                        <span>Compact reason codes for review queues</span>
+                    </div>
+                    <div class="output-item">
+                        <strong>confidence</strong>
+                        <span>Model certainty band</span>
+                    </div>
+                    <div class="output-item">
+                        <strong>traits</strong>
+                        <span>Normalized mailbox and domain attributes</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container split-section">
+                <div>
+                    <p class="kicker">Workflow fit</p>
+                    <h2>Built to sit behind existing systems.</h2>
+                    <p>NeuralScore can support intake forms, onboarding flows, lead quality review, abuse queues, fraud triage, and internal review tools.</p>
+                </div>
+                <div class="steps">
+                    <div class="step">
+                        <span>1</span>
+                        <p>Submit an address and optional context.</p>
+                    </div>
+                    <div class="step">
+                        <span>2</span>
+                        <p>Evaluate mailbox, domain, reputation, and pattern signals.</p>
+                    </div>
+                    <div class="step">
+                        <span>3</span>
+                        <p>Return score, verdict, reasons, and confidence.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-final">
+            <div class="container beta-card">
+                <div>
+                    <p class="kicker">Access</p>
+                    <h2>Private beta access</h2>
+                    <p>NeuralScore is currently available to a limited group of early evaluators.</p>
+                </div>
+                <a class="btn btn-primary" href="mailto:hello@paravanelabs.com?subject=NeuralScore%20private%20beta%20access">Request access</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <span>© 2026 Paravane Labs, Inc.</span>
+            <div class="footer-links">
+                <a href="index.html">Platform</a>
+                <a href="about.html">About</a>
+                <a href="legal.html">Legal</a>
+            </div>
+        </div>
+    </footer>
+    <!-- <script src="js/loader.js"></script> -->
+</body>
+</html>

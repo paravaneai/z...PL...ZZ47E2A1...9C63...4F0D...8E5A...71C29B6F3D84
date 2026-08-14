@@ -1,0 +1,1795 @@
+/* ==========================================================================
+   PARAVANE LABS SAAS HOMEPAGE
+   ==========================================================================
+
+   FILE MAP
+   --------
+   01. Page foundation and shared typography
+   02. Brandmark intro
+   03. Hero section
+   04. Design proof strip
+   05. Shared section headings
+   06. Product bento and product cards
+   07. Decision flow
+   08. API integration section
+   09. Trust section
+   10. Final call to action
+   11. Light-theme overrides
+   12. Responsive breakpoints
+   13. Shared interactions and animations
+
+   HOW TO READ THIS FILE
+   ---------------------
+   - Selectors beginning with ".saas-home-" usually control a whole homepage
+     section.
+   - Selectors beginning with ".saas-product-" control the product cards.
+   - "html[data-theme='light']" rules only apply in light mode.
+   - "@media" blocks override earlier rules at smaller screen widths.
+   - "@keyframes" blocks define animations and do not directly size elements.
+   ========================================================================== */
+
+/* ==========================================================================
+   01. PAGE FOUNDATION AND SHARED TYPOGRAPHY
+   Controls the homepage wrapper, global heading styles, paragraph color,
+   button defaults, and the small uppercase eyebrow labels used above headings.
+   ========================================================================== */
+
+.company-homepage {
+    overflow-x: clip;
+    font-family: "Aptos", "Rubik", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Keeps decorative effects and wide content from creating horizontal scroll. */
+.company-homepage main {
+    position: relative;
+    overflow: clip;
+}
+
+/* Shared font family and balanced wrapping for all homepage headings. */
+.company-homepage main h1,
+.company-homepage main h2,
+/* Card and smaller section-heading sizing. */
+.company-homepage main h3 {
+    font-family: "Rubik", "Aptos", ui-sans-serif, system-ui, sans-serif;
+    text-wrap: balance;
+}
+
+/* Main page headline sizing. clamp() scales between desktop and mobile. */
+.company-homepage main h1 {
+    max-width: none;
+    margin: 0;
+    font-size: clamp(50px, 6vw, 78px);
+    font-weight: 650;
+    line-height: 0.99;
+    letter-spacing: -0.055em;
+}
+
+/* Major section-heading sizing. */
+.company-homepage main h2 {
+    margin: 0;
+    font-size: clamp(38px, 4.8vw, 62px);
+    font-weight: 620;
+    line-height: 1.02;
+    letter-spacing: -0.045em;
+}
+
+.company-homepage main h3 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 620;
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+}
+
+.company-homepage main p {
+    color: var(--muted);
+}
+
+.company-homepage .btn {
+    min-height: 48px;
+    padding-inline: 20px;
+    font-family: "Aptos", "Rubik", ui-sans-serif, system-ui, sans-serif;
+    font-weight: 700;
+}
+
+/* Small orange uppercase label shown above major headings. */
+.saas-eyebrow {
+    margin: 0 0 16px;
+    color: var(--accent-bright) !important;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+}
+
+/* ==========================================================================
+   02. BRANDMARK INTRO
+   The centered Paravane mark shown before the main hero content.
+   ========================================================================== *//* Brandmark intro --------------------------------------------------------- */
+
+/* Creates the vertical area and centers the intro logo. */
+.company-logo-intro {
+    min-height: clamp(340px, 44svh, 460px);
+    display: grid;
+    place-items: center;
+    background: transparent;
+}
+
+/* Controls the logo's visible size and transparency. */
+.company-logo-intro-mark {
+    display: block;
+    width: clamp(230px, 31vw, 500px);
+    max-width: 72vw;
+    height: auto;
+    opacity: 0.42;
+    user-select: none;
+}
+
+html[data-theme="light"] .company-logo-intro-mark {
+    opacity: 0.3;
+}
+
+/* ==========================================================================
+   03. HERO SECTION
+   Includes the hero spacing, background glows, copy column, announcement pill,
+   proof points, and the large product/API visual.
+   ========================================================================== *//* Hero -------------------------------------------------------------------- */
+
+/* Outer hero section and stacking context for decorative background glows. */
+.saas-home-hero {
+    position: relative;
+    padding: clamp(48px, 5vw, 72px) 0 72px;
+    isolation: isolate;
+}
+
+/* Shared setup for the two blurred decorative circles behind the hero. */
+.saas-home-hero::before,
+/* Smaller gold glow positioned near the lower-right side of the hero. */
+.saas-home-hero::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(2px);
+}
+
+/* Large orange glow positioned behind the left side of the hero. */
+.saas-home-hero::before {
+    width: 760px;
+    height: 760px;
+    top: -440px;
+    left: calc(50% - 660px);
+    background: radial-gradient(circle, rgba(238, 152, 38, 0.19), rgba(238, 152, 38, 0.045) 42%, transparent 72%);
+}
+
+.saas-home-hero::after {
+    width: 620px;
+    height: 620px;
+    right: calc(50% - 760px);
+    bottom: -260px;
+    background: radial-gradient(circle, rgba(246, 191, 63, 0.09), transparent 70%);
+}
+
+/* Hero layout: left column = copy, right column = visual. */
+.saas-home-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.93fr) minmax(460px, 1.07fr);
+    gap: clamp(48px, 6vw, 82px);
+    align-items: center;
+}
+
+/* Keeps the hero text above decorative background effects. */
+.saas-home-hero-copy {
+    position: relative;
+    z-index: 2;
+}
+
+/* Green availability announcement pill above the hero headline. */
+.saas-announcement {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 34px;
+    margin: 0 0 28px;
+    padding: 6px 12px 6px 8px;
+    border: 1px solid rgba(83, 213, 142, 0.34);
+    border-radius: 999px;
+    color: var(--text-soft);
+    background: rgba(53, 191, 113, 0.075);
+    font-size: 12px;
+    line-height: 1;
+    transition: border-color 180ms ease, background 180ms ease, transform 180ms ease;
+}
+
+/* Small hover lift and stronger green treatment for the announcement pill. */
+.saas-announcement:hover {
+    border-color: rgba(83, 213, 142, 0.52);
+    background: rgba(53, 191, 113, 0.12);
+    transform: translateY(-1px);
+}
+
+.saas-announcement strong {
+    color: #7ee2ad;
+    font-weight: 800;
+}
+
+.saas-announcement > span:not(.saas-announcement-dot) {
+    color: #b9cbbf;
+}
+
+.saas-announcement i {
+    color: #65d89a;
+    font-size: 10px;
+}
+
+/* Solid green status dot inside the announcement pill. */
+.saas-announcement-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #65d89a;
+    box-shadow: 0 0 0 5px rgba(83, 213, 142, 0.1);
+}
+
+/* Applies the orange-to-gold gradient to the emphasized headline text. */
+.saas-home-hero h1 span {
+    color: transparent;
+    background: linear-gradient(115deg, #f8c34b 0%, #ee9826 46%, #fff0bd 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+/* Introductory paragraph directly below the hero headline. */
+.saas-home-hero-lede {
+    max-width: 680px;
+    margin: 26px 0 0;
+    color: var(--text-soft) !important;
+    font-size: clamp(18px, 1.8vw, 21px);
+    line-height: 1.62;
+}
+
+/* Spacing above the hero buttons. */
+.saas-home-hero-actions {
+    margin-top: 32px;
+}
+
+/* Horizontal list of short proof points below the hero buttons. */
+.saas-home-proof {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    margin-top: 28px;
+}
+
+.saas-home-proof span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 650;
+}
+
+.saas-home-proof i {
+    color: var(--accent-bright);
+    font-size: 11px;
+}
+
+/* Main framed hero visual, including border, background, shadow, and tilt. */
+.saas-home-visual {
+    position: relative;
+    min-width: 0;
+    border: 1px solid rgba(238, 152, 38, 0.26);
+    border-radius: 24px;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 24%),
+        rgba(10, 11, 13, 0.96);
+    box-shadow: 0 34px 110px rgba(0, 0, 0, 0.42), 0 0 0 1px rgba(255, 255, 255, 0.018) inset;
+    transform: perspective(1400px) rotateY(-2deg) rotateX(1deg);
+    transform-origin: center;
+}
+
+/* Soft orange halo behind the hero visual. */
+.saas-home-visual::before {
+    content: "";
+    position: absolute;
+    inset: 12% -8% -12% 12%;
+    z-index: -1;
+    border-radius: 40px;
+    background: radial-gradient(circle at center, rgba(238, 152, 38, 0.19), transparent 68%);
+    filter: blur(30px);
+}
+
+/* Shared flex alignment for the mock application window headers. */
+.saas-window-chrome,
+.product-window-head {
+    display: flex;
+    align-items: center;
+}
+
+/* Top bar of the mock application window. */
+.saas-window-chrome {
+    justify-content: space-between;
+    min-height: 52px;
+    padding: 0 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.075);
+    color: #d9d5cd;
+    font-size: 11px;
+}
+
+/* Group containing the small decorative window dots. */
+.saas-window-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.saas-window-dots span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.24);
+}
+
+.saas-window-dots span:first-child {
+    background: #f0a023;
+}
+
+/* Product name and icon inside the mock window header. */
+.saas-window-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
+/* Small orange square brand icon inside the mock window header. */
+.saas-window-brandmark {
+    display: inline-grid;
+    place-items: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 7px;
+    color: #15110c;
+    background: linear-gradient(135deg, #f7c548, #e88316);
+    font-family: "Rubik", sans-serif;
+    font-weight: 900;
+}
+
+/* Green live-status label in the mock window header. */
+.saas-window-live {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: #7ee2ad;
+}
+
+.saas-window-live i {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #65d89a;
+    box-shadow: 0 0 0 4px rgba(83, 213, 142, 0.11);
+}
+
+/* Image viewport inside the framed hero visual. */
+.saas-home-visual-image {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    background: #08090b;
+    aspect-ratio: 4 / 5;
+    display: grid;
+    place-items: center;
+}
+
+/* Very subtle inner border drawn over the hero image. */
+.saas-home-visual-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(255, 255, 255, 0.035);
+    pointer-events: none;
+}
+
+/* Makes the hero image fit without cropping. */
+.saas-home-visual-image img {
+    display: block;
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* Three-column metrics strip below the hero image. */
+.saas-home-visual-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1px;
+    border-top: 1px solid rgba(255, 255, 255, 0.075);
+    background: rgba(255, 255, 255, 0.075);
+    border-radius: 0 0 23px 23px;
+    overflow: hidden;
+}
+
+.saas-home-visual-metrics div {
+    min-width: 0;
+    padding: 15px 14px 17px;
+    background: #0c0e11;
+}
+
+.saas-home-visual-metrics span,
+.saas-home-visual-metrics strong {
+    display: block;
+}
+
+.saas-home-visual-metrics span {
+    margin-bottom: 5px;
+    color: #77736b;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.saas-home-visual-metrics strong {
+    color: #f4efe5;
+    font-size: 12px;
+    font-weight: 750;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Alternate unframed hero visual container. */
+.saas-home-visual-bare {
+    display: grid;
+    place-items: center start;
+    min-width: 0;
+    margin: 0;
+}
+
+/* Size rules for the alternate unframed hero illustration. */
+.saas-home-visual-bare img {
+    display: block;
+    width: auto;
+    max-width: none;
+    height: min(780px, 72vw);
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* ==========================================================================
+   04. DESIGN PROOF STRIP
+   Four compact statements separated by borders directly below the hero.
+   ========================================================================== *//* Design proof strip ------------------------------------------------------- */
+
+/* Full-width strip background and top/bottom borders. */
+.saas-proof-strip {
+    border-top: 1px solid var(--line-soft);
+    border-bottom: 1px solid var(--line-soft);
+    background: rgba(255, 255, 255, 0.012);
+}
+
+/* Four equal proof columns on large screens. */
+.saas-proof-strip-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* Individual proof item spacing and vertical divider. */
+.saas-proof-strip-grid > div {
+    position: relative;
+    min-width: 0;
+    padding: 28px 24px 30px;
+    border-right: 1px solid var(--line-soft);
+}
+
+.saas-proof-strip-grid > div:first-child {
+    padding-left: 24px;
+}
+
+.saas-proof-strip-grid > div:last-child {
+    padding-right: 24px;
+    border-right: 0;
+}
+
+.saas-proof-strip-grid span,
+.saas-proof-strip-grid strong,
+.saas-proof-strip-grid small {
+    display: block;
+}
+
+.saas-proof-strip-grid span {
+    margin-bottom: 18px;
+    color: var(--accent-bright);
+    font-size: 10px;
+    font-weight: 850;
+    letter-spacing: 0.12em;
+}
+
+.saas-proof-strip-grid strong {
+    margin-bottom: 7px;
+    color: var(--text);
+    font-size: 15px;
+    font-weight: 750;
+}
+
+.saas-proof-strip-grid small {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.55;
+}
+
+/* ==========================================================================
+   05. SHARED SECTION HEADINGS
+   Reusable heading layouts used above the products and other major sections.
+   ========================================================================== *//* Shared section headings ------------------------------------------------- */
+
+/* Default spacing below a section heading group. */
+.saas-section-heading {
+    margin-bottom: 42px;
+}
+
+/* Two-column heading: title on the left, supporting copy on the right. */
+.saas-section-heading--split {
+    display: grid;
+    grid-template-columns: minmax(0, 0.92fr) minmax(320px, 0.52fr);
+    gap: 56px;
+    align-items: end;
+}
+
+.saas-section-heading--split > p {
+    margin: 0;
+    color: var(--text-soft);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* Centered heading variation. */
+.saas-section-heading--center {
+    max-width: 820px;
+    margin-inline: auto;
+    text-align: center;
+}
+
+.saas-section-heading--center > p:last-child {
+    max-width: 720px;
+    margin: 20px auto 0;
+    color: var(--text-soft);
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+/* ==========================================================================
+   06. PRODUCT BENTO AND PRODUCT CARDS
+   Controls the product grid, card shells, status badges, tags, links, image
+   frames, image cropping, and product-specific image positioning.
+   ========================================================================== *//* Product bento ------------------------------------------------------------ */
+
+/* Vertical spacing around the entire products section. */
+.saas-home-products {
+    padding: clamp(92px, 10vw, 138px) 0;
+}
+
+/* Twelve-column grid used to create different card widths. */
+.saas-product-bento {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 18px;
+}
+
+/* Base shell shared by every product card. */
+.saas-product-card {
+    position: relative;
+    grid-column: span 6;
+    min-width: 0;
+    min-height: 520px;
+    overflow: hidden;
+    padding: 28px;
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    background:
+        radial-gradient(circle at 82% 12%, rgba(238, 152, 38, 0.08), transparent 34%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.032), rgba(255, 255, 255, 0.014));
+    box-shadow: 0 20px 68px rgba(0, 0, 0, 0.12);
+    transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+/* Lifts the whole product card on hover. */
+.saas-product-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(238, 152, 38, 0.34);
+    box-shadow: 0 28px 84px rgba(0, 0, 0, 0.2);
+}
+
+/* Larger featured card, currently used for smtpRS. */
+.saas-product-card--featured {
+    grid-column: span 7;
+    display: flex;
+    flex-direction: column;
+    min-height: 520px;
+    background:
+        radial-gradient(circle at 78% 18%, rgba(238, 152, 38, 0.13), transparent 34%),
+        linear-gradient(160deg, rgba(238, 152, 38, 0.055), rgba(255, 255, 255, 0.018) 48%, rgba(255, 255, 255, 0.012));
+}
+
+/* Narrower grid width used by the InvoiceGuard card. */
+.saas-product-card--invoice {
+    grid-column: span 5;
+}
+
+/* Text area inside a product card. */
+.saas-product-card-copy {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Top row inside a card: category on the left, status on the right. */
+.saas-product-card-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    margin-bottom: 26px;
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 750;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* Default category-label color. Product modifiers below override it. */
+.saas-product-card-meta > span:first-child {
+    color: var(--accent-bright);
+}
+
+.saas-product-card--invoice .saas-product-card-meta > span:first-child {
+    color: #67e8f9;
+}
+
+.saas-product-card--retain .saas-product-card-meta > span:first-child {
+    color: #fb7185;
+}
+
+.saas-product-card--vendor .saas-product-card-meta > span:first-child {
+    color: #5eead4;
+}
+
+/* Base pill used for product availability/development status. */
+.saas-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 25px;
+    padding: 4px 8px;
+    border: 1px solid rgba(96, 165, 250, 0.38);
+    border-radius: 999px;
+    color: #93c5fd;
+    background: rgba(59, 130, 246, 0.09);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: none;
+    white-space: nowrap;
+}
+
+/* Blue dot automatically added to non-live status pills. */
+/* Applies the blue pulse animation to development-status dots. */
+.saas-status:not(.saas-status--live)::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    flex: 0 0 6px;
+    border-radius: 50%;
+    background: #60a5fa;
+    box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.1);
+}
+
+/* Green color treatment for products that are available now. */
+.saas-status--live {
+    color: #7ee2ad;
+    border-color: rgba(83, 213, 142, 0.36);
+    background: rgba(53, 191, 113, 0.09);
+}
+
+/* Green dot inside a live status pill. */
+.saas-status--live i {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+    box-shadow: 0 0 0 4px rgba(83, 213, 142, 0.1);
+}
+
+
+/* Shared title row used when a product name and status pill sit together. */
+.docs-api-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.docs-api-title strong {
+    margin: 0;
+}
+
+
+
+
+/* Product name size inside cards. */
+.saas-product-card h3 {
+    font-size: 31px;
+}
+
+/* Product description text. */
+.saas-product-card > p,
+.saas-product-card-copy > p {
+    max-width: 520px;
+    margin: 14px 0 0;
+    color: var(--text-soft);
+    font-size: 15px;
+    line-height: 1.66;
+}
+
+/* Row of small feature tags such as Structured JSON. */
+.saas-tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 24px;
+}
+
+/* Individual feature tag appearance. */
+.saas-tag-list span {
+    padding: 6px 8px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    color: var(--muted);
+    background: rgba(255, 255, 255, 0.018);
+    font-size: 10px;
+    font-weight: 700;
+    cursor: default;
+    transition:
+        color 160ms ease,
+        border-color 160ms ease,
+        background-color 160ms ease,
+        box-shadow 160ms ease,
+        transform 160ms ease;
+}
+
+/* Orange hover treatment for feature tags. */
+.saas-tag-list span:hover {
+    color: var(--accent-bright);
+    border-color: rgba(238, 152, 38, 0.58);
+    background: rgba(238, 152, 38, 0.1);
+    box-shadow: inset 0 0 0 1px rgba(246, 191, 63, 0.08), 0 8px 20px rgba(0, 0, 0, 0.14);
+    transform: translateY(-1px);
+}
+
+/* Bottom product link, such as Explore smtpRS. */
+.saas-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 24px;
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 800;
+}
+
+/* Arrow icon inside the bottom product link. */
+.saas-card-link i {
+    color: var(--accent-bright);
+    font-size: 10px;
+    transition: transform 180ms ease;
+}
+
+.saas-card-link:hover i {
+    transform: translateX(3px);
+}
+
+/* Shared image frame inside every product card. */
+.saas-product-card-visual {
+    position: relative;
+    min-height: 230px;
+    margin: 28px 0 0;
+    overflow: hidden;
+    border: 1px solid rgba(238, 152, 38, 0.16);
+    border-radius: 16px;
+    background: #08090b;
+}
+
+/* Image-frame ratio and spacing for the featured smtpRS card. */
+.saas-product-card--featured .saas-product-card-visual {
+    aspect-ratio: 16 / 9;
+    min-height: 0;
+    margin: 28px 0 0;
+    border-radius: 16px;
+}
+
+/* Image-frame ratio for all non-featured product cards. */
+.saas-product-card:not(.saas-product-card--featured) .saas-product-card-visual {
+    aspect-ratio: 16 / 9;
+    min-height: 0;
+}
+/* --------------------------------------------------------------------------
+   PRODUCT IMAGE FITTING
+   width/height make the image fill its frame.
+   object-fit: cover fills the frame but may crop the image.
+   Change to object-fit: contain when the entire illustration must remain visible.
+   -------------------------------------------------------------------------- *//* Controls the image’s displayed size */
+.saas-product-card-visual img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 500ms ease;
+}
+/* --------------------------------------------------------------------------
+   OLD PRODUCT IMAGE HOVER RULE
+   Replaced because this selector targeted every image inside the visual frame.
+   After adding a product logo, it would enlarge both the illustration and logo.
+   -------------------------------------------------------------------------- */
+/*
+.saas-product-card:hover .saas-product-card-visual img {
+    transform: scale(1.018);
+}
+*/
+
+/* Zoom only the main product illustration. Product logos remain stationary. */
+.saas-product-card:hover .saas-product-card-illustration {
+    transform: scale(1.018);
+}
+
+/* --------------------------------------------------------------------------
+   OLD SMTPRS IMAGE RULES
+   Replaced because ".saas-product-card-visual--smtprs img" targeted both the
+   illustration and the logo, forcing both images to use the same width.
+   -------------------------------------------------------------------------- */
+/*
+.saas-product-card-visual--smtprs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.saas-product-card-visual--smtprs img {
+    width: 82%;
+    height: auto;
+    object-fit: contain;
+}
+*/
+
+/* ==========================================================================
+   SMTPRS PRODUCT VISUAL
+   The main illustration and the smtpRS lockup share the same visual frame.
+   ========================================================================== */
+
+/* Establishes the positioning area and centers the main illustration. */
+.saas-product-card-visual--smtprs {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Main smtpRS illustration: shown slightly smaller so the full art is visible. */
+.saas-product-card-visual--smtprs .saas-product-card-illustration {
+    display: block;
+    width: 82%;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* --------------------------------------------------------------------------
+   OLD SMTPRS-ONLY LOGO RULE
+   Replaced because all four product cards now include a lockup. A shared logo
+   rule prevents the same positioning code from being repeated four times.
+   -------------------------------------------------------------------------- */
+/*
+.saas-product-card-visual--smtprs .saas-product-card-logo {
+    position: absolute;
+    top: 18px;
+    left: 20px;
+    z-index: 2;
+    width: clamp(120px, 25%, 200px);
+    height: auto;
+    object-fit: contain;
+    object-position: left center;
+    pointer-events: none;
+}
+*/
+
+/* ==========================================================================
+   SHARED PRODUCT LOGO OVERLAYS
+   Applies to smtpRS, InvoiceGuard, RetainIQ, and VendorLens.
+   ========================================================================== */
+
+/* All product lockups remain fixed while the main illustration can zoom. */
+.saas-product-card-visual .saas-product-card-logo {
+    position: absolute;
+    top: 18px;
+    left: 20px;
+    z-index: 2;
+
+    width: clamp(110px, 30%, 190px);
+    height: auto;
+    max-height: 52px;
+
+    object-fit: contain;
+    object-position: left center;
+
+    pointer-events: none;
+}
+
+/* The larger featured smtpRS card can use a slightly wider lockup. */
+.saas-product-card-visual--smtprs .saas-product-card-logo {
+    width: clamp(120px, 25%, 210px);
+}
+
+/* ==========================================================================
+   INVOICEGUARD LOGO AND ILLUSTRATION POSITIONING
+   Keeps the lockup above the artwork instead of overlapping the invoice image.
+   ========================================================================== */
+
+.saas-product-card-visual--invoiceguard .saas-product-card-logo {
+    top: 14px;
+    left: 16px;
+    width: clamp(96px, 30%, 150px);
+}
+
+/* Reserve space beneath the InvoiceGuard lockup for the illustration. */
+.saas-product-card-visual--invoiceguard .saas-product-card-illustration {
+    position: absolute;
+    top: 42px;
+    left: 8px;
+
+    width: calc(100% - 16px);
+    height: calc(100% - 50px);
+
+    object-fit: contain;
+    object-position: center;
+}
+
+/* ==========================================================================
+   RETAINIQ LOGO AND ILLUSTRATION POSITIONING
+   Gives the wider RetainIQ lockup a separate area above the artwork.
+   ========================================================================== */
+
+.saas-product-card-visual--retainiq .saas-product-card-logo {
+    top: 14px;
+    left: 18px;
+    width: clamp(105px, 32%, 165px);
+}
+
+/* Reserve space beneath the RetainIQ lockup for the illustration. */
+.saas-product-card-visual--retainiq .saas-product-card-illustration {
+    position: absolute;
+    top: 44px;
+    left: 10px;
+
+    width: calc(100% - 20px);
+    height: calc(100% - 52px);
+
+    object-fit: contain;
+    object-position: center;
+}
+
+/* Center only the main illustrations; do not apply this to the logo overlays. */
+.saas-product-card-visual--invoiceguard .saas-product-card-illustration,
+.saas-product-card-visual--retainiq .saas-product-card-illustration,
+.saas-product-card-visual--vendorlens .saas-product-card-illustration {
+    object-position: center;
+}
+
+/* ==========================================================================
+   07. DECISION FLOW
+   Four numbered steps that explain how data moves through the product.
+   ========================================================================== *//* Decision flow ------------------------------------------------------------ */
+
+/* Full decision-flow section, including the subtle grid background. */
+.saas-home-flow {
+    padding: clamp(90px, 9vw, 132px) 0;
+    border-top: 1px solid var(--line-soft);
+    border-bottom: 1px solid var(--line-soft);
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.012) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.012) 1px, transparent 1px),
+        rgba(255, 255, 255, 0.008);
+    background-size: 54px 54px;
+}
+
+/* Four-column container holding the decision steps. */
+.saas-flow-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: var(--bg-soft);
+    box-shadow: var(--shadow-soft);
+}
+
+/* Individual decision step card. */
+.saas-flow-grid article {
+    position: relative;
+    min-width: 0;
+    min-height: 290px;
+    padding: 26px 24px 30px;
+    border-right: 1px solid var(--line);
+}
+
+.saas-flow-grid article:last-child {
+    border-right: 0;
+}
+
+.saas-flow-grid article > span {
+    color: var(--accent-bright);
+    font-size: 10px;
+    font-weight: 850;
+    letter-spacing: 0.12em;
+}
+
+/* Orange icon box inside each decision step. */
+.saas-flow-icon {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    margin: 40px 0 28px;
+    border: 1px solid var(--accent-line);
+    border-radius: 14px;
+    color: var(--accent-bright);
+    background: rgba(238, 152, 38, 0.07);
+    box-shadow: 0 10px 35px rgba(238, 152, 38, 0.07);
+}
+
+.saas-flow-grid h3 {
+    font-size: 20px;
+}
+
+.saas-flow-grid p {
+    margin: 11px 0 0;
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+/* ==========================================================================
+   08. API INTEGRATION SECTION
+   Left side = explanatory copy and checklist.
+   Right side = theme-specific API result image with an animated green dot.
+   ========================================================================== *//* API section -------------------------------------------------------------- */
+
+/* Vertical spacing around the API section. */
+.saas-home-api {
+    padding: clamp(96px, 10vw, 146px) 0;
+}
+
+/* Two-column API layout: copy on the left, image on the right. */
+.saas-home-api-grid {
+    display: grid;
+    width: min(1400px, calc(100% - 48px));
+    grid-template-columns: minmax(300px, 0.55fr) minmax(680px, 1.45fr);
+    gap: clamp(42px, 5vw, 72px);
+    align-items: center;
+}
+
+/* Main descriptive paragraph in the API section. */
+.saas-home-api-copy > p:not(.saas-eyebrow) {
+    margin: 24px 0 0;
+    color: var(--text-soft);
+    font-size: 17px;
+    line-height: 1.72;
+}
+
+/* API-benefit checklist container. */
+.saas-check-list {
+    display: grid;
+    gap: 13px;
+    margin: 28px 0 32px;
+    padding: 0;
+    list-style: none;
+}
+
+/* Individual API-benefit checklist row. */
+.saas-check-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--text-soft);
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+/* Circular orange check icon. */
+.saas-check-list li span {
+    display: inline-grid;
+    place-items: center;
+    flex: 0 0 auto;
+    width: 20px;
+    height: 20px;
+    margin-top: 1px;
+    border-radius: 50%;
+    color: #15110c;
+    background: linear-gradient(135deg, #f7c548, #e88316);
+    font-size: 11px;
+    font-weight: 900;
+}
+
+/* Positioned wrapper for the API screenshot and live pulse overlay. */
+.saas-api-result-visual {
+    position: relative;
+    width: min(100%, 1403px);
+    margin: 0;
+    justify-self: end;
+    isolation: isolate;
+    filter: drop-shadow(0 32px 50px rgba(0, 0, 0, 0.26));
+}
+
+/* Makes either API screenshot scale responsively. */
+.saas-api-result-visual img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Light screenshot is hidden by default; light-theme rules reveal it later. */
+.saas-api-result-visual-light {
+    display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   OLD LIVE-DOT POSITIONING - KEPT COMMENTED OUT FOR REFERENCE
+   Replaced by the active rule below because the old position and maximum size
+   did not align consistently with both the dark and light API images.
+
+.saas-api-result-live {
+    position: absolute;
+    top: 13.9%;
+    left: 13.68%;
+    width: clamp(7px, 1.82%, 14px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #53d58e;
+    box-shadow:
+        0 0 0 2px rgba(83, 213, 142, 0.09),
+        0 0 7px rgba(83, 213, 142, 0.38);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+-------------------------------------------------------------------------- */
+.saas-api-result-live {
+    position: absolute;
+    top: 13.95%;
+    left: 13.80%;
+    width: clamp(9px, 1.95%, 28px);
+    aspect-ratio: 1;
+    z-index: 2;
+    border-radius: 50%;
+    background: #53d58e;
+    box-shadow:
+        0 0 0 2px rgba(83, 213, 142, 0.09),
+        0 0 7px rgba(83, 213, 142, 0.38);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+/* One small position correction used only with the light screenshot. */
+html[data-theme="light"] .saas-api-result-live {
+    top: 14.04%;
+}
+
+/* Second animated layer that creates the breathing/pulse effect. */
+.saas-api-result-live::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: inherit;
+    opacity: 0.12;
+    animation: saas-api-result-breathe 1.2s ease-in-out infinite;
+}
+
+/* ==========================================================================
+   09. TRUST SECTION
+   Supporting trust copy on the left and a numbered list on the right.
+   ========================================================================== *//* Trust section ------------------------------------------------------------ */
+
+/* Outer trust-section spacing and background. */
+.saas-home-trust {
+    padding: clamp(92px, 9vw, 132px) 0;
+    border-top: 1px solid var(--line-soft);
+    background: rgba(255, 255, 255, 0.01);
+}
+
+/* Two-column trust layout. */
+.saas-home-trust-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.78fr) minmax(460px, 1.22fr);
+    gap: clamp(58px, 8vw, 112px);
+    align-items: start;
+}
+
+.saas-home-trust-grid > div:first-child > p:last-child {
+    max-width: 560px;
+    margin: 24px 0 0;
+    color: var(--text-soft);
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+/* Top border and wrapper for the trust principles. */
+.saas-trust-list {
+    border-top: 1px solid var(--line);
+}
+
+/* Individual numbered trust principle. */
+.saas-trust-list article {
+    position: relative;
+    display: grid;
+    grid-template-columns: 54px minmax(0, 1fr);
+    gap: 20px;
+    padding: 26px 20px 28px;
+    border-bottom: 1px solid var(--line);
+}
+
+.saas-trust-list article > span {
+    color: var(--accent-bright);
+    font-size: 10px;
+    font-weight: 850;
+    letter-spacing: 0.12em;
+}
+
+.saas-trust-list h3 {
+    font-size: 19px;
+}
+
+.saas-trust-list p {
+    margin: 9px 0 0;
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+/* ==========================================================================
+   10. FINAL CALL TO ACTION
+   Large closing card with final message and action buttons.
+   ========================================================================== *//* Final CTA ---------------------------------------------------------------- */
+
+/* Outer spacing around the final call-to-action section. */
+.saas-home-final {
+    padding: 40px 0 clamp(82px, 9vw, 120px);
+}
+
+/* Final call-to-action card shell and two-column layout. */
+.saas-final-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 48px;
+    align-items: end;
+    overflow: hidden;
+    padding: clamp(38px, 5vw, 60px);
+    border: 1px solid rgba(238, 152, 38, 0.28);
+    border-radius: 26px;
+    background:
+        radial-gradient(circle at 92% 22%, rgba(246, 191, 63, 0.15), transparent 32%),
+        radial-gradient(circle at 8% 120%, rgba(238, 152, 38, 0.1), transparent 38%),
+        linear-gradient(145deg, rgba(238, 152, 38, 0.055), rgba(255, 255, 255, 0.018));
+    box-shadow: 0 32px 100px rgba(0, 0, 0, 0.22);
+}
+
+.saas-final-card h2 {
+    max-width: 760px;
+    font-size: clamp(36px, 4.3vw, 56px);
+}
+
+.saas-final-card p:last-child {
+    max-width: 700px;
+    margin: 20px 0 0;
+    color: var(--text-soft);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.saas-final-card .hero-actions {
+    justify-content: flex-end;
+}
+
+/* ==========================================================================
+   11. LIGHT-THEME OVERRIDES
+   These rules replace selected dark-theme colors, shadows, and images whenever
+   the page's <html> element has data-theme="light".
+   ========================================================================== *//* Light theme -------------------------------------------------------------- */
+
+/* Softer shadow for the main hero visual in light mode. */
+html[data-theme="light"] .saas-home-visual {
+    box-shadow: 0 32px 90px rgba(79, 55, 20, 0.18);
+}
+
+/* Hide the dark API screenshot in light mode. */
+html[data-theme="light"] .saas-api-result-visual-dark {
+    display: none;
+}
+
+/* Reveal the light API screenshot in light mode. */
+html[data-theme="light"] .saas-api-result-visual-light {
+    display: block !important;
+}
+
+html[data-theme="light"] .saas-proof-strip,
+html[data-theme="light"] .saas-home-flow,
+html[data-theme="light"] .saas-home-trust {
+    background-color: rgba(255, 255, 255, 0.48);
+}
+
+/* Light card background and shadow. */
+html[data-theme="light"] .saas-product-card {
+    background:
+        radial-gradient(circle at 82% 12%, rgba(238, 152, 38, 0.11), transparent 34%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 253, 248, 0.72));
+    box-shadow: 0 18px 52px rgba(81, 59, 25, 0.08);
+}
+
+/* Product illustration backgrounds */
+html[data-theme="light"] .saas-product-card-visual--smtprs {
+    background: #f9f7f1;
+}
+
+html[data-theme="light"] .saas-product-card-visual--invoiceguard,
+html[data-theme="light"] .saas-product-card-visual--retainiq,
+html[data-theme="light"] .saas-product-card-visual--vendorlens {
+    background: #f9f7f1;
+}
+
+
+
+html[data-theme="light"] .saas-product-card-meta > span:first-child {
+    color: #a85e00;
+}
+
+html[data-theme="light"] .saas-product-card--invoice .saas-product-card-meta > span:first-child {
+    color: #0369a1;
+}
+
+html[data-theme="light"] .saas-product-card--retain .saas-product-card-meta > span:first-child {
+    color: #be123c;
+}
+
+html[data-theme="light"] .saas-product-card--vendor .saas-product-card-meta > span:first-child {
+    color: #0f766e;
+}
+
+html[data-theme="light"] .saas-tag-list span:hover {
+    color: #9a5100;
+    border-color: rgba(190, 107, 12, 0.48);
+    background: rgba(238, 152, 38, 0.12);
+    box-shadow: inset 0 0 0 1px rgba(190, 107, 12, 0.05), 0 8px 20px rgba(81, 59, 25, 0.08);
+}
+
+html[data-theme="light"] .saas-flow-grid {
+    background: rgba(255, 255, 255, 0.82);
+}
+
+html[data-theme="light"] .saas-status {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+html[data-theme="light"] .saas-announcement {
+    border-color: rgba(31, 139, 83, 0.34);
+    background: rgba(53, 191, 113, 0.1);
+}
+
+html[data-theme="light"] .saas-announcement strong,
+html[data-theme="light"] .saas-window-live,
+html[data-theme="light"] .saas-status--live {
+    color: #18784a;
+}
+
+html[data-theme="light"] .saas-announcement > span:not(.saas-announcement-dot) {
+    color: #35624b;
+}
+
+html[data-theme="light"] .saas-status:not(.saas-status--live) {
+    color: #1d4ed8;
+    border-color: rgba(37, 99, 235, 0.34);
+    background: rgba(59, 130, 246, 0.1);
+}
+
+html[data-theme="light"] .saas-status--live {
+    border-color: rgba(31, 139, 83, 0.34);
+    background: rgba(53, 191, 113, 0.11);
+}
+
+/* ==========================================================================
+   12. RESPONSIVE BREAKPOINTS
+   Rules below override the desktop layout as the browser becomes narrower.
+   Read them from largest breakpoint to smallest.
+   ========================================================================== *//* Responsive --------------------------------------------------------------- */
+
+/* --------------------------------------------------------------------------
+   TABLET / SMALL DESKTOP: 1080px AND BELOW
+   Major two-column sections collapse to one column.
+   -------------------------------------------------------------------------- */
+@media (max-width: 1080px) {
+    .saas-home-hero-grid,
+    .saas-home-api-grid,
+    .saas-home-trust-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .saas-home-hero-copy {
+        max-width: 820px;
+    }
+
+    .saas-home-visual-bare img {
+        width: min(100%, 760px);
+        max-width: 100%;
+        height: auto;
+        max-height: none;
+    }
+
+    .saas-home-visual-bare {
+        place-items: center;
+    }
+
+    .saas-home-visual {
+        width: min(860px, 100%);
+        transform: none;
+    }
+
+    .saas-home-api-copy,
+    .saas-home-trust-grid > div:first-child {
+        max-width: 760px;
+    }
+
+    .saas-home-trust-grid {
+        gap: 48px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   TABLET: 900px AND BELOW
+   Product cards become full width; four-column grids become two columns.
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+    .saas-section-heading--split {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .saas-product-card,
+    .saas-product-card--featured,
+    .saas-product-card--invoice {
+        grid-column: span 12;
+    }
+
+    .saas-proof-strip-grid,
+    .saas-flow-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .saas-proof-strip-grid > div:nth-child(2),
+    .saas-flow-grid article:nth-child(2) {
+        border-right: 0;
+    }
+
+    .saas-proof-strip-grid > div:nth-child(-n + 2),
+    .saas-flow-grid article:nth-child(-n + 2) {
+        border-bottom: 1px solid var(--line-soft);
+    }
+
+    .saas-final-card {
+        grid-template-columns: 1fr;
+        align-items: start;
+    }
+
+    .saas-final-card .hero-actions {
+        justify-content: flex-start;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   LARGE PHONE / SMALL TABLET: 720px AND BELOW
+   Reduces typography, card spacing, and simplifies hero/window content.
+   -------------------------------------------------------------------------- */
+@media (max-width: 720px) {
+    .company-logo-intro {
+        min-height: clamp(300px, 44svh, 380px);
+    }
+
+    .company-logo-intro-mark {
+        width: min(72vw, 360px);
+        opacity: 0.34;
+    }
+
+    .company-homepage main h1 {
+        font-size: clamp(44px, 13vw, 62px);
+    }
+
+    .company-homepage main h2 {
+        font-size: clamp(34px, 10vw, 48px);
+    }
+
+    .saas-home-hero {
+        padding-top: 40px;
+    }
+
+    .saas-home-hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 46px;
+    }
+
+    .saas-home-hero-lede {
+        font-size: 17px;
+    }
+
+    .saas-announcement > span:not(.saas-announcement-dot) {
+        display: none;
+    }
+
+    .saas-home-visual-metrics {
+        grid-template-columns: 1fr;
+    }
+
+    .saas-home-visual-metrics div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .saas-home-visual-metrics div:last-child {
+        border-bottom: 0;
+    }
+
+    .saas-home-visual-metrics span {
+        margin: 0;
+    }
+
+    .saas-product-card--featured {
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+    }
+
+    .saas-product-card--featured .saas-product-card-visual {
+        min-height: 0;
+        margin: 28px 0 0;
+        border-radius: 16px;
+    }
+
+    .saas-product-card {
+        min-height: 0;
+        padding: 22px;
+    }
+
+    .saas-product-card-visual {
+        height: auto;
+    }
+
+    .saas-product-card--featured .saas-product-card-visual {
+        aspect-ratio: 16 / 9;
+    }
+
+    .saas-flow-grid article {
+        min-height: 260px;
+    }
+
+}
+
+/* --------------------------------------------------------------------------
+   PHONE: 560px AND BELOW
+   Proof and flow grids collapse to one column.
+   -------------------------------------------------------------------------- */
+@media (max-width: 560px) {
+    .saas-home-proof {
+        display: grid;
+    }
+
+    .saas-proof-strip-grid,
+    .saas-flow-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Shared transition timing for interactive proof, flow, and trust items. */
+.saas-proof-strip-grid > div,
+    .saas-proof-strip-grid > div:first-child,
+    .saas-proof-strip-grid > div:nth-child(2),
+    .saas-proof-strip-grid > div:nth-child(3),
+    .saas-proof-strip-grid > div:last-child {
+        padding: 23px 20px;
+        border-right: 0;
+        border-bottom: 1px solid var(--line-soft);
+    }
+
+    .saas-proof-strip-grid > div:last-child {
+        border-bottom: 0;
+    }
+
+    .saas-flow-grid article,
+    .saas-flow-grid article:nth-child(2) {
+        min-height: 0;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .saas-flow-grid article:last-child {
+        border-bottom: 0;
+    }
+
+    .saas-flow-icon {
+        margin: 28px 0 22px;
+    }
+
+    .saas-window-title > span:last-child,
+    .saas-window-live {
+        display: none;
+    }
+
+    .saas-product-card-meta {
+        align-items: flex-start;
+    }
+
+    .saas-final-card {
+        padding: 30px 22px;
+    }
+}
+
+/* ==========================================================================
+   13. SHARED INTERACTIONS AND ANIMATIONS
+   Pulse effects, hover treatments, reduced-motion accessibility, and keyframes.
+   ========================================================================== *//* Shared status and numbered-section interactions ------------------------- */
+
+/* Applies the green pulse animation to all live-status dots. */
+.saas-announcement-dot,
+.saas-window-live i,
+.saas-status--live i {
+    transform-origin: center;
+    animation: saas-live-status-pulse 2.5s ease-in-out infinite;
+}
+
+.saas-status:not(.saas-status--live)::before {
+    transform-origin: center;
+    animation: saas-development-status-pulse 2.5s ease-in-out infinite;
+}
+
+.saas-proof-strip-grid > div,
+.saas-flow-grid article,
+.saas-trust-list article,
+.saas-flow-icon,
+.saas-proof-strip-grid > div > span,
+.saas-flow-grid article > span,
+.saas-trust-list article > span {
+    transition:
+        color 180ms ease,
+        background-color 180ms ease,
+        border-color 180ms ease,
+        box-shadow 180ms ease;
+}
+
+/* Invisible inset outline that becomes visible on hover. */
+.saas-proof-strip-grid > div::after,
+.saas-flow-grid article::after,
+.saas-trust-list article::after {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    pointer-events: none;
+    transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+/* Hover effects are limited to devices that actually support hovering. */
+@media (hover: hover) {
+    .saas-proof-strip-grid > div:hover,
+    .saas-flow-grid article:hover,
+    .saas-trust-list article:hover {
+        background-color: rgba(238, 152, 38, 0.085);
+    }
+
+    .saas-proof-strip-grid > div:hover::after,
+    .saas-flow-grid article:hover::after,
+    .saas-trust-list article:hover::after {
+        border-color: rgba(246, 191, 63, 0.45);
+        box-shadow: 0 0 24px rgba(238, 152, 38, 0.08);
+    }
+
+    .saas-proof-strip-grid > div:hover > span,
+    .saas-flow-grid article:hover > span,
+    .saas-trust-list article:hover > span {
+        color: #ffd166;
+    }
+
+    .saas-flow-grid article:hover .saas-flow-icon {
+        border-color: rgba(246, 191, 63, 0.55);
+        color: #ffd166;
+        background-color: rgba(238, 152, 38, 0.16);
+        box-shadow: 0 12px 38px rgba(238, 152, 38, 0.2);
+    }
+}
+
+html[data-theme="light"] .saas-proof-strip-grid > div:hover,
+html[data-theme="light"] .saas-flow-grid article:hover,
+html[data-theme="light"] .saas-trust-list article:hover {
+    background-color: rgba(238, 152, 38, 0.13);
+}
+
+/* Green live-status pulse animation. */
+@keyframes saas-live-status-pulse {
+    0%,
+    100% {
+        transform: scale(0.94);
+        box-shadow: 0 0 0 4px rgba(83, 213, 142, 0.1), 0 0 7px rgba(83, 213, 142, 0.24);
+    }
+
+    50% {
+        transform: scale(1.08);
+        box-shadow: 0 0 0 7px rgba(83, 213, 142, 0.025), 0 0 17px rgba(83, 213, 142, 0.72);
+    }
+}
+
+/* Blue development-status pulse animation. */
+@keyframes saas-development-status-pulse {
+    0%,
+    100% {
+        transform: scale(0.94);
+        box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.1), 0 0 7px rgba(96, 165, 250, 0.24);
+    }
+
+    50% {
+        transform: scale(1.08);
+        box-shadow: 0 0 0 7px rgba(96, 165, 250, 0.025), 0 0 17px rgba(96, 165, 250, 0.72);
+    }
+}
+
+/* Accessibility: disables transitions and animations when requested by OS. */
+@media (prefers-reduced-motion: reduce) {
+    .saas-announcement,
+    .saas-product-card,
+    .saas-product-card-visual img,
+    .saas-card-link i,
+    .saas-proof-strip-grid > div,
+    .saas-flow-grid article,
+    .saas-trust-list article,
+    .saas-flow-icon,
+    .saas-tag-list span {
+        transition: none;
+    }
+
+    .saas-announcement-dot,
+    .saas-window-live i,
+    .saas-status--live i,
+    .saas-api-result-live::after,
+    .saas-status:not(.saas-status--live)::before {
+        animation: none;
+    }
+}
+
+/* Breathing halo used by the green overlay dot on the API screenshot. */
+@keyframes saas-api-result-breathe {
+    0%,
+    100% {
+        opacity: 0.12;
+        transform: scale(0.92);
+        box-shadow: 0 0 0 1px rgba(83, 213, 142, 0.025), 0 0 3px rgba(83, 213, 142, 0.16);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.12);
+        box-shadow: 0 0 0 3px rgba(83, 213, 142, 0.045), 0 0 8px rgba(83, 213, 142, 0.46);
+    }
+}
