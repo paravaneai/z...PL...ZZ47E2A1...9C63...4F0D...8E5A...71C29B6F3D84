@@ -9,8 +9,8 @@
     var root = document.documentElement;
     var themeChangeReleaseFrame = 0;
     var faviconPaths = {
-        dark: "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/b4/b47d8a12345bdbf064f0de8351c8ff55b0c87d6eec4e283d71a72b3fa8e150eb.ico",
-        light: "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/47/47f41a0063dc5d27def2b6ab47b53a7d22ee2aefecb2a84765c9e6c1539af98c.ico"
+        dark: "../../../shared/b4/b47d8a12345bdbf064f0de8351c8ff55b0c87d6eec4e283d71a72b3fa8e150eb.ico",
+        light: "../../../shared/47/47f41a0063dc5d27def2b6ab47b53a7d22ee2aefecb2a84765c9e6c1539af98c.ico"
     };
 
     root.setAttribute(

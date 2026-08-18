@@ -5,11 +5,11 @@
     var API_BASE = window.PARAVANE_API_BASE ||
         (localHostnames.indexOf(window.location.hostname) >= 0 ? "" : "https://api.paravane.io");
     var endpoints = {
-        login: "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v005.001.002/v1/auth/login",
-        forgot: "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v005.001.002/v1/auth/forgot-password",
-        reset: "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v005.001.002/v1/auth/reset-password",
-        verify: "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v005.001.002/v1/auth/verify-email",
-        resend: "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v005.001.002/v1/auth/resend-verification"
+        login: "../v1/auth/login",
+        forgot: "../v1/auth/forgot-password",
+        reset: "../v1/auth/reset-password",
+        verify: "../v1/auth/verify-email",
+        resend: "../v1/auth/resend-verification"
     };
 
     function statusEl(form) {
@@ -49,8 +49,8 @@
 
     function nextUrl(form) {
         var params = new URLSearchParams(window.location.search);
-        var next = params.get("next") || form.dataset.successRedirect || "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v005.001.002/pages/app/index.html";
-        return next.charAt(0) === "/" && next.charAt(1) !== "/" ? next : "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v005.001.002/pages/app/index.html";
+        var next = params.get("next") || form.dataset.successRedirect || "../pages/app/index.html";
+        return next.charAt(0) === "/" && next.charAt(1) !== "/" ? next : "../pages/app/index.html";
     }
 
     async function postJson(endpoint, payload) {

@@ -7,9 +7,9 @@
     var TURNSTILE_SITE_KEY = window.PARAVANE_TURNSTILE_SITE_KEY || "0x4AAAAAADfgZgjq1AON2RdA";
     var TURNSTILE_SCRIPT_SRC = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
     var endpoints = {
-        contact: "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v008.002.000/v1/contact",
-        signup: "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v008.002.000/v1/signup",
-        demo: "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v008.002.000/v1/demo/score"
+        contact: "../v1/contact",
+        signup: "../v1/signup",
+        demo: "../v1/demo/score"
     };
     var turnstileScriptPromise = null;
 
@@ -237,8 +237,8 @@
                 }).join(""),
             '</ul>',
             '<div class="demo-result-actions">',
-                '<a class="text-link" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v008.002.000/pages/auth/signup.html">Request full access</a>',
-                '<a class="text-link" href="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v008.002.000/pages/docs/index.html">View API docs</a>',
+                '<a class="text-link" href="../pages/auth/signup.html">Request full access</a>',
+                '<a class="text-link" href="../pages/docs/index.html">View API docs</a>',
             '</div>'
         ].join("");
     }
@@ -248,8 +248,8 @@
             .replace(/&/g, "&amp;")
             .replace(/</g, "&lt;")
             .replace(/>/g, "&gt;")
-            .replace(/"/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v008.002.000/g, "&quot;")
-            .replace(/'/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v008.002.000/g, "&#39;");
+            .replace(/"../g, "&quot;")
+            .replace(/'../g, "&#39;");
     }
 
     async function submitForm(form) {

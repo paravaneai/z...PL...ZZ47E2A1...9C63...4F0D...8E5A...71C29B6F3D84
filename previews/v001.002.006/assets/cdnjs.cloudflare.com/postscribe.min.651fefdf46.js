@@ -658,7 +658,7 @@
                         function r(t) {
                             var e = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : "";
                             return t
-                                ? t.replace(/([^"]*)"/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v001.002.006/g, function (t, e) {
+                                ? t.replace(/([^"]*)"../../g, function (t, e) {
                                       return /\\/.test(e) ? e + '"' : e + '\\"';
                                   })
                                 : e;

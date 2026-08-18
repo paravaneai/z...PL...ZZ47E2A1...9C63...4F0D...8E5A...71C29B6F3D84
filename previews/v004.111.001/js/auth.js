@@ -5,11 +5,11 @@
     var API_BASE = window.PARAVANE_API_BASE ||
         (localHostnames.indexOf(window.location.hostname) >= 0 ? "" : "https://api.paravane.io");
     var endpoints = {
-        login: "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v004.111.001/v1/auth/login",
-        forgot: "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v004.111.001/v1/auth/forgot-password",
-        reset: "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v004.111.001/v1/auth/reset-password",
-        verify: "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v004.111.001/v1/auth/verify-email",
-        resend: "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v004.111.001/v1/auth/resend-verification"
+        login: "../v1/auth/login",
+        forgot: "../v1/auth/forgot-password",
+        reset: "../v1/auth/reset-password",
+        verify: "../v1/auth/verify-email",
+        resend: "../v1/auth/resend-verification"
     };
 
     function statusEl(form) {

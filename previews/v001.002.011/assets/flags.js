@@ -1,7 +1,7 @@
 <script>
 (async () => {
   try {
-    const res = await fetch('/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v001.002.011/features.json', { cache: 'no-store' });
+    const res = await fetch('../features.json', { cache: 'no-store' });
     if (!res.ok) return;
     const cfg = await res.json();
     if (!cfg?.nav) return;

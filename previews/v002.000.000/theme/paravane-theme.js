@@ -103,37 +103,37 @@
 
         logos: {
             primary: {
-                path: "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/ca/cac0ae6c7817e9eef91d11f5a08dc56dfe6bd70859e5e58d9a3bc61c4c2b7082.svg",
+                path: "../../../shared/ca/cac0ae6c7817e9eef91d11f5a08dc56dfe6bd70859e5e58d9a3bc61c4c2b7082.svg",
                 displayName: "Paravane primary logo",
                 alt: "Paravane logo"
             },
             secondary: {
-                path: "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/43/43c5512f12c07b377557011725253faab0ed81602cdc3df0a4827af82230a26d.svg",
+                path: "../../../shared/43/43c5512f12c07b377557011725253faab0ed81602cdc3df0a4827af82230a26d.svg",
                 displayName: "Paravane secondary logo",
                 alt: "Paravane logo"
             },
             dark: {
-                path: "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/43/43c5512f12c07b377557011725253faab0ed81602cdc3df0a4827af82230a26d.svg",
+                path: "../../../shared/43/43c5512f12c07b377557011725253faab0ed81602cdc3df0a4827af82230a26d.svg",
                 displayName: "Paravane dark logo",
                 alt: "Paravane logo"
             },
             light: {
-                path: "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/ca/cac0ae6c7817e9eef91d11f5a08dc56dfe6bd70859e5e58d9a3bc61c4c2b7082.svg",
+                path: "../../../shared/ca/cac0ae6c7817e9eef91d11f5a08dc56dfe6bd70859e5e58d9a3bc61c4c2b7082.svg",
                 displayName: "Paravane light logo",
                 alt: "Paravane logo"
             },
             icon: {
-                path: "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/ca/cac0ae6c7817e9eef91d11f5a08dc56dfe6bd70859e5e58d9a3bc61c4c2b7082.svg",
+                path: "../../../shared/ca/cac0ae6c7817e9eef91d11f5a08dc56dfe6bd70859e5e58d9a3bc61c4c2b7082.svg",
                 displayName: "Paravane icon",
                 alt: "Paravane icon"
             },
             favicon: {
-                path: "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/de/de4e1830590e29e61056af418b1b4c5afdccc3c0019a9a5a21d0e7c5a37ff97e.png",
+                path: "../../../shared/de/de4e1830590e29e61056af418b1b4c5afdccc3c0019a9a5a21d0e7c5a37ff97e.png",
                 displayName: "Paravane favicon",
                 alt: "Paravane icon"
             },
             socialPreview: {
-                path: "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/de/de4e1830590e29e61056af418b1b4c5afdccc3c0019a9a5a21d0e7c5a37ff97e.png",
+                path: "../../../shared/de/de4e1830590e29e61056af418b1b4c5afdccc3c0019a9a5a21d0e7c5a37ff97e.png",
                 displayName: "Paravane social preview image",
                 alt: "Paravane social preview image"
             }

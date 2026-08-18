@@ -58,7 +58,7 @@
     }
 
     function isPlatformPage() {
-        return window.location.pathname === "/" || window.location.pathname === "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v011.000.001-alpha.107/index.html";
+        return window.location.pathname === "/" || window.location.pathname === "../index.html";
     }
 
     function hasActiveRouteArrival() {

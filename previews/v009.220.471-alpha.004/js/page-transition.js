@@ -63,12 +63,12 @@
     }
 
     function normalizePath(pathname) {
-        if (!pathname || pathname === "/") return "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.004/index.html";
-        return pathname.replace(/\/+$/, "") || "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.004/index.html";
+        if (!pathname || pathname === "/") return "../index.html";
+        return pathname.replace(/\/+$/, "") || "../index.html";
     }
 
     function isPlatformPath(pathname) {
-        return normalizePath(pathname) === "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.004/index.html";
+        return normalizePath(pathname) === "../index.html";
     }
 
     function platformHasBeenVisited() {

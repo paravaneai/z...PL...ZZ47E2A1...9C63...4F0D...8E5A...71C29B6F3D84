@@ -13,22 +13,22 @@
     var routeLoaderFrameDurationMs = 180;
     var routeLoaderFrames = {
         dark: [
-            "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/53/5379caf98dc03f58295f0478bbea0ec723e97bd443ddd5f4bfc6e946ae659fbe.svg",
-            "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/39/3923b030634e2794db68f07b28613082370255f3c478a2c470dc429e34065440.svg",
-            "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/92/92fdc67d3c9b32e088d84ea9f688d36fec17c19ac666babd7d11d14b68ac0883.svg",
-            "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/81/8112244f5cbf981ee70cf8fb19c1be4b389621c299752058ffcf4fa89930f228.svg",
-            "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/07/077bd53154b7b56f5cfe4ee96196ebd2f71ddfbdcf9ccff986afa7c442475071.svg",
-            "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/74/74672dcdbdcd8ee20497f4b6d92f33cec13f4f86034d2a7c64a5c1b627065530.svg",
-            "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/76/76010f0394048a52ec556035630d91c9204895f9c94f9fe83fb61d8fb9ecd180.svg"
+            "../../../shared/53/5379caf98dc03f58295f0478bbea0ec723e97bd443ddd5f4bfc6e946ae659fbe.svg",
+            "../../../shared/39/3923b030634e2794db68f07b28613082370255f3c478a2c470dc429e34065440.svg",
+            "../../../shared/92/92fdc67d3c9b32e088d84ea9f688d36fec17c19ac666babd7d11d14b68ac0883.svg",
+            "../../../shared/81/8112244f5cbf981ee70cf8fb19c1be4b389621c299752058ffcf4fa89930f228.svg",
+            "../../../shared/07/077bd53154b7b56f5cfe4ee96196ebd2f71ddfbdcf9ccff986afa7c442475071.svg",
+            "../../../shared/74/74672dcdbdcd8ee20497f4b6d92f33cec13f4f86034d2a7c64a5c1b627065530.svg",
+            "../../../shared/76/76010f0394048a52ec556035630d91c9204895f9c94f9fe83fb61d8fb9ecd180.svg"
         ],
         light: [
-            "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/76/76010f0394048a52ec556035630d91c9204895f9c94f9fe83fb61d8fb9ecd180.svg",
-            "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/32/32f95ab33901c5b3673014d6a099a2eb64a6a08886d253e8b75f97e51cc8a410.svg",
-            "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/7a/7a99ec1693d4a5cf323e903cce10078291130bf33c35e3e29a30538fa1ec19f7.svg",
-            "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/6a/6a4e3e2b34311dfe4d063877e5c9884da41643fe1e0f7568dd19ba2aa5dc53bd.svg",
-            "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/22/22bc214ca99f35008f34c0fc8c8f3a020eb9bbab7562a5400fa2e742f0a14b72.svg",
-            "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/cb/cbf843fcd47f864d97d926532b30a471a95893e6f376c47c5545e1e7e081ced0.svg",
-            "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/53/5379caf98dc03f58295f0478bbea0ec723e97bd443ddd5f4bfc6e946ae659fbe.svg"
+            "../../../shared/76/76010f0394048a52ec556035630d91c9204895f9c94f9fe83fb61d8fb9ecd180.svg",
+            "../../../shared/32/32f95ab33901c5b3673014d6a099a2eb64a6a08886d253e8b75f97e51cc8a410.svg",
+            "../../../shared/7a/7a99ec1693d4a5cf323e903cce10078291130bf33c35e3e29a30538fa1ec19f7.svg",
+            "../../../shared/6a/6a4e3e2b34311dfe4d063877e5c9884da41643fe1e0f7568dd19ba2aa5dc53bd.svg",
+            "../../../shared/22/22bc214ca99f35008f34c0fc8c8f3a020eb9bbab7562a5400fa2e742f0a14b72.svg",
+            "../../../shared/cb/cbf843fcd47f864d97d926532b30a471a95893e6f376c47c5545e1e7e081ced0.svg",
+            "../../../shared/53/5379caf98dc03f58295f0478bbea0ec723e97bd443ddd5f4bfc6e946ae659fbe.svg"
         ]
     };
     var leaving = false;
@@ -126,12 +126,12 @@
     }
 
     function normalizePath(pathname) {
-        if (!pathname || pathname === "/") return "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v011.000.001-alpha.106/index.html";
-        return pathname.replace(/\/+$/, "") || "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v011.000.001-alpha.106/index.html";
+        if (!pathname || pathname === "/") return "../index.html";
+        return pathname.replace(/\/+$/, "") || "../index.html";
     }
 
     function isPlatformPath(pathname) {
-        return normalizePath(pathname) === "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v011.000.001-alpha.106/index.html";
+        return normalizePath(pathname) === "../index.html";
     }
 
     function platformHasBeenVisited() {

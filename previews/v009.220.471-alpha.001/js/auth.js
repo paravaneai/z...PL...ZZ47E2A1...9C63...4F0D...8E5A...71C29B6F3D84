@@ -5,11 +5,11 @@
     var API_BASE = window.PARAVANE_API_BASE ||
         (localHostnames.indexOf(window.location.hostname) >= 0 ? "" : "https://api.paravane.io");
     var endpoints = {
-        login: "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.001/v1/auth/login",
-        forgot: "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.001/v1/auth/forgot-password",
-        reset: "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.001/v1/auth/reset-password",
-        verify: "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.001/v1/auth/verify-email",
-        resend: "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.001/v1/auth/resend-verification"
+        login: "../v1/auth/login",
+        forgot: "../v1/auth/forgot-password",
+        reset: "../v1/auth/reset-password",
+        verify: "../v1/auth/verify-email",
+        resend: "../v1/auth/resend-verification"
     };
 
     function statusEl(form) {
@@ -81,13 +81,13 @@
             var nextLink = actions.querySelector("a");
             if (nextLink) {
                 if (active) {
-                    nextLink.href = "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.001/pages/auth/login.html?next=%2Fpages%2Fapp%2Fapi-keys.html";
+                    nextLink.href = "../pages/auth/login.html?next=%2Fpages%2Fapp%2Fapi-keys.html";
                     nextLink.textContent = "Sign in to create API key";
                 } else if (billingRequired) {
-                    nextLink.href = "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.001/pages/auth/login.html?next=%2Fpages%2Fapp%2Fbilling.html";
+                    nextLink.href = "../pages/auth/login.html?next=%2Fpages%2Fapp%2Fbilling.html";
                     nextLink.textContent = "Sign in to complete billing";
                 } else {
-                    nextLink.href = "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.001/index.html";
+                    nextLink.href = "../index.html";
                     nextLink.textContent = "Return to Paravane Labs";
                 }
             }
@@ -136,8 +136,8 @@
 
     function nextUrl(form) {
         var params = new URLSearchParams(window.location.search);
-        var next = params.get("next") || form.dataset.successRedirect || "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.001/pages/app/index.html";
-        return next.charAt(0) === "/" && next.charAt(1) !== "/" ? next : "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.001/pages/app/index.html";
+        var next = params.get("next") || form.dataset.successRedirect || "../pages/app/index.html";
+        return next.charAt(0) === "/" && next.charAt(1) !== "/" ? next : "../pages/app/index.html";
     }
 
     function successRedirect(form, fallback) {
@@ -204,7 +204,7 @@
                 setStatus(form, "If an account exists for that email, a reset link has been sent.", "success");
             } else if (kind === "reset") {
                 setStatus(form, "Password updated. Opening confirmation...", "success");
-                navigateWithTransition(successRedirect(form, "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v009.220.471-alpha.001/pages/auth/password-reset-success.html"), 350);
+                navigateWithTransition(successRedirect(form, "../pages/auth/password-reset-success.html"), 350);
                 return;
             } else if (kind === "verify") {
                 setStatus(form, verificationMessage(result, true), "success");

@@ -61,7 +61,7 @@
     }
 
     function isPlatformPathname(pathname) {
-        return pathname === "/" || pathname === "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v008.004.001/index.html";
+        return pathname === "/" || pathname === "../index.html";
     }
 
     function cameFromPlatform() {
@@ -187,8 +187,8 @@
             .replace(/&/g, "&amp;")
             .replace(/</g, "&lt;")
             .replace(/>/g, "&gt;")
-            .replace(/"/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v008.004.001/g, "&quot;")
-            .replace(/'/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v008.004.001/g, "&#39;");
+            .replace(/"../g, "&quot;")
+            .replace(/'../g, "&#39;");
     }
 
     function formatDate(value) {
@@ -300,8 +300,8 @@
     }
 
     function redirectToLogin() {
-        var next = window.location.pathname || "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v008.004.001/pages/app/index.html";
-        window.location.href = "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v008.004.001/pages/auth/login.html?next=" + encodeURIComponent(next);
+        var next = window.location.pathname || "../pages/app/index.html";
+        window.location.href = "../pages/auth/login.html?next=" + encodeURIComponent(next);
     }
 
     async function requestJson(path, options) {
@@ -420,7 +420,7 @@
         setPanelLoading(".app-mini-stat", true);
         renderTableSkeleton("[data-usage-rows]", 4, 4);
         try {
-            var data = await requestJson("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v008.004.001/v1/app/summary");
+            var data = await requestJson("../v1/app/summary");
             renderDashboard(data);
             setStatus("Dashboard ready.", "success");
         } catch (err) {
@@ -463,7 +463,7 @@
         renderTableSkeleton("[data-profile-usage-rows]", 3, 4);
         renderTableSkeleton("[data-usage-rows]", 4, 4);
         try {
-            var data = await requestJson("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v008.004.001/v1/app/usage");
+            var data = await requestJson("../v1/app/usage");
             var usage = data.usage || {};
             var total = Number(usage.month_to_date || 0);
             var limit = usage.monthly_limit == null ? null : Number(usage.monthly_limit);
@@ -611,7 +611,7 @@
 
     async function loadApiKeys() {
         renderTableSkeleton("[data-api-key-rows]", 6, 4);
-        var data = await requestJson("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v008.004.001/v1/app/api-keys");
+        var data = await requestJson("../v1/app/api-keys");
         applyApiKeysData(data);
         setStatus("API keys loaded.", "success");
         return data;
@@ -634,7 +634,7 @@
             setStatus("Creating API key.", "loading");
             try {
                 var data = new FormData(form);
-                var result = await requestJson("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v008.004.001/v1/app/api-keys", {
+                var result = await requestJson("../v1/app/api-keys", {
                     method: "POST",
                     headers: {
                         "Accept": "application/json",
@@ -649,7 +649,7 @@
                     value.textContent = secret || "";
                     box.hidden = !secret;
                 }
-                var refreshed = await requestJson("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v008.004.001/v1/app/api-keys");
+                var refreshed = await requestJson("../v1/app/api-keys");
                 applyApiKeysData(refreshed);
                 setStatus(secret ? "API key created and ready to copy." : "API key created.", "success");
             } catch (err) {
@@ -727,7 +727,7 @@
                 if (renameSubmit) renameSubmit.disabled = true;
                 setStatus("Renaming API key.", "loading");
                 try {
-                    await requestJson("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v008.004.001/v1/app/api-keys/" + encodeURIComponent(renameKeyId), {
+                    await requestJson("../v1/app/api-keys/" + encodeURIComponent(renameKeyId), {
                         method: "PATCH",
                         headers: {
                             "Accept": "application/json",
@@ -830,7 +830,7 @@
             button.disabled = true;
             setStatus("Revoking API key.", "loading");
             try {
-                await requestJson("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v008.004.001/v1/app/api-keys/" + encodeURIComponent(id) + "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v008.004.001/revoke", { method: "POST" });
+                await requestJson("../v1/app/api-keys/" + encodeURIComponent(id) + "../revoke", { method: "POST" });
                 await loadApiKeys();
                 setStatus("API key revoked.", "success");
             } catch (err) {
@@ -889,7 +889,7 @@
         setStatus("Loading billing.", "loading");
         setPanelLoading(".billing-summary-card", true);
         try {
-            var data = await requestJson("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v008.004.001/v1/billing/status");
+            var data = await requestJson("../v1/billing/status");
             renderBilling(data);
             setStatus("Billing loaded.", "success");
         } catch (err) {
@@ -909,7 +909,7 @@
                 button.disabled = true;
                 setStatus("Opening Stripe Checkout.", "loading");
                 try {
-                    var result = await requestJson("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v008.004.001/v1/billing/checkout", {
+                    var result = await requestJson("../v1/billing/checkout", {
                         method: "POST",
                         headers: {
                             "Accept": "application/json",
@@ -933,7 +933,7 @@
                 portalButton.disabled = true;
                 setStatus("Opening Stripe billing portal.", "loading");
                 try {
-                    var result = await requestJson("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v008.004.001/v1/billing/portal", { method: "POST" });
+                    var result = await requestJson("../v1/billing/portal", { method: "POST" });
                     if (!result.url) throw new Error("Stripe did not return a portal URL.");
                     window.location.href = result.url;
                 } catch (err) {
@@ -1043,17 +1043,17 @@
             showDeleteMessage("Submitting account deletion request.", "loading");
 
             try {
-                await requestJson("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v008.004.001/v1/app/account", {
+                await requestJson("../v1/app/account", {
                     method: "DELETE",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ confirmation: requiredText })
                 });
                 clearSensitiveSessionState();
                 try {
-                    await requestJson("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v008.004.001/v1/auth/logout", { method: "POST" });
+                    await requestJson("../v1/auth/logout", { method: "POST" });
                 } catch (err) {}
                 showAppTransition();
-                var loginUrl = new URL("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v008.004.001/pages/auth/login.html?account=deleted", window.location.href);
+                var loginUrl = new URL("../pages/auth/login.html?account=deleted", window.location.href);
                 writePageArrivalState(loginUrl);
                 window.location.href = loginUrl.href;
             } catch (err) {
@@ -1076,11 +1076,11 @@
                 button.disabled = true;
                 showAppTransition();
                 try {
-                    await requestJson("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v008.004.001/v1/auth/logout", { method: "POST" });
+                    await requestJson("../v1/auth/logout", { method: "POST" });
                 } catch (err) {
                     // A failed logout still sends the user back to sign in.
                 }
-                var loginUrl = new URL("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v008.004.001/pages/auth/login.html", window.location.href);
+                var loginUrl = new URL("../pages/auth/login.html", window.location.href);
                 writePageArrivalState(loginUrl);
                 window.location.href = loginUrl.href;
             });
