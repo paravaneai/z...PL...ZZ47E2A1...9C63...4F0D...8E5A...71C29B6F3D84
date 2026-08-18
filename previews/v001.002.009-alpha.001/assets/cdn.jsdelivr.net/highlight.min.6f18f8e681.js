@@ -24,7 +24,7 @@ var hljs = (function () {
         }
     }
     function t(e) {
-        return e.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v001.002.009-alpha.001/g, "&quot;").replace(/'/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v001.002.009-alpha.001/g, "&#x27;");
+        return e.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"../../g, "&quot;").replace(/'../../g, "&#x27;");
     }
     function r(e, ...n) {
         var t = {};

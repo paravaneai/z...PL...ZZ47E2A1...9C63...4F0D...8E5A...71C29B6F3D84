@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: "Aptos";
-    src: url("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/01/01bbd2d3bd483045e1dbf4f106935cb86478b937f8d334258ad12eea60554a05.ttf") format("truetype");
+    src: url("../../../shared/01/01bbd2d3bd483045e1dbf4f106935cb86478b937f8d334258ad12eea60554a05.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -12,7 +12,7 @@
 
 @font-face {
     font-family: "Aptos";
-    src: url("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/3b/3bd631a7ecb762df8aa7bca31b147db54d441babc83d91b96ba4a69d438880d9.ttf") format("truetype");
+    src: url("../../../shared/3b/3bd631a7ecb762df8aa7bca31b147db54d441babc83d91b96ba4a69d438880d9.ttf") format("truetype");
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -20,7 +20,7 @@
 
 @font-face {
     font-family: "Aptos";
-    src: url("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/ae/ae318584be8737164e24842e0b27ab180ee6761c1bedd799f5a29c93a8a4e65c.ttf") format("truetype");
+    src: url("../../../shared/ae/ae318584be8737164e24842e0b27ab180ee6761c1bedd799f5a29c93a8a4e65c.ttf") format("truetype");
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -28,7 +28,7 @@
 
 @font-face {
     font-family: "Rubik";
-    src: url("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/67/673ed4786dc1e4a5df68dd0adf07ae3b9a91a01d56e543b854ae85bfb8721572.ttf") format("truetype");
+    src: url("../../../shared/67/673ed4786dc1e4a5df68dd0adf07ae3b9a91a01d56e543b854ae85bfb8721572.ttf") format("truetype");
     font-weight: 300 900;
     font-style: normal;
     font-display: swap;
@@ -36,7 +36,7 @@
 
 @font-face {
     font-family: "Rubik";
-    src: url("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/f0/f08acb43e8f89f768d675786f5c405eac971a0441f261ef184be7b9d0ffc35cb.ttf") format("truetype");
+    src: url("../../../shared/f0/f08acb43e8f89f768d675786f5c405eac971a0441f261ef184be7b9d0ffc35cb.ttf") format("truetype");
     font-weight: 300 900;
     font-style: italic;
     font-display: swap;
@@ -44,7 +44,7 @@
 
 @font-face {
     font-family: "FiraCode iScript";
-    src: url("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/75/75b48ce16ec3addf67fc491f5eaf0fdf52aec5b8d9d70b6e16267c68579bbd3c.ttf") format("truetype");
+    src: url("../../../shared/75/75b48ce16ec3addf67fc491f5eaf0fdf52aec5b8d9d70b6e16267c68579bbd3c.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -52,7 +52,7 @@
 
 @font-face {
     font-family: "FiraCode iScript";
-    src: url("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/06/06c8271e9536e094def2153fe54fc4455c134bc263f149f15aada4d132204f52.ttf") format("truetype");
+    src: url("../../../shared/06/06c8271e9536e094def2153fe54fc4455c134bc263f149f15aada4d132204f52.ttf") format("truetype");
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -60,7 +60,7 @@
 
 @font-face {
     font-family: "FiraCode iScript";
-    src: url("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/9d/9dc795ec45c7f4e17cec91f93dbfa033e4b6c80f87e1b78d0abfb5c2372eb231.ttf") format("truetype");
+    src: url("../../../shared/9d/9dc795ec45c7f4e17cec91f93dbfa033e4b6c80f87e1b78d0abfb5c2372eb231.ttf") format("truetype");
     font-weight: 400;
     font-style: italic;
     font-display: swap;
@@ -90,7 +90,7 @@
         linear-gradient(180deg, #0a0b0d 0%, #08090b 46%, #090a0c 100%);
     --header-bg: rgba(9, 10, 12, 0.82);
     --preloader-bg: #000;
-    --preloader-logo: var(--image-loader-logo-dark, url('/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/3d/3d4459a900b101744e214db20a94ee12c12255138b28dae6883b63926b458cdc.gif'));
+    --preloader-logo: var(--image-loader-logo-dark, url('../../../shared/3d/3d4459a900b101744e214db20a94ee12c12255138b28dae6883b63926b458cdc.gif'));
     --surface-light: rgba(255, 255, 255, 0.024);
     --control-bg: rgba(255, 255, 255, 0.028);
     --control-focus-bg: rgba(238, 152, 38, 0.035);
@@ -137,7 +137,7 @@ html[data-theme="light"] {
         linear-gradient(180deg, #ffffff 0%, #fbfaf7 48%, #f7f2e8 100%);
     --header-bg: rgba(255, 255, 255, 0.84);
     --preloader-bg: #ffffff;
-    --preloader-logo: var(--image-loader-logo-light, url('/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/36/36711ff3422b35db24f4058d4546f43f896d4fa13a4fe8f97b7a1e22bfa7164f.gif'));
+    --preloader-logo: var(--image-loader-logo-light, url('../../../shared/36/36711ff3422b35db24f4058d4546f43f896d4fa13a4fe8f97b7a1e22bfa7164f.gif'));
     --surface-light: rgba(255, 255, 255, 0.72);
     --control-bg: rgba(255, 255, 255, 0.82);
     --control-focus-bg: rgba(238, 152, 38, 0.09);

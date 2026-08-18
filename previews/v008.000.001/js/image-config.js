@@ -24,23 +24,23 @@
     };
 
     var paths = {
-        "brand.favicon": "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/5c/5c0b22202097d2111076516815a4316e0be58467ac5161de9ee4ca1d0771e901.ico",
+        "brand.favicon": "../../../shared/5c/5c0b22202097d2111076516815a4316e0be58467ac5161de9ee4ca1d0771e901.ico",
 
-        "brand.wordmark": "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/02/02c14fb8f12f2de1620aae8c89e2a025036a24bed8dea8d040df51c67ee4c3ea.png",
-        "brand.heroMark": "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/2f/2fbb30dde6353d85b496f4fe916315ad8349cd51edd7a8b11b9a6a731f5aeb9a.png",
-        "email.brandmark": "https://paravane.io/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/2f/2fbb30dde6353d85b496f4fe916315ad8349cd51edd7a8b11b9a6a731f5aeb9a.png",
+        "brand.wordmark": "../../../shared/02/02c14fb8f12f2de1620aae8c89e2a025036a24bed8dea8d040df51c67ee4c3ea.png",
+        "brand.heroMark": "../../../shared/2f/2fbb30dde6353d85b496f4fe916315ad8349cd51edd7a8b11b9a6a731f5aeb9a.png",
+        "email.brandmark": "https://paravane.io../../../shared/2f/2fbb30dde6353d85b496f4fe916315ad8349cd51edd7a8b11b9a6a731f5aeb9a.png",
 
-        "brand.loader.dark": "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/3d/3d4459a900b101744e214db20a94ee12c12255138b28dae6883b63926b458cdc.gif",
-        "brand.loader.light": "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/36/36711ff3422b35db24f4058d4546f43f896d4fa13a4fe8f97b7a1e22bfa7164f.gif",        
+        "brand.loader.dark": "../../../shared/3d/3d4459a900b101744e214db20a94ee12c12255138b28dae6883b63926b458cdc.gif",
+        "brand.loader.light": "../../../shared/36/36711ff3422b35db24f4058d4546f43f896d4fa13a4fe8f97b7a1e22bfa7164f.gif",        
 
-        "home.platformVisual.webp.dark": "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/cb/cb9d503fc03e66f7c10644173a58cc269167736cca89f8fc85a1de4c42c376d4.webp",
-        "home.platformVisual.webp.light": "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/08/080318e1734dad232c356ce7c302e7bb71f5dab3bfb434f5c0ec553d530696f5.webp",        
+        "home.platformVisual.webp.dark": "../../../shared/cb/cb9d503fc03e66f7c10644173a58cc269167736cca89f8fc85a1de4c42c376d4.webp",
+        "home.platformVisual.webp.light": "../../../shared/08/080318e1734dad232c356ce7c302e7bb71f5dab3bfb434f5c0ec553d530696f5.webp",        
 
-        "home.platformVisual.gif.dark": "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/3b/3b0309db26c4795a8cb9c969f7411fa8e2369707387c5a5a7b1c581c0d13bcec.gif",
-        "home.platformVisual.gif.light": "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/50/50d45f6b50b46398f54fde4457c391b7a8b566f0d71b79a9a839214149bae870.gif",
+        "home.platformVisual.gif.dark": "../../../shared/3b/3b0309db26c4795a8cb9c969f7411fa8e2369707387c5a5a7b1c581c0d13bcec.gif",
+        "home.platformVisual.gif.light": "../../../shared/50/50d45f6b50b46398f54fde4457c391b7a8b566f0d71b79a9a839214149bae870.gif",
 
-        "smtprs.hero.dark": "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/ee/ee689ae1c619d82509a9aee72698f6295f89dea16856dd3d7d42fa0603b7df96.gif",
-        "smtprs.hero.light": "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/0f/0f4c94827d90ba7fade1341b3b91747cf52690e6666f632effee204e7cc18c52.gif"      
+        "smtprs.hero.dark": "../../../shared/ee/ee689ae1c619d82509a9aee72698f6295f89dea16856dd3d7d42fa0603b7df96.gif",
+        "smtprs.hero.light": "../../../shared/0f/0f4c94827d90ba7fade1341b3b91747cf52690e6666f632effee204e7cc18c52.gif"      
     };
 
     var formatGroups = {

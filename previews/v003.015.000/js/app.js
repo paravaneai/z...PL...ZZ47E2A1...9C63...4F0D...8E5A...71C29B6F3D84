@@ -27,8 +27,8 @@
             .replace(/&/g, "&amp;")
             .replace(/</g, "&lt;")
             .replace(/>/g, "&gt;")
-            .replace(/"/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v003.015.000/g, "&quot;")
-            .replace(/'/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v003.015.000/g, "&#39;");
+            .replace(/"../g, "&quot;")
+            .replace(/'../g, "&#39;");
     }
 
     function formatDate(value) {
@@ -97,7 +97,7 @@
     async function initDashboard() {
         if (!$("[data-app-dashboard]")) return;
         try {
-            var data = await requestJson("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v003.015.000/v1/app/summary");
+            var data = await requestJson("../v1/app/summary");
             renderDashboard(data);
             setStatus("Dashboard ready.", "success");
         } catch (err) {
@@ -127,7 +127,7 @@
     }
 
     async function loadApiKeys() {
-        var data = await requestJson("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v003.015.000/v1/app/api-keys");
+        var data = await requestJson("../v1/app/api-keys");
         renderApiKeyRows(data.items);
         setStatus("API keys loaded.", "success");
     }
@@ -146,7 +146,7 @@
             setStatus("Creating API key.", null);
             try {
                 var data = new FormData(form);
-                var result = await requestJson("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v003.015.000/v1/app/api-keys", {
+                var result = await requestJson("../v1/app/api-keys", {
                     method: "POST",
                     headers: {
                         "Accept": "application/json",
@@ -181,7 +181,7 @@
             button.disabled = true;
             setStatus("Revoking API key.", null);
             try {
-                await requestJson("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v003.015.000/v1/app/api-keys/" + encodeURIComponent(id) + "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v003.015.000/revoke", { method: "POST" });
+                await requestJson("../v1/app/api-keys/" + encodeURIComponent(id) + "../revoke", { method: "POST" });
                 await loadApiKeys();
                 setStatus("API key revoked.", "success");
             } catch (err) {
@@ -207,7 +207,7 @@
             button.addEventListener("click", async function () {
                 button.disabled = true;
                 try {
-                    await requestJson("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v003.015.000/v1/auth/logout", { method: "POST" });
+                    await requestJson("../v1/auth/logout", { method: "POST" });
                 } catch (err) {
                     // A failed logout still sends the user back to sign in.
                 }

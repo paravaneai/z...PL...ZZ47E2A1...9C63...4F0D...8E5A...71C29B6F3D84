@@ -12,8 +12,8 @@
         (localHostnames.indexOf(window.location.hostname) >= 0 ? "" : "https://api.paravane.io");
     var themeChangeReleaseFrame = 0;
     var faviconPaths = {
-        dark: "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/b4/b47d8a12345bdbf064f0de8351c8ff55b0c87d6eec4e283d71a72b3fa8e150eb.ico",
-        light: "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/47/47f41a0063dc5d27def2b6ab47b53a7d22ee2aefecb2a84765c9e6c1539af98c.ico"
+        dark: "../../../shared/b4/b47d8a12345bdbf064f0de8351c8ff55b0c87d6eec4e283d71a72b3fa8e150eb.ico",
+        light: "../../../shared/47/47f41a0063dc5d27def2b6ab47b53a7d22ee2aefecb2a84765c9e6c1539af98c.ico"
     };
 
     root.setAttribute(
@@ -230,7 +230,7 @@
 
     function sessionNavigationActions() {
         return Array.prototype.slice.call(document.querySelectorAll(
-            'a.nav-action[href^="/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v011.000.001-alpha.107/pages/auth/signin.html"], a.nav-session-action'
+            'a.nav-action[href^="../pages/auth/signin.html"], a.nav-session-action'
         ));
     }
 
@@ -239,7 +239,7 @@
             action.classList.add("nav-session-action");
             action.classList.remove("active");
             action.setAttribute("data-session-state", "authenticated");
-            action.setAttribute("href", "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v011.000.001-alpha.107/pages/app/index.html");
+            action.setAttribute("href", "../pages/app/index.html");
             action.setAttribute("aria-label", "Open account dashboard");
             action.setAttribute("title", "Open account dashboard");
             action.innerHTML = authenticatedAccountMarkup();
@@ -253,7 +253,7 @@
         if (!actions.length || document.querySelector('form[data-auth-form="login"]')) return;
 
         try {
-            var response = await fetch(API_BASE + "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v011.000.001-alpha.107/v1/auth/me", {
+            var response = await fetch(API_BASE + "../v1/auth/me", {
                 credentials: "include",
                 headers: { "Accept": "application/json" }
             });

@@ -11,22 +11,22 @@
     var routeLoaderFrameDurationMs = 180;
     var routeLoaderFrames = {
         dark: [
-            "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/53/5379caf98dc03f58295f0478bbea0ec723e97bd443ddd5f4bfc6e946ae659fbe.svg",
-            "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/39/3923b030634e2794db68f07b28613082370255f3c478a2c470dc429e34065440.svg",
-            "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/92/92fdc67d3c9b32e088d84ea9f688d36fec17c19ac666babd7d11d14b68ac0883.svg",
-            "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/81/8112244f5cbf981ee70cf8fb19c1be4b389621c299752058ffcf4fa89930f228.svg",
-            "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/07/077bd53154b7b56f5cfe4ee96196ebd2f71ddfbdcf9ccff986afa7c442475071.svg",
-            "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/74/74672dcdbdcd8ee20497f4b6d92f33cec13f4f86034d2a7c64a5c1b627065530.svg",
-            "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/76/76010f0394048a52ec556035630d91c9204895f9c94f9fe83fb61d8fb9ecd180.svg"
+            "../../../shared/53/5379caf98dc03f58295f0478bbea0ec723e97bd443ddd5f4bfc6e946ae659fbe.svg",
+            "../../../shared/39/3923b030634e2794db68f07b28613082370255f3c478a2c470dc429e34065440.svg",
+            "../../../shared/92/92fdc67d3c9b32e088d84ea9f688d36fec17c19ac666babd7d11d14b68ac0883.svg",
+            "../../../shared/81/8112244f5cbf981ee70cf8fb19c1be4b389621c299752058ffcf4fa89930f228.svg",
+            "../../../shared/07/077bd53154b7b56f5cfe4ee96196ebd2f71ddfbdcf9ccff986afa7c442475071.svg",
+            "../../../shared/74/74672dcdbdcd8ee20497f4b6d92f33cec13f4f86034d2a7c64a5c1b627065530.svg",
+            "../../../shared/76/76010f0394048a52ec556035630d91c9204895f9c94f9fe83fb61d8fb9ecd180.svg"
         ],
         light: [
-            "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/76/76010f0394048a52ec556035630d91c9204895f9c94f9fe83fb61d8fb9ecd180.svg",
-            "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/32/32f95ab33901c5b3673014d6a099a2eb64a6a08886d253e8b75f97e51cc8a410.svg",
-            "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/7a/7a99ec1693d4a5cf323e903cce10078291130bf33c35e3e29a30538fa1ec19f7.svg",
-            "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/6a/6a4e3e2b34311dfe4d063877e5c9884da41643fe1e0f7568dd19ba2aa5dc53bd.svg",
-            "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/22/22bc214ca99f35008f34c0fc8c8f3a020eb9bbab7562a5400fa2e742f0a14b72.svg",
-            "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/cb/cbf843fcd47f864d97d926532b30a471a95893e6f376c47c5545e1e7e081ced0.svg",
-            "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/53/5379caf98dc03f58295f0478bbea0ec723e97bd443ddd5f4bfc6e946ae659fbe.svg"
+            "../../../shared/76/76010f0394048a52ec556035630d91c9204895f9c94f9fe83fb61d8fb9ecd180.svg",
+            "../../../shared/32/32f95ab33901c5b3673014d6a099a2eb64a6a08886d253e8b75f97e51cc8a410.svg",
+            "../../../shared/7a/7a99ec1693d4a5cf323e903cce10078291130bf33c35e3e29a30538fa1ec19f7.svg",
+            "../../../shared/6a/6a4e3e2b34311dfe4d063877e5c9884da41643fe1e0f7568dd19ba2aa5dc53bd.svg",
+            "../../../shared/22/22bc214ca99f35008f34c0fc8c8f3a020eb9bbab7562a5400fa2e742f0a14b72.svg",
+            "../../../shared/cb/cbf843fcd47f864d97d926532b30a471a95893e6f376c47c5545e1e7e081ced0.svg",
+            "../../../shared/53/5379caf98dc03f58295f0478bbea0ec723e97bd443ddd5f4bfc6e946ae659fbe.svg"
         ]
     };
     var routeLoaderFrameTimer = null;
@@ -118,7 +118,7 @@
     }
 
     function isPlatformPathname(pathname) {
-        return pathname === "/" || pathname === "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v011.000.001-alpha.106/index.html";
+        return pathname === "/" || pathname === "../index.html";
     }
 
     function cameFromPlatform() {
@@ -247,8 +247,8 @@
             .replace(/&/g, "&amp;")
             .replace(/</g, "&lt;")
             .replace(/>/g, "&gt;")
-            .replace(/"/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v011.000.001-alpha.106/g, "&quot;")
-            .replace(/'/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v011.000.001-alpha.106/g, "&#39;");
+            .replace(/"../g, "&quot;")
+            .replace(/'../g, "&#39;");
     }
 
     function formatDate(value) {
@@ -375,8 +375,8 @@
     function redirectToLogin() {
         if (loginRedirectStarted) return;
         loginRedirectStarted = true;
-        var next = (window.location.pathname || "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v011.000.001-alpha.106/pages/app/index.html") + window.location.search;
-        var loginUrl = new URL("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v011.000.001-alpha.106/pages/auth/signin.html", window.location.href);
+        var next = (window.location.pathname || "../pages/app/index.html") + window.location.search;
+        var loginUrl = new URL("../pages/auth/signin.html", window.location.href);
         loginUrl.searchParams.set("next", next);
         writePageArrivalState(loginUrl);
         showAppTransition();
@@ -409,7 +409,7 @@
 
     async function requirePortalAccess() {
         try {
-            var result = await requestJson("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v011.000.001-alpha.106/v1/auth/me");
+            var result = await requestJson("../v1/auth/me");
             var tenant = result && result.tenant;
             if (!tenant || String(tenant.status || "").toLowerCase() !== "active") {
                 redirectToLogin();
@@ -520,7 +520,7 @@
         setPanelLoading(".app-mini-stat", true);
         renderTableSkeleton("[data-usage-rows]", 4, 4);
         try {
-            var data = await requestJson("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v011.000.001-alpha.106/v1/app/summary");
+            var data = await requestJson("../v1/app/summary");
             renderDashboard(data);
             setStatus("Dashboard ready.", "success");
         } catch (err) {
@@ -563,7 +563,7 @@
         renderTableSkeleton("[data-profile-usage-rows]", 3, 4);
         renderTableSkeleton("[data-usage-rows]", 4, 4);
         try {
-            var data = await requestJson("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v011.000.001-alpha.106/v1/app/usage");
+            var data = await requestJson("../v1/app/usage");
             var usage = data.usage || {};
             var total = Number(usage.month_to_date || 0);
             var limit = usage.monthly_limit == null ? null : Number(usage.monthly_limit);
@@ -714,7 +714,7 @@
 
     async function loadApiKeys() {
         renderTableSkeleton("[data-api-key-rows]", 6, 4);
-        var data = await requestJson("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v011.000.001-alpha.106/v1/app/api-keys");
+        var data = await requestJson("../v1/app/api-keys");
         applyApiKeysData(data);
         setStatus("API keys loaded.", "success");
         return data;
@@ -737,7 +737,7 @@
             setStatus("Creating API key.", "loading");
             try {
                 var data = new FormData(form);
-                var result = await requestJson("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v011.000.001-alpha.106/v1/app/api-keys", {
+                var result = await requestJson("../v1/app/api-keys", {
                     method: "POST",
                     headers: {
                         "Accept": "application/json",
@@ -752,7 +752,7 @@
                     value.textContent = secret || "";
                     box.hidden = !secret;
                 }
-                var refreshed = await requestJson("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v011.000.001-alpha.106/v1/app/api-keys");
+                var refreshed = await requestJson("../v1/app/api-keys");
                 applyApiKeysData(refreshed);
                 setStatus(secret ? "API key created and ready to copy." : "API key created.", "success");
             } catch (err) {
@@ -830,7 +830,7 @@
                 if (renameSubmit) renameSubmit.disabled = true;
                 setStatus("Renaming API key.", "loading");
                 try {
-                    await requestJson("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v011.000.001-alpha.106/v1/app/api-keys/" + encodeURIComponent(renameKeyId), {
+                    await requestJson("../v1/app/api-keys/" + encodeURIComponent(renameKeyId), {
                         method: "PATCH",
                         headers: {
                             "Accept": "application/json",
@@ -933,7 +933,7 @@
             button.disabled = true;
             setStatus("Revoking API key.", "loading");
             try {
-                await requestJson("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v011.000.001-alpha.106/v1/app/api-keys/" + encodeURIComponent(id) + "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v011.000.001-alpha.106/revoke", { method: "POST" });
+                await requestJson("../v1/app/api-keys/" + encodeURIComponent(id) + "../revoke", { method: "POST" });
                 await loadApiKeys();
                 setStatus("API key revoked.", "success");
             } catch (err) {
@@ -1078,7 +1078,7 @@
         setStatus("Loading billing.", "loading");
         setPanelLoading(".billing-summary-card", true);
         async function loadBilling() {
-            var data = await requestJson("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v011.000.001-alpha.106/v1/billing/status");
+            var data = await requestJson("../v1/billing/status");
             renderBilling(data);
             return data;
         }
@@ -1103,7 +1103,7 @@
                 button.disabled = true;
                 setStatus("Opening Stripe Checkout.", "loading");
                 try {
-                    var result = await requestJson("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v011.000.001-alpha.106/v1/billing/checkout", {
+                    var result = await requestJson("../v1/billing/checkout", {
                         method: "POST",
                         headers: {
                             "Accept": "application/json",
@@ -1127,7 +1127,7 @@
             button.disabled = true;
             setStatus("Opening secure credit checkout.", "loading");
             try {
-                var result = await requestJson("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v011.000.001-alpha.106/v1/billing/credit-packs/checkout", {
+                var result = await requestJson("../v1/billing/credit-packs/checkout", {
                     method: "POST",
                     headers: {
                         "Accept": "application/json",
@@ -1150,7 +1150,7 @@
                 portalButton.disabled = true;
                 setStatus("Opening Stripe billing portal.", "loading");
                 try {
-                    var result = await requestJson("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v011.000.001-alpha.106/v1/billing/portal", { method: "POST" });
+                    var result = await requestJson("../v1/billing/portal", { method: "POST" });
                     if (!result.url) throw new Error("Stripe did not return a portal URL.");
                     window.location.href = result.url;
                 } catch (err) {
@@ -1275,17 +1275,17 @@
             showDeleteMessage("Verifying billing and submitting account deletion.", "loading");
 
             try {
-                await requestJson("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v011.000.001-alpha.106/v1/app/account", {
+                await requestJson("../v1/app/account", {
                     method: "DELETE",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ confirmation: requiredText })
                 });
                 clearSensitiveSessionState();
                 try {
-                    await requestJson("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v011.000.001-alpha.106/v1/auth/logout", { method: "POST" });
+                    await requestJson("../v1/auth/logout", { method: "POST" });
                 } catch (err) {}
                 showAppTransition();
-                var loginUrl = new URL("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v011.000.001-alpha.106/pages/auth/signin.html?account=deleted", window.location.href);
+                var loginUrl = new URL("../pages/auth/signin.html?account=deleted", window.location.href);
                 writePageArrivalState(loginUrl);
                 window.location.href = loginUrl.href;
             } catch (err) {
@@ -1308,7 +1308,7 @@
                 button.disabled = true;
                 showAppTransition();
                 try {
-                    await requestJson("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v011.000.001-alpha.106/v1/auth/logout", { method: "POST" });
+                    await requestJson("../v1/auth/logout", { method: "POST" });
                     clearSensitiveSessionState();
                 } catch (err) {
                     hideAppTransition();
@@ -1316,7 +1316,7 @@
                     setStatus(err.message || "Logout could not be completed. Please try again.", "error");
                     return;
                 }
-                var loginUrl = new URL("/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v011.000.001-alpha.106/pages/auth/signin.html", window.location.href);
+                var loginUrl = new URL("../pages/auth/signin.html", window.location.href);
                 writePageArrivalState(loginUrl);
                 window.location.replace(loginUrl.href);
             });

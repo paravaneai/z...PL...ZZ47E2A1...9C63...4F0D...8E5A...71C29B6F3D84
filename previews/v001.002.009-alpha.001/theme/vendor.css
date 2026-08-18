@@ -4409,7 +4409,7 @@ figcaption {
     grid-column-gap: 32px;
     grid-row-gap: 32px;
     flex-wrap: wrap;
-    grid-template: ". ." ". ." "Area Area"/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v001.002.009-alpha.001/1fr 1fr;
+    grid-template: ". ." ". ." "Area Area"../1fr 1fr;
     grid-auto-columns: 1fr;
     align-items: flex-start;
     display: grid;
@@ -10947,7 +10947,7 @@ figcaption {
         background-clip: border-box;
         outline: 3px var(--color-text-primary);
         flex: 1;
-        grid-template: ". ." ". ." ".Area"/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v001.002.009-alpha.001/1fr 1fr;
+        grid-template: ". ." ". ." ".Area"../1fr 1fr;
         grid-auto-columns: 1fr;
         width: 100%;
         padding: 40px 32px;

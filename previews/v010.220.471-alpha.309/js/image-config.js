@@ -24,23 +24,23 @@
     };
 
     var paths = {
-        "brand.favicon": "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/b4/b47d8a12345bdbf064f0de8351c8ff55b0c87d6eec4e283d71a72b3fa8e150eb.ico",
+        "brand.favicon": "../../../shared/b4/b47d8a12345bdbf064f0de8351c8ff55b0c87d6eec4e283d71a72b3fa8e150eb.ico",
 
-        "brand.wordmark": "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/53/5324d7fe22bb243f1b8198e1552ef6818428086c753da78222be42bdeccddd26.png",
-        "brand.heroMark": "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/53/5324d7fe22bb243f1b8198e1552ef6818428086c753da78222be42bdeccddd26.png",
-        "email.brandmark": "https://paravane.io/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/53/5324d7fe22bb243f1b8198e1552ef6818428086c753da78222be42bdeccddd26.png",
+        "brand.wordmark": "../../../shared/53/5324d7fe22bb243f1b8198e1552ef6818428086c753da78222be42bdeccddd26.png",
+        "brand.heroMark": "../../../shared/53/5324d7fe22bb243f1b8198e1552ef6818428086c753da78222be42bdeccddd26.png",
+        "email.brandmark": "https://paravane.io../../../shared/53/5324d7fe22bb243f1b8198e1552ef6818428086c753da78222be42bdeccddd26.png",
 
-        "brand.loader.dark": "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/15/159cbd36dec6a321c7a0b75cba13e7c0b86cc72dd642947a264205447a0b1feb.gif",
-        "brand.loader.light": "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/shared/36/36711ff3422b35db24f4058d4546f43f896d4fa13a4fe8f97b7a1e22bfa7164f.gif",        
+        "brand.loader.dark": "../../../shared/15/159cbd36dec6a321c7a0b75cba13e7c0b86cc72dd642947a264205447a0b1feb.gif",
+        "brand.loader.light": "../../../shared/36/36711ff3422b35db24f4058d4546f43f896d4fa13a4fe8f97b7a1e22bfa7164f.gif",        
 
-        "home.platformVisual.webp.dark": "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.309/assets/webp/transparent/ai-visualization-neural-signal-network-transparent-animation-vibrant.webp",
-        "home.platformVisual.webp.light": "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.309/assets/webp/opaque/ai-visualization-neural-signal-network-transparent-animation-vibrant-for-white.webp",        
+        "home.platformVisual.webp.dark": "../assets/webp/transparent/ai-visualization-neural-signal-network-transparent-animation-vibrant.webp",
+        "home.platformVisual.webp.light": "../assets/webp/opaque/ai-visualization-neural-signal-network-transparent-animation-vibrant-for-white.webp",        
 
-        "home.platformVisual.gif.dark": "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.309/assets/gif/transparent/ai-visualization-neural-signal-network-animation-vibrant-transparent.gif",
-        "home.platformVisual.gif.light": "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.309/assets/gif/opaque/ai-visualization-neural-signal-network-animation-vibrant-on-white.gif",
+        "home.platformVisual.gif.dark": "../assets/gif/transparent/ai-visualization-neural-signal-network-animation-vibrant-transparent.gif",
+        "home.platformVisual.gif.light": "../assets/gif/opaque/ai-visualization-neural-signal-network-animation-vibrant-on-white.gif",
 
-        "smtprs.hero.dark": "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.309/assets/gif/opaque/smtprs-email-risk-intelligence-animated-loop-large-black-lossy.gif",
-        "smtprs.hero.light": "/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v010.220.471-alpha.309/assets/gif/opaque/smtprs-email-risk-intelligence-animated-loop-large-white-lossy.gif"      
+        "smtprs.hero.dark": "../assets/gif/opaque/smtprs-email-risk-intelligence-animated-loop-large-black-lossy.gif",
+        "smtprs.hero.light": "../assets/gif/opaque/smtprs-email-risk-intelligence-animated-loop-large-white-lossy.gif"      
     };
 
     var formatGroups = {

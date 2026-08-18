@@ -63,7 +63,7 @@
                     r(e) +
                     [].map
                         .call(e.attributes, function (e) {
-                            return " " + e.nodeName + '="' + n(e.value).replace(/"/z...PL...ZZ47E2A1...9C63...4F0D...8E5A...71C29B6F3D84/previews/v002.003.000/g, "&quot;") + '"';
+                            return " " + e.nodeName + '="' + n(e.value).replace(/"../../g, "&quot;") + '"';
                         })
                         .join("") +
                     ">";
