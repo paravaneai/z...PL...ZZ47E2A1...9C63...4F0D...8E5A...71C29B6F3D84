@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+    <head>
+<meta http-equiv="Content-Security-Policy" content="connect-src 'none'; form-action 'none'">
+<meta name="robots" content="noindex, nofollow">
+<script src="../../../hosted-preview.js"></script>
+
+        <meta charset="utf-8" />
+        <meta name="color-scheme" content="only light" />
+        <meta name="darkreader-lock" content="true" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Understand smtpRS API response fields, email risk scores, confidence, sender and domain signals, evidence, and allow, review, or reject decisions.">
+        <title>smtpRS API Responses and Risk Decisions | Paravane Docs</title>
+        <link rel="canonical" href="https://paravane.io/pages/docs/smtprs/responses" />
+        <link rel="icon" href="../../../../../shared/b4/b47d8a12345bdbf064f0de8351c8ff55b0c87d6eec4e283d71a72b3fa8e150eb.ico" data-image-href="brand.favicon" />
+        <script>
+            (function () {
+                try {
+                    var theme = localStorage.getItem("paravane-theme");
+                    document.documentElement.setAttribute("data-theme", theme === "light" ? "light" : "dark");
+                } catch (err) {
+                    document.documentElement.setAttribute("data-theme", "dark");
+                }
+            })();
+        </script>
+        <script src="../../../js/image-config.js?v=009.220.471-alpha.310-loader-soft-fade"></script>
+        <script src="../../../js/site-config.js?v=009.220.471-alpha.310-loader-soft-fade"></script>
+        <script src="../../../js/theme.js?v=012.000.001-alpha.108-multi-catalog"></script>
+        <script src="../../../js/page-transition.js?v=011.000.001-platform-loader-handoff"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+        <link rel="stylesheet" href="../../../css/paravane.css?v=012.000.001-alpha.108-contact-spacing-2" />
+        <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Paravane">
+    <meta property="og:title" content="smtpRS API Responses and Risk Decisions | Paravane Docs">
+    <meta property="og:description" content="Understand smtpRS API response fields, email risk scores, confidence, sender and domain signals, evidence, and allow, review, or reject decisions.">
+    <meta property="og:url" content="https://paravane.io/pages/docs/smtprs/responses">
+    <meta property="og:image" content="https://paravane.io/assets/png/illustrations/products/smtprs-submit-analyse-decide-workflow-dark-v2-new-logo.png">
+    <meta property="og:image:width" content="1774">
+    <meta property="og:image:height" content="887">
+    <meta property="og:image:alt" content="smtpRS email risk analysis workflow">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="smtpRS API Responses and Risk Decisions | Paravane Docs">
+    <meta name="twitter:description" content="Understand smtpRS API response fields, email risk scores, confidence, sender and domain signals, evidence, and allow, review, or reject decisions.">
+    <meta name="twitter:image" content="https://paravane.io/assets/png/illustrations/products/smtprs-submit-analyse-decide-workflow-dark-v2-new-logo.png">
+    <meta name="twitter:image:alt" content="smtpRS email risk analysis workflow">
+    <script type="application/ld+json" data-seo-schema="paravane">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://paravane.io/pages/docs/smtprs/responses#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Paravane",
+          "item": "https://paravane.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Documentation",
+          "item": "https://paravane.io/pages/docs/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "smtpRS documentation",
+          "item": "https://paravane.io/pages/docs/smtprs/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Responses",
+          "item": "https://paravane.io/pages/docs/smtprs/responses"
+        }
+      ]
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://paravane.io/pages/docs/smtprs/responses#webpage",
+      "url": "https://paravane.io/pages/docs/smtprs/responses",
+      "name": "smtpRS API Responses and Risk Decisions | Paravane Docs",
+      "description": "Understand smtpRS API response fields, email risk scores, confidence, sender and domain signals, evidence, and allow, review, or reject decisions.",
+      "isPartOf": {
+        "@id": "https://paravane.io/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://paravane.io/pages/docs/smtprs/responses#breadcrumb"
+      },
+      "inLanguage": "en-US",
+      "headline": "Understand smtpRS results.",
+      "publisher": {
+        "@id": "https://paravane.io/#organization"
+      },
+      "about": {
+        "@id": "https://paravane.io/pages/products/smtprs#software"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://paravane.io/#organization",
+      "name": "Paravane Labs",
+      "alternateName": "Paravane",
+      "url": "https://paravane.io/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://paravane.io../../../../../shared/53/5324d7fe22bb243f1b8198e1552ef6818428086c753da78222be42bdeccddd26.png"
+      },
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "DOYDL Technologies",
+        "url": "https://doydl.studio/"
+      },
+      "sameAs": [
+        "https://x.com/ParavaneAI",
+        "https://www.youtube.com/@ParavaneAI",
+        "https://www.linkedin.com/company/paravane",
+        "https://www.facebook.com/Paravane/",
+        "https://www.reddit.com/user/ParavaneLabs/",
+        "https://github.com/paravaneai"
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+    <body class="page-smtprs page-standard page-docs">
+        <header class="site-header">
+            <div class="container nav">
+                <a class="logo" href="/" aria-label="Paravane Labs home">
+                    <img src="../../../../../shared/76/76010f0394048a52ec556035630d91c9204895f9c94f9fe83fb61d8fb9ecd180.svg" data-theme-src-dark="../../../../../shared/76/76010f0394048a52ec556035630d91c9204895f9c94f9fe83fb61d8fb9ecd180.svg" data-theme-src-light="../../../../../shared/53/5379caf98dc03f58295f0478bbea0ec723e97bd443ddd5f4bfc6e946ae659fbe.svg" data-image-src="brand.wordmark" alt="Paravane Labs" / width="52" height="52" decoding="async">
+                </a>
+                <nav class="nav-links" aria-label="Primary navigation" id="primary-navigation">
+                    <div class="nav-catalog nav-products">
+                        <button class="nav-catalog-trigger" type="button" aria-haspopup="true" aria-label="Open product catalog">
+                            <span>Products</span>
+                        </button>
+                        <div class="product-catalog-menu" id="product-catalog-navigation" role="menu" aria-label="Products catalog">
+                            <div class="product-catalog-head">
+                                <div>
+                                    <strong>Product catalog</strong>
+                                    <span>Applied intelligence for risk, revenue, operations, compliance, data, and vendor decisions.</span>
+                                </div>
+                            </div>
+                            <div class="product-catalog-grid">
+                                <section class="product-catalog-section" aria-label="Risk &amp; Trust Intelligence">
+                                    <p class="product-catalog-heading">Risk &amp; Trust Intelligence</p>
+                                    <p>Detect suspicious activity, unreliable outputs, risky communications, and fraud signals.</p>
+                                    <div class="product-catalog-list">
+                                        <a class="product-catalog-item is-available" href="../../../pages/products/smtprs" role="menuitem">
+                                            <span class="product-catalog-title">smtpRS | Email Risk Intelligence</span>
+                                            <p>Scores email risk, urgency, confidence, and unusual activity.</p>
+                                        </a>
+                                        <a class="product-catalog-item is-available" href="../../../pages/products/invoiceguard" role="menuitem">
+                                            <span class="product-catalog-title">InvoiceGuard | Invoice Protection <span class="product-catalog-pill">In development</span></span>
+                                            <p>Detects fraudulent, duplicate, inflated, or suspicious invoice activity.</p>
+                                        </a>
+                                    </div>
+                                </section>
+                                <section class="product-catalog-section" aria-label="Customer &amp; Revenue Intelligence">
+                                    <p class="product-catalog-heading">Customer &amp; Revenue Intelligence</p>
+                                    <p>Predict churn, renewal health, payment reliability, and revenue risk.</p>
+                                    <div class="product-catalog-list">
+                                        <a class="product-catalog-item is-available" href="../../../pages/products/retainiq" role="menuitem">
+                                            <span class="product-catalog-title">RetainIQ | Customer Retention Intelligence <span class="product-catalog-pill">In development</span></span>
+                                            <p>Predicts customer churn, disengagement, and renewal risk.</p>
+                                        </a>
+                                    </div>
+                                </section>
+                                <section class="product-catalog-section" aria-label="Data &amp; Vendor Intelligence">
+                                    <p class="product-catalog-heading">Data &amp; Vendor Intelligence</p>
+                                    <p>Improve data reliability and evaluate third-party operational risk.</p>
+                                    <div class="product-catalog-list">
+                                        <a class="product-catalog-item is-available" href="../../../pages/products/vendorlens" role="menuitem">
+                                            <span class="product-catalog-title">VendorLens | Vendor Intelligence <span class="product-catalog-pill">In development</span></span>
+                                            <p>Assesses vendor reliability, compliance, and operational dependency risk.</p>
+                                        </a>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-catalog nav-resources">
+                        <button class="nav-catalog-trigger active" type="button" aria-haspopup="true" aria-label="Open resources menu">
+                            <span>Resources</span>
+                        </button>
+                        <div class="product-catalog-menu nav-resources-menu" id="resources-navigation" role="menu" aria-label="Resources">
+                            <div class="product-catalog-head">
+                                <div>
+                                    <strong>Resources</strong>
+                                    <span>Technical guidance for integrating and operating Paravane products.</span>
+                                </div>
+                            </div>
+                            <div class="nav-resource-list">
+                                <a class="nav-resource-item" href="../../../pages/docs/" role="menuitem">
+                                    <span class="nav-resource-icon" aria-hidden="true"><i class="fa-solid fa-code"></i></span>
+                                    <span><strong>Developer Docs</strong><small>API references, quickstarts, authentication, and integration guidance.</small></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="../../../pages/pricing/">Pricing</a>
+                </nav>
+                <div class="nav-actions">
+                    <a class="nav-action nav-action-secondary" href="../../../pages/auth/signin">Sign in</a>
+                                            <a class="nav-action nav-action-secondary nav-contact-action" href="../../../pages/contact/">Contact</a>
+                    <button class="theme-toggle" type="button" data-theme-toggle role="switch" aria-label="Switch to light theme" aria-pressed="false" aria-checked="true" title="Switch to light theme">
+                        <svg class="theme-toggle__side-icon theme-toggle__side-icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+                            <circle cx="12" cy="12" r="3.2"></circle>
+                            <path d="M12 2.7v2M12 19.3v2M4.7 12h-2M21.3 12h-2M5.4 5.4l1.4 1.4M17.2 17.2l1.4 1.4M18.6 5.4l-1.4 1.4M6.8 17.2l-1.4 1.4"></path>
+                        </svg>
+                        <svg class="theme-toggle__side-icon theme-toggle__side-icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M20.2 14.2A8.25 8.25 0 0 1 9.8 3.8 8.5 8.5 0 1 0 20.2 14.2Z"></path>
+                        </svg>
+                        <span class="theme-toggle__thumb" aria-hidden="true">
+                            <svg class="theme-toggle__thumb-icon theme-toggle__thumb-icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                                <circle cx="12" cy="12" r="3.2"></circle>
+                                <path d="M12 2.7v2M12 19.3v2M4.7 12h-2M21.3 12h-2M5.4 5.4l1.4 1.4M17.2 17.2l1.4 1.4M18.6 5.4l-1.4 1.4M6.8 17.2l-1.4 1.4"></path>
+                            </svg>
+                            <svg class="theme-toggle__thumb-icon theme-toggle__thumb-icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20.2 14.2A8.25 8.25 0 0 1 9.8 3.8 8.5 8.5 0 1 0 20.2 14.2Z"></path>
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero standard-hero">
+                <div class="container">
+                    <p class="kicker">Responses</p>
+                    <h1>Understand smtpRS results.</h1>
+                    <p class="lede">
+                        Responses include a decision, a normalized risk score, plan context, model context, and usage
+                        accounting. Full layer details are available only to entitled tiers.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container docs-reference-shell">
+                    <aside class="docs-sidebar" aria-label="Documentation navigation">
+                        <a href="../../../pages/docs/smtprs/">Overview</a>
+                        <a href="../../../pages/docs/smtprs/quickstart">Quickstart</a>
+                        <a href="../../../pages/docs/smtprs/authentication">Authentication</a>
+                        <a href="../../../pages/docs/smtprs/analyse">Analyse endpoint</a>
+                        <a class="active" href="../../../pages/docs/smtprs/responses">Responses</a>
+                        <a href="../../../pages/docs/smtprs/errors">Errors</a>
+                        <a href="../../../pages/docs/smtprs/plans-limits">Plans and limits</a>
+                        <a href="../../../pages/docs/smtprs/changelog">Changelog</a>
+                    </aside>
+
+                    <article class="docs-article">
+                        <section class="docs-section">
+<h2>Core fields.</h2>
+<div class="docs-table-wrap"><table class="docs-table">
+<thead><tr><th>Field</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td><code>email</code></td><td>The email represented by the response, when returned.</td></tr>
+<tr><td><code>overall_risk</code></td><td>Normalized overall risk score.</td></tr>
+<tr><td><code>decision</code></td><td>Customer-facing recommendation such as <code>allow</code>, <code>manual_review</code>, or <code>reject</code>.</td></tr>
+<tr><td><code>tier</code></td><td>The workspace or API-key tier reflected by the request.</td></tr>
+<tr><td><code>analysis_profile</code></td><td>The profile used: <code>quick</code>, <code>standard</code>, <code>adaptive</code>, <code>deep</code>, or <code>catch_all</code>.</td></tr>
+<tr><td><code>response_profile</code></td><td>The response shape, such as <code>summary</code> or <code>full</code>.</td></tr>
+<tr><td><code>credit_cost</code></td><td>Planned credit cost for the selected profile.</td></tr>
+<tr><td><code>credits_charged</code></td><td>Credits recorded for this request, when returned.</td></tr>
+<tr><td><code>reasons</code></td><td>Human-readable reasons supporting the decision.</td></tr>
+<tr><td><code>usage</code></td><td>Usage and quota snapshot for the active period.</td></tr>
+<tr><td><code>company_validity_beta</code></td><td>Typed beta availability and opt-in metadata when returned.</td></tr>
+<tr><td><code>domain_signal</code></td><td>Normalized domain, mail, and optional company-context facts when returned.</td></tr>
+</tbody></table></div>
+</section>
+
+                        <section class="docs-section">
+                            <h2>Decision values.</h2>
+                            <div class="docs-table-wrap">
+                                <table class="docs-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Decision</th>
+                                            <th>Typical meaning</th>
+                                            <th>Suggested action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>allow</code></td>
+                                            <td>The signal set does not indicate high risk.</td>
+                                            <td>Continue your normal workflow.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>manual_review</code></td>
+                                            <td>The address or domain has ambiguous or elevated signals.</td>
+                                            <td>Queue for review, request more context, or add friction.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>reject</code></td>
+                                            <td>The signal set indicates strong risk or invalid structure.</td>
+                                            <td>Block, deny, or require a safer alternate email depending on your policy.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+
+                        <section class="docs-section">
+<h2>Summary response.</h2>
+<p>Summary responses provide stable decision and accounting fields without internal layer payloads.</p>
+<div class="code-card"><pre><code>{
+  "email": "alice@example.com",
+  "overall_risk": 2,
+  "decision": "allow",
+  "tier": "BASIC",
+  "analysis_profile": "quick",
+  "credit_cost": 1,
+  "credits_charged": 1,
+  "response_profile": "summary",
+  "reasons": []
+}</code></pre></div>
+</section>
+
+                        <section class="docs-section">
+<h2>Full response.</h2>
+<p>Entitled tiers may receive additional domain signals or layer details. Treat internal layer payloads as diagnostic data rather than stable fields for hardcoded business rules.</p>
+<div class="code-card"><pre><code>{
+  "email": "alice@example.com",
+  "overall_risk": 2,
+  "decision": "allow",
+  "tier": "PRO",
+  "analysis_profile": "deep",
+  "response_profile": "full",
+  "credit_cost": 5,
+  "credits_charged": 5,
+  "domain_signal": {
+    "domain": "example.com",
+    "domain_exists": true,
+    "mail_capable": true,
+    "spf_present": true,
+    "dmarc_present": true,
+    "reason_codes": []
+  },
+  "layers": {}
+}</code></pre></div>
+<div class="docs-callout"><strong>Python SDK response handling.</strong><span>The SDK returns <code>SmtpRsAnalysis</code> and preserves the complete payload. Use typed attributes for stable fields and <code>result.to_dict()</code> for newly added or diagnostic fields.</span></div>
+</section>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container footer-directory">
+                <div class="footer-directory-grid">
+                    <section class="footer-directory-column" aria-labelledby="footer-getting-started">
+                        <h2 id="footer-getting-started">Getting Started</h2>
+                        <div class="footer-directory-links">
+                            <a href="../../../pages/contact/">Contact</a>
+                            <a href="../../../pages/products/smtprs#try-smtprs">Test smtpRS</a>
+                        </div>
+                    </section>
+                    <section class="footer-directory-column" aria-labelledby="footer-company">
+                        <h2 id="footer-company">Company</h2>
+                        <div class="footer-directory-links">
+                            <a href="../../../pages/company/">About</a>
+                            <a href="../../../pages/careers/">Careers</a>
+                        </div>
+                    </section>
+                    <section class="footer-directory-column" aria-labelledby="footer-developers">
+                        <h2 id="footer-developers">Developers</h2>
+                        <div class="footer-directory-links">
+                            <a href="../../../pages/docs/">Documentation</a>
+                        </div>
+                    </section>
+                </div>
+                <div class="footer-bottom">
+                    <span class="footer-copyright">
+                        © 2026 Paravane. A
+                        <a href="https://doydl.studio/" target="_blank" rel="noopener noreferrer">DOYDL Technologies</a>
+                        company.
+                    </span>
+                    <nav class="footer-social" aria-label="Paravane Labs social media">
+                        <a class="footer-social-link footer-social-x" href="https://x.com/ParavaneAI" target="_blank" rel="noopener noreferrer" aria-label="Paravane Labs on X">
+                            <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a class="footer-social-link footer-social-youtube" href="https://www.youtube.com/@ParavaneAI" target="_blank" rel="noopener noreferrer" aria-label="Paravane Labs on YouTube">
+                            <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+                        </a>
+                        <a class="footer-social-link footer-social-linkedin" href="https://www.linkedin.com/company/paravane" target="_blank" rel="noopener noreferrer" aria-label="Paravane Labs on LinkedIn">
+                            <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                        </a>
+                        <a class="footer-social-link footer-social-facebook" href="https://www.facebook.com/Paravane/" target="_blank" rel="noopener noreferrer" aria-label="Paravane Labs on Facebook">
+                            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                        </a>
+                        <a class="footer-social-link footer-social-reddit" href="https://www.reddit.com/user/ParavaneLabs/" target="_blank" rel="noopener noreferrer" aria-label="Paravane Labs on Reddit">
+                            <i class="fa-brands fa-reddit-alien" aria-hidden="true"></i>
+                        </a>
+                        <a class="footer-social-link footer-social-github" href="https://github.com/paravaneai" target="_blank" rel="noopener noreferrer" aria-label="Paravane Labs on GitHub">
+                            <i class="fa-brands fa-github" aria-hidden="true"></i>
+                        </a>
+                    </nav>
+                    <nav class="footer-legal" aria-label="Legal">
+                        <a href="../../../pages/legal/">Legal</a>
+                        <a href="../../../pages/legal/terms">Terms</a>
+                        <a href="../../../pages/legal/privacy">Privacy</a>
+                        <a href="../../../pages/legal/security">Security</a>
+                    </nav>
+                </div>
+            </div>
+        </footer>
+        <script src="../../../js/docs-code-copy.js?v=011.000.001-docs-copy-controls"></script>
+</body>
+</html>

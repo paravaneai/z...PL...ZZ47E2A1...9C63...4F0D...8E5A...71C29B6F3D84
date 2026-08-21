@@ -1,0 +1,47 @@
+{
+  "updated": "2026-08-21",
+  "jobs": [
+    {
+      "id": "REQ-94523",
+      "slug": "director-fpa",
+      "title": "Director of FP&A",
+      "department": "Finance & Operations",
+      "location": "Remote, United States",
+      "employmentType": "Full time",
+      "experience": "Director",
+      "salaryRange": {
+        "currency": "USD",
+        "minimum": 260000,
+        "maximum": 463000,
+        "period": "YEAR"
+      },
+      "datePosted": "2026-08-21",
+      "active": true,
+      "summary": "Lead financial planning, forecasting, and decision support as Paravane grows its operational intelligence product portfolio.",
+      "description": [
+        "Paravane is looking for a Director of FP&A to establish and lead financial planning, forecasting, and management reporting across the company.",
+        "This role partners closely with company leadership and product operations to turn financial and operating data into clear decisions. You will build the planning discipline needed for a focused software company while keeping the work practical, visible, and useful."
+      ],
+      "responsibilities": [
+        "Own annual planning, rolling forecasts, and long-range financial models across revenue, operating expenses, cash, and headcount.",
+        "Build management reporting that connects financial performance with product usage, customer activity, and operating priorities.",
+        "Partner with leadership on pricing, packaging, investment decisions, and scenario planning.",
+        "Develop clear metrics and review rhythms that help teams understand performance and act early.",
+        "Improve finance systems, controls, and data quality without adding unnecessary process.",
+        "Prepare concise materials for leadership, ownership, and other stakeholders."
+      ],
+      "qualifications": [
+        "Substantial FP&A, strategic finance, or corporate finance experience in software, SaaS, or another technology business.",
+        "Experience building forecasts and operating models in an evolving environment.",
+        "Strong command of financial statements, unit economics, cash planning, and management reporting.",
+        "Ability to explain complex financial information clearly to technical and non-technical partners.",
+        "A hands-on approach, sound judgment, and comfort moving between strategy and detailed execution.",
+        "High standards for accuracy, discretion, and accountable decision-making."
+      ],
+      "aboutParavane": [
+        "Paravane builds software for identifying risk, unusual activity, and signals that are easy to miss in everyday business systems.",
+        "Paravane Labs is a wholly owned subsidiary of DOYDL Technologies. Our first public product, smtpRS, brings email risk intelligence developed through years of private production use to a broader market."
+      ]
+    }
+  ]
+}
