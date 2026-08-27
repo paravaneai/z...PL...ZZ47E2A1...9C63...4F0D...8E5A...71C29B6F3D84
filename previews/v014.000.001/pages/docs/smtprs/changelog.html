@@ -1,0 +1,804 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+<meta http-equiv="Content-Security-Policy" content="connect-src 'none'; form-action 'none'">
+<meta name="robots" content="noindex, nofollow">
+<script src="../../../hosted-preview.js"></script>
+
+        <meta charset="utf-8" />
+        <meta name="color-scheme" content="only light" />
+        <meta name="darkreader-lock" content="true" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <title>smtpRS API Changelog | Paravane Docs</title>
+    <meta name="description" content="Review published changes to the smtpRS email risk scoring API, documentation, request contract, response fields, and operational behavior.">
+        <link rel="canonical" href="https://paravane.io/pages/docs/smtprs/changelog" />
+        <link data-image-href="brand.favicon" href="../../../../../shared/b4/b47d8a12345bdbf064f0de8351c8ff55b0c87d6eec4e283d71a72b3fa8e150eb.ico" rel="icon" />
+        <script>
+            (function () {
+                try {
+                    var theme = localStorage.getItem("paravane-theme");
+                    document.documentElement.setAttribute("data-theme", theme === "light" ? "light" : "dark");
+                } catch (err) {
+                    document.documentElement.setAttribute("data-theme", "dark");
+                }
+            })();
+        </script>
+        <script src="../../../js/image-config.js?v=009.220.471-alpha.310-loader-soft-fade"></script>
+        <script src="../../../js/site-config.js?v=009.220.471-alpha.310-loader-soft-fade"></script>
+        <script src="../../../js/theme.js?v=012.000.001-alpha.108-multi-catalog"></script>
+        <script src="../../../js/page-transition.js?v=011.000.001-platform-loader-handoff"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="../../../css/paravane.css?v=012.000.001-alpha.108-contact-spacing-2" />
+        <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Paravane">
+    <meta property="og:title" content="smtpRS API Changelog | Paravane Docs">
+    <meta property="og:description" content="Review published changes to the smtpRS email risk scoring API, documentation, request contract, response fields, and operational behavior.">
+    <meta property="og:url" content="https://paravane.io/pages/docs/smtprs/changelog">
+    <meta property="og:image" content="https://paravane.io../../../../../shared/89/89d89c89150b7f3de6b904ca779d2c75649d45ce5843bb16e58750aadd26bd5d.png">
+    <meta property="og:image:width" content="1774">
+    <meta property="og:image:height" content="887">
+    <meta property="og:image:alt" content="smtpRS email risk analysis workflow">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="smtpRS API Changelog | Paravane Docs">
+    <meta name="twitter:description" content="Review published changes to the smtpRS email risk scoring API, documentation, request contract, response fields, and operational behavior.">
+    <meta name="twitter:image" content="https://paravane.io../../../../../shared/89/89d89c89150b7f3de6b904ca779d2c75649d45ce5843bb16e58750aadd26bd5d.png">
+    <meta name="twitter:image:alt" content="smtpRS email risk analysis workflow">
+    <script type="application/ld+json" data-seo-schema="paravane">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://paravane.io/pages/docs/smtprs/changelog#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Paravane",
+          "item": "https://paravane.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Documentation",
+          "item": "https://paravane.io/pages/docs/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "smtpRS documentation",
+          "item": "https://paravane.io/pages/docs/smtprs/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Changelog",
+          "item": "https://paravane.io/pages/docs/smtprs/changelog"
+        }
+      ]
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://paravane.io/pages/docs/smtprs/changelog#webpage",
+      "url": "https://paravane.io/pages/docs/smtprs/changelog",
+      "name": "smtpRS API Changelog | Paravane Docs",
+      "description": "Review published changes to the smtpRS email risk scoring API, documentation, request contract, response fields, and operational behavior.",
+      "isPartOf": {
+        "@id": "https://paravane.io/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://paravane.io/pages/docs/smtprs/changelog#breadcrumb"
+      },
+      "inLanguage": "en-US",
+      "headline": "API changelog.",
+      "publisher": {
+        "@id": "https://paravane.io/#organization"
+      },
+      "about": {
+        "@id": "https://paravane.io/pages/products/smtprs#software"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://paravane.io/#organization",
+      "name": "Paravane Labs",
+      "alternateName": "Paravane",
+      "url": "https://paravane.io/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://paravane.io../../../../../shared/53/5324d7fe22bb243f1b8198e1552ef6818428086c753da78222be42bdeccddd26.png"
+      },
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "DOYDL Technologies",
+        "url": "https://doydl.studio/"
+      },
+      "sameAs": [
+        "https://x.com/ParavaneAI",
+        "https://www.youtube.com/@ParavaneAI",
+        "https://www.linkedin.com/company/paravane",
+        "https://www.facebook.com/Paravane/",
+        "https://www.reddit.com/user/ParavaneLabs/",
+        "https://github.com/paravaneai"
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+    <body class="page-smtprs page-standard page-docs">
+        <header class="site-header">
+            <div class="container nav">
+                <a aria-label="Paravane Labs home" class="logo" href="/">
+                    <img
+                        alt="Paravane Labs"
+                        data-image-src="brand.wordmark"
+                        data-theme-src-dark="../../../../../shared/76/76010f0394048a52ec556035630d91c9204895f9c94f9fe83fb61d8fb9ecd180.svg"
+                        data-theme-src-light="../../../../../shared/53/5379caf98dc03f58295f0478bbea0ec723e97bd443ddd5f4bfc6e946ae659fbe.svg"
+                        src="../../../../../shared/76/76010f0394048a52ec556035630d91c9204895f9c94f9fe83fb61d8fb9ecd180.svg"
+                    width="52" height="52" decoding="async" fetchpriority="high">
+                </a>
+                <nav class="nav-links" aria-label="Primary navigation" id="primary-navigation">
+                    <div class="nav-catalog nav-products">
+                        <button class="nav-catalog-trigger" type="button" aria-haspopup="true" aria-label="Open product catalog">
+                            <span>Products</span>
+                        </button>
+                        <div class="product-catalog-menu" id="product-catalog-navigation" role="menu" aria-label="Products catalog">
+                            <div class="product-catalog-head">
+                                <div>
+                                    <strong>Product catalog</strong>
+                                    <span>Applied intelligence for risk, revenue, operations, compliance, data, and vendor decisions.</span>
+                                </div>
+                            </div>
+                            <div class="product-catalog-grid">
+                                <section class="product-catalog-section" aria-label="Risk &amp; Trust Intelligence">
+                                    <p class="product-catalog-heading">Risk &amp; Trust Intelligence</p>
+                                    <p>Detect suspicious activity, unreliable outputs, risky communications, and fraud signals.</p>
+                                    <div class="product-catalog-list">
+                                        <a class="product-catalog-item is-available" href="../../../pages/products/smtprs" role="menuitem">
+                                            <span class="product-catalog-title">smtpRS | Email Risk Intelligence</span>
+                                            <p>Scores email risk, urgency, confidence, and unusual activity.</p>
+                                        </a>
+                                        <a class="product-catalog-item is-available" href="../../../pages/products/invoiceguard" role="menuitem">
+                                            <span class="product-catalog-title">InvoiceGuard | Invoice Protection <span class="product-catalog-pill">In development</span></span>
+                                            <p>Detects fraudulent, duplicate, inflated, or suspicious invoice activity.</p>
+                                        </a>
+                                    </div>
+                                </section>
+                                <section class="product-catalog-section" aria-label="Customer &amp; Revenue Intelligence">
+                                    <p class="product-catalog-heading">Customer &amp; Revenue Intelligence</p>
+                                    <p>Predict churn, renewal health, payment reliability, and revenue risk.</p>
+                                    <div class="product-catalog-list">
+                                        <a class="product-catalog-item is-available" href="../../../pages/products/retainiq" role="menuitem">
+                                            <span class="product-catalog-title">RetainIQ | Customer Retention Intelligence <span class="product-catalog-pill">In development</span></span>
+                                            <p>Predicts customer churn, disengagement, and renewal risk.</p>
+                                        </a>
+                                    </div>
+                                </section>
+                                <section class="product-catalog-section" aria-label="Data &amp; Vendor Intelligence">
+                                    <p class="product-catalog-heading">Data &amp; Vendor Intelligence</p>
+                                    <p>Improve data reliability and evaluate third-party operational risk.</p>
+                                    <div class="product-catalog-list">
+                                        <a class="product-catalog-item is-available" href="../../../pages/products/vendorlens" role="menuitem">
+                                            <span class="product-catalog-title">VendorLens | Vendor Intelligence <span class="product-catalog-pill">In development</span></span>
+                                            <p>Assesses vendor reliability, compliance, and operational dependency risk.</p>
+                                        </a>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-catalog nav-resources">
+                        <button class="nav-catalog-trigger active" type="button" aria-haspopup="true" aria-label="Open resources menu">
+                            <span>Resources</span>
+                        </button>
+                        <div class="product-catalog-menu nav-resources-menu" id="resources-navigation" role="menu" aria-label="Resources">
+                            <div class="product-catalog-head">
+                                <div>
+                                    <strong>Resources</strong>
+                                    <span>Technical guidance for integrating and operating Paravane products.</span>
+                                </div>
+                            </div>
+                            <div class="nav-resource-list">
+                                <a class="nav-resource-item" href="../../../pages/docs/" role="menuitem">
+                                    <span class="nav-resource-icon" aria-hidden="true"><i class="fa-solid fa-code"></i></span>
+                                    <span><strong>Developer Docs</strong><small>API references, quickstarts, authentication, and integration guidance.</small></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="../../../pages/pricing/">Pricing</a>
+                </nav>
+                <div class="nav-actions">
+                    <a class="nav-action nav-action-secondary" href="../../../pages/auth/signin">Sign in</a>
+                                            <a class="nav-action nav-action-secondary nav-contact-action" href="../../../pages/contact/">Contact</a>
+                                            <button
+                                                class="theme-toggle"
+                                                type="button"
+                                                data-theme-toggle
+                                                role="switch"
+                                                aria-label="Switch to light theme"
+                                                aria-pressed="false"
+                                                aria-checked="true"
+                                                title="Switch to light theme"
+                                            >
+                                                <svg
+                                                    class="theme-toggle__side-icon theme-toggle__side-icon--sun"
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                    stroke="currentColor"
+                                                    stroke-width="1.8"
+                                                    stroke-linecap="round"
+                                                    aria-hidden="true"
+                                                >
+                                                    <circle cx="12" cy="12" r="3.2"></circle>
+                                                    <path
+                                                        d="M12 2.7v2M12 19.3v2M4.7 12h-2M21.3 12h-2M5.4 5.4l1.4 1.4M17.2 17.2l1.4 1.4M18.6 5.4l-1.4 1.4M6.8 17.2l-1.4 1.4"
+                                                    ></path>
+                                                </svg>
+                                                <svg
+                                                    class="theme-toggle__side-icon theme-toggle__side-icon--moon"
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                    stroke="currentColor"
+                                                    stroke-width="1.8"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    aria-hidden="true"
+                                                >
+                                                    <path d="M20.2 14.2A8.25 8.25 0 0 1 9.8 3.8 8.5 8.5 0 1 0 20.2 14.2Z"></path>
+                                                </svg>
+                                                <span class="theme-toggle__thumb" aria-hidden="true">
+                                                    <svg
+                                                        class="theme-toggle__thumb-icon theme-toggle__thumb-icon--sun"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                    >
+                                                        <circle cx="12" cy="12" r="3.2"></circle>
+                                                        <path
+                                                            d="M12 2.7v2M12 19.3v2M4.7 12h-2M21.3 12h-2M5.4 5.4l1.4 1.4M17.2 17.2l1.4 1.4M18.6 5.4l-1.4 1.4M6.8 17.2l-1.4 1.4"
+                                                        ></path>
+                                                    </svg>
+                                                    <svg
+                                                        class="theme-toggle__thumb-icon theme-toggle__thumb-icon--moon"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                    >
+                                                        <path d="M20.2 14.2A8.25 8.25 0 0 1 9.8 3.8 8.5 8.5 0 1 0 20.2 14.2Z"></path>
+                                                    </svg>
+                                                </span>
+                                            </button>
+                    </div>
+            </div>
+        </header>
+        <main>
+            <section class="hero standard-hero">
+                <div class="container">
+                    <p class="kicker">Changelog</p>
+                    <h1>API changelog.</h1>
+                    <p class="lede">This Changelog highlights notable changes to the smtpRS API.</p>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container docs-reference-shell docs-reference-shell--toc">
+                    <aside aria-label="Documentation navigation" class="docs-sidebar">
+                        <a href="../../../pages/docs/smtprs/">Overview</a>
+                        <a href="../../../pages/docs/smtprs/quickstart">Quickstart</a>
+                        <a href="../../../pages/docs/smtprs/authentication">Authentication</a>
+                        <a href="../../../pages/docs/smtprs/analyse">Analyse endpoint</a>
+                        <a href="../../../pages/docs/smtprs/responses">Responses</a>
+                        <a href="../../../pages/docs/smtprs/errors">Errors</a>
+                        <a href="../../../pages/docs/smtprs/plans-limits">Plans and limits</a>
+                        <a class="active" href="../../../pages/docs/smtprs/changelog">Changelog</a>
+                    </aside>
+
+                    <!-- ======================= CHANGELOG TABLE OF CONTENTS START ======================= -->                
+                    <aside aria-label="On this page" class="docs-toc">
+                        <div class="docs-toc-heading">On this page</div>
+                        <nav class="docs-toc-nav" aria-label="Changelog dates">
+                            <a href="#2026-08" data-docs-toc-link="2026-08">August 2026</a>
+                            <a href="#2026-07" data-docs-toc-link="2026-07">July 2026</a>
+                            <a href="#2026-06" data-docs-toc-link="2026-06">June 2026</a>
+                            <a href="#2026-05" data-docs-toc-link="2026-05">May 2026</a>
+                            <a href="#2025-12" data-docs-toc-link="2025-12">December 2025</a>
+                            <a href="#2025-10" data-docs-toc-link="2025-10">October 2025</a>
+                            <a href="#2025-08" data-docs-toc-link="2025-08">August 2025</a>
+                            <a href="#2025-06" data-docs-toc-link="2025-06">June 2025</a>
+                            <a href="#2025-04" data-docs-toc-link="2025-04">April 2025</a>
+                            <a href="#2025-02" data-docs-toc-link="2025-02">February 2025</a>
+                            <a href="#2024-11" data-docs-toc-link="2024-11">November 2024</a>
+                            <a href="#2024-09" data-docs-toc-link="2024-09">September 2024</a>
+                            <a href="#2024-07" data-docs-toc-link="2024-07">July 2024</a>
+                            <a href="#2024-03" data-docs-toc-link="2024-03">March 2024</a>
+                            <a href="#2023-12" data-docs-toc-link="2023-12">December 2023</a>
+                            <a href="#2023-09" data-docs-toc-link="2023-09">September 2023</a>
+                            <a href="#2023-06" data-docs-toc-link="2023-06">June 2023</a>
+                            <a href="#2023-03" data-docs-toc-link="2023-03">March 2023</a>
+                            <a href="#2023-01" data-docs-toc-link="2023-01">January 2023</a>
+                        </nav>
+                    </aside>
+                    <!-- ======================= CHANGELOG TABLE OF CONTENTS END ======================= -->  
+
+
+                            
+                    <!-- =============================== CHANGELOG START =============================== -->    
+                    <article class="docs-article">
+                        <section class="docs-section" id="2026-08">
+                            <h2 class="kicker">August 2026</h2>
+                                    
+                            <div class="docs-changelog-entry">
+                                <h3>Python SDK 1.0.2 made publicly available.</h3>
+                                <ul class="docs-mini-list">
+                                    <li>Aligned package and runtime versions at 1.0.2.</li>
+                                    <li>Added support for Python 3.10 through 3.13 and required a security-current <code>requests</code> release.</li>
+                                    <li>Added typed smtpRS organization, documentary-association, and logo response metadata.</li>
+                                    <li>Improved typed analysis responses with additional request and processing metadata.</li>
+                                    <li>Improved request retry safeguards for billable API operations.</li>
+                                    <li>Simplified the public analysis interface by removing unsupported internal options.</li>
+                                    <li>Improved package publishing and refreshed release documentation.</li>
+                                </ul>
+                            </div>                                    
+                            <div class="docs-changelog-entry">
+                                <h3>Company intelligence expanded.</h3>
+                                <ul class="docs-mini-list">
+                                    <li>Improved company-related email intelligence for eligible plans.</li>
+                                    <li>Expanded the coverage and consistency of company validation signals.</li>
+                                    <li>
+                                        Improved reliability when evaluating older, incomplete, or conflicting company
+                                        information.
+                                    </li>
+                                    <li>Refined company-related results while preserving user privacy.</li>
+                                </ul>
+                            </div>
+                            <div class="docs-changelog-entry">
+                                <h3>Verified organization branding added.</h3>
+                                <ul class="docs-mini-list">
+                                    <li>Added verified organization branding to eligible company results.</li>
+                                    <li>
+                                        Improved the consistency of organization identity information shown to
+                                        customers.
+                                    </li>
+                                    <li>
+                                        Improved the consistency of company identity details shown alongside eligible
+                                        results.
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="docs-changelog-entry">
+                                <h3>Preview, credits, and billing controls strengthened.</h3>
+                                <ul class="docs-mini-list">
+                                    <li>Improved the public smtpRS Preview experience and decision guidance.</li>
+                                    <li>Added optional credit purchases for supported paid accounts.</li>
+                                    <li>
+                                        Improved plan-transition handling so account limits remain aligned with the
+                                        active plan.
+                                    </li>
+                                    <li>Strengthened overall billing and entitlement reliability.</li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="docs-section" id="2026-07">
+                            <h2 class="kicker">July 2026</h2>
+                            <div class="docs-changelog-entry">
+                                <h3>Company validation coverage expanded.</h3>
+                                <ul class="docs-mini-list">
+                                    <li>Expanded the breadth of company validation coverage.</li>
+                                    <li>Improved confidence when associating business domains with organizations.</li>
+                                    <li>
+                                        Improved handling of incomplete, repeated, or conflicting company information.
+                                    </li>
+                                    <li>Refined domain-risk decisions to reduce avoidable false positives.</li>
+                                </ul>
+                            </div>
+                            <div class="docs-changelog-entry">
+                                <h3>Flexible analysis options and Company Validity Beta added.</h3>
+                                <ul class="docs-mini-list">
+                                    <li>
+                                        Added additional analysis options so eligible accounts can choose between faster
+                                        and more comprehensive evaluation.
+                                    </li>
+                                    <li>Introduced Company Validity Beta for eligible paid accounts.</li>
+                                    <li>
+                                        Kept existing analysis behavior unchanged unless additional options are
+                                        selected.
+                                    </li>
+                                    <li>Strengthened access controls around paid features.</li>
+                                </ul>
+                            </div>
+                            <div class="docs-changelog-entry">
+                                <h3>Company and domain intelligence expanded.</h3>
+                                <ul class="docs-mini-list">
+                                    <li>Added broader company and business-domain intelligence.</li>
+                                    <li>
+                                        Improved the ability to distinguish a technically valid domain from one
+                                        confidently associated with a specific organization.
+                                    </li>
+                                    <li>
+                                        Improved handling of ambiguous, redirected, and conflicting business domains.
+                                    </li>
+                                    <li>
+                                        Improved handling of cases where a company-domain relationship cannot be
+                                        established confidently.
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="docs-changelog-entry">
+                                <h3>Account and API key management refined.</h3>
+                                <ul class="docs-mini-list">
+                                    <li>Added API key renaming for easier workspace management.</li>
+                                    <li>Improved signup and workspace creation when a company name is not provided.</li>
+                                    <li>
+                                        Simplified customer-facing analysis responses to focus on useful decisions and
+                                        context.
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="docs-section" id="2026-06">
+                            <h2 class="kicker">June 2026</h2>
+                            <div class="docs-changelog-entry">
+                                <h3>Access security and abuse protections expanded.</h3>
+                                <ul class="docs-mini-list">
+                                    <li>Strengthened account and API access security.</li>
+                                    <li>Improved signup safeguards against duplicate and abusive account activity.</li>
+                                    <li>Improved protections against suspicious or abusive usage.</li>
+                                    <li>Improved the reliability of account and access controls.</li>
+                                </ul>
+                            </div>
+                            <div class="docs-changelog-entry">
+                                <h3>Self-service account deletion added.</h3>
+                                <ul class="docs-mini-list">
+                                    <li>
+                                        Added authenticated self-service account deletion with confirmation safeguards.
+                                    </li>
+                                    <li>Improved cleanup of account access when deletion is completed.</li>
+                                    <li>Added safeguards for accounts with active billing relationships.</li>
+                                    <li>Protected shared workspaces when other active members remain.</li>
+                                </ul>
+                            </div>
+                            <div class="docs-changelog-entry">
+                                <h3>Customer accounts, plans, billing, and administration added.</h3>
+                                <ul class="docs-mini-list">
+                                    <li>
+                                        Added customer login, account verification, password recovery, dashboard access,
+                                        and self-service API key management.
+                                    </li>
+                                    <li>
+                                        Added plan-aware usage limits, credits, feature access, and account controls.
+                                    </li>
+                                    <li>Added self-service subscription and billing management.</li>
+                                    <li>Improved customer visibility into usage, plan, and subscription status.</li>
+                                </ul>
+                            </div>
+                            <div class="docs-changelog-entry">
+                                <h3>Public evaluation and signup workflows introduced.</h3>
+                                <ul class="docs-mini-list">
+                                    <li>
+                                        Connected public contact and signup experiences to structured customer
+                                        onboarding.
+                                    </li>
+                                    <li>
+                                        Added account review and secure API access provisioning for approved customers.
+                                    </li>
+                                    <li>Added usage tracking and plan limits for approved accounts.</li>
+                                    <li>
+                                        Added a limited public smtpRS Preview experience for evaluating the service
+                                        before integration.
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="docs-changelog-entry">
+                                <h3>smtpRS available.</h3>
+                                <ul class="docs-mini-list">
+                                    <li>Introduced email risk analysis for individual address checks.</li>
+                                    <li>
+                                        Results provide clear risk guidance, decision support, and usage information.
+                                    </li>
+                                    <li>
+                                        Flexible analysis options support evaluation and production workflows according
+                                        to the account plan.
+                                    </li>
+                                    <li>
+                                        Secure access and practical integration guidance are included for approved
+                                        customers.
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="docs-section" id="2026-05">
+                            <h2 class="kicker">May 2026</h2>
+                            <h3>Core analysis quality and reliability improved.</h3>
+                            <ul class="docs-mini-list">
+                                <li>Improved email risk scoring accuracy across a wider range of address patterns.</li>
+                                <li>Improved scoring consistency to reduce avoidable misclassification.</li>
+                                <li>Strengthened overall service reliability and resilience.</li>
+                                <li>Expanded customer and integration documentation.</li>
+                            </ul>
+                        </section>
+                        <section class="docs-section" id="2025-12">
+                            <h2 class="kicker">December 2025</h2>
+                            <h3>Response consistency improved.</h3>
+                            <ul class="docs-mini-list">
+                                <li>Standardized common analysis fields across responses.</li>
+                                <li>Added clearer decision guidance for borderline results.</li>
+                                <li>Improved consistency between repeated checks of the same address.</li>
+                            </ul>
+                        </section>
+                        <section class="docs-section" id="2025-10">
+                            <h2 class="kicker">October 2025</h2>
+                            <h3>Deliverability checks refined.</h3>
+                            <ul class="docs-mini-list">
+                                <li>Improved handling of domains with unusual or inconsistent mail configurations.</li>
+                                <li>Reduced false warnings for otherwise healthy business domains.</li>
+                                <li>Improved timeout handling for slower network-dependent checks.</li>
+                            </ul>
+                        </section>
+                        <section class="docs-section" id="2025-08">
+                            <h2 class="kicker">August 2025</h2>
+                            <h3>Disposable email coverage expanded.</h3>
+                            <ul class="docs-mini-list">
+                                <li>Expanded detection coverage for temporary and disposable email services.</li>
+                                <li>Improved handling of newly observed disposable-domain patterns.</li>
+                                <li>Refined risk guidance for addresses using short-lived mailbox providers.</li>
+                            </ul>
+                        </section>
+                        <section class="docs-section" id="2025-06">
+                            <h2 class="kicker">June 2025</h2>
+                            <h3>Domain reputation signals broadened.</h3>
+                            <ul class="docs-mini-list">
+                                <li>Added additional domain-level risk indicators.</li>
+                                <li>Improved handling of newly registered and low-confidence domains.</li>
+                                <li>Refined scoring when individual signals disagree.</li>
+                            </ul>
+                        </section>
+                        <section class="docs-section" id="2025-04">
+                            <h2 class="kicker">April 2025</h2>
+                            <h3>Address normalization improved.</h3>
+                            <ul class="docs-mini-list">
+                                <li>Improved normalization of mixed-case and unusually formatted addresses.</li>
+                                <li>Expanded support for internationalized domain and address edge cases.</li>
+                                <li>Reduced avoidable validation failures caused by formatting differences.</li>
+                            </ul>
+                        </section>
+                        <section class="docs-section" id="2025-02">
+                            <h2 class="kicker">February 2025</h2>
+                            <h3>Risk results made easier to interpret.</h3>
+                            <ul class="docs-mini-list">
+                                <li>Simplified result wording for low-, medium-, and high-risk outcomes.</li>
+                                <li>Added a normalized <code>decision</code> field to standard responses.</li>
+                                <li>Improved reason ordering so the most important findings appear first.</li>
+                            </ul>
+                        </section>
+                        <section class="docs-section" id="2024-11">
+                            <h2 class="kicker">November 2024</h2>
+                            <h3>Mailbox pattern handling expanded.</h3>
+                            <ul class="docs-mini-list">
+                                <li>Improved recognition of common role-based and shared mailbox patterns.</li>
+                                <li>Reduced unnecessary penalties for legitimate business aliases.</li>
+                                <li>Refined treatment of unusual local-part formatting.</li>
+                            </ul>
+                        </section>
+                        <section class="docs-section" id="2024-09">
+                            <h2 class="kicker">September 2024</h2>
+                            <h3>Domain validation became more resilient.</h3>
+                            <ul class="docs-mini-list">
+                                <li>Improved handling of redirects, aliases, and inconsistent domain responses.</li>
+                                <li>Added safer fallbacks when a domain could not be evaluated completely.</li>
+                                <li>Reduced hard failures when external checks were temporarily unavailable.</li>
+                            </ul>
+                        </section>
+                        <section class="docs-section" id="2024-07">
+                            <h2 class="kicker">July 2024</h2>
+                            <h3>Mail-domain checks expanded.</h3>
+                            <ul class="docs-mini-list">
+                                <li>Added broader checks for whether a domain appears configured to receive email.</li>
+                                <li>Improved handling of domains with multiple mail routes.</li>
+                                <li>Refined results for partially configured domains.</li>
+                            </ul>
+                        </section>
+                        <section class="docs-section" id="2024-03">
+                            <h2 class="kicker">March 2024</h2>
+                            <h3>Standard response metadata expanded.</h3>
+                            <ul class="docs-mini-list">
+                                <li>Added clearer request-level metadata to analysis responses.</li>
+                                <li>Improved processing-time reporting for diagnostics and integration testing.</li>
+                                <li>Standardized field naming across early response formats.</li>
+                            </ul>
+                        </section>
+                        <section class="docs-section" id="2023-12">
+                            <h2 class="kicker">December 2023</h2>
+                            <h3>Risk categories standardized.</h3>
+                            <ul class="docs-mini-list">
+                                <li>Introduced consistent low-, medium-, and high-risk classifications.</li>
+                                <li>Grouped validation findings into clearer customer-facing reasons.</li>
+                                <li>Improved consistency between numeric scores and final guidance.</li>
+                            </ul>
+                        </section>
+                        <section class="docs-section" id="2023-09">
+                            <h2 class="kicker">September 2023</h2>
+                            <h3>Disposable-address detection introduced.</h3>
+                            <ul class="docs-mini-list">
+                                <li>Added early detection for known temporary and disposable mailbox domains.</li>
+                                <li>Expanded the initial domain deny-list used during evaluation.</li>
+                                <li>Improved handling of obvious throwaway-address patterns.</li>
+                            </ul>
+                        </section>
+                        <section class="docs-section" id="2023-06">
+                            <h2 class="kicker">June 2023</h2>
+                            <h3>Domain verification added.</h3>
+                            <ul class="docs-mini-list">
+                                <li>Added checks for whether the email domain exists and appears usable.</li>
+                                <li>Improved handling of malformed, incomplete, and nonexistent domains.</li>
+                                <li>Separated address-format issues from domain-level issues.</li>
+                            </ul>
+                        </section>
+                        <section class="docs-section" id="2023-03">
+                            <h2 class="kicker">March 2023</h2>
+                            <h3>Email parsing and normalization improved.</h3>
+                            <ul class="docs-mini-list">
+                                <li>Improved parsing of common address formats and edge cases.</li>
+                                <li>Normalized casing and whitespace before evaluation.</li>
+                                <li>Added clearer validation reasons for malformed addresses.</li>
+                            </ul>
+                        </section>
+                        <section class="docs-section" id="2023-01">
+                            <h2 class="kicker">January 2023</h2>
+                            <h3>Early smtpRS prototype established.</h3>
+                            <ul class="docs-mini-list">
+                                <li>Created the first structured email-risk evaluation flow.</li>
+                                <li>Added basic syntax and domain checks.</li>
+                                <li>Introduced an early risk score for comparing suspicious and ordinary addresses.</li>
+                            </ul>
+                        </section>
+                    </article>
+                    <!-- =============================== CHANGELOG END =============================== -->   
+                            
+                </div>
+            </section>
+        </main>
+        <footer class="site-footer">
+            <div class="container footer-directory">
+                <div class="footer-directory-grid">
+                    <section class="footer-directory-column" aria-labelledby="footer-getting-started">
+                        <h2 id="footer-getting-started">Getting Started</h2>
+                        <div class="footer-directory-links">
+                            <a href="../../../pages/contact/">Contact</a>
+                            <a href="../../../pages/products/smtprs#try-smtprs">Test smtpRS</a>
+                        </div>
+                    </section>
+                    <section class="footer-directory-column" aria-labelledby="footer-company">
+                        <h2 id="footer-company">Company</h2>
+                        <div class="footer-directory-links">
+                            <a href="../../../pages/company/">About</a>
+                            <a href="../../../pages/careers/">Careers</a>
+                        </div>
+                    </section>
+                    <section class="footer-directory-column" aria-labelledby="footer-developers">
+                        <h2 id="footer-developers">Developers</h2>
+                        <div class="footer-directory-links">
+                            <a href="../../../pages/docs/">Documentation</a>
+                        </div>
+                    </section>
+                </div>
+                <div class="footer-bottom">
+                    <span class="footer-copyright">
+                        © 2026 Paravane. A
+                        <a href="https://doydl.studio/" target="_blank" rel="noopener noreferrer">DOYDL Technologies</a>
+                        company.
+                    </span>
+                    <nav class="footer-social" aria-label="Paravane Labs social media">
+                        <a class="footer-social-link footer-social-x" href="https://x.com/ParavaneAI" target="_blank" rel="noopener noreferrer" aria-label="Paravane Labs on X">
+                            <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a class="footer-social-link footer-social-youtube" href="https://www.youtube.com/@ParavaneAI" target="_blank" rel="noopener noreferrer" aria-label="Paravane Labs on YouTube">
+                            <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+                        </a>
+                        <a class="footer-social-link footer-social-linkedin" href="https://www.linkedin.com/company/paravane" target="_blank" rel="noopener noreferrer" aria-label="Paravane Labs on LinkedIn">
+                            <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                        </a>
+                        <a class="footer-social-link footer-social-facebook" href="https://www.facebook.com/Paravane/" target="_blank" rel="noopener noreferrer" aria-label="Paravane Labs on Facebook">
+                            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                        </a>
+                        <a class="footer-social-link footer-social-reddit" href="https://www.reddit.com/user/ParavaneLabs/" target="_blank" rel="noopener noreferrer" aria-label="Paravane Labs on Reddit">
+                            <i class="fa-brands fa-reddit-alien" aria-hidden="true"></i>
+                        </a>
+                        <a class="footer-social-link footer-social-github" href="https://github.com/paravaneai" target="_blank" rel="noopener noreferrer" aria-label="Paravane Labs on GitHub">
+                            <i class="fa-brands fa-github" aria-hidden="true"></i>
+                        </a>
+                    </nav>
+                    <nav class="footer-legal" aria-label="Legal">
+                        <a href="../../../pages/legal/">Legal</a>
+                        <a href="../../../pages/legal/terms">Terms</a>
+                        <a href="../../../pages/legal/privacy">Privacy</a>
+                        <a href="../../../pages/legal/security">Security</a>
+                    </nav>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            (function () {
+                var toc = document.querySelector(".docs-toc");
+                if (!toc) return;
+
+                var links = Array.prototype.slice.call(toc.querySelectorAll("[data-docs-toc-link]"));
+                var items = links
+                    .map(function (link) {
+                        var id = link.getAttribute("data-docs-toc-link");
+                        return { id: id, link: link, section: document.getElementById(id) };
+                    })
+                    .filter(function (item) {
+                        return item.section;
+                    });
+
+                if (!items.length) return;
+
+                var ticking = false;
+
+                function setActive(id) {
+                    items.forEach(function (item) {
+                        var active = item.id === id;
+                        item.link.classList.toggle("active", active);
+                        if (active) {
+                            item.link.setAttribute("aria-current", "location");
+                        } else {
+                            item.link.removeAttribute("aria-current");
+                        }
+                    });
+
+                    var activeLink = toc.querySelector(".docs-toc-nav a.active");
+                    if (activeLink && typeof activeLink.scrollIntoView === "function") {
+                        var tocRect = toc.getBoundingClientRect();
+                        var linkRect = activeLink.getBoundingClientRect();
+
+                        if (linkRect.top < tocRect.top + 48 || linkRect.bottom > tocRect.bottom - 12) {
+                            activeLink.scrollIntoView({ block: "nearest", inline: "nearest", behavior: "smooth" });
+                        }
+                    }
+                }
+
+                function updateActiveSection() {
+                    ticking = false;
+                    var threshold = 170;
+                    var current = items[0];
+
+                    items.forEach(function (item) {
+                        if (item.section.getBoundingClientRect().top <= threshold) {
+                            current = item;
+                        }
+                    });
+
+                    setActive(current.id);
+                }
+
+                function requestUpdate() {
+                    if (ticking) return;
+                    ticking = true;
+                    window.requestAnimationFrame(updateActiveSection);
+                }
+
+                links.forEach(function (link) {
+                    link.addEventListener("click", function () {
+                        setActive(link.getAttribute("data-docs-toc-link"));
+                    });
+                });
+
+                window.addEventListener("scroll", requestUpdate, { passive: true });
+                window.addEventListener("resize", requestUpdate);
+                window.addEventListener("hashchange", requestUpdate);
+                requestUpdate();
+            })();
+        </script>
+
+        <script src="../../../js/docs-code-copy.js?v=011.000.001-docs-copy-controls"></script>
+    </body>
+</html>
