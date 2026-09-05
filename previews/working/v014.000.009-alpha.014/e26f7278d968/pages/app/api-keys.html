@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+    <head>
+<meta http-equiv="Content-Security-Policy" content="connect-src 'none'; form-action 'none'">
+<meta name="robots" content="noindex, nofollow">
+<script src="../../hosted-preview.js"></script>
+
+        <meta charset="utf-8" />
+        <meta name="color-scheme" content="only light" />
+        <meta name="darkreader-lock" content="true" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Manage Paravane Labs API keys." />
+        <title>API Keys | Paravane</title>
+        <link rel="icon" href="../../../../../../shared/b4/b47d8a12345bdbf064f0de8351c8ff55b0c87d6eec4e283d71a72b3fa8e150eb.ico" />
+        <script>
+            (function () {
+                try {
+                    var theme = localStorage.getItem("paravane-theme");
+                    document.documentElement.setAttribute("data-theme", theme === "light" ? "light" : "dark");
+                    document.documentElement.classList.add("app-is-booting");
+                } catch (err) {
+                    document.documentElement.setAttribute("data-theme", "dark");
+                    document.documentElement.classList.add("app-is-booting");
+                }
+            })();
+        </script>
+        <script src="../../js/site-config.js?v=009.220.471-alpha.310-loader-soft-fade"></script>
+        <script src="../../js/theme.js?v=012.000.001-alpha.108-multi-catalog"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+        <link rel="stylesheet" href="../../css/paravane.css?v=012.000.001-alpha.108-contact-spacing-2" />
+        <meta name="robots" content="noindex,nofollow,noarchive">
+</head>
+    <body class="page-smtprs page-standard page-app">
+        <div class="app-route-backdrop" aria-hidden="true"></div>
+        <div class="app-route-loader" aria-live="polite" aria-label="Loading">
+            <img class="app-route-svg-frame" alt="" aria-hidden="true" />
+        </div>
+        <header class="site-header app-site-header">
+            <div class="container nav">
+                <a class="logo" href="/" aria-label="Paravane Labs home">
+                    <img src="../../../../../../shared/76/76010f0394048a52ec556035630d91c9204895f9c94f9fe83fb61d8fb9ecd180.svg" data-theme-src-dark="../../../../../../shared/76/76010f0394048a52ec556035630d91c9204895f9c94f9fe83fb61d8fb9ecd180.svg" data-theme-src-light="../../../../../../shared/53/5379caf98dc03f58295f0478bbea0ec723e97bd443ddd5f4bfc6e946ae659fbe.svg" alt="Paravane Labs" />
+                </a>
+                <nav class="nav-links" aria-label="Primary navigation" id="primary-navigation">
+                    <div class="nav-catalog nav-products">
+                        <button class="nav-catalog-trigger" type="button" aria-haspopup="true" aria-label="Open product catalog">
+                            <span>Products</span>
+                        </button>
+                        <div class="product-catalog-menu" id="product-catalog-navigation" role="menu" aria-label="Products catalog">
+                            <div class="product-catalog-head">
+                                <div>
+                                    <strong>Product catalog</strong>
+                                    <span>Applied intelligence for risk, revenue, operations, compliance, data, and vendor decisions.</span>
+                                </div>
+                            </div>
+                            <div class="product-catalog-grid">
+                                <section class="product-catalog-section" aria-label="Risk &amp; Trust Intelligence">
+                                    <p class="product-catalog-heading">Risk &amp; Trust Intelligence</p>
+                                    <p>Detect suspicious activity, unreliable outputs, risky communications, and fraud signals.</p>
+                                    <div class="product-catalog-list">
+                                        <a class="product-catalog-item is-available" href="../../pages/products/smtprs" role="menuitem">
+                                            <span class="product-catalog-title">smtpRS | Email Risk Intelligence</span>
+                                            <p>Scores email risk, urgency, confidence, and unusual activity.</p>
+                                        </a>
+                                        <a class="product-catalog-item is-available" href="../../pages/products/invoiceguard" role="menuitem">
+                                            <span class="product-catalog-title">InvoiceGuard | Invoice Protection <span class="product-catalog-pill">In development</span></span>
+                                            <p>Detects fraudulent, duplicate, inflated, or suspicious invoice activity.</p>
+                                        </a>
+                                    </div>
+                                </section>
+                                <section class="product-catalog-section" aria-label="Customer &amp; Revenue Intelligence">
+                                    <p class="product-catalog-heading">Customer &amp; Revenue Intelligence</p>
+                                    <p>Predict churn, renewal health, payment reliability, and revenue risk.</p>
+                                    <div class="product-catalog-list">
+                                        <a class="product-catalog-item is-available" href="../../pages/products/retainiq" role="menuitem">
+                                            <span class="product-catalog-title">RetainIQ | Customer Retention Intelligence <span class="product-catalog-pill">In development</span></span>
+                                            <p>Predicts customer churn, disengagement, and renewal risk.</p>
+                                        </a>
+                                    </div>
+                                </section>
+                                <section class="product-catalog-section" aria-label="Data &amp; Vendor Intelligence">
+                                    <p class="product-catalog-heading">Data &amp; Vendor Intelligence</p>
+                                    <p>Improve data reliability and evaluate third-party operational risk.</p>
+                                    <div class="product-catalog-list">
+                                        <a class="product-catalog-item is-available" href="../../pages/products/vendorlens" role="menuitem">
+                                            <span class="product-catalog-title">VendorLens | Vendor Intelligence <span class="product-catalog-pill">In development</span></span>
+                                            <p>Assesses vendor reliability, compliance, and operational dependency risk.</p>
+                                        </a>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-catalog nav-resources">
+                        <button class="nav-catalog-trigger" type="button" aria-haspopup="true" aria-label="Open resources menu">
+                            <span>Resources</span>
+                        </button>
+                        <div class="product-catalog-menu nav-resources-menu" id="resources-navigation" role="menu" aria-label="Resources">
+                            <div class="product-catalog-head">
+                                <div>
+                                    <strong>Resources</strong>
+                                    <span>Technical guidance for integrating and operating Paravane products.</span>
+                                </div>
+                            </div>
+                            <div class="nav-resource-list">
+                                <a class="nav-resource-item" href="../../pages/docs/" role="menuitem">
+                                    <span class="nav-resource-icon" aria-hidden="true"><i class="fa-solid fa-code"></i></span>
+                                    <span><strong>Developer Docs</strong><small>API references, quickstarts, authentication, and integration guidance.</small></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="../../pages/pricing/">Pricing</a>
+                </nav>
+                <div class="nav-actions">
+                    <button class="nav-action nav-action-secondary" type="button" data-logout>Logout</button>
+                                            <a class="nav-action nav-action-secondary nav-contact-action" href="../../pages/contact/">Contact</a>
+                    <button class="theme-toggle" type="button" data-theme-toggle role="switch" aria-label="Switch to light theme" aria-pressed="false" aria-checked="true" title="Switch to light theme">
+                        <svg class="theme-toggle__side-icon theme-toggle__side-icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+                            <circle cx="12" cy="12" r="3.2"></circle>
+                            <path d="M12 2.7v2M12 19.3v2M4.7 12h-2M21.3 12h-2M5.4 5.4l1.4 1.4M17.2 17.2l1.4 1.4M18.6 5.4l-1.4 1.4M6.8 17.2l-1.4 1.4"></path>
+                        </svg>
+                        <svg class="theme-toggle__side-icon theme-toggle__side-icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M20.2 14.2A8.25 8.25 0 0 1 9.8 3.8 8.5 8.5 0 1 0 20.2 14.2Z"></path>
+                        </svg>
+                        <span class="theme-toggle__thumb" aria-hidden="true">
+                            <svg class="theme-toggle__thumb-icon theme-toggle__thumb-icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                                <circle cx="12" cy="12" r="3.2"></circle>
+                                <path d="M12 2.7v2M12 19.3v2M4.7 12h-2M21.3 12h-2M5.4 5.4l1.4 1.4M17.2 17.2l1.4 1.4M18.6 5.4l-1.4 1.4M6.8 17.2l-1.4 1.4"></path>
+                            </svg>
+                            <svg class="theme-toggle__thumb-icon theme-toggle__thumb-icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20.2 14.2A8.25 8.25 0 0 1 9.8 3.8 8.5 8.5 0 1 0 20.2 14.2Z"></path>
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="app-shell" data-api-keys-page>
+            <aside class="app-sidebar" aria-label="Account navigation">
+                <div class="app-sidebar-head">
+                    <span>Account</span>
+                    <strong>Customer portal</strong>
+                </div>
+                <a class="app-nav-link" href="../../pages/app/"><span>Dashboard</span></a>
+                <a class="app-nav-link active" href="../../pages/app/api-keys"><span>API keys</span></a>
+                <a class="app-nav-link" href="../../pages/app/usage"><span>Usage</span></a>
+                <a class="app-nav-link" href="../../pages/app/billing"><span>Billing</span></a>
+                <a class="app-nav-link" href="../../pages/app/settings"><span>Settings</span></a>
+            </aside>
+            <section class="app-main">
+                <div class="app-topbar">
+                    <div class="app-page-title">
+                        <p class="kicker">Account</p>
+                        <h1>API keys</h1>
+                        <p class="app-page-intro">Manage the keys your team uses to connect smtpRS to production workflows.</p>
+                    </div>
+                    <p class="app-status" data-app-status aria-live="polite">Loading keys.</p>
+                </div>
+
+                <div class="app-section-grid app-section-grid-balanced">
+                    <section class="app-card app-form-card">
+                        <div class="app-card-head">
+                            <div>
+                                <h2>Create a key</h2>
+                                <p>Keys can be copied when their full value is available from this browser session or the API.</p>
+                            </div>
+                        </div>
+                        <form class="site-form api-key-form" data-create-api-key>
+                            <label class="field">
+                                <span>Key name</span>
+                                <input type="text" name="name" value="Production key" maxlength="120" required />
+                            </label>
+                            <button class="btn btn-primary" type="submit" data-create-api-key-button>Create key</button>
+                        </form>
+                        <p class="api-key-limit-message" data-api-key-limit-message hidden></p>
+                        <div class="secret-box" data-new-api-key hidden>
+                            <div class="secret-box-head">
+                                <span>New API key</span>
+                                <button class="table-action" type="button" data-copy-new-api-key>Copy key</button>
+                            </div>
+                            <code data-new-api-key-value></code>
+                        </div>
+                    </section>
+
+                    <section class="app-card">
+                        <div class="app-card-head">
+                            <div>
+                                <h2>Key handling</h2>
+                            <p>New API keys are shown once. If a key is lost, revoke it and create a replacement.</p>
+                            </div>
+                        </div>
+                        <div class="app-summary-grid">
+                            <div class="app-mini-stat">
+                                <span>Visibility</span>
+                                <strong>Shown once</strong>
+                                <small>Full values are never stored after creation</small>
+                            </div>
+                            <div class="app-mini-stat">
+                                <span>Header</span>
+                                <strong>X-API-Key</strong>
+                                <small>Use with smtpRS API requests</small>
+                            </div>
+                            <div class="app-mini-stat">
+                                <span>Plan limit</span>
+                                <strong data-api-key-plan-limit>Checking</strong>
+                                <small data-api-key-plan-note>Active key allowance</small>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <section class="app-card">
+                    <div class="app-card-head app-card-head-controls">
+                        <div>
+                            <h2>Workspace keys</h2>
+                            <p>Active keys can score requests through the smtpRS API. Revoked keys remain available for audit history.</p>
+                        </div>
+                        <label class="app-inline-filter">
+                            <span>Show</span>
+                            <select data-api-key-filter aria-label="Filter API keys by status">
+                                <option value="active">Active keys</option>
+                                <option value="all">All keys</option>
+                                <option value="revoked">Revoked keys</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="empty-state" data-empty-keys hidden>No API keys have been created for this workspace.</div>
+                    <div class="table-wrap">
+                        <table class="data-table" aria-label="API keys">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Prefix</th>
+                                    <th>Tier</th>
+                                    <th>Status</th>
+                                    <th>Created</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody data-api-key-rows></tbody>
+                        </table>
+                    </div>
+                </section>
+            </section>
+        </main>
+
+        <div class="app-confirm-modal" data-api-key-rename-modal hidden>
+            <div class="app-confirm-scrim" data-api-key-rename-modal-cancel></div>
+            <section
+                class="app-confirm-panel app-key-edit-panel"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="api-key-rename-modal-title"
+                aria-describedby="api-key-rename-modal-copy"
+                tabindex="-1"
+            >
+                <p class="eyebrow">Key settings</p>
+                <h2 id="api-key-rename-modal-title">Rename API key</h2>
+                <p id="api-key-rename-modal-copy">
+                    Give this key a recognizable label. Its value, prefix, permissions, and integrations will not change.
+                </p>
+                <form class="site-form app-key-edit-form" data-api-key-rename-form>
+                    <label class="field">
+                        <span>Key name</span>
+                        <input type="text" name="name" maxlength="120" required data-api-key-rename-input />
+                    </label>
+                    <div class="app-confirm-actions">
+                        <button class="btn btn-subtle" type="button" data-api-key-rename-modal-cancel>Cancel</button>
+                        <button class="btn btn-primary" type="submit" data-api-key-rename-modal-confirm>Save name</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+
+        <div class="app-confirm-modal" data-api-key-revoke-modal hidden>
+            <div class="app-confirm-scrim" data-api-key-revoke-modal-cancel></div>
+            <section
+                class="app-confirm-panel"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="api-key-revoke-modal-title"
+                aria-describedby="api-key-revoke-modal-copy"
+                tabindex="-1"
+            >
+                <p class="eyebrow">Key access</p>
+                <h2 id="api-key-revoke-modal-title">Revoke this API key?</h2>
+                <p id="api-key-revoke-modal-copy">
+                    Existing integrations using this key will stop working immediately.
+                </p>
+                <div class="app-confirm-warning">
+                    <span>Selected key</span>
+                    <strong data-api-key-revoke-name>API key</strong>
+                </div>
+                <div class="app-confirm-actions">
+                    <button class="btn btn-subtle" type="button" data-api-key-revoke-modal-cancel>Cancel</button>
+                    <button class="btn btn-danger" type="button" data-api-key-revoke-modal-confirm>Revoke API key</button>
+                </div>
+            </section>
+        </div>
+
+        <footer class="site-footer">
+            <div class="container footer-directory">
+                <div class="footer-directory-grid">
+                    <section class="footer-directory-column" aria-labelledby="footer-getting-started">
+                        <h2 id="footer-getting-started">Getting Started</h2>
+                        <div class="footer-directory-links">
+                            <a href="../../pages/contact/">Contact</a>
+                            <a href="../../pages/products/smtprs#try-smtprs">Test smtpRS</a>
+                        </div>
+                    </section>
+                    <section class="footer-directory-column" aria-labelledby="footer-company">
+                        <h2 id="footer-company">Company</h2>
+                        <div class="footer-directory-links">
+                            <a href="../../pages/company/">About</a>
+                            <a href="../../pages/careers/">Careers</a>
+                        </div>
+                    </section>
+                    <section class="footer-directory-column" aria-labelledby="footer-developers">
+                        <h2 id="footer-developers">Developers</h2>
+                        <div class="footer-directory-links">
+                            <a href="../../pages/docs/">Documentation</a>
+                        </div>
+                    </section>
+                </div>
+                <div class="footer-bottom">
+                    <span class="footer-copyright">
+                        © 2026 Paravane. A
+                        <a href="https://doydl.studio/" target="_blank" rel="noopener noreferrer">DOYDL Technologies</a>
+                        company.
+                    </span>
+                    <nav class="footer-social" aria-label="Paravane Labs social media">
+                        <a class="footer-social-link footer-social-x" href="https://x.com/ParavaneAI" target="_blank" rel="noopener noreferrer" aria-label="Paravane Labs on X">
+                            <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a class="footer-social-link footer-social-youtube" href="https://www.youtube.com/@ParavaneAI" target="_blank" rel="noopener noreferrer" aria-label="Paravane Labs on YouTube">
+                            <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+                        </a>
+                        <a class="footer-social-link footer-social-linkedin" href="https://www.linkedin.com/company/paravane" target="_blank" rel="noopener noreferrer" aria-label="Paravane Labs on LinkedIn">
+                            <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                        </a>
+                        <a class="footer-social-link footer-social-facebook" href="https://www.facebook.com/Paravane/" target="_blank" rel="noopener noreferrer" aria-label="Paravane Labs on Facebook">
+                            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                        </a>
+                        <a class="footer-social-link footer-social-reddit" href="https://www.reddit.com/user/ParavaneLabs/" target="_blank" rel="noopener noreferrer" aria-label="Paravane Labs on Reddit">
+                            <i class="fa-brands fa-reddit-alien" aria-hidden="true"></i>
+                        </a>
+                        <a class="footer-social-link footer-social-github" href="https://github.com/paravaneai" target="_blank" rel="noopener noreferrer" aria-label="Paravane Labs on GitHub">
+                            <i class="fa-brands fa-github" aria-hidden="true"></i>
+                        </a>
+                    </nav>
+                    <nav class="footer-legal" aria-label="Legal">
+                        <a href="../../pages/legal/">Legal</a>
+                        <a href="../../pages/legal/terms">Terms</a>
+                        <a href="../../pages/legal/privacy">Privacy</a>
+                        <a href="../../pages/legal/security">Security</a>
+                    </nav>
+                </div>
+            </div>
+        </footer>
+        <script src="../../js/app.js?v=013.000.000-alpha.011-enterprise-unlimited"></script>
+    </body>
+</html>
