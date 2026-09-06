@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated from https://paravane.io/v1/careers/jobs by tools/generate_indeed_job_feed.py. -->
+<source>
+  <job>
+    <title><![CDATA[Applied AI Engineer — LLM Systems]]></title>
+    <date><![CDATA[2026-08-21]]></date>
+    <referencenumber><![CDATA[REQ-94524]]></referencenumber>
+    <requisitionid><![CDATA[REQ-94524]]></requisitionid>
+    <url><![CDATA[https://paravane.io/pages/careers/jobs/applied-ai-engineer-llm-systems/REQ-94524/?source=Indeed]]></url>
+    <company><![CDATA[Paravane Labs]]></company>
+    <city><![CDATA[Remote]]></city>
+    <state />
+    <country><![CDATA[US]]></country>
+    <postalcode />
+    <description><![CDATA[About Paravane
+
+Paravane builds software for identifying risk, unusual activity, and signals that are easy to miss in everyday business systems.
+Paravane Labs is a wholly owned subsidiary of DOYDL Technologies. Our first public product, smtpRS, brings email risk intelligence developed through years of private production use to a broader market.
+
+About the role
+
+Paravane is looking for an Applied AI Engineer to help design, build, evaluate, and operate the large language model systems behind our software. You’ll take ownership of model selection, evaluation, inference, reliability, and production integration while helping establish how Paravane builds and operates AI-powered capabilities.
+As Paravane’s products grow, we need an engineer who can take deep ownership of the large language model systems used throughout our software.
+This role is focused on the technical side of applied AI: selecting and evaluating models, designing reliable inference pipelines, measuring output quality, improving model behavior, managing cost and latency, and integrating model-driven capabilities into production software.
+This is not primarily a prompt-writing role. You’ll work on the engineering systems surrounding LLMs as much as the models themselves, including evaluation frameworks, structured outputs, retrieval, observability, fallbacks, security controls, and model-provider integrations.
+Because this is an engineering role, you’ll have significant influence over Paravane’s AI architecture, development practices, model strategy, and internal tooling.
+
+What you'll do
+
+- Design and build production systems that use large language models
+- Evaluate hosted, commercial, and open-weight models for different product requirements
+- Build and maintain LLM inference pipelines
+- Develop model evaluation frameworks and automated regression testing
+- Create test datasets and benchmarks for measuring model performance
+- Investigate hallucinations, inconsistent outputs, and other model failure modes
+- Build structured output, schema validation, retry, and fallback mechanisms
+- Develop retrieval-augmented generation systems where appropriate
+- Work with embeddings, semantic search, reranking, and retrieval systems
+- Determine when an LLM, traditional machine learning, or deterministic software is the right solution
+- Optimize model usage for accuracy, latency, reliability, and cost
+- Develop model-routing and multi-provider strategies where appropriate
+- Build observability around model requests, responses, failures, latency, and usage
+- Design safeguards for prompt injection, untrusted input, and sensitive data
+- Evaluate fine-tuning or model adaptation when there is a clear technical need
+- Integrate model-driven capabilities into Paravane products and backend systems
+- Build internal tools for testing, inspecting, and debugging model behavior
+- Document model behavior, architectural decisions, evaluations, and known limitations
+- Work closely with product and engineering on new AI-powered capabilities
+- Help establish Paravane’s long-term technical standards for applied AI
+
+What you bring
+
+- Strong software engineering experience, preferably with Python
+- Experience building production applications that use large language models
+- Strong understanding of LLM capabilities, limitations, and failure modes
+- Experience working with model APIs and inference systems
+- Experience designing evaluations for nondeterministic systems
+- Understanding of structured outputs, tool use, function calling, or schema-constrained generation
+- Experience with retrieval-augmented generation and semantic retrieval
+- Familiarity with embeddings, vector search, or related technologies
+- Ability to evaluate models based on accuracy, latency, reliability, privacy, and cost
+- Strong debugging and problem-solving skills
+- Experience integrating AI systems into larger software applications
+- Comfort working with APIs, databases, backend services, and cloud infrastructure
+- Understanding of AI security concerns including prompt injection and data exposure
+- Ability to recognize when a problem should not be solved with an LLM
+- Strong written technical communication skills
+- Ability to independently own technically ambiguous problems
+- Comfort working in an early-stage environment where systems and processes are still being established
+- Experience with open-weight models, model hosting, GPU infrastructure, fine-tuning, or inference optimization is a plus
+
+Compensation
+
+Annual base salary range: USD 90,704.19 - 185,256.66 per year.
+
+Equal Opportunity & Inclusion
+
+Paravane is committed to building a team with different backgrounds, experiences, perspectives, and ways of thinking.
+Paravane is an equal opportunity employer. We provide employment opportunities without regard to any characteristic protected by applicable federal, state, or local law.
+EOE, including disability and protected veteran status.
+
+Accommodations
+
+We want every candidate to have a meaningful and accessible interview experience. If you require a reasonable accommodation or adjustment during the application or interview process, please let your Paravane recruiting contact know.
+
+Recruiting Agencies
+
+Paravane does not accept unsolicited resumes, candidate profiles, or other submissions from staffing agencies or third-party recruiters.
+Agencies may submit candidates only with prior written authorization from Paravane under an applicable written recruiting agreement.]]></description>
+    <salary><![CDATA[USD 90,704.19 - 185,256.66 per year]]></salary>
+    <jobtype><![CDATA[Full time]]></jobtype>
+    <category><![CDATA[Engineering]]></category>
+    <experience><![CDATA[Senior]]></experience>
+    <remotetype><![CDATA[Fully remote]]></remotetype>
+    <email><![CDATA[careers@paravane.io]]></email>
+  </job>
+  <job>
+    <title><![CDATA[Customer Solutions Engineer]]></title>
+    <date><![CDATA[2026-08-19]]></date>
+    <referencenumber><![CDATA[REQ-94525]]></referencenumber>
+    <requisitionid><![CDATA[REQ-94525]]></requisitionid>
+    <url><![CDATA[https://paravane.io/pages/careers/jobs/customer-solutions-engineer/REQ-94525/?source=Indeed]]></url>
+    <company><![CDATA[Paravane Labs]]></company>
+    <city><![CDATA[Remote]]></city>
+    <state />
+    <country><![CDATA[US]]></country>
+    <postalcode />
+    <description><![CDATA[About Paravane
+
+Paravane builds software for identifying risk, unusual activity, and signals that are easy to miss in everyday business systems.
+Paravane Labs is a wholly owned subsidiary of DOYDL Technologies. Our first public product, smtpRS, brings email risk intelligence developed through years of private production use to a broader market.
+
+About the role
+
+Paravane is looking for a Customer Solutions Engineer to help customers successfully deploy, integrate, and operate our software. You’ll work directly with customers from initial technical conversations through implementation and ongoing use while serving as a connection between customer needs and our product engineering work.
+As Paravane grows, customers will need someone who can understand their environment, help them implement our products correctly, troubleshoot technical issues, and turn complex questions into clear answers.
+The Customer Solutions Engineer will work closely with customers during onboarding, integrations, implementation, troubleshooting, and ongoing technical support.
+You’ll also serve as an important link between customers and engineering by identifying recurring problems, translating technical requirements, and helping improve the product based on real-world use.
+This role is a strong fit for someone who enjoys both technical problem-solving and working directly with customers.
+
+What you'll do
+
+- Guide customers through technical onboarding and product implementation
+- Help customers integrate Paravane products into existing systems and workflows
+- Configure and troubleshoot customer environments during deployments
+- Investigate technical issues and work with engineering to identify root causes
+- Answer customer questions about APIs, integrations, configuration, and product behavior
+- Conduct technical product demonstrations and implementation discussions when needed
+- Translate customer requirements into clear technical requirements for engineering
+- Identify recurring implementation problems and help turn them into product improvements
+- Create and improve technical documentation, implementation guides, and troubleshooting resources
+- Develop repeatable onboarding and deployment processes
+- Help define technical support and customer escalation processes
+- Monitor customer deployments and identify implementation risks
+- Collect product feedback and communicate patterns back to engineering
+- Help customers understand product results, signals, and outputs
+- Work across customer success, engineering, product, and operations as Paravane grows
+
+What you bring
+
+- Experience in solutions engineering, implementation engineering, software engineering, technical support, systems engineering, or a similar technical role
+- Strong troubleshooting skills and the ability to investigate unfamiliar technical problems
+- Comfort working with APIs, HTTP, JSON, logs, configuration files, and software integrations
+- Ability to explain technical concepts clearly to both technical and non-technical customers
+- Experience working directly with customers or stakeholders to solve technical problems
+- Ability to independently own an issue from initial report through resolution
+- Strong written communication skills
+- Ability to recognize patterns across customer problems and identify opportunities for improvement
+- Good judgment about when to solve a problem directly, document it, or escalate it to engineering
+- Comfort working in an early-stage environment where processes are still being developed
+- A practical, customer-focused approach to technical problem-solving
+- Experience with email infrastructure, security products, SaaS platforms, cloud infrastructure, risk systems, or enterprise software is a plus
+
+Equal Opportunity & Inclusion
+
+Paravane is committed to building a team with different backgrounds, experiences, perspectives, and ways of thinking.
+Paravane is an equal opportunity employer. We provide employment opportunities without regard to any characteristic protected by applicable federal, state, or local law.
+EOE, including disability and protected veteran status.
+
+Accommodations
+
+We want every candidate to have a meaningful and accessible interview experience. If you require a reasonable accommodation or adjustment during the application or interview process, please let your Paravane recruiting contact know.
+
+Recruiting Agencies
+
+Paravane does not accept unsolicited resumes, candidate profiles, or other submissions from staffing agencies or third-party recruiters.
+Agencies may submit candidates only with prior written authorization from Paravane under an applicable written recruiting agreement.]]></description>
+    <salary />
+    <jobtype><![CDATA[Full time]]></jobtype>
+    <category><![CDATA[Customer Engineering]]></category>
+    <experience><![CDATA[Mid-level / Senior]]></experience>
+    <remotetype><![CDATA[Fully remote]]></remotetype>
+    <email><![CDATA[careers@paravane.io]]></email>
+  </job>
+</source>
