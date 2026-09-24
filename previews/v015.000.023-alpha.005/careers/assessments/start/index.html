@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-route-arrival="true">
+<head>
+<meta http-equiv="Content-Security-Policy" content="connect-src 'none'; form-action 'none'">
+<meta name="robots" content="noindex, nofollow">
+<script src="../../../hosted-preview.js"></script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#ffffff">
+  <title>Candidate Assessment | Paravane</title>
+  <link rel="icon" type="image/x-icon" href="../../../../../shared/47/47f41a0063dc5d27def2b6ab47b53a7d22ee2aefecb2a84765c9e6c1539af98c.ico">
+  <script src="../../../js/site-config.js?v=careers-assessments-5"></script>
+  <script src="../../../js/theme.js?v=careers-assessments-5"></script>
+  <script src="../../../js/page-transition.js?v=careers-assessments-4"></script>
+  <link rel="stylesheet" href="../../../css/paravane.css?v=careers-assessments-6">
+</head>
+<body class="assessment-portal">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="../../../pages/careers/" aria-label="Paravane Careers">
+        <img class="brand-lockup" src="../../../../../shared/3e/3ef38dfb9278e2573304ce8cdb7ef82b9a4b973ae8ecaeabe493a7e1f08cd4a5.svg" data-theme-src-light="../../../../../shared/3e/3ef38dfb9278e2573304ce8cdb7ef82b9a4b973ae8ecaeabe493a7e1f08cd4a5.svg" data-theme-src-dark="../../../../../shared/bd/bd4645ae80adb86846ed020e2f6c94b32532ab0c14859ca5404f9a432c9b5b4e.svg" alt="Paravane">
+        <span class="brand-rule" aria-hidden="true"></span>
+        <span class="brand-context">Careers · Assessment center</span>
+      </a>
+      <div class="topbar-actions">
+        <span id="assessment-id" class="pill dark">Private invitation</span>
+        <button class="theme-toggle" type="button" data-theme-toggle role="switch" aria-label="Switch to dark theme" aria-checked="false" aria-pressed="true" title="Switch to dark theme">
+          <svg class="theme-toggle__side-icon theme-toggle__side-icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="3.2"></circle><path d="M12 2.7v2M12 19.3v2M4.7 12h-2M21.3 12h-2M5.4 5.4l1.4 1.4M17.2 17.2l1.4 1.4M18.6 5.4l-1.4 1.4M6.8 17.2l-1.4 1.4"></path></svg>
+          <svg class="theme-toggle__side-icon theme-toggle__side-icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.2 14.2A8.25 8.25 0 0 1 9.8 3.8 8.5 8.5 0 1 0 20.2 14.2Z"></path></svg>
+          <span class="theme-toggle__thumb" aria-hidden="true">
+            <svg class="theme-toggle__thumb-icon theme-toggle__thumb-icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3.2"></circle><path d="M12 2.7v2M12 19.3v2M4.7 12h-2M21.3 12h-2M5.4 5.4l1.4 1.4M17.2 17.2l1.4 1.4M18.6 5.4l-1.4 1.4M6.8 17.2l-1.4 1.4"></path></svg>
+            <svg class="theme-toggle__thumb-icon theme-toggle__thumb-icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.2 14.2A8.25 8.25 0 0 1 9.8 3.8 8.5 8.5 0 1 0 20.2 14.2Z"></path></svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-grid">
+    <div class="container">
+      <div id="loading" class="center-page"><span class="spinner" aria-label="Loading assessment"></span></div>
+      <div id="fatal" class="error" hidden></div>
+      <div id="assessment" class="layout" hidden>
+        <section class="card">
+          <div class="card-accent"></div>
+          <div class="card-body">
+            <div class="assessment-topline">
+              <span class="section-code">Paravane recruiting assessment</span>
+              <div class="assessment-statuses">
+                <span class="pill category">Finance assessment</span>
+                <span id="status-pill" class="pill slate">Not started</span>
+              </div>
+            </div>
+
+            <p class="eyebrow">Candidate assessment</p>
+            <h1 id="role">Finance &amp; Accounting Manager</h1>
+            <p id="candidate" class="lede"></p>
+
+            <div class="facts" aria-label="Assessment details">
+              <div class="fact"><p class="fact-label">Time limit</p><p id="duration" class="fact-value">2 hours</p></div>
+              <div class="fact"><p class="fact-label">Working file</p><p class="fact-value">Excel workbook (.xlsx)</p></div>
+              <div class="fact"><p class="fact-label">Submission policy</p><p class="fact-value">Revisions and late files accepted</p></div>
+            </div>
+
+            <div id="message" class="error" hidden></div>
+            <section id="prestart" class="notice">
+              <div class="notice-head">
+                <span class="notice-index" aria-hidden="true">01</span>
+                <div>
+                  <h2>Begin when you are ready to work.</h2>
+                  <p>Starting the assessment records your start time and downloads your personalized workbook. The timer begins immediately and cannot be paused or restarted.</p>
+                </div>
+              </div>
+              <button id="sign-in" class="button start-button" type="button">Begin assessment &amp; download workbook</button>
+              <p class="start-note">Do not start until you can complete the timed portion in one sitting.</p>
+            </section>
+
+            <section id="started" hidden>
+              <div class="timer">
+                <p id="timer-label" class="timer-label">Time remaining</p>
+                <p id="timer-value" class="timer-value">02 : 00 : 00</p>
+                <div class="progress" aria-hidden="true"><span id="progress"></span></div>
+                <div class="timer-meta"><span id="started-at"></span><span id="deadline"></span></div>
+              </div>
+              <div class="action-grid">
+                <a id="download" class="action-box" href="#" download><span class="action-icon" aria-hidden="true">↓</span><strong>Download workbook</strong><span>Retrieve your personalized assessment file again</span></a>
+                <label class="action-box" for="upload" tabindex="0" role="button"><span class="action-icon" aria-hidden="true">↑</span><strong id="upload-label">Submit completed workbook</strong><span>.xlsx only · maximum file size 20 MB</span><input id="upload" type="file" accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" hidden></label>
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <aside class="stack">
+          <section class="side-card">
+            <p class="side-kicker">Assessment guidance</p>
+            <h2 class="side-title">Before you begin</h2>
+            <ul class="guidance-list">
+              <li>Your invitation URL is unique to this assessment and should not be shared.</li>
+              <li>The assessment timer starts only when you select the begin button.</li>
+              <li>You may download your workbook again after the assessment has started.</li>
+              <li>You may submit revised files; each uploaded version is retained and timestamped.</li>
+            </ul>
+          </section>
+          <section class="side-card">
+            <p class="side-kicker">Record</p>
+            <h2 class="side-title">Submission history</h2>
+            <p id="no-submissions" class="muted small">No file has been submitted yet.</p>
+            <ul id="submissions" class="history"></ul>
+          </section>
+          <section class="side-card dark">
+            <div class="assurance-row">
+              <span class="assurance-icon" aria-hidden="true">P</span>
+              <div>
+                <p class="eyebrow protocol-label">Private assessment</p>
+                <p class="small protocol-copy">This assessment is assigned to a specific candidate and is part of Paravane's recruiting process. Submission timestamps and assessment timing are recorded automatically.</p>
+              </div>
+            </div>
+          </section>
+        </aside>
+      </div>
+      <p class="footer-note">Paravane · Recruiting assessment center · Confidential candidate material</p>
+    </div>
+  </main>
+
+  <script src="../../../js/assessment-candidate.js?v=careers-assessments-4" defer></script>
+</body>
+</html>
